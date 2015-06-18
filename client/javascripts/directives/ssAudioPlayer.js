@@ -63,15 +63,19 @@ angular.module("Sales")
                     
                     e.preventDefault();
                     var $this = jQuery(this)
+                    var  hasNotPlayed = true; 
+
                     if( $this.hasClass('play') ){ scplayer.pause(); }
                     else if( $this.hasClass('pause') ){ 
 
                         if(hasNotPlayed) {
-
+                            console.log('playing!'); 
                             scplayer.play(); 
+                            hasNotPlayed = false; 
 
                         } else {
                             scplayer.pause(); 
+                            hasNotPlayed = false; 
                         }
 
                     }
@@ -101,32 +105,33 @@ angular.module("Sales")
                 });
 
                 
-                // scplayer.on('scplayer.play', function(e, index) {
-                //     if(scope.hasNotPlayed) {
+                scplayer.on('scplayer.play', function(e, index) {
+                    if(scope.hasNotPlayed) {
 
-                //         scope.currentSong = scope.loadingText;
-                //         scope.$apply();     
+                        scope.currentSong = scope.loadingText;
+                        scope.$apply();     
 
-                //         scplayer.track_info(index).done(function(track){
-                //             scope.currentSong = track.title;
-                //             scope.changeTheme(track.permalink);
-                //         });
-                //     }
-                // });
+                        scplayer.track_info(index).done(function(track){
+                            scope.currentSong = track.title;
+                            scope.changeTheme(track.permalink);
+                            scope.$apply();
+                        });
+                    }
+                });
 
-                // scplayer.on('scplayer.changing_track', function(e, index) {
-                //         scope.currentSong = scope.loadingText;
-                //         scope.$apply(); 
+                scplayer.on('scplayer.changing_track', function(e, index) {
+                        scope.currentSong = scope.loadingText;
+                        scope.$apply(); 
 
-                //     scplayer.track_info(index).done(function(track){
-                //         scope.currentSong = track.title;
-                //         scope.changeTheme(track.permalink);
-                //         //Has the jquery object use the scope of this directive 
-                //         scope.$apply();
+                    scplayer.track_info(index).done(function(track){
+                        scope.currentSong = track.title;
+                        scope.changeTheme(track.permalink);
+                        //Has the jquery object use the scope of this directive 
+                        scope.$apply();
                         
-                //     });
+                    });
 
-                // });
+                });
 
                 
             }
