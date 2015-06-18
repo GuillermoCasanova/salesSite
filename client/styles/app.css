@@ -9230,10 +9230,17 @@ h6 {
 /*------------------------------------*\
     #Dropshadows
 \*------------------------------------*/
+/* line 19, ../scss/partials/_generics.scss */
+.box-shadow1 {
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
 /*------------------------------------*\
     #Responsive Image Class
 \*------------------------------------*/
-/* line 27, ../scss/partials/_generics.scss */
+/* line 29, ../scss/partials/_generics.scss */
 img.ri {
   width: 80%;
   top: 0;
@@ -9246,12 +9253,12 @@ img.ri {
 /*------------------------------------*\
     #Display Block & Inline Block
 \*------------------------------------*/
-/* line 45, ../scss/partials/_generics.scss */
+/* line 47, ../scss/partials/_generics.scss */
 .display--inline {
   display: inline-block;
 }
 
-/* line 49, ../scss/partials/_generics.scss */
+/* line 51, ../scss/partials/_generics.scss */
 .display--inlineBlock {
   display: inline-block;
 }
@@ -9259,24 +9266,24 @@ img.ri {
 /*------------------------------------*\
     #Centering
 \*------------------------------------*/
-/* line 60, ../scss/partials/_generics.scss */
+/* line 62, ../scss/partials/_generics.scss */
 .centerContentsVertically {
   display: inline-block;
 }
-/* line 63, ../scss/partials/_generics.scss */
+/* line 65, ../scss/partials/_generics.scss */
 .centerContentsVertically > * {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 69, ../scss/partials/_generics.scss */
+/* line 71, ../scss/partials/_generics.scss */
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 75, ../scss/partials/_generics.scss */
+/* line 77, ../scss/partials/_generics.scss */
 .vertical-align-middle {
   position: absolute;
   top: 50%;
@@ -9287,12 +9294,12 @@ img.ri {
 /*------------------------------------*\
     #Position Relative or Absolute
 \*------------------------------------*/
-/* line 90, ../scss/partials/_generics.scss */
+/* line 92, ../scss/partials/_generics.scss */
 .relative {
   position: relative;
 }
 
-/* line 94, ../scss/partials/_generics.scss */
+/* line 96, ../scss/partials/_generics.scss */
 .absolute {
   position: absolute;
 }
@@ -9303,27 +9310,27 @@ img.ri {
 /*------------------------------------*\
     #Width 
 \*------------------------------------*/
-/* line 149, ../scss/partials/_generics.scss */
+/* line 151, ../scss/partials/_generics.scss */
 .width100 {
   width: 100%;
 }
 
-/* line 152, ../scss/partials/_generics.scss */
+/* line 154, ../scss/partials/_generics.scss */
 .maxWidth7 {
   max-width: 450px;
 }
 
-/* line 157, ../scss/partials/_generics.scss */
+/* line 159, ../scss/partials/_generics.scss */
 .u-expanded {
   width: 100%;
 }
 
-/* line 162, ../scss/partials/_generics.scss */
+/* line 164, ../scss/partials/_generics.scss */
 .expand-on-small {
   width: 100%;
 }
 @media (min-width: 900px) {
-  /* line 162, ../scss/partials/_generics.scss */
+  /* line 164, ../scss/partials/_generics.scss */
   .expand-on-small {
     width: auto;
   }
@@ -9333,14 +9340,14 @@ img.ri {
     #Visibility Classes
 \*------------------------------------*/
 @media (min-width: 100px) and (max-width: 760px) {
-  /* line 177, ../scss/partials/_generics.scss */
+  /* line 179, ../scss/partials/_generics.scss */
   .hide-on-small {
     display: none;
   }
 }
 
 @media (min-width: 760px) {
-  /* line 184, ../scss/partials/_generics.scss */
+  /* line 186, ../scss/partials/_generics.scss */
   .hide-on-medium {
     display: none;
   }
@@ -9349,7 +9356,7 @@ img.ri {
 /*------------------------------------*\
     #Clearfix
 \*------------------------------------*/
-/* line 198, ../scss/partials/_generics.scss */
+/* line 200, ../scss/partials/_generics.scss */
 .cf {
   overflow: auto;
   zoom: 1;
@@ -9359,13 +9366,13 @@ img.ri {
     #View Port Height and Width 
 \*------------------------------------*/
 @media (min-width: 760px) {
-  /* line 210, ../scss/partials/_generics.scss */
+  /* line 212, ../scss/partials/_generics.scss */
   .vh100 {
     height: 100vh;
   }
 }
 
-/* line 216, ../scss/partials/_generics.scss */
+/* line 218, ../scss/partials/_generics.scss */
 .vw100 {
   width: 100vw;
 }
@@ -9376,7 +9383,7 @@ img.ri {
 /*------------------------------------*\
     #Margins
 \*------------------------------------*/
-/* line 244, ../scss/partials/_generics.scss */
+/* line 246, ../scss/partials/_generics.scss */
 .mga {
   margin: auto;
 }
