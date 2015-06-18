@@ -1,0 +1,112 @@
+
+/*------------------------------------*\
+    #Flex-Box
+\*------------------------------------*/
+
+//DO NOT use flexParent with Soundcloud or iframes
+.flexParent {
+  display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+  display: -moz-box;      /* OLD: Firefox (buggy) */
+  display: -ms-flexbox;   /* MID: IE 10 */
+  display: -webkit-flex;  /* NEW, Chrome 21–28, Safari 6.1+ */
+  display: flex;          /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
+  padding-right: rem-calc(14);
+  padding-left: rem-calc(14);
+}
+
+.flexDirection--rowReverse {
+   @include flex-direction(row-reverse); 
+}
+
+.flexDirection--column {
+   @include flex-direction(column);
+}
+
+.flexDirection--row {
+   @include flex-direction(row);
+}
+
+.columnOn-small {
+  @include breakpoint(mobileOnly) {
+    @include flex-direction(column);
+  }
+}
+
+.flexDirection--columnReverse {
+  @include flex-direction(column-reverse); 
+}
+
+.flexWrap--wrap {
+  @include flex-wrap(wrap);
+}
+
+.flexwrap--wrapReverse {
+  @include flex-wrap(wrap-reverse); 
+}
+
+.justifyContent--center {
+  @include justify-content(center); 
+}
+
+.centerOn-Small {
+  @include justify-content(center); 
+}
+
+.justifyContent--spaceBetween {
+  @include justify-content(space-between);
+}
+
+.justifyContent--spaceAround {
+  @include justify-content(space-around);
+}
+
+.alignItems--center {
+  @include align-items(center);
+}
+
+.alignItems--left {
+  @include align-items(left);
+}
+
+.alignItems--right {
+  @include align-items(right);
+}
+
+//Debug For finding FlexBoxes with Grow 
+[class*="flex"] {
+  // background-color: red; 
+  // margin-right: 2em;
+  // margin-left: 2em; 
+}
+
+.flexGrow--1 {
+  @include flex-grow(1);
+}
+
+.flexGrow--2 {
+  @include flex-grow(2);
+}
+
+.flexGrow--3 {
+  @include flex-grow(3);
+}
+
+
+
+.flexBasis--70 {
+  flex-basis: rem-calc(700);
+}
+
+.flexBasis--60 {
+  flex-basis: rem-calc(600);
+}
+
+
+.flexBasis--50 {
+  flex-basis: rem-calc(500);
+}
+
+.flexBasis--40 {
+  flex-basis: rem-calc(400);
+}
+

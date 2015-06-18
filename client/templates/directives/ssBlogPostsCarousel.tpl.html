@@ -1,0 +1,64 @@
+
+<div id="section-news"  class="mtb4  ptb5 ">
+
+    <div class="row  text-center">
+        <h1 class="text--mega  pb3">NEWS</h1>
+    </div>
+
+
+    <div  class="slideshow--news" carousel-slick slides="3" speed="100" > 
+        
+        <div data-reveal-id="modal"
+             ng-click="selectBlogPost(post)"
+             blog-link="{{post-date}}" 
+             class="slideshow-slide  text-center" 
+             ng-repeat="post in posts" 
+             style="background-image: url({{post.thumbnail}});">
+
+            <a class="width100">
+
+                <div class="slideshow-slide-title display--inlineBlock text-center">
+
+                    <h1 class="slideshow-slide-title-text">{{post.title}}</h1>
+                    
+                </div>
+
+            </a>
+            
+        </div>
+            
+    </div>
+
+
+    <div id="modal" 
+         class="reveal-modal  medium" 
+         data-reveal 
+         aria-labelledby="modalTitle" 
+         aria-hidden="true" 
+         role="dialog">
+
+        <h1 class="reveal-modal-title" id="modalTitle">{{selectedPost.title}}</h1>
+
+        <p>{{selectedPost.body}}</p>
+
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
+    </div>
+  
+
+    <div class="row hide-for-medium-up">
+
+        <div class="small-12  columns  centerContentsVertically  text-center">
+
+            <div class="icon--small" rel="prev"> </div>
+            
+            <h2 class="nowrap  pt2">SWIPE TO NAVIGATE</h3>
+            
+            <div class="icon--small" rel="next"></div>
+
+        </div>
+
+    </div>
+
+    
+</div>

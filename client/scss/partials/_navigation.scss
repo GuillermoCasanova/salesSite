@@ -1,0 +1,97 @@
+
+/*------------------------------------*\
+    #Navigation
+\*------------------------------------*/
+
+.mainNav {
+    background: transparent;
+    z-index: 700; 
+    overflow: visible; 
+}
+
+.mainNav-link {
+    font-family: $customFont; 
+    @extend %h2; 
+    @extend %mr1; 
+    @include transform(translateY(0));
+
+    &:hover {
+        @include transform(translateY(-4px)); 
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Main Navigation Large 
+\*------------------------------------*/
+
+
+.mainNav--large {
+    height: rem-calc(80); 
+    @extend %ptb2;  
+    @extend %relative; 
+
+    .fixed & {
+        height: rem-calc(60); 
+        z-index: 700; 
+    }
+
+    .mainNav-logo {
+        width: rem-calc(200px);
+        @include single-transition(all, 0.3s, cubic-bezier(.39, 1.05, .23, 1.26));
+
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Main Navigation Small 
+\*------------------------------------*/
+
+
+.mainNav--small {
+    
+    @extend %relative;  
+
+    .controls {
+        width: 100%;
+        display: block; 
+        @extend %relative;  
+        @extend %pt1; 
+    }
+    
+    .mainNav-logo {
+        width: rem-calc(160px);
+        @extend %left;
+        @extend %mt1;  
+    }
+
+    .mainNav-menuIcon {
+        text-align: right; 
+        @extend %mr3; 
+        @extend %mt2; 
+    }
+
+    .mainNav-menu {
+        display: block; 
+        overflow: hidden;
+        height: 0; 
+        opacity: 0; 
+        @include single-transition(all, 0.3s, ease-in-out);
+        @extend %left; 
+        @extend %mt3; 
+        @extend %relative; 
+
+        &.is-showing {
+             height: 17.5rem; 
+             opacity: 1; 
+        }
+    }
+
+}

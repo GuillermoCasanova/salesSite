@@ -1,0 +1,76 @@
+
+<div class="small-12  columns  pb4" >
+
+    <sound-manager>
+
+    </sound-manager>
+
+    <div class="row">
+
+        <div class="small-12  medium-6  small-centered columns  text-center">
+            
+            <div class="alignItems--center flexParent text-center justifyContent--center">
+        
+                <div class="flexBasis--70  text-center">
+
+                    <!--Album Artwork-->         
+                    <div class="theme-artworkContainer  relative  center"
+                        ng-class="{'bounce' : isPlaying}">
+        
+                        <ss-page-theme-backgrounds component="theme-artwork">
+                        
+                        </ss-page-theme-backgrounds>
+
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div  class="small-12  medium-6  small-centered  columns  text-center">
+            
+            <!--Curent Song--> 
+            <h1 class="h2  mt2  text--mega">{{currentSong}}</h1>
+            
+        
+             <div class="alignItems--center flexParent text-center justifyContent--center">
+        
+               <!--Audio Player Controllers-->                  
+                <div class="flexBasis--70  text-center  controls">
+        
+                    <button class="fa  audioPlayer-button  prev fa-backward">
+                        
+                    </button>
+                         
+                    
+                    <button class="fa  audioPlayer-button  pause">
+                       
+                    </button>
+
+        
+                    <button  
+                         class="fa  audioPlayer-button  next fa-forward" >
+                        
+                    </button>
+                
+                    <div id="playlist">
+                        
+                    </div>
+
+                </div>
+
+                <h3 id="now_playing"></h3>
+            
+            </div>
+        
+        </div>
+
+    </div>
+
+</div>

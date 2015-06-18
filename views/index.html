@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="Sales">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>SALES | New Movie Out Now!</title>
+
+    <meta name="description" content="Watch SALES' new movie SALES from 12 to 12!" >
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
+
+
+
+      <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
+
+  </head>
+
+<body ss-page-theme>
+    
+<!--       
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43938621-1', 'auto');
+      ga('send', 'pageview');
+    </script> -->
+
+    <ss-page-nav >
+
+    </ss-page-nav>
+
+    <ss-page-theme-backgrounds component="theme-background">
+
+    </ss-page-theme-backgrounds>
+
+    <div class="pageTheme-pageWrap">
+
+        <div ng-view  autoscroll="true">
+        
+            
+        </div>
+        
+        <ss-page-footer>
+        </ss-page-footer>
+
+    </div>
+    
+
+
+</body>
+
+
+
+<script src="//localhost:35729/livereload.js"></script>
+
+<!--Bower Stuff-->
+
+<!-- build:remove -->
+
+<!-- bower:js -->
+<!-- endbower-->
+
+    <!-- App -->
+    <script type="text/javascript" src="javascripts/app.js"></script>
+    <script type="text/javascript" src="javascripts/routes.js"></script>
+
+
+    <!--- Directives -->
+    <script src="javascripts/directives/ssAudioPlayer.js"></script>
+    <script src="javascripts/directives/ssPageNav.js"></script>
+    <script src="javascripts/directives/ssPageFooter.js"></script>
+    <script src="javascripts/directives/ssPageTheme.js"></script>
+    <script src="javascripts/directives/ssPageThemeBackgrounds.js"></script>
+    <script src="javascripts/directives/ssShowsList.js"></script>
+    <script src="javascripts/directives/ssSmallMainNav.js"></script>
+    <script src="javascripts/directives/ssBlogPostsCarousel.js"></script>
+    <script src="javascripts/directives/ssVideoCarousel.js"></script>
+    <script src="javascripts/directives/carouselSlick.js"></script>
+    <script src="javascripts/directives/foundationInit.js"></script>
+    <script src="javascripts/directives/ssSpinner.js"></script>
+    
+    <!--- Controller -->
+    <script src="javascripts/controllers/showsController.js"></script>
+    <script src="javascripts/controllers/blogController.js"></script>
+    <script src="javascripts/controllers/audioPlayerController.js"></script>
+
+
+    <!--- Services -->
+    <script src="javascripts/services/shows.js"></script>
+    <script src="javascripts/services/audio.js"></script>
+
+
+<!-- /build -->
+
+
+
+<!--- Vendor Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/soundmanager2/2.97a.20150601/script/soundmanager2-nodebug-jsmin.js"></script>
+
+<script src="javascripts/_bower.js"></script>
+<script src="javascripts/app.js"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+<script src="javascripts/vendor/sc-player.js"></script>
+
+
+<script>
+
+$(document).foundation();
+
+$(document).foundation('interchange', {
+
+named_queries : {
+
+childBear : 'only screen and (min-width: 100px)',
+teenBear :  'only screen and (min-width: 760px)',
+mamaBear :  'only screen and (min-width: 900px)'
+}
+
+});
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+
+/*------------------------------------*\
+    #Forms
+\*------------------------------------*/
+
+input,
+textarea {
+  font-family: $customFont; 
+}
+
+// .input--noBox {
+//   border: none; 
+//   outline: 0; 
+//   background-color: transparent; 
+// }
+
+input[type="email"] {
+    @include border-radius(10px); 
+    font-size: rem-calc(18); 
+    background-color: transparent; 
+    box-shadow: none; 
+    color: #fff; 
+    height: rem-calc(60);
+    padding: rem-calc(14);
+    outline: none;
+    border: 2px solid white; 
+    width: auto; 
+    min-width: rem-calc(250);
+    width: 80%; 
+
+    @media #{$medium-up} {
+
+        font-size: rem-calc(30); 
+    }
+
+    &:focus {
+        outline: none; 
+        border: 2px solid white; 
+        box-shadow: none; 
+        background-color: transparent; 
+    }
+}

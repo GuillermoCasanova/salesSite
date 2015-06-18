@@ -1,0 +1,192 @@
+
+/*------------------------------------*\
+    #Icons
+\*------------------------------------*/
+
+// [rel*="email"] {
+//   @include icon($icon--email) {
+//     margin-right: 10px;
+//   }
+// }
+
+// [rel*="phone"] {
+//   @include icon($icon--phone) {
+//     margin-right: 10px;
+//     }
+// }
+
+// [rel*="fax"] {
+//   @include icon($icon--fax) {
+//     margin-right: 10px;
+//   }
+// }
+
+
+
+//Arrows
+
+[rel*="prev"] {
+ @extend %icon--arrowLeft; 
+}
+
+[rel*="next"] {
+  @extend %icon--arrowRight; 
+}
+
+
+[rel*="up"] {
+  @include icon($icon--arrowup) {
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+  }
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Social Media Icons
+\*------------------------------------*/
+
+
+a[href*="twitter"],
+.icon--twitter {
+  @include icon($icon--socialMedia) {
+    background-position: 0 -6em; 
+  }
+}
+
+
+a[href*="facebook"],
+.icon--facebook {
+  @include icon($icon--socialMedia) {
+    background-position: 0 -12em; 
+  }
+}
+
+a[href*="soundcloud"],
+.icon--soundcloud {
+  @include icon($icon--socialMedia);
+}
+
+a[href*="youtube"],
+.icon--youtube {
+  @include icon($icon--socialMedia) {
+    background-position: 0 -18em; 
+  }
+}
+
+a[href*="instagram"],
+.icon--instagram {
+  @include icon($icon--socialMedia) {
+    background-position: 0 -24em; 
+  }
+}
+
+
+
+/*------------------------------------*\
+    #Stores Icons
+\*------------------------------------*/
+
+
+.icon--itunes {
+  @include icon($icons--stores) {
+    background-position: 0 -6em; 
+  }
+
+  &.icon--small {
+    @include icon($icons--stores) {
+    background-position: 0 -3em; 
+    }  
+  }
+}
+
+.icon--bandcamp {
+  @include icon($icons--stores) {
+    background-position: 0 -12em; 
+  }
+
+  &.icon--small {
+    @include icon($icons--stores) {
+    background-position: 0 -6em; 
+    }  
+  }
+}
+
+.icon--spotify {
+  @include icon($icons--stores) {
+    background-position: 0 0;
+  }
+}
+
+
+
+// a[href*="vimeo"],
+// .icon--vimeo {
+//   @include icon($icon--vimeo);
+
+//     &.icon--brandColors {
+//     color: $blue--vimeo;
+//   }
+// }
+
+
+
+
+
+/*------------------------------------*\
+    #Icon-Sizes
+\*------------------------------------*/
+
+.icon--large {
+  background-size: 12em auto; 
+  padding: 6em;
+  display: inline-block;  
+}
+
+.icon--medium {
+  background-size: 6em auto; 
+  padding: 3em;
+  display: inline-block;  
+}
+
+.icon--small {
+  background-size: 3em auto; 
+  padding: 1.5em;
+  display: inline-block;  
+}
+
+
+// .icon--jumbo {
+//   font-size: rem-calc(116);
+// }
+
+// .icon--large {
+//   @extend %h1;
+// }
+
+// .icon--medium {
+//   @extend %h4;
+// }
+
+// .icon--small {
+//   @extend %h5; 
+// }
+
+// .icon--tiny {
+//   font-size: rem-calc(16);
+// }
+
+// .hasNoIcon {
+//   &:before {
+//     content: "" !important; 
+//   }
+// }
+
+
+
+

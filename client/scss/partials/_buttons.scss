@@ -1,0 +1,102 @@
+
+/*------------------------------------*\
+    #Buttons
+\*------------------------------------*/
+
+button {
+
+  border: 0; 
+
+  &:hover {
+    cursor: pointer; 
+  }
+
+  
+}
+
+.button {
+  @include border-radius(6px);
+  color: #000; 
+  font-weight: bold; 
+
+}
+
+.button--action {
+  @include box-shadow(rgba(darken(#fff, 60%), 1) 0 2px 0);
+  background-color: lighten(#fff, 10%);
+ 
+  &:hover {
+    @include box-shadow(rgba(darken(#fff, 60%), 1) 0 1px 0);
+    position: relative;
+    top: 2px; 
+    color: #000; 
+    background-color: darken(#fff, 10%);
+    
+  }
+}
+
+.button--secondaryAction {
+    @include border-radius(40px);
+    color: #fff; 
+    border: 2px solid #fff; 
+    background-color: transparent; 
+    
+
+    &:hover {
+        color: #191919; 
+        background-color: #fff; 
+    }
+}
+
+.button--goUp {
+
+  @include single-transition(bottom, 1s, cubic-bezier(.6,.32,1,.65));
+  width: 50px; 
+  height: 50px;
+  background-color: transparent; 
+  position: fixed; 
+  right: 10px; 
+  bottom: -200px; 
+
+  &:hover {
+    background-color: transparent; 
+  }
+
+}
+
+.showGoUpBtn {
+  bottom: 30px;
+}
+
+.button--newsletter {
+    min-width: rem-calc(250);
+    width: 80%; 
+    height: rem-calc(60);
+    padding: rem-calc(14);
+    font-size: rem-calc(22); 
+}
+
+
+
+/*------------------------------------*\
+    #Button Sizes
+\*------------------------------------*/
+
+.small {
+
+  padding: rem-calc(10);
+  padding-right: rem-calc(20);
+  padding-left: rem-calc(20);
+
+}
+
+.medium {
+  padding: rem-calc(16);
+  padding-right: rem-calc(32);
+  padding-left: rem-calc(32);
+}
+
+// $button-tny: rem-calc(10);
+// $button-sml: rem-calc(14);
+// $button-med: rem-calc(16);
+// $button-lrg: rem-calc(18);

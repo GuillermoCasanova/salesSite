@@ -1,0 +1,146 @@
+
+/*------------------------------------*\
+    #Typography
+\*------------------------------------*/
+
+body, html {	
+	font-size: rem-calc(13);
+
+		@include breakpoint(teenBear) {
+				font-size: rem-calc(16); 
+				p {
+				font-size: rem-calc(16);
+			}
+		}
+}
+
+
+
+
+/*------------------------------------*\
+    #Font Weight
+\*------------------------------------*/
+
+.fwn {font-weight: $normal;}
+.fwb {font-weight: $bold;}
+.uc {text-transform: uppercase;}
+
+
+
+
+
+/*-----------------------------------*\
+    #Text Alignement 
+\*------------------------------------*/
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+
+
+
+
+/*------------------------------------*\
+    #Paragraph Sizes 
+\*------------------------------------*/
+
+.par--subText {
+		font-size: rem-calc(14);
+}
+
+.par--important {
+		font-size: rem-calc(18);
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Link Styles
+\*------------------------------------*/
+
+a {
+	font-weight: $bold; 
+	color: $offWhite;
+	text-decoration: none; 
+
+	&:hover {
+		color: $offWhite; 
+		position: relative; 
+	}
+
+}
+
+a {
+		&[class*="link"] {
+				@include single-transition(all, .2s, ease-in-out);
+		}
+
+		&.link--orange:hover { color: $orange;}
+		&.link--red:hover { color: $red;}
+		&.link--blue:hover { color: $blue;}
+		&.link--purple:hover {color: $purple;}
+		&.link--yellow:hover {color: $yellow;}
+		&.link--green:hover {color: $green;}
+}
+
+.link--white {
+	color: $offWhite; 
+	
+	&:hover {
+		color: $offWhite; 
+	}
+}
+
+
+
+/*------------------------------------*\
+    #Section--alt Typography Styles  
+\*------------------------------------*/
+
+.section--alt {
+	 
+	.section--alt-subTitle {
+			color: $grey--dark;
+	}
+
+	.section--alt-text {
+		color: $grey--dark;
+
+		&:hover {
+				color: $grey--dark; 
+			}
+	}
+
+	.section--alt-link {
+
+			padding: rem-calc(2); 
+			color: $grey--dark; 
+
+			&:hover {
+					color: $offWhite; 
+					text-decoration: underline; 
+					position: relative; 
+					top: 0; 
+					
+			}
+	}
+}
+
+
+.text--mega {
+    @extend %text--mega;
+    letter-spacing: rem-calc(4px); 
+}
+
+.text--micro {
+    @extend %text--micro; 
+}
+
+h1,
+.h1 {
+    @extend %h1; 
+}
+

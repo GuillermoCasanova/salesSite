@@ -1,0 +1,55 @@
+
+/*------------------------------------*\
+    #Theme Files 
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+    #Backgrounds Placeholder
+\*------------------------------------*/
+
+
+%theme-backgrounds {
+    &.is-showing {
+        opacity: 1;
+        z-index: 80;
+    }
+
+    &.is-hidden {
+        opacity: 0;
+    }
+
+    &.is-next {
+        z-index: 70;
+    }
+
+
+    &.ep,
+    &.getting-it-on,
+    &.toto-xxyyxx-remix {
+        background: #000 url('../images/bg--black.png') repeat center fixed;
+
+    }
+
+    &.sales-renee {
+        background: green url('../images/bg--green.png') repeat center fixed;
+    }
+
+    &.vow {
+        background: orange url('../images/bg--orange.png') repeat center fixed;
+
+    }
+
+    &.chinese-new-year {
+       background: red url('../images/bg--red.png') repeat center fixed;
+
+    }
+
+    &.toto {
+    background: purple url('../images/bg--purple.png') repeat center fixed;
+
+
+    }
+
+}

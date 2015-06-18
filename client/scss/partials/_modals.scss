@@ -1,0 +1,24 @@
+
+/*------------------------------------*\
+    #Modals
+\*------------------------------------*/
+
+
+.reveal-modal {
+    @include border-radius(20px); 
+    
+    h1, 
+    h2, 
+    h3, 
+    h4, 
+    h5, 
+    h6, 
+    p {
+        color: #191919; 
+    }
+
+    .reveal-modal-title {
+        @extend %mt2; 
+    }
+}
+
