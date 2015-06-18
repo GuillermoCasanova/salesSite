@@ -11,11 +11,11 @@ angular.module('Sales')
         $window, 
         smoothScroll){
 
-    $scope.search = {}; 
-    $scope.events = {};
+        $scope.search = {}; 
+        $scope.events = {};
 
-    Shows.getShows()
-        .success(function(pData) {
+        Shows.getShows()
+            .success(function(pData) {
 
            $scope.events = pData.resultsPage.results.event; 
         });

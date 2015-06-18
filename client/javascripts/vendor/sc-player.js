@@ -47,7 +47,7 @@ __slice = [].slice;
 //call setup for SM2, which inits all this
 if(typeof soundManager != 'undefined'){
     soundManager.setup({
-          url: '/examples/swf/'
+          url: 'swf/'
         , flashVersion: 9
         , useFlashBlock: false
         , useHighPerformance: true
@@ -55,7 +55,6 @@ if(typeof soundManager != 'undefined'){
         , useFastPolling: true
         , debugMode: false
         , flashLoadTimeout: 1000
-        , preferFlash: false
     });
 }
 
@@ -110,7 +109,6 @@ var SoundCloudPlayer = function(tracks, config){
         , cache: true //caches the SC track lookup. Browser should handle the audio
         , preload: false //prefetch the sc track data
         , debug: false
-        , preferFlash: false
     }
     , sc_resolve_url = "http://api.soundcloud.com/resolve?url=http://soundcloud.com"
     , urlregex = new RegExp(/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi);
@@ -172,16 +170,13 @@ var SoundCloudPlayer = function(tracks, config){
         _this.log('play');
         //if the sound it there and ready, get to it
         if( _this.sound && _this.sound.readyState == 3 ){
-            //Delays the playing of the song as Theme loads up 
-
-                _this.sound.play();
-    
+            _this.sound.play();
         }else{
             //or hold a state to come back to when ready
             _this.play_when_ready = true;
         }
-       
-             _this.trigger('scplayer.play', _this.current_track_index);
+        console.log("play function activated" ); 
+        _this.trigger('scplayer.play', _this.current_track_index);
         
         return _this;
     };

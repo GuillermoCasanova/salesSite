@@ -15,23 +15,16 @@
 }
 
 .theme-artworkContainer {
-    height: rem-calc(300px);
-    @extend %mtb2;
-    // @include single-transition(all, 0.4s, ease-in-out); 
-    // // opacity: 0; 
-
-
-    // // .is-hidden {
-    // //     opacity: 0;
-    // // }
-    
-    // // .is-showing {
-    // //     opacity: 1; 
-    // // }
-
+    //Fallback for Safari needing a height/width on container
+    width: rem-calc(250px);
+    height: rem-calc(200px); 
     @media #{$medium-up} {
         height: rem-calc(450px);
+        width: rem-calc(450px);
     }
+    //
+    @extend %mtb2;
+
 }
 
 

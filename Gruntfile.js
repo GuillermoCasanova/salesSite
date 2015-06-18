@@ -80,7 +80,7 @@ module.exports = function(grunt) {
                       flatten: false, 
                       cwd: 'client/javascripts',
                       src: [
-                            '**/*'
+                            '**/**'
                       ],
                       dest: 'build/javascripts'
                   }
