@@ -53,7 +53,7 @@ angular.module("Sales")
                     , preload: false
                     , cache: true
                     , loop : true
-                    , debug: false
+                    , debug: true
                 });
 
                 //Inits controls of audio player selecting DOM elements
@@ -67,16 +67,8 @@ angular.module("Sales")
 
                     if( $this.hasClass('play') ){ scplayer.pause(); }
                     else if( $this.hasClass('pause') ){ 
+                    scplayer.pause(); 
 
-                        if(hasNotPlayed) {
-                            console.log('playing!'); 
-                            scplayer.play(); 
-                            hasNotPlayed = false; 
-
-                        } else {
-                            scplayer.pause(); 
-                            hasNotPlayed = false; 
-                        }
 
                     }
                     else if( 

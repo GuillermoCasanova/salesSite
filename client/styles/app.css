@@ -10363,16 +10363,18 @@ input[type="email"]:focus {
 
 /* line 17, ../scss/partials/_themes.scss */
 .theme-artworkContainer {
-  height: 18.75rem;
+  width: 15.625rem;
+  height: 12.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 17, ../scss/partials/_themes.scss */
   .theme-artworkContainer {
     height: 28.125rem;
+    width: 28.125rem;
   }
 }
 
-/* line 39, ../scss/partials/_themes.scss */
+/* line 32, ../scss/partials/_themes.scss */
 .theme-artwork {
   background-size: contain;
   top: 0;
@@ -10390,37 +10392,37 @@ input[type="email"]:focus {
   transition: all 0.3s ease-in-out;
   opacity: 0;
 }
-/* line 51, ../scss/partials/_themes.scss */
+/* line 44, ../scss/partials/_themes.scss */
 .theme-artwork.is-showing {
   z-index: 80;
   opacity: 1;
 }
-/* line 136, ../scss/partials/_themes.scss */
+/* line 129, ../scss/partials/_themes.scss */
 .theme-artwork.is-next {
   z-index: 70;
 }
-/* line 141, ../scss/partials/_themes.scss */
+/* line 134, ../scss/partials/_themes.scss */
 .theme-artwork.getting-it-on {
   background-image: url("../images/getting-it-on--small.png");
 }
-/* line 145, ../scss/partials/_themes.scss */
+/* line 138, ../scss/partials/_themes.scss */
 .theme-artwork.sales-renee {
   background-image: url("../images/sales-renee--small.png");
 }
-/* line 150, ../scss/partials/_themes.scss */
+/* line 143, ../scss/partials/_themes.scss */
 .theme-artwork.vow {
   background-image: url("../images/vow--small.png");
 }
-/* line 156, ../scss/partials/_themes.scss */
+/* line 149, ../scss/partials/_themes.scss */
 .theme-artwork.chinese-new-year {
   background-image: url("../images/chinese-new-year--small.png");
 }
-/* line 162, ../scss/partials/_themes.scss */
+/* line 155, ../scss/partials/_themes.scss */
 .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
   background-image: url("../images/toto--small.png");
 }
 
-/* line 170, ../scss/partials/_themes.scss */
+/* line 163, ../scss/partials/_themes.scss */
 .pageTheme-pageWrap {
   z-index: 90;
   position: relative;
