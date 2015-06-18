@@ -1,8 +1,6 @@
 angular.module("Sales")
-    .directive('ssAudioPlayer', [
-        '$timeout',
-        function(
-                $timeout) {
+    .directive('ssAudioPlayer', 
+        function() {
 
         return {
 
@@ -13,8 +11,7 @@ angular.module("Sales")
             templateUrl: "templates/directives/ssAudioPlayer.tpl.html",
             controller: [
             '$scope',
-            '$http',
-            function($scope, $http) {
+            function($scope) {
 
                 $scope.placeHolderText = "Play the EP";
                 $scope.loadingText = "Loading track..."; 
@@ -56,21 +53,16 @@ angular.module("Sales")
                     , debug: true
                 });
 
+                //Tells player the user has yet to play anything
+                var hasNotPlayed = true; 
+
                 //Inits controls of audio player selecting DOM elements
-
-
                 $controls.on("click", 'button', function(e){
                     
                     e.preventDefault();
                     var $this = jQuery(this)
-                    var  hasNotPlayed = true; 
-
                     if( $this.hasClass('play') ){ scplayer.pause(); }
-                    else if( $this.hasClass('pause') ){ 
-                    scplayer.pause(); 
-
-
-                    }
+                    else if( $this.hasClass('pause') ){ scplayer.pause(); }
                     else if( 
                         $this.hasClass('stop') ){ scplayer.stop(); 
 
@@ -95,22 +87,36 @@ angular.module("Sales")
                         }
                     }
                 });
-
                 
-                scplayer.on('scplayer.play', function(e, index) {
-                    if(scope.hasNotPlayed) {
+                scplayer.on("scplayer.pause", function(e, is_paused){
 
+                    //Changes currentSong and theme on the initial play 
+                    //since changing_track event has already been called 
+                    if(hasNotPlayed === true) {
                         scope.currentSong = scope.loadingText;
-                        scope.$apply();     
+                        scope.$apply(); 
 
-                        scplayer.track_info(index).done(function(track){
+                        scplayer.track_info(scplayer.track_index()).done(function(track){
                             scope.currentSong = track.title;
                             scope.changeTheme(track.permalink);
+                            //Has the jquery object use the scope of this directive 
                             scope.$apply();
+                            
                         });
-                    }
-                });
+                        hasNotPlayed = false; 
 
+                    }
+                    if(is_paused === true){
+                        $controls.find('.play').addClass("pause");
+                        $controls.find('.pause').removeClass("play");
+                    }else{
+                        $controls.find('.pause').addClass("play");
+                        $controls.find('.play').removeClass("pause");
+                    }
+
+                });                
+                
+                //Changes currentSong and theme on the changing_track event
                 scplayer.on('scplayer.changing_track', function(e, index) {
                         scope.currentSong = scope.loadingText;
                         scope.$apply(); 
@@ -129,4 +135,4 @@ angular.module("Sales")
             }
         };
 
-}]);
+});
