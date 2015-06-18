@@ -175,7 +175,6 @@ var SoundCloudPlayer = function(tracks, config){
             //or hold a state to come back to when ready
             _this.play_when_ready = true;
         }
-        console.log("play function activated" ); 
         _this.trigger('scplayer.play', _this.current_track_index);
         
         return _this;

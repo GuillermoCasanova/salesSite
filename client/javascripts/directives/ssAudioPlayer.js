@@ -59,17 +59,17 @@ angular.module("Sales")
                 //Function for changing theme
                 var changeTheme = function() {
 
-                      scope.currentSong = scope.loadingText;
-                        scope.$apply(); 
+                    scope.currentSong = scope.loadingText;
+                    scope.$apply(); 
 
-                        scplayer.track_info(scplayer.track_index()).done(function(track){
-                            scope.currentSong = track.title;
-                            scope.changeTheme(track.permalink);
-                            //Has the jquery object use the scope of this directive 
-                            scope.$apply();
-                            
-                        });
-                }
+                    scplayer.track_info(scplayer.track_index()).done(function(track){
+                        scope.currentSong = track.title;
+                        scope.changeTheme(track.permalink);
+                        //Has the jquery object use the scope of this directive 
+                        scope.$apply();
+                        
+                    });
+                };
 
                 //Inits controls of audio player selecting DOM elements
                 $controls.on("click", 'button', function(e){
@@ -122,7 +122,7 @@ angular.module("Sales")
 
                 });                
                 
-                // //Changes currentSong and theme on the changing_track event
+                //Changes currentSong and theme on the changing_track event
                 scplayer.on('scplayer.changing_track', function(e, index) {
                     changeTheme(); 
                 });

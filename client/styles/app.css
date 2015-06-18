@@ -10354,9 +10354,15 @@ input[type="email"]:focus {
   }
 }
 /*------------------------------------*\
-    #Page Themes
+    #Page Themes 
 \*------------------------------------*/
-/* line 8, ../scss/partials/_themes.scss */
+/* line 7, ../scss/partials/_themes.scss */
+.pageTheme-pageWrap {
+  z-index: 90;
+  position: relative;
+}
+
+/* line 12, ../scss/partials/_themes.scss */
 .theme-background {
   top: 0;
   left: 0;
@@ -10368,20 +10374,20 @@ input[type="email"]:focus {
   transition: all 0.3s ease-in-out;
 }
 
-/* line 17, ../scss/partials/_themes.scss */
+/* line 21, ../scss/partials/_themes.scss */
 .theme-artworkContainer {
   width: 15.625rem;
   height: 12.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 17, ../scss/partials/_themes.scss */
+  /* line 21, ../scss/partials/_themes.scss */
   .theme-artworkContainer {
     height: 28.125rem;
     width: 28.125rem;
   }
 }
 
-/* line 32, ../scss/partials/_themes.scss */
+/* line 35, ../scss/partials/_themes.scss */
 .theme-artwork {
   background-size: contain;
   top: 0;
@@ -10399,40 +10405,94 @@ input[type="email"]:focus {
   transition: all 0.3s ease-in-out;
   opacity: 0;
 }
-/* line 44, ../scss/partials/_themes.scss */
+/* line 47, ../scss/partials/_themes.scss */
 .theme-artwork.is-showing {
   z-index: 80;
   opacity: 1;
 }
-/* line 129, ../scss/partials/_themes.scss */
+/* line 52, ../scss/partials/_themes.scss */
 .theme-artwork.is-next {
   z-index: 70;
 }
-/* line 134, ../scss/partials/_themes.scss */
+/* line 57, ../scss/partials/_themes.scss */
 .theme-artwork.getting-it-on {
   background-image: url("../images/getting-it-on--small.png");
 }
-/* line 138, ../scss/partials/_themes.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 57, ../scss/partials/_themes.scss */
+  .theme-artwork.getting-it-on {
+    background-image: url("../images/getting-it-on--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 57, ../scss/partials/_themes.scss */
+  .theme-artwork.getting-it-on {
+    background-image: url("../images/getting-it-on--large.png");
+  }
+}
+/* line 61, ../scss/partials/_themes.scss */
 .theme-artwork.sales-renee {
   background-image: url("../images/sales-renee--small.png");
 }
-/* line 143, ../scss/partials/_themes.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 61, ../scss/partials/_themes.scss */
+  .theme-artwork.sales-renee {
+    background-image: url("../images/sales-renee--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 61, ../scss/partials/_themes.scss */
+  .theme-artwork.sales-renee {
+    background-image: url("../images/sales-renee--large.png");
+  }
+}
+/* line 65, ../scss/partials/_themes.scss */
 .theme-artwork.vow {
   background-image: url("../images/vow--small.png");
 }
-/* line 149, ../scss/partials/_themes.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 65, ../scss/partials/_themes.scss */
+  .theme-artwork.vow {
+    background-image: url("../images/vow--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 65, ../scss/partials/_themes.scss */
+  .theme-artwork.vow {
+    background-image: url("../images/vow--large.png");
+  }
+}
+/* line 69, ../scss/partials/_themes.scss */
 .theme-artwork.chinese-new-year {
   background-image: url("../images/chinese-new-year--small.png");
 }
-/* line 155, ../scss/partials/_themes.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 69, ../scss/partials/_themes.scss */
+  .theme-artwork.chinese-new-year {
+    background-image: url("../images/chinese-new-year--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 69, ../scss/partials/_themes.scss */
+  .theme-artwork.chinese-new-year {
+    background-image: url("../images/chinese-new-year--large.png");
+  }
+}
+/* line 73, ../scss/partials/_themes.scss */
 .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
   background-image: url("../images/toto--small.png");
 }
-
-/* line 163, ../scss/partials/_themes.scss */
-.pageTheme-pageWrap {
-  z-index: 90;
-  position: relative;
+@media only screen and (min-width: 40.0625em) {
+  /* line 73, ../scss/partials/_themes.scss */
+  .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
+    background-image: url("../images/toto--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 73, ../scss/partials/_themes.scss */
+  .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
+    background-image: url("../images/toto--large.png");
+  }
 }
 
 /*------------------------------------*\
