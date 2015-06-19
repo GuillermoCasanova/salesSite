@@ -7,7 +7,6 @@ angular.module("Sales")
 
              link: function(scope, element, attrs) {
 
-
                 $timeout(function() {   
 
                       $(element).foundation(function() {

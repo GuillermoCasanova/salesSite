@@ -1,5 +1,5 @@
 angular.module('Sales')
-    .controller('ShowsController', [
+    .controller('showsController', [
         'Shows', 
         '$scope',
         '$window',
@@ -13,10 +13,11 @@ angular.module('Sales')
 
         $scope.search = {}; 
         $scope.events = {};
+        $scope.loaded = false; 
 
         Shows.getShows()
             .success(function(pData) {
-
+           $scope.loaded = true; 
            $scope.events = pData.resultsPage.results.event; 
         });
 

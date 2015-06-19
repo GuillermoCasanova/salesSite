@@ -10,25 +10,20 @@ angular.module('Sales')
         return {
 
             restrict: 'E',
+            scope: {}, 
             require: '^ssPageTheme',
             templateUrl : 'templates/directives/ssPageThemeBackgrounds.tpl.html',
-            controller: function($scope, $timeout) {
-
-
-            },
             link: function(scope, element, attrs, ssPageTheme) {
 
                 scope.component = attrs.component;
 
                 scope.loaded = false; 
 
-                scope.backgrounds = Theme.getThemeBackgrounds(); 
+                scope.backgrounds = Theme.getThemes(); 
 
                 scope.isActive = function(pBackground) {
                     return ssPageTheme.getCurrentTheme() === pBackground;
                 }
-
-
 
             }
 

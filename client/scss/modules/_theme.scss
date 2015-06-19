@@ -53,3 +53,16 @@
     }
 
 }
+
+@mixin themeArtwork($pArtwork) {
+    background-image: url('../images/'+ $pArtwork + '--small.png');
+
+    @media #{$medium-up} {
+        background-image: url('../images/'+ $pArtwork + '--medium.png');
+    }
+
+    @media #{$large-up} {
+        background-image: url('../images/'+ $pArtwork + '--large.png');
+    }
+
+}

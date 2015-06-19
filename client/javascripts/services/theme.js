@@ -14,7 +14,7 @@ angular.module('Sales')
                  {'name' : 'toto-xxyyxx-remix'}
                 ];
     return {
-            getThemeBackgrounds : function() {
+            getThemes : function() {
 
                 return themes; 
             }

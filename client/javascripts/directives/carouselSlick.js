@@ -19,10 +19,20 @@ angular.module("Sales")
                     speed: attrs.speed || 2000, 
                     pauseOnHover: true,
                     infinite: true,
-                    slidesToShow: attrs.slides
+                    slidesToShow: attrs.slides,
+                    responsive: [
+                        {
+                          breakpoint: 480,
+                          settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                          }
+                        }
+
+                    ]
                 });
 
-
+                //Removes all text from slick's next and previous buttons
                 element.find('button').text("");
 
             }); 

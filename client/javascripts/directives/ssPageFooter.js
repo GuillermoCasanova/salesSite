@@ -4,6 +4,7 @@ angular.module("Sales")
         return {
             replace: true, 
             restrict: "E",
+            scope: {}, 
             templateUrl: "templates/directives/ssPageFooter.tpl.html"
 
         };

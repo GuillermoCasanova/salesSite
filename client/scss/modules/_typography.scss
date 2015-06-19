@@ -3,7 +3,18 @@
     #Typography
 \*------------------------------------*/
 
-@include font-face("SALES", font-files("../fonts/SALES.ttf"));
+//@include font-face("SALES", font-files("../fonts/SALES.ttf"));
+
+@font-face {
+  font-family: 'SALES';
+  src: url('../fonts/SALES.eot');
+  src: url('../fonts/SALES.otf') format('embedded-opentype'),
+       url('../fonts/SALES.woff') format('woff'),
+       url('../fonts/SALES.ttf') format('truetype'),
+       url('../fonts/SALES.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -27,7 +38,7 @@ $weight--extra-bold: 700;
 // $base-font-weight: $normal;
 
 
-$customFont: SALES;
+$customFont: 'SALES', 'sans-serif';
 
 
 /*------------------------------------*\

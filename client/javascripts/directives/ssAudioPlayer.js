@@ -50,11 +50,26 @@ angular.module("Sales")
                     , preload: false
                     , cache: true
                     , loop : true
-                    , debug: true
+                    , debug: false
                 });
 
                 //Tells player the user has yet to play anything
                 var hasNotPlayed = true; 
+
+                //Function for changing theme
+                var changeTheme = function() {
+
+                    scope.currentSong = scope.loadingText;
+                    scope.$apply(); 
+
+                    scplayer.track_info(scplayer.track_index()).done(function(track){
+                        scope.currentSong = track.title;
+                        scope.changeTheme(track.permalink);
+                        //Has the jquery object use the scope of this directive 
+                        scope.$apply();
+                        
+                    });
+                };
 
                 //Inits controls of audio player selecting DOM elements
                 $controls.on("click", 'button', function(e){
@@ -87,24 +102,15 @@ angular.module("Sales")
                         }
                     }
                 });
+
                 
                 scplayer.on("scplayer.pause", function(e, is_paused){
 
                     //Changes currentSong and theme on the initial play 
                     //since changing_track event has already been called 
                     if(hasNotPlayed === true) {
-                        scope.currentSong = scope.loadingText;
-                        scope.$apply(); 
-
-                        scplayer.track_info(scplayer.track_index()).done(function(track){
-                            scope.currentSong = track.title;
-                            scope.changeTheme(track.permalink);
-                            //Has the jquery object use the scope of this directive 
-                            scope.$apply();
-                            
-                        });
+                        changeTheme(); 
                         hasNotPlayed = false; 
-
                     }
                     if(is_paused === true){
                         $controls.find('.play').addClass("pause");
@@ -118,17 +124,7 @@ angular.module("Sales")
                 
                 //Changes currentSong and theme on the changing_track event
                 scplayer.on('scplayer.changing_track', function(e, index) {
-                        scope.currentSong = scope.loadingText;
-                        scope.$apply(); 
-
-                    scplayer.track_info(index).done(function(track){
-                        scope.currentSong = track.title;
-                        scope.changeTheme(track.permalink);
-                        //Has the jquery object use the scope of this directive 
-                        scope.$apply();
-                        
-                    });
-
+                    changeTheme(); 
                 });
 
                 

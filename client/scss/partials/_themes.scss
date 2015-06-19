@@ -1,9 +1,13 @@
 
 /*------------------------------------*\
-    #Page Themes
+    #Page Themes 
 \*------------------------------------*/
+//Uses mixins from themes module 
 
-
+.pageTheme-pageWrap {
+    z-index: 90;
+    position: relative;
+}
 
 .theme-background {
 
@@ -28,7 +32,6 @@
 }
 
 
-
 .theme-artwork {
 
     background-size: contain;
@@ -44,86 +47,6 @@
     &.is-showing {
         z-index: 80;
         opacity: 1; 
-
-// @-webkit-keyframes rubberBand {
-//   0% {
-//     -webkit-transform: scale3d(1, 1, 1);
-//     transform: scale3d(1, 1, 1);
-//   }
-
-//   30% {
-//     -webkit-transform: scale3d(1.25, 0.75, 1);
-//     transform: scale3d(1.25, 0.75, 1);
-//   }
-
-//   40% {
-//     -webkit-transform: scale3d(0.75, 1.25, 1);
-//     transform: scale3d(0.75, 1.25, 1);
-//   }
-
-//   50% {
-//     -webkit-transform: scale3d(1.15, 0.85, 1);
-//     transform: scale3d(1.15, 0.85, 1);
-//   }
-
-//   65% {
-//     -webkit-transform: scale3d(.95, 1.05, 1);
-//     transform: scale3d(.95, 1.05, 1);
-//   }
-
-//   75% {
-//     -webkit-transform: scale3d(1.05, .95, 1);
-//     transform: scale3d(1.05, .95, 1);
-//   }
-
-//   100% {
-//     -webkit-transform: scale3d(1, 1, 1);
-//     transform: scale3d(1, 1, 1);
-//   }
-// }
-
-// @keyframes rubberBand {
-//   0% {
-//     -webkit-transform: scale3d(1, 1, 1);
-//     transform: scale3d(1, 1, 1);
-//   }
-
-//   30% {
-//     -webkit-transform: scale3d(1.25, 0.75, 1);
-//     transform: scale3d(1.25, 0.75, 1);
-//   }
-
-//   40% {
-//     -webkit-transform: scale3d(0.75, 1.25, 1);
-//     transform: scale3d(0.75, 1.25, 1);
-//   }
-
-//   50% {
-//     -webkit-transform: scale3d(1.15, 0.85, 1);
-//     transform: scale3d(1.15, 0.85, 1);
-//   }
-
-//   65% {
-//     -webkit-transform: scale3d(.95, 1.05, 1);
-//     transform: scale3d(.95, 1.05, 1);
-//   }
-
-//   75% {
-//     -webkit-transform: scale3d(1.05, .95, 1);
-//     transform: scale3d(1.05, .95, 1);
-//   }
-
-//   100% {
-//     -webkit-transform: scale3d(1, 1, 1);
-//     transform: scale3d(1, 1, 1);
-//   }
-// }
-
-// .rubberBand {
-//   -webkit-animation-name: rubberBand;
-//   animation-name: rubberBand;
-        // }
-
     }
 
     &.is-next {
@@ -132,36 +55,28 @@
 
 
     &.getting-it-on {
-        background-image: url('../images/getting-it-on--small.png');
+        @include themeArtwork('getting-it-on'); 
     }
 
     &.sales-renee {
-        background-image:  url('../images/sales-renee--small.png');
-
+         @include themeArtwork('sales-renee'); 
     }
 
     &.vow {
-        background-image:  url('../images/vow--small.png');
-
-
+        @include themeArtwork('vow'); 
     }
 
     &.chinese-new-year {
-       background-image: url('../images/chinese-new-year--small.png');
-
-
+       @include themeArtwork('chinese-new-year');
     }
 
     &.toto,
     &.toto-xxyyxx-remix {
-        background-image:  url('../images/toto--small.png');
+        @include themeArtwork('toto');
     }
 
 
 }
 
-.pageTheme-pageWrap {
-    z-index: 90;
-    position: relative;
-}
+
 
