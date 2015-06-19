@@ -38,8 +38,13 @@
          role="dialog">
 
         <h1 class="reveal-modal-title" id="modalTitle">{{selectedPost.title}}</h1>
+        
+        <img class="center" ss-img-properties  src="{{selectedPost.thumbnail}}" alt="{{selectedPost.title}}">
+    
 
-        <p>{{selectedPost.body}}</p>
+        <div class="reveal-modal-body"  ng-bind-html="selectedPost.body">
+            
+        </div>
 
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 

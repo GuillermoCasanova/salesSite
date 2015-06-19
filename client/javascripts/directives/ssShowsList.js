@@ -4,8 +4,10 @@ angular.module("Sales")
         return {
             replace: true, 
             restrict: "E",
+            scope: {}, 
             templateUrl: "templates/directives/ssShowsList.tpl.html",
-            controller: 'ShowsController'
+            controller: 'showsController',
+            controllerAs: 'showsController'
 
         };
         

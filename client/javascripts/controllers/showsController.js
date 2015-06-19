@@ -1,5 +1,5 @@
 angular.module('Sales')
-    .controller('ShowsController', [
+    .controller('showsController', [
         'Shows', 
         '$scope',
         '$window',

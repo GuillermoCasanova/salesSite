@@ -1,5 +1,5 @@
 angular.module('Sales')
-    .controller('BlogController', [
+    .controller('blogController', [
 
         '$scope',
         '$location',
@@ -18,7 +18,7 @@ angular.module('Sales')
                     {
                         "title": "SALES from 12 to 12",
                         "date": "May 14th, 2015",
-                        'thumbnail': 'https://scontent-atl1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/11096570_819638611452071_7788932418853402534_o.png',
+                        'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_from12_to_12.jpg',
                         'body' : 'big movie voice* This fall, two best friends will make the journey of a lifetime across the Atlantic Ocean in search of more cuisine, more ears, and more friends. Europe this fall, yall! Tour poster by Alana Questell'
                     },
                     {

@@ -13,12 +13,18 @@
     h4, 
     h5, 
     h6, 
-    p {
+    p,
+    .reveal-modal-body {
         color: #191919; 
     }
 
     .reveal-modal-title {
         @extend %mt2; 
     }
+
+    img {
+        @extend %mb3; 
+    }
+
 }
 

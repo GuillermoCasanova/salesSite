@@ -32,7 +32,7 @@ angular.module("Sales")
                     ]
                 });
 
-
+                //Removes all text from slick's next and previous buttons
                 element.find('button').text("");
 
             }); 
