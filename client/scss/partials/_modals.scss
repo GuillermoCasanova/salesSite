@@ -41,48 +41,64 @@
     #Themed Modals 
 \*------------------------------------*/
 
+
 .theme-chinese-new-year {
 
     .reveal-modal {
+         .reveal-modal-body  {
 
          a{
-            color: $red; 
+                color: $red; 
+       }    
         }       
+
     }
 }
 
 .theme-sales-renee {
     .reveal-modal {
-        a{
+         .reveal-modal-body {
+            a{
             color: $green; 
-        }  
+            }  
+       }
     }
+
 }
 
 .theme-vow {
     .reveal-modal {
-        a{
+         .reveal-modal-body {
+            a{
             color: $orange; 
-        }  
+            }  
+       }
     }
+
 }
 
 .theme-toto {
     .reveal-modal {
-        a{
+         .reveal-modal-body {
+            a{
             color: $purple; 
-        }  
+            }  
+       }
     }
+
 }
 
 
 .theme-toto-xxyyxx-remix,
 .getting-it-on {
     .reveal-modal {
-        a{
+         .reveal-modal-body {
+            a{
             color: $offBlack; 
-        }  
+            }  
+       }
     }
+
 }
 
 

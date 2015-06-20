@@ -1,6 +1,5 @@
 angular.module("Sales")
     .directive('ssBlogPostsCarousel', [
-        '$sanitize', 
         function() {
 
         return {
@@ -11,14 +10,11 @@ angular.module("Sales")
             scope: {},
             link: function(scope, element, attrs) {
 
-                $(document).foundation('reveal', 'reflow'); 
-
+               $(document).foundation('reveal', 'reflow'); 
 
                scope.selectBlogPost = function(pPost) {
                    scope.selectedPost = pPost; 
-                   console.log("selected blog post"); 
                    angular.element("#modal").foundation('reveal', 'open');
-
                 };
             },
             controller: [

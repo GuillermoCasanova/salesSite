@@ -9,9 +9,9 @@ angular.module('Sales')
                         'title' : 'WEST COAST SUMMER 2015',
                         'date': 'June 1st, 2015',
                         'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_West_Coast_2015.jpg',
-                        'mainImage' : 'https://s3.amazonaws.com/salessite/SALES_West_Coast_2015_header.jpg',
+                        'mainImage' : 'https://s3.amazonaws.com/salessite/SALES_West_Coast_2015_header.png',
                         'id' : 'west',
-                        'body' : 'We Emoticono heart ya\'ll so much, we can\'t stay away. We are pleased to announce the following west coast tour dates: http://on.fb.me/<1QkZvb6></1QkZvb6>**The Echo show is ALL AGES / Soda Bar 21+**'
+                        'body' : 'We love ya\'ll so much, we can\'t stay away. We are pleased to announce the following west coast tour dates: <a href="http://on.fb.me/" target="_blank">http://on.fb.me/</a>'
                     },
 
                     {
@@ -26,7 +26,7 @@ angular.module('Sales')
                         "title": "EUROPEAN TOUR 2015",
                         "date": "May 2nd, 2015",
                         'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_EU_2015.jpg',
-                        'mainImage' : 'https://s3.amazonaws.com/salessite/SALES_EU_2015_Poster.jpg',
+                        'mainImage' : 'https://s3.amazonaws.com/salessite/SALES_EU_2015_header.png',
                         'id' : 'european',
                         'body' : '<p>Hey Friends! It\'s been fun touring the U.S. and Canada, but we are really excited about our upcoming <b>2015 European Tour</b> this Fall. We will spend a whole month touring Europe and will hopefully get to meet you. Until that beautiful day when we cross the Atlantic Ocean into your arms, we will be spending the next few months in our home studio (bedroom) working on a full length album.</p><p>Event page & tickets here: <a href="http://on.fb.me/1Ixmkrq" target="_blank">http://on.fb.me/1Ixmkrq</a></p>'
 

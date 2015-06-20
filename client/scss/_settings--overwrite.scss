@@ -317,7 +317,7 @@ $include-html-type-classes: false;
 // 01. Accordion
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-accordion-classes: $include-html-classes;
+$include-html-accordion-classes: false;
 
 // $accordion-navigation-padding: rem-calc(16);
 // $accordion-navigation-bg-color: $silver  ;
@@ -333,7 +333,7 @@ $include-html-type-classes: false;
 // 02. Alert Boxes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-alert-classes: $include-html-classes;
+$include-html-alert-classes: false;
 
 // We use this to control alert padding.
 // $alert-padding-top: rem-calc(14);
@@ -375,7 +375,7 @@ $include-html-type-classes: false;
 // 03. Block Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-block-grid-classes: $include-html-classes;
+$include-html-block-grid-classes: false;
 // $include-xl-html-block-grid-classes: false;
 
 // We use this to control the maximum number of block grid elements per row
@@ -390,7 +390,7 @@ $include-html-type-classes: false;
 // 04. Breadcrumbs
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-nav-classes: $include-html-classes;
+$include-html-nav-classes: false;
 
 // We use this to set the background color for the breadcrumb container.
 // $crumb-bg: scale-color($secondary-color, $lightness: 55%);
@@ -480,7 +480,7 @@ $include-html-button-classes: false;
 // 07. Clearing
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-clearing-classes: $include-html-classes;
+$include-html-clearing-classes: false;
 
 // We use these to set the background colors for parts of Clearing.
 // $clearing-bg: $oil;
@@ -510,7 +510,7 @@ $include-html-button-classes: false;
 // 08. Dropdown
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-dropdown-classes: $include-html-classes;
+$include-html-dropdown-classes: false;
 
 // We use these to controls height and width styles.
 // $f-dropdown-max-width: 200px;
@@ -557,7 +557,7 @@ $include-html-button-classes: false;
 // 09. Dropdown Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: false;
 
 // We use these to set the color of the pip in dropdown buttons
 // $dropdown-button-pip-color: $white;
@@ -1155,7 +1155,7 @@ $reveal-position-top: rem-calc(60);
 // 27. Split Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: false;
 
 // We use these to control different shared styles for Split Buttons
 // $split-button-function-factor: 10%;
