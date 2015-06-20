@@ -48,6 +48,24 @@ button {
     }
 }
 
+
+
+
+
+/*------------------------------------*\
+    #Special Buttons
+\*------------------------------------*/
+
+
+.button--newsletter {
+    min-width: rem-calc(250);
+    width: 80%; 
+    height: rem-calc(60);
+    padding: rem-calc(14);
+    font-size: rem-calc(18); 
+}
+
+
 .button--goUp {
 
   @include single-transition(bottom, 1s, cubic-bezier(.6,.32,1,.65));
@@ -62,19 +80,14 @@ button {
     background-color: transparent; 
   }
 
+  .is-showing {
+    bottom: 30px;
+  }
+
 }
 
-.showGoUpBtn {
-  bottom: 30px;
-}
 
-.button--newsletter {
-    min-width: rem-calc(250);
-    width: 80%; 
-    height: rem-calc(60);
-    padding: rem-calc(14);
-    font-size: rem-calc(18); 
-}
+
 
 
 
