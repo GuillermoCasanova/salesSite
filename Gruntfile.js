@@ -123,10 +123,17 @@ module.exports = function(grunt) {
         },
 
         uglify: {
-          build: {
-              src: 'build/javascripts/app.js',
-              dest: 'build/javascripts/app.min.js'
-          }
+            options: {
+                mangle: false
+            },
+          target: {
+             files : {
+                'build/javascripts/app.min.js' : ['build/javascripts/app.js'],
+                'build/javascripts/vendor/sc-player.js' : ['build/javascripts/vendor/sc-player.js'],
+                'build/javascripts/_bower.js' : ['build/javascripts/_bower.js']
+             }
+          },
+
         },
 
         bower_concat: {
@@ -255,10 +262,12 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('build:prod', [
+        'connect', 
         'build:dev',
         'cssmin',
         'uglify',
-        'replace'
+        'replace',
+        'watch:client'        
     ]);
 
 };
