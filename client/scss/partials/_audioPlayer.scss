@@ -29,12 +29,12 @@
     &.is-showing {
         opacity: 1; 
          left: 0; 
-         @include transform(translateX(10px) rotateY(180deg));
+         @include transform(translateX(8px) rotateY(180deg));
     }
 
     &.is-hidden {
         opacity: 0; 
-        @include transform(translateX(-10px) rotateY(180deg));
+        @include transform(translateX(-8px) rotateY(180deg));
     }
 
 }
@@ -48,16 +48,14 @@
 
     &.is-showing {
         opacity: 1; 
-        @include transform(translateX(-10px));
+        @include transform(translateX(-8px));
     }
 
     &.is-hidden {
         opacity: 0; 
-        @include transform(translateX(10px));
+        @include transform(translateX(8px));
     }
-    //     &:active {
-    //     @include transform(scale(.5)); 
-    // }
+
 }
 
 
@@ -67,11 +65,6 @@
     width: rem-calc(70);
     height: rem-calc(70);
     @include single-transition(transform, .2s, ease-in-out);
-
-
-    // &:active {
-    //     @include transform(scale(.6)); 
-    // }
 
 }
 

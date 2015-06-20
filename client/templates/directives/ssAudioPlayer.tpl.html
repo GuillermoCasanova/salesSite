@@ -44,18 +44,18 @@
                <!--Audio Player Controllers-->                  
                 <div class="flexBasis--70  text-center  controls">
         
-                    <button class="fa  audioPlayer-button  prev fa-backward">
+                    <button ng-class="isPlaying ? 'is-showing' : 'is-hidden' "  class="fa fa-backward [ audioPlayer-button  prev ]">
                         
                     </button>
                          
                     
-                    <button class="fa  audioPlayer-button  pause">
+                    <button class="fa  [ audioPlayer-button  pause ] ">
                        
                     </button>
 
         
-                    <button  
-                         class="fa  audioPlayer-button  next fa-forward" >
+                    <button   ng-class="isPlaying ? 'is-showing' : 'is-hidden' "
+                              class="fa  fa-forward  [ audioPlayer-button  next ]" >
                         
                     </button>
                 
