@@ -185,7 +185,7 @@ module.exports = function(grunt) {
                   'client/scss/**/*.scss',
                   'views/index.html',
                   'client/templates/**/*',
-                  'client/images'
+                  'client/images/*'
                 ],
                 tasks: ['build:dev'],
                 options: {
