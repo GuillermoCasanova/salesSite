@@ -222,7 +222,11 @@ module.exports = function(grunt) {
               {
                 match: /app\.js/g,
                 replacement: 'app.min.js'
-                }
+              },
+              {
+                match: /app\.css/g,
+                replacement: 'app.min.css'
+              }
               ]
             },
             files: [
