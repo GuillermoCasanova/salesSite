@@ -21,13 +21,6 @@
 }
 
 
-[rel*="up"] {
-  @include icon($icon--arrowup) {
-    background-size: contain; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-  }
-}
 
 
 

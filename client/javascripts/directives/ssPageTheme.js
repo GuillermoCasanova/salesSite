@@ -3,7 +3,6 @@ angular.module("Sales")
 
         return {
             restrict: "A",
-            scope: {}, 
             controller: [
             '$scope', 
             function($scope) {
