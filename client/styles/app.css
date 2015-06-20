@@ -771,7 +771,7 @@ h6,
 }
 /* line 49, ../scss/modules/_theme.scss */
 .toto.theme-background {
-  background: purple url("../images/bg--purple.png") repeat center fixed;
+  background: purple url("../images/bg--purple.jpg") repeat center fixed;
 }
 
 /* line 25, ../scss/partials/_base.scss */
@@ -7836,7 +7836,7 @@ h6,
 }
 /* line 49, ../scss/modules/_theme.scss */
 .toto.theme-background {
-  background: purple url("../images/bg--purple.png") repeat center fixed;
+  background: purple url("../images/bg--purple.jpg") repeat center fixed;
 }
 
 /* line 25, ../scss/partials/_base.scss */
@@ -9149,18 +9149,18 @@ input[type="email"]:focus {
 .next.is-showing {
   opacity: 1;
   left: 0;
-  -moz-transform: translateX(10px) rotateY(180deg);
-  -ms-transform: translateX(10px) rotateY(180deg);
-  -webkit-transform: translateX(10px) rotateY(180deg);
-  transform: translateX(10px) rotateY(180deg);
+  -moz-transform: translateX(8px) rotateY(180deg);
+  -ms-transform: translateX(8px) rotateY(180deg);
+  -webkit-transform: translateX(8px) rotateY(180deg);
+  transform: translateX(8px) rotateY(180deg);
 }
 /* line 35, ../scss/partials/_audioPlayer.scss */
 .next.is-hidden {
   opacity: 0;
-  -moz-transform: translateX(-10px) rotateY(180deg);
-  -ms-transform: translateX(-10px) rotateY(180deg);
-  -webkit-transform: translateX(-10px) rotateY(180deg);
-  transform: translateX(-10px) rotateY(180deg);
+  -moz-transform: translateX(-8px) rotateY(180deg);
+  -ms-transform: translateX(-8px) rotateY(180deg);
+  -webkit-transform: translateX(-8px) rotateY(180deg);
+  transform: translateX(-8px) rotateY(180deg);
 }
 
 /* line 42, ../scss/partials/_audioPlayer.scss */
@@ -9172,21 +9172,21 @@ input[type="email"]:focus {
 /* line 49, ../scss/partials/_audioPlayer.scss */
 .prev.is-showing {
   opacity: 1;
-  -moz-transform: translateX(-10px);
-  -ms-transform: translateX(-10px);
-  -webkit-transform: translateX(-10px);
-  transform: translateX(-10px);
+  -moz-transform: translateX(-8px);
+  -ms-transform: translateX(-8px);
+  -webkit-transform: translateX(-8px);
+  transform: translateX(-8px);
 }
 /* line 54, ../scss/partials/_audioPlayer.scss */
 .prev.is-hidden {
   opacity: 0;
-  -moz-transform: translateX(10px);
-  -ms-transform: translateX(10px);
-  -webkit-transform: translateX(10px);
-  transform: translateX(10px);
+  -moz-transform: translateX(8px);
+  -ms-transform: translateX(8px);
+  -webkit-transform: translateX(8px);
+  transform: translateX(8px);
 }
 
-/* line 64, ../scss/partials/_audioPlayer.scss */
+/* line 62, ../scss/partials/_audioPlayer.scss */
 .pause,
 .play {
   width: 4.375rem;
@@ -9194,12 +9194,12 @@ input[type="email"]:focus {
   transition: transform 0.2s ease-in-out;
 }
 
-/* line 79, ../scss/partials/_audioPlayer.scss */
+/* line 72, ../scss/partials/_audioPlayer.scss */
 .play {
   background-image: url("../images/icon--pause.svg");
 }
 
-/* line 83, ../scss/partials/_audioPlayer.scss */
+/* line 76, ../scss/partials/_audioPlayer.scss */
 .pause {
   background-image: url("../images/icon--play.svg");
 }

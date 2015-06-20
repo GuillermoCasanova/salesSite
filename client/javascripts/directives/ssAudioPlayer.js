@@ -24,6 +24,7 @@ angular.module("Sales")
                 //and sets notPlayed to true; 
                 scope.currentSong = scope.placeHolderText;
 
+
                 scope.changeTheme = function(pThemeName) {
                     //Uses parent directive's controller function to change theme
                     ssPageTheme.changeTheme(pThemeName);
@@ -58,7 +59,7 @@ angular.module("Sales")
 
                 //Function for changing theme
                 var changeTheme = function() {
-
+                    scope.isPlaying = true; 
                     scope.currentSong = scope.loadingText;
                     scope.$apply(); 
 
