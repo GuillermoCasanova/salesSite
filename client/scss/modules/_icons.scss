@@ -5,91 +5,10 @@
 
 @import "typography.scss";
 
-@font-face {
-  font-family: 'arcc-icons';
-  src: url('../font/arcc-icons.eot?14161889');
-  src: url('../font/arcc-icons.eot?14161889#iefix') format('embedded-opentype'),
-       url('../font/arcc-icons.woff?14161889') format('woff'),
-       url('../font/arcc-icons.ttf?14161889') format('truetype'),
-       url('../font/arcc-icons.svg?14161889#arcc-icons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'arcc-icons';
-    src: url('../font/arcc-icons.svg?4962011#arcc-icons') format('svg');
-  }
-}
-*/
- 
- 
-// .icon-spin3:before { content: '\e80b'; } /* '' */
-// .icon-clock:before { content: '\e819'; } /* '' */
-// .icon-female:before { content: '\e801'; } /* '' */
-// .icon-info:before { content: '\e803'; } /* '' */
-// .icon-quote-left:before { content: '\e804'; } /* '' */
-// .icon-quote-right:before { content: '\e805'; } /* '' */
-// .icon-print:before { content: '\e822'; } /* '' */
-// .icon-attention:before { content: '\e80a'; } /* '' */
-// .icon-doc-text:before { content: '\e824'; } /* '' */
-// .icon-phone:before { content: '\e823'; } /* '' */
-// .icon-angle-left:before { content: '\e809'; } /* '' */
-// .icon-angle-right:before { content: '\e808'; } /* '' */
-// .icon-angle-up:before { content: '\e806'; } /* '' */
-// .icon-angle-down:before { content: '\e807'; } /* '' */
-// .icon-angle-double-left:before { content: '\e80f'; } /* '' */
-// .icon-angle-double-right:before { content: '\e80e'; } /* '' */
-// .icon-angle-double-up:before { content: '\e80d'; } /* '' */
-// .icon-angle-double-down:before { content: '\e80c'; } /* '' */
-// .icon-male:before { content: '\e802'; } /* '' */
-// .icon-laptop:before { content: '\e81d'; } /* '' */
-// .icon-sun-1:before { content: '\e810'; } /* '' */
-// .icon-circle-empty:before { content: '\e81f'; } /* '' */
-// .icon-money:before { content: '\e811'; } /* '' */
-// .icon-mail:before { content: '\e81e'; } /* '' */
-// .icon-vimeo-circled:before { content: '\e815'; } /* '' */
-// .icon-twitter-circled:before { content: '\e814'; } /* '' */
-// .icon-facebook-circled:before { content: '\e813'; } /* '' */
-// .icon-gplus-circled:before { content: '\e812'; } /* '' */
-// .icon-pinterest-circled:before { content: '\e816'; } /* '' */
-// .icon-sun-filled:before { content: '\e818'; } /* '' */
-// .icon-snow:before { content: '\e800'; } /* '' */
-// .icon-leaf:before { content: '\e817'; } /* '' */
-// .icon-plus:before { content: '\e81b'; } /* '' */
-// .icon-minus:before { content: '\e81a'; } /* '' */
-// .icon-quote:before { content: '\e81c'; } /* '' */
-// .icon-location-circled:before { content: '\e820'; } /* '' */
-// .icon-award:before { content: '\e821'; } /* '' */
-
-
-
-$icon--alert: "\e80a";
-$icon--info: "\e803";
-
-$icon--plussign: "\e81b";
-$icon--negsign:  "\e81a";
-
-//Communication 
-$icon--phone: "\e823";
-$icon--fax: "\e822";
-$icon--email: "\e81e";
-
-$icon--female: "\e801";
-$icon--male : "\e802";
-$icon--clock: "\e819";
-
 //Arrows 
 $icon--arrowright: "../images/icon--arrowLeft.svg";
 $icon--arrowleft: "../images/icon--arrowLeft.svg";
 $icon--arrowup: "../images/icon--arrowUp.svg";
-
-//Documents/Devices
-$icon--doc: "\e824";
-$icon--laptop : "\e81d";
 
 //Social Media 
 $icon--socialMedia: "../images/icons--socialMedia.svg";
@@ -98,23 +17,6 @@ $icon--socialMedia: "../images/icons--socialMedia.svg";
 $icons--stores: "../images/icons--stores.svg";
 
 
-// @mixin icon($icon: false, $position: before) {
-//   @if $position == both {
-//     $position: 'before, &:after';
-//   }
-
-//   &:#{$position} {
-//     @if $icon {
-//       content: $icon;
-//       font-family: arcc-icons;
-//       font-style: normal; 
-//       vertical-align: middle; 
-//     }
-
-//     @content;
-    
-//   }
-// }
 
 @mixin icon($icon: false) {
   background-image: url($icon);
@@ -122,6 +24,8 @@ $icons--stores: "../images/icons--stores.svg";
 
   @content; 
 }
+
+
 
 %icon--arrowRight {
     @include transform(rotateY(180deg));
@@ -132,16 +36,8 @@ $icons--stores: "../images/icons--stores.svg";
     background-image: url($icon--arrowleft);
 }
 
-// Advanced SASS stuff: 
 
-// http://12devs.co.uk/articles/handy-advanced-sass/
-
-// Semantic HTML + applying icons based on link content 
-// and relation, not on  a css class applied to it. 
-
-// http://www.smashingmagazine.com/2013/08/20/semantic-css-with-intelligent-selectors/
-
-
-
-
+%noIcon {
+    background-image: none; 
+}
 

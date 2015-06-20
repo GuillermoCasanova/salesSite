@@ -3,18 +3,22 @@
     #Slideshows 
 \*------------------------------------*/
 
+
+/*------------------------------------*\
+    #Slick Slideshow 
+\*------------------------------------*/
+
+
 /* Slick Slider Variables */
-$slick-arrow-color: $off-black;
+//$slick-arrow-color: $off-black;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-dot-character: '\2022' !default;
-$slick-dot-size: 6px !default;
+//$slick-dot-size: 6px !default;
 $slick-opacity-default: .75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: .25 !default;
 
-
-/* Slider */
 
 .slick-slider {
     position: relative; 
@@ -240,55 +244,3 @@ $slick-opacity-not-active: .25 !default;
     }
 
 }
-
-
-
-
-
-
-
-
-
-//Animation for loader
-
-// @include keyframes (rotate) {
-//   0% {
-//       @include transform(rotate(0deg));
-//   }
-//   100% {
-//       @include transform(rotate(360deg));
-//   }
-
-// }
-
-// .pre-loader {
-//   display: none; 
-// }
-
-// .slick-loading {
-
-// .pre-loader {
-//     display: block; 
-//     height: rem-calc(40);
-//     width: rem-calc(40);
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     z-index: 99;
-//     margin: auto;
-//    @include animation(rotate .9s infinite linear);
-// }
-
-//   .slick-list,
-//   .slide img {
-//     opacity: 0; 
-//   }
-
-// }
-
-
-
-
-

@@ -16,6 +16,12 @@
     p,
     .reveal-modal-body {
         color: #191919; 
+
+        a { 
+            color: $offBlack; 
+            @extend %noIcon; 
+        }
+    
     }
 
     .reveal-modal-title {
@@ -27,4 +33,60 @@
     }
 
 }
+
+
+
+
+/*------------------------------------*\
+    #Themed Modals 
+\*------------------------------------*/
+
+.theme-chinese-new-year {
+
+    .reveal-modal {
+
+         a{
+            color: $red; 
+        }       
+    }
+}
+
+.theme-sales-renee {
+    .reveal-modal {
+        a{
+            color: $green; 
+        }  
+    }
+}
+
+.theme-vow {
+    .reveal-modal {
+        a{
+            color: $orange; 
+        }  
+    }
+}
+
+.theme-toto {
+    .reveal-modal {
+        a{
+            color: $purple; 
+        }  
+    }
+}
+
+
+.theme-toto-xxyyxx-remix,
+.getting-it-on {
+    .reveal-modal {
+        a{
+            color: $offBlack; 
+        }  
+    }
+}
+
+
+
+
+
 
