@@ -32,7 +32,7 @@ angular.module("Sales")
 
 
                 //Inits Controls for Audio Player as Jquery Object
-                $controls = jQuery(".controls");
+                $controls = element.find(".controls");
 
 
                 //Inits Soundcloud player with array of URLS
@@ -51,7 +51,7 @@ angular.module("Sales")
                     , preload: false
                     , cache: true
                     , loop : true
-                    , debug: false
+                    , debug: true
                 });
 
                 //Tells player the user has yet to play anything
@@ -125,6 +125,11 @@ angular.module("Sales")
                 
                 //Changes currentSong and theme on the changing_track event
                 scplayer.on('scplayer.changing_track', function(e, index) {
+
+                    if(hasNotPlayed === true) {
+                        return;
+                    }
+
                     changeTheme(); 
                 });
 

@@ -1,44 +1,3 @@
-if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {
-    'use strict';
-    if (this == null) {
-      throw new TypeError();
-    }
-    var n, k, t = Object(this),
-        len = t.length >>> 0;
-
-    if (len === 0) {
-      return -1;
-    }
-    n = 0;
-    if (arguments.length > 1) {
-      n = Number(arguments[1]);
-      if (n != n) { // shortcut for verifying if it's NaN
-        n = 0;
-      } else if (n != 0 && n != Infinity && n != -Infinity) {
-        n = (n > 0 || -1) * Math.floor(Math.abs(n));
-      }
-    }
-    if (n >= len) {
-      return -1;
-    }
-    for (k = n >= 0 ? n : Math.max(len - Math.abs(n), 0); k < len; k++) {
-      if (k in t && t[k] === searchElement) {
-        return k;
-      }
-    }
-    return -1;
-  };
-}
-
-
-
-///////////////////////////////////
-///////////////////////////////////
-///////////////////////////////////
-
-
-
 //object slice
 __slice = [].slice;
 
@@ -53,8 +12,9 @@ if(typeof soundManager != 'undefined'){
         , useHighPerformance: true
         , wmode: 'transparent'
         , useFastPolling: true
+        , debugFlash: false
         , debugMode: false
-        , flashLoadTimeout: 1000
+        , preferFlash: false 
     });
 }
 
@@ -497,12 +457,24 @@ var SoundCloudPlayer = function(tracks, config){
             if(cb) cb(_track);
         });
         
-        //call the ajax
-        jQuery.ajax({
-              url: sc_resolve_url+url+
+        var full_resolve_url;
+
+        if (url.lastIndexOf("http://api.soundcloud.com/tracks/", 0) === 0) {
+            full_resolve_url = url+
+                '?format=json'+
+                '&consumer_key='+_this.config.consumer_key+
+                '&callback=?';
+        } else {
+            full_resolve_url = sc_resolve_url+url+
                 '&format=json'+
                 '&consumer_key='+_this.config.consumer_key+
-                '&callback=?'
+                '&callback=?';
+        }
+
+
+        //call the ajax
+        jQuery.ajax({
+              url: full_resolve_url
             , dataType: 'jsonp'
             , error: function(jqXHR, textStatus, errorThrown){
                 promise.reject(jqXHR, textStatus, errorThrown);
@@ -562,39 +534,15 @@ var SoundCloudPlayer = function(tracks, config){
     _this.add_tracks = function(tracks){
         //take a single string or array of strings
         if(typeof tracks == 'string') tracks = [tracks];
-        //tracks were passed (and track passed is not currently playing!)
-        if(tracks != null && tracks.length > 0 ){
-
-            var found_at_index = 0;
-
-            for ( var i=0; i < tracks.length; i++ ){
-                if ( _this.tracks.indexOf( tracks[i] ) > -1 ) {
-                    found_at_index = _this.tracks.indexOf( tracks[i] );
-                    //alert( found_at_index );
-                    if ( found_at_index == _this.current_track_index ){
-                        //alert( 'nope!' );
-                        return 'current_track';
-                    }
-                }
-            }
-            //add the tracks to the tracks array (if they're not already in it)
-            if ( found_at_index < 1 ){
-                _this.tracks = _this.tracks.concat(tracks);
-            }
-
-            //otherwise, move it to the end
-            else {
-                _this.tracks.splice( found_at_index, tracks.length );
-                _this.tracks = _this.tracks.concat( tracks);
-            }
+        //tracks were passed
+        if(tracks != null && tracks.length > 0){
+            //add the tracks to the tracks array
+            _this.tracks = _this.tracks.concat(tracks);
 
             //preload SC data? or init
             if(_this.config.preload == true) _this.preload_sc_tracks.call(_this, _this.init);
             else _this.init.call(_this);
-
         }
-        
-        return found_at_index;      
     };
 
     _this.log = function(){
@@ -668,6 +616,6 @@ var SoundCloudPlayer = function(tracks, config){
         , sound:        this.get_sound      //expose the current SM2 object
         , playlist:     this.get_playlist   //expose the playlist
         , destroy:      this.destroy        //make all internals for garbage collection
-        , add_tracks:   this.add_tracks     //append tracks to a player
+        , add_tracks:   this.add_tracks         //append tracks to a player
     };
 };
