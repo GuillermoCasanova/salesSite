@@ -12,10 +12,16 @@ angular.module("Sales")
 
                $(document).foundation('reveal', 'reflow'); 
 
+               $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+                  scope.selectedPost = {};  
+               });
+
                scope.selectBlogPost = function(pPost) {
                    scope.selectedPost = pPost; 
                    angular.element("#modal").foundation('reveal', 'open');
                 };
+
+
             },
             controller: [
             '$scope',
