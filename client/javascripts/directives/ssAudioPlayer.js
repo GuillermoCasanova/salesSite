@@ -77,8 +77,25 @@ angular.module("Sales")
                     
                     e.preventDefault();
                     var $this = jQuery(this)
-                    if( $this.hasClass('play') ){ scplayer.pause(); }
-                    else if( $this.hasClass('pause') ){ scplayer.pause(); }
+                    if( $this.hasClass('play') ){ 
+
+                        scplayer.pause();
+                    }
+                    else if( $this.hasClass('pause') ) { 
+                        if(hasNotPlayed === true) {
+                            changeTheme(); 
+                            hasNotPlayed = false; 
+
+                            setTimeout(function() {
+                                scplayer.pause(); 
+                            }, 1000)
+
+                            return; 
+                        }
+              
+                        scplayer.pause(); 
+
+                    }
                     else if( 
                         $this.hasClass('stop') ){ scplayer.stop(); 
 
@@ -107,12 +124,6 @@ angular.module("Sales")
                 
                 scplayer.on("scplayer.pause", function(e, is_paused){
 
-                    //Changes currentSong and theme on the initial play 
-                    //since changing_track event has already been called 
-                    if(hasNotPlayed === true) {
-                        changeTheme(); 
-                        hasNotPlayed = false; 
-                    }
                     if(is_paused === true){
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");
