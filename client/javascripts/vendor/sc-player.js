@@ -107,8 +107,9 @@ var SoundCloudPlayer = function(tracks, config){
         , volume: 100
         , toggle_pause: true //should pause act as a toggle?
         , cache: true //caches the SC track lookup. Browser should handle the audio
-        , preload: false //prefetch the sc track data
+        , preload: true //prefetch the sc track data
         , debug: false
+        , preferFlash: false 
     }
     , sc_resolve_url = "http://api.soundcloud.com/resolve?url=http://soundcloud.com"
     , urlregex = new RegExp(/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi);

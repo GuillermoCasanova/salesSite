@@ -8252,15 +8252,10 @@ a.link--green:hover {
 /*------------------------------------*\
     #Backgrounds
 \*------------------------------------*/
-/* line 18, ../scss/partials/_objects.scss */
-.bg--main {
-  background: #000 url("../images/bg--black.png") repeat center fixed;
-}
-
 /*------------------------------------*\
     #Dividers
 \*------------------------------------*/
-/* line 30, ../scss/partials/_objects.scss */
+/* line 25, ../scss/partials/_objects.scss */
 .divider {
   height: 1.25rem;
   width: 100%;
@@ -8272,7 +8267,7 @@ a.link--green:hover {
 /*------------------------------------*\
     #Section
 \*------------------------------------*/
-/* line 46, ../scss/partials/_objects.scss */
+/* line 41, ../scss/partials/_objects.scss */
 .logo {
   width: 20em;
   margin-top: 20px;
@@ -8282,22 +8277,22 @@ a.link--green:hover {
   display: block;
   text-align: center;
 }
-/* line 55, ../scss/partials/_objects.scss */
+/* line 50, ../scss/partials/_objects.scss */
 .logo img {
   width: 100%;
 }
 
-/* line 61, ../scss/partials/_objects.scss */
+/* line 56, ../scss/partials/_objects.scss */
 .release {
   position: relative;
   padding-bottom: 100%;
   height: 0;
 }
-/* line 66, ../scss/partials/_objects.scss */
+/* line 61, ../scss/partials/_objects.scss */
 .release:hover {
   outline: 4px #fff solid;
 }
-/* line 70, ../scss/partials/_objects.scss */
+/* line 65, ../scss/partials/_objects.scss */
 .release iframe {
   position: absolute;
   top: 0;
@@ -8306,7 +8301,7 @@ a.link--green:hover {
   height: 100%;
 }
 
-/* line 81, ../scss/partials/_objects.scss */
+/* line 76, ../scss/partials/_objects.scss */
 .newsletterSignUp {
   font-family: 'Didact Gothic', Helvetica, sans-serif;
   max-width: 28.125rem;
@@ -8314,7 +8309,7 @@ a.link--green:hover {
   text-align: center;
 }
 
-/* line 88, ../scss/partials/_objects.scss */
+/* line 83, ../scss/partials/_objects.scss */
 .section--alt {
   background-color: rgba(200, 200, 200, 0.2);
 }
@@ -8325,7 +8320,7 @@ a.link--green:hover {
 /*------------------------------------*\
     #Loading Screens 
 \*------------------------------------*/
-/* line 106, ../scss/partials/_objects.scss */
+/* line 101, ../scss/partials/_objects.scss */
 .spinner {
   width: 5rem;
   height: 5rem;
