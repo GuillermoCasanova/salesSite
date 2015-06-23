@@ -35,7 +35,7 @@ angular.module("Sales")
                         }
                        scope.changeText(scope.spinner, loadingText, currentText); 
                        currentText++
-                    }, 800);
+                    }, 500);
                     
                 }
 

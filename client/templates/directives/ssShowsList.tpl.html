@@ -6,7 +6,7 @@
             <h1 class="text--mega text-center">WE'RE ON TOUR</h1>
     </div>
 
-     <div class="small-12  columns  pb4  text-center">
+     <div class="[ small-12  columns ]   pb4  text-center">
             
         <a href="https://www.songkick.com/artists/7225704-sales">
 
@@ -18,7 +18,7 @@
 
     </div>
 
-    <table class="small-12 medium-10 columns  small-centered  table--primary  pb2"  cellpadding="0" cellspacing="0"  class="ng-hide" ng-show="loaded">
+    <table class="[ small-12 medium-10 columns  small-centered ] table--primary  pb2"  cellpadding="0" cellspacing="0"  class="ng-hide" ng-show="loaded">
     
         <tr class="hide-on-small">
             <td class="fwb  text-center">
@@ -91,11 +91,16 @@
     
     </table>
 
-     <div class="small-12  columns  pb4  text-center">
+    <div class="small-12 columns"  ng-hide="loaded" ng-show="loading">
+            <ss-spinner></ss-spinner>
+    </div>
+
+     <div class="[ small-12  columns ]  [ pt2  pb4 ]   text-center" ng-hide="viewingAllShows">
             
-        <button  ng-click="showAllShows()"  class="button  button--secondaryAction medium fwb">
-            View All Shows 
+        <button  ng-click="showAllShows()"  class="button  button--secondaryAction large fwb">
+            View More Upcoming Shows 
         </button>
 
     </div>
+
 </div>

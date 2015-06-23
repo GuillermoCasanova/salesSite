@@ -109,6 +109,13 @@ button {
   padding-left: rem-calc(32);
 }
 
+.large {
+  font-size: rem-calc(16); 
+  padding: rem-calc(18);
+  padding-right: rem-calc(36);
+  padding-left: rem-calc(36); 
+}
+
 // $button-tny: rem-calc(10);
 // $button-sml: rem-calc(14);
 // $button-med: rem-calc(16);

@@ -9,11 +9,17 @@ angular.module("Sales")
             controller: 'showsController',
             controllerAs: 'showsController',
             link: function(scope, element, attr) {
-                scope.showsLimit = 10; 
+                scope.showsLimit = 20; 
+                scope.viewingAllShows = false; 
 
                 scope.showAllShows = function() {
-                    scope.showsLimit = scope.events.length; 
-                    console.log(scope.events.length);
+                    scope.loading = true; 
+                    scope.viewingAllShows = true; 
+
+                    setTimeout(function() {
+                        scope.showsLimit = scope.events.length; 
+                        scope.loading = false; 
+                    }, 800);
                 }
 
                 scope.isNotFestival = function(eventName) {
