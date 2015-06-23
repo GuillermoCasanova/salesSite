@@ -80,8 +80,11 @@
 
             &.country {
                 //Padding left to align with country title 
+                @extend %fwb; 
+
                 @media #{$medium-up} {
                     padding-left: rem-calc(36);
+                    font-weight: normal; 
                 }
             }
 
@@ -92,6 +95,13 @@
                 @media #{$medium-up} {
                     //Have padding bottom for venue match rest of TDS on medium up 
                     padding-bottom: rem-calc(12); 
+                }
+            }
+
+            &.tickets {
+                @media #{$small-only} {
+                    padding-right: rem-calc(20); 
+                    padding-left: rem-calc(20); 
                 }
             }
         }

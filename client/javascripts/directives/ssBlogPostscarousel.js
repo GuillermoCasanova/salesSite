@@ -14,6 +14,7 @@ angular.module("Sales")
 
                $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
                   scope.selectedPost = {};  
+                  scope.$apply(); 
                });
 
                scope.selectBlogPost = function(pPost) {

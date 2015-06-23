@@ -532,7 +532,7 @@
     #Font Weight
 \*------------------------------------*/
 /* line 49, ../scss/modules/_typography.scss */
-.table--primary .table-row td.date {
+.table--primary .table-row td.date, .table--primary .table-row td.country {
   font-weight: 500;
 }
 
@@ -640,7 +640,7 @@ h6,
     #Font Weight
 \*------------------------------------*/
 /* line 49, ../scss/modules/_typography.scss */
-.table--primary .table-row td.date {
+.table--primary .table-row td.date, .table--primary .table-row td.country {
   font-weight: 500;
 }
 
@@ -7632,7 +7632,7 @@ th.hide-for-touch {
     #Font Weight
 \*------------------------------------*/
 /* line 49, ../scss/modules/_typography.scss */
-.table--primary .table-row td.date {
+.table--primary .table-row td.date, .table--primary .table-row td.country {
   font-weight: 500;
 }
 
@@ -7740,7 +7740,7 @@ h6,
     #Font Weight
 \*------------------------------------*/
 /* line 49, ../scss/modules/_typography.scss */
-.table--primary .table-row td.date {
+.table--primary .table-row td.date, .table--primary .table-row td.country {
   font-weight: 500;
 }
 
@@ -9546,15 +9546,23 @@ Copyright (c) 2015 Daniel Eden
   /* line 81, ../scss/partials/_tables.scss */
   .table--primary .table-row td.country {
     padding-left: 2.25rem;
+    font-weight: normal;
   }
 }
-/* line 88, ../scss/partials/_tables.scss */
+/* line 91, ../scss/partials/_tables.scss */
 .table--primary .table-row td.venue {
   padding-bottom: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 88, ../scss/partials/_tables.scss */
+  /* line 91, ../scss/partials/_tables.scss */
   .table--primary .table-row td.venue {
     padding-bottom: 0.75rem;
+  }
+}
+@media only screen and (max-width: 40em) {
+  /* line 101, ../scss/partials/_tables.scss */
+  .table--primary .table-row td.tickets {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }

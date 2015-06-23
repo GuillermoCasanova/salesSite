@@ -19,7 +19,6 @@ angular.module("Sales")
             }],
             link: function(scope, element, attrs, ssPageTheme) {
 
-
                 //Initializes the current song text with the placeholder text
                 //and sets notPlayed to true; 
                 scope.currentSong = scope.placeHolderText;

@@ -11,7 +11,7 @@ angular.module('Sales')
                         'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_West_Coast_2015.jpg',
                         'mainImage' : 'https://s3.amazonaws.com/salessite/SALES_West_Coast_2015_header.png',
                         'id' : 'west',
-                        'body' : 'We love ya\'ll so much, we can\'t stay away. We are pleased to announce the following west coast tour dates: <a href="http://on.fb.me/" target="_blank">http://on.fb.me/</a>'
+                        'body' : 'We love ya\'ll so much, we can\'t stay away. We are pleased to announce the following west coast tour dates: <a href="http://on.fb.me/1QkZvb6" target="_blank">http://on.fb.me/1QkZvb6</a>'
                     },
 
                     {
