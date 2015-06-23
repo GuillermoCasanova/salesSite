@@ -1,0 +1,35 @@
+
+/*------------------------------------*\
+    #Animations
+\*------------------------------------*/
+
+
+%animated {
+ -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+%primaryAnimation {
+    @extend %animated; 
+
+    &:hover {
+
+    animation: bounce .6s cubic-bezier(0,1,1,.5) forwards;
+    -webkit-animation: bounce .6s cubic-bezier(.17,.67,1,.5);
+    }
+
+}
+
+
+%secondaryAnimation {
+    @extend %animated; 
+
+    &:hover {
+
+  -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+    }
+
+}
