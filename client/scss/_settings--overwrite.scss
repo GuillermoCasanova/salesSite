@@ -471,7 +471,7 @@ $include-html-button-classes: false;
 // 06. Button Groups
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: false;
 
 // Sets the margin for the right side by default, and the left margin if right-to-left direction is used
 // $button-bar-margin-opposite: rem-calc(10);
@@ -608,7 +608,7 @@ $include-html-button-classes: false;
 // 11. Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-form-classes: $include-html-classes;
+$include-html-form-classes: false;
 
 // We use this to set the base for lots of form spacing and positioning styles
 // $form-spacing: rem-calc(16);
@@ -720,7 +720,7 @@ $include-html-button-classes: false;
 // 14. Joyride
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-joyride-classes: $include-html-classes;
+$include-html-joyride-classes: false;
 
 // Controlling default Joyride styles
 // $joyride-tip-bg: $oil;

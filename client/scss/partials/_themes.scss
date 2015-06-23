@@ -12,6 +12,7 @@
 .theme-background {
 
     top: 0; left: 0; right: 0; bottom: 0;
+    height: 100%; 
     @include single-transition(all, .3s, ease-in-out);
     @extend %fixed;
     @extend %theme-backgrounds;
@@ -26,7 +27,6 @@
         height: rem-calc(450px);
         width: rem-calc(450px);
     }
-    //
     @extend %mtb2;
 
 }
@@ -41,8 +41,8 @@
     position: absolute;
     background-position: center; 
     background-repeat: no-repeat;
-    @include single-transition(all, .3s, ease-in-out);
     opacity: 0; 
+    @include single-transition(all, .3s, ease-in-out);
 
     &.is-showing {
         z-index: 80;
@@ -79,4 +79,27 @@
 }
 
 
+.theme-ep,
+.theme-getting-it-on,
+.theme-toto-xxyyxx-remix {
+    background-color: $offBlack;
 
+}
+
+.theme-sales-renee {
+    background-color: $green;
+}
+
+.theme-vow {
+    background-color: $orange;
+
+}
+
+.theme-chinese-new-year {
+   background-color: $red;
+}
+
+.theme-toto {
+background-color: $purple;
+
+}

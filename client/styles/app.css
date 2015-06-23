@@ -700,28 +700,28 @@ h6,
 \*------------------------------------*/
 /* line 35, ../scss/modules/_colors.scss */
 .theme-chinese-new-year .reveal-modal a {
-  color: #e0274f;
+  color: #CD3F3D;
 }
 
 /* line 43, ../scss/modules/_colors.scss */
 .theme-sales-renee .reveal-modal a {
-  color: #b9d362;
+  color: #588E80;
 }
 
 /* line 51, ../scss/modules/_colors.scss */
 .theme-vow .reveal-modal a {
-  color: #f5a540;
+  color: #EF9B38;
 }
 
 /* line 59, ../scss/modules/_colors.scss */
 .theme-toto .reveal-modal a {
-  color: #8568b1;
+  color: #915382;
 }
 
 /* line 69, ../scss/modules/_colors.scss */
 .theme-toto-xxyyxx-remix .reveal-modal a,
 .getting-it-on .reveal-modal a {
-  color: #191919;
+  color: #181617;
 }
 
 /*------------------------------------*\
@@ -755,25 +755,28 @@ h6,
 }
 /* line 28, ../scss/modules/_theme.scss */
 .ep.theme-background, .getting-it-on.theme-background, .toto-xxyyxx-remix.theme-background {
-  background: #000 url("../images/bg--black.jpg") repeat center fixed;
+  background: #181617 url("../images/bg--black.jpg") repeat center fixed;
 }
 /* line 35, ../scss/modules/_theme.scss */
 .sales-renee.theme-background {
-  background: green url("../images/bg--green.jpg") repeat center fixed;
+  background: #588E80 url("../images/bg--green.jpg") repeat center fixed;
 }
 /* line 39, ../scss/modules/_theme.scss */
 .vow.theme-background {
-  background: orange url("../images/bg--orange.jpg") repeat center fixed;
+  background: #EF9B38 url("../images/bg--orange.jpg") repeat center fixed;
 }
 /* line 44, ../scss/modules/_theme.scss */
 .chinese-new-year.theme-background {
-  background: red url("../images/bg--red.jpg") repeat center fixed;
+  background: #CD3F3D url("../images/bg--red.jpg") repeat center fixed;
 }
 /* line 49, ../scss/modules/_theme.scss */
 .toto.theme-background {
-  background: purple url("../images/bg--purple.jpg") repeat center fixed;
+  background: #915382 url("../images/bg--purple.jpg") repeat center fixed;
 }
 
+/*------------------------------------*\
+    #Theme Artwork Mixin 
+\*------------------------------------*/
 /*------------------------------------*\
     #Animations
 \*------------------------------------*/
@@ -2536,501 +2539,6 @@ select {
   left: 0;
 }
 
-/* Standard Forms */
-/* line 387, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form {
-  margin: 0 0 1rem;
-}
-
-/* Using forms within rows, we need to set some defaults */
-/* line 92, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .row {
-  margin: 0 -0.5rem;
-}
-/* line 94, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .row .column,
-form .row .row .columns {
-  padding: 0 0.5rem;
-}
-/* line 98, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .row.collapse {
-  margin: 0;
-}
-/* line 100, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .row.collapse .column,
-form .row .row.collapse .columns {
-  padding: 0;
-}
-/* line 102, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .row.collapse input {
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-/* line 108, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row input.column,
-form .row input.columns,
-form .row textarea.column,
-form .row textarea.columns {
-  padding-left: 0.5rem;
-}
-
-/* Label Styles */
-/* line 393, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-label {
-  color: #4d4d4d;
-  cursor: pointer;
-  display: block;
-  font-size: 0.875rem;
-  font-weight: normal;
-  line-height: 1.5;
-  margin-bottom: 0;
-  /* Styles for required inputs */
-}
-/* line 394, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-label.right {
-  float: none !important;
-  text-align: right;
-}
-/* line 395, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-label.inline {
-  margin: 0 0 1rem 0;
-  padding: 0.5625rem 0;
-}
-/* line 397, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-label small {
-  text-transform: capitalize;
-  color: #676767;
-}
-
-/* Attach elements to the beginning or end of an input */
-/* line 404, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.prefix,
-.postfix {
-  border-style: solid;
-  border-width: 1px;
-  display: block;
-  font-size: 0.875rem;
-  height: 2.3125rem;
-  line-height: 2.3125rem;
-  overflow: visible;
-  padding-bottom: 0;
-  padding-top: 0;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  z-index: 2;
-}
-
-/* Adjust padding, alignment and radius if pre/post element is a button */
-/* line 408, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.postfix.button {
-  border-color: true;
-}
-
-/* line 409, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.prefix.button {
-  border: none;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-  text-align: center;
-}
-
-/* line 411, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.prefix.button.radius {
-  border-radius: 0;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-}
-
-/* line 412, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.postfix.button.radius {
-  border-radius: 0;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-/* line 413, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.prefix.button.round {
-  border-radius: 0;
-  -webkit-border-bottom-left-radius: 1000px;
-  -webkit-border-top-left-radius: 1000px;
-  border-bottom-left-radius: 1000px;
-  border-top-left-radius: 1000px;
-}
-
-/* line 414, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.postfix.button.round {
-  border-radius: 0;
-  -webkit-border-bottom-right-radius: 1000px;
-  -webkit-border-top-right-radius: 1000px;
-  border-bottom-right-radius: 1000px;
-  border-top-right-radius: 1000px;
-}
-
-/* Separate prefix and postfix styles when on span or label so buttons keep their own */
-/* line 417, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-span.prefix, label.prefix {
-  background: #f2f2f2;
-  border-right: none;
-  color: #333333;
-  border-color: #cccccc;
-}
-
-/* line 418, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-span.postfix, label.postfix {
-  background: #f2f2f2;
-  color: #333333;
-  border-color: #cccccc;
-}
-
-/* We use this to get basic styling on all basic form elements */
-/* line 421, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 0;
-  background-color: #FFFFFF;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #cccccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.75);
-  display: block;
-  font-family: inherit;
-  font-size: 0.875rem;
-  height: 2.3125rem;
-  margin: 0 0 1rem 0;
-  padding: 0.5rem;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: border-color 0.15s linear, background 0.15s linear;
-  -moz-transition: border-color 0.15s linear, background 0.15s linear;
-  -ms-transition: border-color 0.15s linear, background 0.15s linear;
-  -o-transition: border-color 0.15s linear, background 0.15s linear;
-  transition: border-color 0.15s linear, background 0.15s linear;
-}
-/* line 138, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
-  background: #fafafa;
-  border-color: #999999;
-  outline: none;
-}
-/* line 144, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"]:disabled, input[type="password"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="week"]:disabled, input[type="email"]:disabled, input[type="number"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, textarea:disabled {
-  background-color: #DDDDDD;
-  cursor: default;
-}
-/* line 150, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"][disabled], input[type="text"][readonly], fieldset[disabled] input[type="text"], input[type="password"][disabled], input[type="password"][readonly], fieldset[disabled] input[type="password"], input[type="date"][disabled], input[type="date"][readonly], fieldset[disabled] input[type="date"], input[type="datetime"][disabled], input[type="datetime"][readonly], fieldset[disabled] input[type="datetime"], input[type="datetime-local"][disabled], input[type="datetime-local"][readonly], fieldset[disabled] input[type="datetime-local"], input[type="month"][disabled], input[type="month"][readonly], fieldset[disabled] input[type="month"], input[type="week"][disabled], input[type="week"][readonly], fieldset[disabled] input[type="week"], input[type="email"][disabled], input[type="email"][readonly], fieldset[disabled] input[type="email"], input[type="number"][disabled], input[type="number"][readonly], fieldset[disabled] input[type="number"], input[type="search"][disabled], input[type="search"][readonly], fieldset[disabled] input[type="search"], input[type="tel"][disabled], input[type="tel"][readonly], fieldset[disabled] input[type="tel"], input[type="time"][disabled], input[type="time"][readonly], fieldset[disabled] input[type="time"], input[type="url"][disabled], input[type="url"][readonly], fieldset[disabled] input[type="url"], input[type="color"][disabled], input[type="color"][readonly], fieldset[disabled] input[type="color"], textarea[disabled], textarea[readonly], fieldset[disabled] textarea {
-  background-color: #DDDDDD;
-  cursor: default;
-}
-/* line 433, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"].radius, input[type="password"].radius, input[type="date"].radius, input[type="datetime"].radius, input[type="datetime-local"].radius, input[type="month"].radius, input[type="week"].radius, input[type="email"].radius, input[type="number"].radius, input[type="search"].radius, input[type="tel"].radius, input[type="time"].radius, input[type="url"].radius, input[type="color"].radius, textarea.radius {
-  border-radius: 3px;
-}
-
-/* line 441, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .prefix-radius.row.collapse input,
-form .row .prefix-radius.row.collapse textarea,
-form .row .prefix-radius.row.collapse select,
-form .row .prefix-radius.row.collapse button {
-  border-radius: 0;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-}
-/* line 445, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .prefix-radius.row.collapse .prefix {
-  border-radius: 0;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-}
-/* line 448, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .postfix-radius.row.collapse input,
-form .row .postfix-radius.row.collapse textarea,
-form .row .postfix-radius.row.collapse select,
-form .row .postfix-radius.row.collapse button {
-  border-radius: 0;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-}
-/* line 452, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .postfix-radius.row.collapse .postfix {
-  border-radius: 0;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-}
-/* line 455, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .prefix-round.row.collapse input,
-form .row .prefix-round.row.collapse textarea,
-form .row .prefix-round.row.collapse select,
-form .row .prefix-round.row.collapse button {
-  border-radius: 0;
-  -webkit-border-bottom-right-radius: 1000px;
-  -webkit-border-top-right-radius: 1000px;
-  border-bottom-right-radius: 1000px;
-  border-top-right-radius: 1000px;
-}
-/* line 459, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .prefix-round.row.collapse .prefix {
-  border-radius: 0;
-  -webkit-border-bottom-left-radius: 1000px;
-  -webkit-border-top-left-radius: 1000px;
-  border-bottom-left-radius: 1000px;
-  border-top-left-radius: 1000px;
-}
-/* line 462, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .postfix-round.row.collapse input,
-form .row .postfix-round.row.collapse textarea,
-form .row .postfix-round.row.collapse select,
-form .row .postfix-round.row.collapse button {
-  border-radius: 0;
-  -webkit-border-bottom-left-radius: 1000px;
-  -webkit-border-top-left-radius: 1000px;
-  border-bottom-left-radius: 1000px;
-  border-top-left-radius: 1000px;
-}
-/* line 466, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-form .row .postfix-round.row.collapse .postfix {
-  border-radius: 0;
-  -webkit-border-bottom-right-radius: 1000px;
-  -webkit-border-top-right-radius: 1000px;
-  border-bottom-right-radius: 1000px;
-  border-top-right-radius: 1000px;
-}
-
-/* line 471, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="submit"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 0;
-}
-
-/* Respect enforced amount of rows for textarea */
-/* line 478, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-textarea[rows] {
-  height: auto;
-}
-
-/* Not allow resize out of parent */
-/* line 483, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-textarea {
-  max-width: 100%;
-}
-
-/* line 488, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-::-webkit-input-placeholder {
-  color: #cccccc;
-}
-
-/* line 492, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #cccccc;
-}
-
-/* line 496, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #cccccc;
-}
-
-/* line 500, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-:-ms-input-placeholder {
-  color: #cccccc;
-}
-
-/* Add height value for select elements to match text input height */
-/* line 506, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-select {
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  background-color: #FAFAFA;
-  border-radius: 0;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
-  background-position: 100% center;
-  background-repeat: no-repeat;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #cccccc;
-  color: rgba(0, 0, 0, 0.75);
-  font-family: inherit;
-  font-size: 0.875rem;
-  line-height: normal;
-  padding: 0.5rem;
-  border-radius: 0;
-  height: 2.3125rem;
-}
-/* line 337, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-select::-ms-expand {
-  display: none;
-}
-/* line 360, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-select.radius {
-  border-radius: 3px;
-}
-/* line 361, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-select:hover {
-  background-color: #f3f3f3;
-  border-color: #999999;
-}
-/* line 366, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-select:disabled {
-  background-color: #DDDDDD;
-  cursor: default;
-}
-/* line 509, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-select[multiple] {
-  height: auto;
-}
-
-/* Adjust margin for form elements below */
-/* line 515, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="file"],
-input[type="checkbox"],
-input[type="radio"],
-select {
-  margin: 0 0 1rem 0;
-}
-
-/* line 522, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-  display: inline-block;
-  margin-left: 0.5rem;
-  margin-right: 1rem;
-  margin-bottom: 0;
-  vertical-align: baseline;
-}
-
-/* Normalize file input width */
-/* line 532, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input[type="file"] {
-  width: 100%;
-}
-
-/* HTML5 Number spinners settings */
-/* We add basic fieldset styling */
-/* line 546, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-fieldset {
-  border: 1px solid #DDDDDD;
-  margin: 1.125rem 0;
-  padding: 1.25rem;
-}
-/* line 279, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-fieldset legend {
-  background: #FFFFFF;
-  font-weight: bold;
-  margin-left: -0.1875rem;
-  margin: 0;
-  padding: 0 0.1875rem;
-}
-
-/* Error Handling */
-/* line 553, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-[data-abide] .error small.error, [data-abide] .error span.error, [data-abide] span.error, [data-abide] small.error {
-  display: block;
-  font-size: 0.75rem;
-  font-style: italic;
-  font-weight: normal;
-  margin-bottom: 1rem;
-  margin-top: -1px;
-  padding: 0.375rem 0.5625rem 0.5625rem;
-  background: #f04124;
-  color: #FFFFFF;
-}
-/* line 556, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-[data-abide] span.error, [data-abide] small.error {
-  display: none;
-}
-
-/* line 559, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-span.error, small.error {
-  display: block;
-  font-size: 0.75rem;
-  font-style: italic;
-  font-weight: normal;
-  margin-bottom: 1rem;
-  margin-top: -1px;
-  padding: 0.375rem 0.5625rem 0.5625rem;
-  background: #f04124;
-  color: #FFFFFF;
-}
-
-/* line 564, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.error input,
-.error textarea,
-.error select {
-  margin-bottom: 0;
-}
-/* line 570, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.error input[type="checkbox"],
-.error input[type="radio"] {
-  margin-bottom: 1rem;
-}
-/* line 575, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.error label,
-.error label.error {
-  color: #f04124;
-}
-/* line 580, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.error small.error {
-  display: block;
-  font-size: 0.75rem;
-  font-style: italic;
-  font-weight: normal;
-  margin-bottom: 1rem;
-  margin-top: -1px;
-  padding: 0.375rem 0.5625rem 0.5625rem;
-  background: #f04124;
-  color: #FFFFFF;
-}
-/* line 585, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.error > label > small {
-  background: transparent;
-  color: #676767;
-  display: inline;
-  font-size: 60%;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
-  text-transform: capitalize;
-}
-/* line 597, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-.error span.error-message {
-  display: block;
-}
-
-/* line 602, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-input.error,
-textarea.error,
-select.error {
-  margin-bottom: 0;
-}
-
-/* line 607, ../../bower_components/foundation/scss/foundation/components/_forms.scss */
-label.error {
-  color: #f04124;
-}
-
 /* line 347, ../../bower_components/foundation/scss/foundation/components/_icon-bar.scss */
 .icon-bar {
   display: inline-block;
@@ -3486,208 +2994,6 @@ label.error {
   display: block;
 }
 
-/* Foundation Joyride */
-/* line 48, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-list {
-  display: none;
-}
-
-/* Default styles for the container */
-/* line 51, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide {
-  background: #333333;
-  color: #FFFFFF;
-  display: none;
-  font-family: inherit;
-  font-weight: normal;
-  position: absolute;
-  top: 0;
-  width: 95%;
-  z-index: 101;
-  left: 2.5%;
-}
-
-/* line 64, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.lt-ie9 .joyride-tip-guide {
-  margin-left: -400px;
-  max-width: 800px;
-  left: 50%;
-}
-
-/* line 70, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-content-wrapper {
-  padding: 1.125rem 1.25rem 1.5rem;
-  width: 100%;
-}
-/* line 74, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-content-wrapper .button {
-  margin-bottom: 0 !important;
-}
-/* line 76, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-content-wrapper .joyride-prev-tip {
-  margin-right: 10px;
-}
-
-/* Add a little css triangle pip, older browser just miss out on the fanciness of it */
-/* line 81, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub {
-  border: 10px solid #333333;
-  display: block;
-  height: 0;
-  position: absolute;
-  width: 0;
-  left: 22px;
-}
-/* line 89, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.top {
-  border-color: #333333;
-  border-top-color: transparent !important;
-  border-top-style: solid;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  top: -20px;
-}
-/* line 97, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.bottom {
-  border-color: #333333 !important;
-  border-bottom-color: transparent !important;
-  border-bottom-style: solid;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  bottom: -20px;
-}
-/* line 106, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.right {
-  right: -20px;
-}
-/* line 107, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide .joyride-nub.left {
-  left: -20px;
-}
-
-/* Typography */
-/* line 112, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide h1,
-.joyride-tip-guide h2,
-.joyride-tip-guide h3,
-.joyride-tip-guide h4,
-.joyride-tip-guide h5,
-.joyride-tip-guide h6 {
-  color: #FFFFFF;
-  font-weight: bold;
-  line-height: 1.25;
-  margin: 0;
-}
-
-/* line 123, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-tip-guide p {
-  font-size: 0.875rem;
-  line-height: 1.3;
-  margin: 0 0 1.125rem 0;
-}
-
-/* line 129, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-timer-indicator-wrap {
-  border: solid 1px #555555;
-  bottom: 1rem;
-  height: 3px;
-  position: absolute;
-  width: 50px;
-  right: 1.0625rem;
-}
-
-/* line 137, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-timer-indicator {
-  background: #666666;
-  display: block;
-  height: inherit;
-  width: 0;
-}
-
-/* line 144, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-close-tip {
-  color: #777777 !important;
-  font-size: 24px;
-  font-weight: normal;
-  line-height: .5 !important;
-  position: absolute;
-  text-decoration: none;
-  top: 10px;
-  right: 12px;
-}
-/* line 154, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-close-tip:hover, .joyride-close-tip:focus {
-  color: #EEEEEE !important;
-}
-
-/* line 158, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-modal-bg {
-  background: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  display: none;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  left: 0;
-}
-
-/* line 170, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-expose-wrapper {
-  background-color: #FFFFFF;
-  border-radius: 3px;
-  box-shadow: 0 0 15px #FFFFFF;
-  position: absolute;
-  z-index: 102;
-}
-
-/* line 178, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-.joyride-expose-cover {
-  background: transparent;
-  border-radius: 3px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 9999;
-}
-
-/* Styles for screens that are at least 768px; */
-@media only screen and (min-width: 40.0625em) {
-  /* line 190, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-  .joyride-tip-guide {
-    width: 300px;
-    left: inherit;
-  }
-  /* line 192, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.bottom {
-    border-color: #333333 !important;
-    border-bottom-color: transparent !important;
-    border-left-color: transparent !important;
-    border-right-color: transparent !important;
-    bottom: -20px;
-  }
-  /* line 199, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.right {
-    border-color: #333333 !important;
-    border-right-color: transparent !important;
-    border-bottom-color: transparent !important;
-    border-top-color: transparent !important;
-    left: auto;
-    right: -20px;
-    top: 22px;
-  }
-  /* line 207, ../../bower_components/foundation/scss/foundation/components/_joyride.scss */
-  .joyride-tip-guide .joyride-nub.left {
-    border-color: #333333 !important;
-    border-bottom-color: transparent !important;
-    border-left-color: transparent !important;
-    border-top-color: transparent !important;
-    left: -20px;
-    right: auto;
-    top: 22px;
-  }
-}
 /* line 54, ../../bower_components/foundation/scss/foundation/components/_keystrokes.scss */
 .keystroke,
 kbd {
@@ -4635,162 +3941,6 @@ ul.pagination li {
   position: absolute;
   top: 0.625rem;
   right: 1.375rem;
-}
-
-/* line 215, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch {
-  border: none;
-  margin-bottom: 1.5rem;
-  outline: 0;
-  padding: 0;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-/* line 58, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch label {
-  background: #DDDDDD;
-  color: transparent;
-  cursor: pointer;
-  display: block;
-  margin-bottom: 1rem;
-  position: relative;
-  text-indent: 100%;
-  width: 4rem;
-  height: 2rem;
-  transition: left 0.15s ease-out;
-}
-/* line 74, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch input {
-  left: 10px;
-  opacity: 0;
-  padding: 0;
-  position: absolute;
-  top: 9px;
-}
-/* line 81, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch input + label {
-  margin-left: 0;
-  margin-right: 0;
-}
-/* line 88, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch label:after {
-  background: #FFFFFF;
-  content: "";
-  display: block;
-  height: 1.5rem;
-  left: .25rem;
-  position: absolute;
-  top: .25rem;
-  width: 1.5rem;
-  -webkit-transition: left 0.15s ease-out;
-  -moz-transition: left 0.15s ease-out;
-  -o-transition: translate3d(0, 0, 0);
-  transition: left 0.15s ease-out;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-/* line 110, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch input:checked + label {
-  background: #008CBA;
-}
-/* line 114, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch input:checked + label:after {
-  left: 2.25rem;
-}
-/* line 126, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch label {
-  height: 2rem;
-  width: 4rem;
-}
-/* line 131, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch label:after {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-/* line 136, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch input:checked + label:after {
-  left: 2.25rem;
-}
-/* line 157, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch label {
-  color: transparent;
-  background: #DDDDDD;
-}
-/* line 162, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch label:after {
-  background: #FFFFFF;
-}
-/* line 166, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch input:checked + label {
-  background: #008CBA;
-}
-/* line 126, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.large label {
-  height: 2.5rem;
-  width: 5rem;
-}
-/* line 131, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.large label:after {
-  height: 2rem;
-  width: 2rem;
-}
-/* line 136, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.large input:checked + label:after {
-  left: 2.75rem;
-}
-/* line 126, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.small label {
-  height: 1.75rem;
-  width: 3.5rem;
-}
-/* line 131, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.small label:after {
-  height: 1.25rem;
-  width: 1.25rem;
-}
-/* line 136, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.small input:checked + label:after {
-  left: 2rem;
-}
-/* line 126, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.tiny label {
-  height: 1.5rem;
-  width: 3rem;
-}
-/* line 131, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.tiny label:after {
-  height: 1rem;
-  width: 1rem;
-}
-/* line 136, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.tiny input:checked + label:after {
-  left: 1.75rem;
-}
-/* line 229, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.radius label {
-  border-radius: 4px;
-}
-/* line 230, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.radius label:after {
-  border-radius: 3px;
-}
-/* line 234, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.round {
-  border-radius: 1000px;
-}
-/* line 235, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.round label {
-  border-radius: 2rem;
-}
-/* line 236, ../../bower_components/foundation/scss/foundation/components/_switches.scss */
-.switch.round label:after {
-  border-radius: 2rem;
 }
 
 /* line 30, ../../bower_components/foundation/scss/foundation/components/_tabs.scss */
@@ -7790,28 +6940,28 @@ h6,
 \*------------------------------------*/
 /* line 35, ../scss/modules/_colors.scss */
 .theme-chinese-new-year .reveal-modal a {
-  color: #e0274f;
+  color: #CD3F3D;
 }
 
 /* line 43, ../scss/modules/_colors.scss */
 .theme-sales-renee .reveal-modal a {
-  color: #b9d362;
+  color: #588E80;
 }
 
 /* line 51, ../scss/modules/_colors.scss */
 .theme-vow .reveal-modal a {
-  color: #f5a540;
+  color: #EF9B38;
 }
 
 /* line 59, ../scss/modules/_colors.scss */
 .theme-toto .reveal-modal a {
-  color: #8568b1;
+  color: #915382;
 }
 
 /* line 69, ../scss/modules/_colors.scss */
 .theme-toto-xxyyxx-remix .reveal-modal a,
 .getting-it-on .reveal-modal a {
-  color: #191919;
+  color: #181617;
 }
 
 /*------------------------------------*\
@@ -7845,25 +6995,28 @@ h6,
 }
 /* line 28, ../scss/modules/_theme.scss */
 .ep.theme-background, .getting-it-on.theme-background, .toto-xxyyxx-remix.theme-background {
-  background: #000 url("../images/bg--black.jpg") repeat center fixed;
+  background: #181617 url("../images/bg--black.jpg") repeat center fixed;
 }
 /* line 35, ../scss/modules/_theme.scss */
 .sales-renee.theme-background {
-  background: green url("../images/bg--green.jpg") repeat center fixed;
+  background: #588E80 url("../images/bg--green.jpg") repeat center fixed;
 }
 /* line 39, ../scss/modules/_theme.scss */
 .vow.theme-background {
-  background: orange url("../images/bg--orange.jpg") repeat center fixed;
+  background: #EF9B38 url("../images/bg--orange.jpg") repeat center fixed;
 }
 /* line 44, ../scss/modules/_theme.scss */
 .chinese-new-year.theme-background {
-  background: red url("../images/bg--red.jpg") repeat center fixed;
+  background: #CD3F3D url("../images/bg--red.jpg") repeat center fixed;
 }
 /* line 49, ../scss/modules/_theme.scss */
 .toto.theme-background {
-  background: purple url("../images/bg--purple.jpg") repeat center fixed;
+  background: #915382 url("../images/bg--purple.jpg") repeat center fixed;
 }
 
+/*------------------------------------*\
+    #Theme Artwork Mixin 
+\*------------------------------------*/
 /*------------------------------------*\
     #Animations
 \*------------------------------------*/
@@ -8176,11 +7329,11 @@ a[class*="link"] {
 }
 /* line 81, ../scss/partials/_typography.scss */
 a.link--orange:hover {
-  color: #f5a540;
+  color: #EF9B38;
 }
 /* line 82, ../scss/partials/_typography.scss */
 a.link--red:hover {
-  color: #e0274f;
+  color: #CD3F3D;
 }
 /* line 83, ../scss/partials/_typography.scss */
 a.link--blue:hover {
@@ -8188,7 +7341,7 @@ a.link--blue:hover {
 }
 /* line 84, ../scss/partials/_typography.scss */
 a.link--purple:hover {
-  color: #8568b1;
+  color: #915382;
 }
 /* line 85, ../scss/partials/_typography.scss */
 a.link--yellow:hover {
@@ -8196,7 +7349,7 @@ a.link--yellow:hover {
 }
 /* line 86, ../scss/partials/_typography.scss */
 a.link--green:hover {
-  color: #b9d362;
+  color: #588E80;
 }
 
 /* line 89, ../scss/partials/_typography.scss */
@@ -8985,19 +8138,20 @@ Copyright (c) 2015 Daniel Eden
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100%;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-/* line 21, ../scss/partials/_themes.scss */
+/* line 22, ../scss/partials/_themes.scss */
 .theme-artworkContainer {
   width: 15.625rem;
   height: 12.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 21, ../scss/partials/_themes.scss */
+  /* line 22, ../scss/partials/_themes.scss */
   .theme-artworkContainer {
     height: 28.125rem;
     width: 28.125rem;
@@ -9016,11 +8170,11 @@ Copyright (c) 2015 Daniel Eden
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  opacity: 0;
 }
 /* line 47, ../scss/partials/_themes.scss */
 .theme-artwork.is-showing {
@@ -9110,6 +8264,33 @@ Copyright (c) 2015 Daniel Eden
   .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
     background-image: url("../images/toto--large.png");
   }
+}
+
+/* line 82, ../scss/partials/_themes.scss */
+.theme-ep,
+.theme-getting-it-on,
+.theme-toto-xxyyxx-remix {
+  background-color: #181617;
+}
+
+/* line 89, ../scss/partials/_themes.scss */
+.theme-sales-renee {
+  background-color: #588E80;
+}
+
+/* line 93, ../scss/partials/_themes.scss */
+.theme-vow {
+  background-color: #EF9B38;
+}
+
+/* line 98, ../scss/partials/_themes.scss */
+.theme-chinese-new-year {
+  background-color: #CD3F3D;
+}
+
+/* line 102, ../scss/partials/_themes.scss */
+.theme-toto {
+  background-color: #915382;
 }
 
 /*------------------------------------*\
@@ -9438,7 +8619,7 @@ Copyright (c) 2015 Daniel Eden
 .reveal-modal h6 a,
 .reveal-modal p a,
 .reveal-modal .reveal-modal-body a {
-  color: #191919;
+  color: #181617;
 }
 
 /*------------------------------------*\
@@ -9446,26 +8627,26 @@ Copyright (c) 2015 Daniel Eden
 \*------------------------------------*/
 /* line 50, ../scss/partials/_modals.scss */
 .theme-chinese-new-year .reveal-modal .reveal-modal-body a {
-  color: #e0274f;
+  color: #CD3F3D;
 }
 
 /* line 61, ../scss/partials/_modals.scss */
 .theme-sales-renee .reveal-modal .reveal-modal-body a {
-  color: #b9d362;
+  color: #588E80;
 }
 
 /* line 72, ../scss/partials/_modals.scss */
 .theme-vow .reveal-modal .reveal-modal-body a {
-  color: #f5a540;
+  color: #EF9B38;
 }
 
 /* line 83, ../scss/partials/_modals.scss */
 .theme-toto .reveal-modal .reveal-modal-body a {
-  color: #8568b1;
+  color: #915382;
 }
 
 /* line 96, ../scss/partials/_modals.scss */
 .theme-toto-xxyyxx-remix .reveal-modal .reveal-modal-body a,
 .getting-it-on .reveal-modal .reveal-modal-body a {
-  color: #191919;
+  color: #181617;
 }
