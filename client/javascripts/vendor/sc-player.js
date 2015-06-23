@@ -55,6 +55,7 @@ if(typeof soundManager != 'undefined'){
         , useFastPolling: true
         , debugMode: false
         , flashLoadTimeout: 1000
+        , preferFlash: false
     });
 }
 
