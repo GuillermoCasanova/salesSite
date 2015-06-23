@@ -1,0 +1,104 @@
+
+/*------------------------------------*\
+    #Tables 
+\*------------------------------------*/
+
+
+.table--primary {
+
+    @extend %prl0; 
+        
+    .table-row {
+
+        @extend %mtb3; 
+
+        &:hover {
+
+            & {
+                .button--secondaryAction {
+                    color: #000;    
+                    background-color: #fff; 
+                }
+            }
+
+            @media #{$medium-up} {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+        }
+
+        @media #{$small-only} {
+            display: block; 
+        }
+        
+    }   
+
+}
+
+
+.table--primary {
+
+    .table-row {
+        //Styles for Data 
+        td {    
+
+            @media #{$small-only} {
+                display: block;
+                width: 100%; 
+                text-align: center; 
+                padding-left: 0; 
+            }      
+
+            @media #{$medium-up} {
+                border-top: 1px solid rgba(255, 255, 255, .6);  
+                padding-top: rem-calc(12);
+                padding-bottom: rem-calc(12); 
+            }
+
+            &.date {
+               font-family: $customFont; 
+               @extend %h2; 
+               @extend %mb0; 
+               @extend %fwb; 
+
+               @media #{$medium-up} {
+                font-size: rem-calc(20); 
+               }
+
+            }
+
+            &.country, 
+            &.venue {
+
+                font-size: rem-calc(20); 
+
+                @media #{$medium-up} { 
+                    font-size: rem-calc(16); 
+                }
+
+            }
+
+            &.country {
+                //Padding left to align with country title 
+                @media #{$medium-up} {
+                    padding-left: rem-calc(36);
+                }
+            }
+
+            &.venue {
+
+                padding-bottom: rem-calc(12);
+
+                @media #{$medium-up} {
+                    //Have padding bottom for venue match rest of TDS on medium up 
+                    padding-bottom: rem-calc(12); 
+                }
+            }
+        }
+    }
+
+}
+
+
+
+

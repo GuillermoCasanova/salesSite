@@ -21,14 +21,8 @@ angular.module('Sales')
            $scope.events = pData.resultsPage.results.event; 
         });
 
-        $scope.isNotFestival = function(eventName) {
-
-         return eventName === "Concert";
-
-        };
-
         $scope.navigateToTickets = function(ticketLink) {
             $window.open(ticketLink, "_blank");
         };
-    
+
 }]);

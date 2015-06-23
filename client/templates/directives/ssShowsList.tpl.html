@@ -1,5 +1,5 @@
 
-<div class="row small-collapsed  pb4" id="section-tour">
+<div class="row pb4" id="section-tour">
 
     <div class="small-12 columns"> 
 
@@ -18,85 +18,84 @@
 
     </div>
 
+    <table class="small-12 medium-10 columns  small-centered  table--primary  pb2"  cellpadding="0" cellspacing="0"  class="ng-hide" ng-show="loaded">
+    
+        <tr class="hide-on-small">
+            <td class="fwb  text-center">
+                Dates
 
-    <div class="row">
+            </td>
 
-        <div class="small-12 columns"  ng-hide="loaded">
-                <ss-spinner></ss-spinner>
-        </div>
+            <td class="fwb  pl4">
+                Location
 
-        <table class="small-12 medium-10 columns  small-centered  table--primary  pb2"  cellpadding="0" cellspacing="0"  class="ng-hide" ng-show="loaded">
-            <tr  >
-                <td class="fwb  text-center">
-                    Dates
+            </td>
 
-                </td>
+             <td class="fwb">
+                Venue
 
-                <td class="fwb  pl4">
-                    Location
+            </td>
 
-                </td>
-
-                 <td class="fwb">
-                    Venue
-
-                </td>
-
-                <td class="fwb  text-center">
-                    
-                    Tickets
-                </td>
-
-            </tr>
-
-            <tr ng-click="navigateToTickets(event.uri)" ng-repeat="event in events"  class="    table-item">
-            
-                <td class="text-center  ptb2">
-                    <h5 class="  [ mt2  mb0 lh0 ] ">
-                        {{event.start.date | date: "MMM"}}
-
-                        {{event.start.date | date: "dd"}}
-                        </h5>
-                    
-                </td>
+            <td class="fwb  text-center">
                 
-                <td class="pl4 ">
-                        
-                    <div class="display--block">
+                Tickets
+            </td>
 
-                    {{event.venue.metroArea.displayName}},
-                    {{event.venue.metroArea.state.displayName || event.venue.metroArea.country.displayName}}
+        </tr>
 
-                    </div>                  
-
-                </td>
-                
-                <td>
-
-                    <div class="display--block"  ng-class="{'ng-hide': isNotFestival(event.type)} ">
-                            {{event.displayName}}
-                    </div>
-
-                    <div>
-
-                        {{event.venue.displayName}}
-
-                    </div>
-
-                </td>
-    
-                <td class="text-center">
-    
-                    <button  ng-href="{{event.uri}}" target="_blank" class="button  button--secondaryAction  small  expand-on-small [ display--block    center]">
-                       TICKETS
-                    </button>
-    
-                </td>
-    
-            </tr>
+        <tr ng-click="navigateToTickets(event.uri)" ng-repeat="event in events | limitTo: showsLimit"  class="table-row">
         
-        </table>
+            <td class="text-center  date">
+                <span >
+                    {{event.start.date | date: "MMM"}}
+
+                    {{event.start.date | date: "dd"}}
+                </span>
+                
+            </td>
+            
+            <td class="country">
+                    
+                <div class="display--block">
+
+                {{event.venue.metroArea.displayName}},
+                {{event.venue.metroArea.state.displayName || event.venue.metroArea.country.displayName}}
+
+                </div>                  
+
+            </td>
+            
+            <td class="venue">
+
+                <div class="display--block"  ng-hide="isNotFestival(event.type)">
+                        {{event.displayName}}
+                </div>
+
+                <div>
+
+                    {{event.venue.displayName}}
+
+                </div>
+
+            </td>
+
+            <td class="text-center">
+
+                <button  ng-href="{{event.uri}}" target="_blank" class="button  button--secondaryAction  small  expand-on-small [ display--block    center]">
+                   TICKETS
+                </button>
+
+            </td>
+
+        </tr>
+    
+    </table>
+
+     <div class="small-12  columns  pb4  text-center">
+            
+        <button  ng-click="showAllShows()"  class="button  button--secondaryAction medium fwb">
+            View All Shows 
+        </button>
 
     </div>
-
 </div>
