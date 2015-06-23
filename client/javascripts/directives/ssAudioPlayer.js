@@ -83,10 +83,8 @@ angular.module("Sales")
                     }
                     else if( $this.hasClass('pause') ) { 
                         if(hasNotPlayed === true) {
-                            console.log('has not played going')
                             changeTheme(); 
                             hasNotPlayed = false; 
-                            console.log(hasNotPlayed); 
 
                             setTimeout(function() {
                                 scplayer.pause(); 
