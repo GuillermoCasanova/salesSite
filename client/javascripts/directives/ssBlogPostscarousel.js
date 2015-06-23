@@ -13,8 +13,12 @@ angular.module("Sales")
                $(document).foundation('reveal', 'reflow'); 
 
                $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
-                  scope.selectedPost = {};  
-                  scope.$apply(); 
+                  setTimeout(function() {
+
+                      scope.selectedPost = {};  
+                      scope.$apply(); 
+                  }, 1000);
+
                });
 
                scope.selectBlogPost = function(pPost) {
