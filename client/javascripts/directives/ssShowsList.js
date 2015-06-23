@@ -7,7 +7,28 @@ angular.module("Sales")
             scope: {}, 
             templateUrl: "templates/directives/ssShowsList.tpl.html",
             controller: 'showsController',
-            controllerAs: 'showsController'
+            controllerAs: 'showsController',
+            link: function(scope, element, attr) {
+                scope.showsLimit = 20; 
+                scope.viewingAllShows = false; 
+
+                scope.showAllShows = function() {
+                    scope.loading = true; 
+                    scope.viewingAllShows = true; 
+
+                    setTimeout(function() {
+                        scope.showsLimit = scope.events.length; 
+                        scope.loading = false; 
+                    }, 800);
+                }
+
+                scope.isNotFestival = function(eventName) {
+
+                 return eventName === "Concert";
+
+                };
+
+            }
 
         };
         
