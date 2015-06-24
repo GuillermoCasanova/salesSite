@@ -50,7 +50,7 @@ angular.module("Sales")
                     , preload: false
                     , cache: true
                     , loop : true
-                    , debug: true
+                    , debug: false
                 });
 
                 //Tells player the user has yet to play anything
