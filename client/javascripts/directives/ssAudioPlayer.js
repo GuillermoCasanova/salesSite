@@ -13,7 +13,7 @@ angular.module("Sales")
             '$scope',
             function($scope) {
 
-                $scope.placeHolderText = "Play the EP";
+                $scope.placeHolderText = "Play music below";
                 $scope.loadingText = "Loading track..."; 
 
             }],
@@ -36,6 +36,7 @@ angular.module("Sales")
 
                 //Inits Soundcloud player with array of URLS
                 var scplayer = new SoundCloudPlayer([
+                    "https://soundcloud.com/sales/big-sis",
                     "https://soundcloud.com/sales/sales-renee",
                     "https://soundcloud.com/sales/vow",
                     "https://soundcloud.com/sales/chinese-new-year",
