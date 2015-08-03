@@ -783,6 +783,10 @@ h6,
 .toto.theme-background {
   background: purple url("../images/bg--purple.jpg") repeat center fixed;
 }
+/* line 54, ../scss/modules/_theme.scss */
+.big-sis.theme-background {
+  background: purple url("../images/bg--big-sis.jpg") repeat center fixed;
+}
 
 /*------------------------------------*\
     #Animations
@@ -7883,6 +7887,10 @@ h6,
 .toto.theme-background {
   background: purple url("../images/bg--purple.jpg") repeat center fixed;
 }
+/* line 54, ../scss/modules/_theme.scss */
+.big-sis.theme-background {
+  background: purple url("../images/bg--big-sis.jpg") repeat center fixed;
+}
 
 /*------------------------------------*\
     #Animations
@@ -9123,6 +9131,22 @@ Copyright (c) 2015 Daniel Eden
   /* line 73, ../scss/partials/_themes.scss */
   .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
     background-image: url("../images/toto--large.png");
+  }
+}
+/* line 78, ../scss/partials/_themes.scss */
+.theme-artwork.big-sis {
+  background-image: url("../images/big-sis--small.png");
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 78, ../scss/partials/_themes.scss */
+  .theme-artwork.big-sis {
+    background-image: url("../images/big-sis--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 78, ../scss/partials/_themes.scss */
+  .theme-artwork.big-sis {
+    background-image: url("../images/big-sis--large.png");
   }
 }
 

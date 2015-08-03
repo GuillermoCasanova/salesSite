@@ -51,6 +51,11 @@
 
     }
 
+        &.big-sis {
+    background: purple url('../images/bg--big-sis.jpg') repeat center fixed;
+
+    }
+
 }
 
 @mixin themeArtwork($pArtwork) {

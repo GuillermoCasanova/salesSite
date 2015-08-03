@@ -1,4 +1,4 @@
-    
+        
 /*------------------------------------*\
     #Page Themes 
 \*------------------------------------*/
@@ -75,6 +75,9 @@
         @include themeArtwork('toto');
     }
 
+    &.big-sis {
+        @include themeArtwork('big-sis');
+    }
 
 }
 
