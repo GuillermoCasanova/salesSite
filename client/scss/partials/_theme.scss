@@ -9,6 +9,23 @@
     position: relative;
 }
 
+
+//Changes color of text to black since Big Sis is too bright for white text
+.theme-big-sis {
+    color: #2E2D31; 
+
+    a,
+    a:hover {
+        color: #2E2D31; 
+    }
+}
+
+
+/*------------------------------------*\
+    #Backgrounds (extends from _theme.scss)  
+\*------------------------------------*/
+
+
 .theme-background {
 
     top: 0; left: 0; right: 0; bottom: 0;
@@ -18,6 +35,16 @@
      
 }
 
+
+
+
+
+
+/*------------------------------------*\
+    #Artworks  (Includes from _theme.scss)
+\*------------------------------------*/
+
+
 .theme-artworkContainer {
     //Fallback for Safari needing a height/width on container
     width: rem-calc(250px);
@@ -26,7 +53,6 @@
         height: rem-calc(450px);
         width: rem-calc(450px);
     }
-    //
     @extend %mtb2;
 
 }

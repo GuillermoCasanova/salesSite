@@ -11,12 +11,16 @@
 
 .mainNav-link {
     font-family: $customFont; 
-    @extend %h2; 
+    @extend %h2;    
     @extend %mr1; 
-    @include transform(translateY(0));
+    //Needed so hover scale transform pesists 
+    @extend %display--block; 
+    @include single-transition(all, 0.3s, cubic-bezier(.39, 1.05, .23, 1.26));
+    @include transform(scale(1)); 
 
-    &:hover {
-        @include transform(translateY(-4px)); 
+    &:hover,
+    &:active {
+        @include transform(scale(1.1)); 
     }
 }
 
@@ -61,7 +65,7 @@
 
     .controls {
         width: 100%;
-        display: block; 
+        @extend %display--block;  
         @extend %relative;  
         @extend %pt1; 
     }
@@ -79,11 +83,11 @@
     }
 
     .mainNav-menu {
-        display: block; 
         overflow: hidden;
         height: 0; 
         opacity: 0; 
         @include single-transition(all, 0.3s, ease-in-out);
+        @extend %display--block;  
         @extend %left; 
         @extend %mt3; 
         @extend %relative; 

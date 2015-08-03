@@ -33,32 +33,30 @@
     }
 
     &.sales-renee {
-        background: green url('../images/bg--green.jpg') repeat center fixed;
+        background: $green url('../images/bg--green.jpg') repeat center fixed;
     }
 
     &.vow {
-        background: orange url('../images/bg--orange.jpg') repeat center fixed;
-
+        background: $orange url('../images/bg--orange.jpg') repeat center fixed;
     }
 
     &.chinese-new-year {
-       background: red url('../images/bg--red.jpg') repeat center fixed;
-
+       background: $red url('../images/bg--red.jpg') repeat center fixed;
     }
 
     &.toto {
-    background: purple url('../images/bg--purple.jpg') repeat center fixed;
-
+        background: $purple url('../images/bg--purple.jpg') repeat center fixed;
     }
 
-        &.big-sis {
-    background: purple url('../images/bg--big-sis.jpg') repeat center fixed;
+    &.big-sis {
+        background: $yellow url('../images/bg--big-sis.jpg') repeat center fixed;
 
     }
 
 }
 
 @mixin themeArtwork($pArtwork) {
+    
     background-image: url('../images/'+ $pArtwork + '--small.png');
 
     @media #{$medium-up} {

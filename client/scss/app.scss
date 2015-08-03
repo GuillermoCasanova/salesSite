@@ -4,6 +4,7 @@
 
 @import "settings--overwrite";
 @import "foundation";
+@import "normalize"; 
 
 
 // Partials
@@ -11,7 +12,7 @@
 "partials/base",
 "partials/generics",
 "partials/typography",
-"partials/objects",
+"partials/components",
 "partials/icons",
 "partials/buttons",
 "partials/lists",
@@ -19,7 +20,7 @@
 "partials/flexBox",
 "partials/navigation",
 "partials/animations",
-"partials/themes",
+"partials/theme",
 "foundation/components/flex-video",
 "partials/audioPlayer",
 "partials/slideshows",
