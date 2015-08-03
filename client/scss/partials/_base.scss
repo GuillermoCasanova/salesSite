@@ -19,9 +19,8 @@ $weight--extra-bold: 700;
 
 
 
-body {
-    color: #fff; 
+body { 
     background-color: #000; 
-
+    @extend %text--white; 
 }
 

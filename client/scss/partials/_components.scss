@@ -1,6 +1,6 @@
 
 /*------------------------------------*\
-    #Site Objects
+    #Components
 \*------------------------------------*/
 
 
@@ -30,7 +30,7 @@
 .spinner {
     width: rem-calc(80); 
     height: rem-calc(80);
-    @extend %center-section; 
+    @extend %center-horizontally; 
     @extend %mtb4; 
     @extend %text-center; 
 }

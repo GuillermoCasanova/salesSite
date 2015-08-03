@@ -123,3 +123,27 @@ $customFont: 'SALES', 'sans-serif';
 {
 	@include text-shadow(rgba(darken($color, 30%), 1) 0 1px 0);
 }
+
+
+
+
+
+/*------------------------------------*\
+    #Common Font Colors
+\*------------------------------------*/
+
+%text--white {
+    color: #fff; 
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Text Alignment 
+\*------------------------------------*/
+
+
+%text-center { text-align: center; }
+

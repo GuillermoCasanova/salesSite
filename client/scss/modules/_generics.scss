@@ -3,8 +3,6 @@
     #Generics 
 \*------------------------------------*/
 
-%text-center { text-align: center; }
-
 
 %flexb { 
   display: -webkit-flex;
@@ -55,9 +53,14 @@
   @include border-radius(100%);
 }
 
-//
-//Drop shadows 
-//
+
+
+
+
+
+/*------------------------------------*\
+    #Drop Shadows
+\*------------------------------------*/
 
 %dropshadow {
   @include single-box-shadow(0, 0, 2px, rgba(0,0,0, .2));
@@ -68,20 +71,15 @@
 }
 
 
-//Standardize these for uniformity across the SCSS 
-
-%object--center {
-  display: block; 
-  margin-right: auto;
-  margin-left: auto;
-}
 
 
-%center-section {
-  display: block; 
-  margin-right: auto;
-  margin-left: auto;
-}
+
+
+
+/*------------------------------------*\
+    #Display Types
+\*------------------------------------*/
+
 
 %display--inlineBlock {
   display: inline-block; 
@@ -89,6 +87,18 @@
 
 %display--block {
   display: block; 
+}
+
+%center-horizontally {
+  display: block; 
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+%center-vertically {
+  display: inline-block; 
+  vertical-align: middle; 
 }
 
 
@@ -102,18 +112,22 @@
 }
 
 
-%center-vertically {
-  display: inline-block; 
-  vertical-align: middle; 
-}
-
+//Requires height of parent to be defined 
 %vertical-align {
-
-  position: relative;
   top: 50%;
   @include transform(translateY(-50%));
+  @extend %relative; 
 
 }
+
+
+
+
+
+/*------------------------------------*\
+    #Positions
+\*------------------------------------*/
+
 
 %fixed {
     position: fixed; 
@@ -126,6 +140,8 @@
 %absolute {
     position: absolute; 
 }
+
+
 
 
 

@@ -38,7 +38,6 @@ $slick-opacity-not-active: .25 !default;
 
 
 .slick-list {
-    @include single-transition(all, .4s, ease-in-out);
     position: relative;
     overflow: hidden;
     display: block;
@@ -46,6 +45,7 @@ $slick-opacity-not-active: .25 !default;
     padding: 0;
     //Showing list of slides after init 
     opacity: 1; 
+    @include single-transition(all, .4s, ease-in-out);
 
     &:focus {
         outline: none;
@@ -168,18 +168,19 @@ $slick-opacity-not-active: .25 !default;
 \*------------------------------------*/
 
 .slideshow--news {
-    @extend %ptb2; 
     overflow: hidden; 
+    @extend %ptb2; 
 
     .slideshow-slide {
-        @include single-transition(all, .4s, ease-in-out);
-        @include transform(scale(1)); 
+
         background-color: #000; 
         height: rem-calc(300);
         background-size: cover; 
         background-repeat: no-repeat; 
         background-position: top; 
         overflow: hidden; 
+        @include single-transition(all, .4s, ease-in-out);
+        @include transform(scale(1)); 
 
         &:hover {
             background-color: rgba(0,0,0, 0);
@@ -193,7 +194,7 @@ $slick-opacity-not-active: .25 !default;
             width: 100%; 
             height: 100%; 
             opacity: 1; 
-            color: #fff; 
+            @extend %text--white;
             @extend %vertical-align; 
             @include single-transition(all, .4s, ease-in-out);
 
@@ -201,7 +202,7 @@ $slick-opacity-not-active: .25 !default;
         }
 
         h1.slideshow-slide-title-text {
-            color: #fff; 
+            @extend %text--white;
             @extend %vertical-align; 
             @include text-shadow(1px, 1px, 1px, false, rgba(0, 0, 0, .6));
         }
@@ -210,13 +211,13 @@ $slick-opacity-not-active: .25 !default;
     //Customizes Slick Arrows
     .slick-prev,
     .slick-next {
-        @include border-radius(6px); 
         width: rem-calc(55); 
         height: rem-calc(60); 
         background-color: #191919; 
         background-size: 85%; 
         opacity: 0; 
         @extend %ptb1; 
+        @include border-radius(6px); 
 
         @media #{$medium-up} {
             opacity: 1; 
