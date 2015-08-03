@@ -11,35 +11,35 @@
 
 
 // Changes color of text, svg logos/icons, and table borders  to $offBlack since
-// Big Sis theme background is too bright for white text
+// Big Sis theme background is too ight for white text
 .theme-big-sis {
-    color: $brown; 
+    color: $blue--dark; 
 
     .logo,
     .icon--controls, 
     a,
     a:hover {
         // Colors svg files  through fill property and links
-        fill:  $brown;
-        color: $brown; 
+        fill:  $blue--dark;
+        color: $blue--dark; 
     }
 
     .button--primary {
-        background-color: lighten($brown, 6%); 
+        background-color: lighten($blue--dark, 6%); 
         @extend %text--white; 
 
         &:hover {
-            background-color: darken($brown, 6%);
+            background-color: darken($blue--dark, 6%);
             @extend %text--white; 
         }
     }
 
     .button--secondary {
-        border: 2px solid $brown; 
-        color: $brown; 
+        border: 2px solid $blue--dark; 
+        color: $blue--dark; 
 
         &:hover {
-            background-color: $brown; 
+            background-color: $blue--dark; 
             @extend %text--white; 
         }
     }
@@ -60,7 +60,7 @@
 
 
                 @media #{$medium-up} {
-                    border-top: 1px solid $brown;  
+                    border-top: 1px solid $blue--dark;  
 
                 }
 
@@ -71,8 +71,8 @@
 
     input,
     input:focus {
-        color: $brown; 
-        border: 2px solid $brown;
+        color: $blue--dark; 
+        border: 2px solid $blue--dark;
         
     }
 
@@ -83,7 +83,7 @@
 
 
 /*------------------------------------*\
-    #Backgrounds (extends from _theme.scss)  
+    #Backgrounds (Extends from _theme.scss)  
 \*------------------------------------*/
 
 
@@ -125,11 +125,11 @@
     top: 0; right: 0; bottom: 0; left: 0;
     height: 100%;
     width: 100%;
-    position: absolute;
     background-position: center; 
     background-repeat: no-repeat;
-    @include single-transition(all, .3s, ease-in-out);
     opacity: 0; 
+    @extend %absolute; 
+    @include single-transition(all, .3s, ease-in-out);
 
     &.is-showing {
         z-index: 80;
