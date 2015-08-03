@@ -75,12 +75,14 @@
 }
 
 
-.play {
-    background-image: url("../images/icon--pause.svg");
-}
-
 .pause {
-    background-image: url("../images/icon--play.svg");
+    .icon--controls.play {
+        display: none; 
+    }
 }
 
-
+.play {
+    .icon--controls.pause {
+        display: none; 
+    }
+}

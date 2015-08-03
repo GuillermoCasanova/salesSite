@@ -9,6 +9,13 @@
     overflow: visible; 
 }
 
+
+.mainNav-logo {
+    fill: #fff;
+    width: rem-calc(260px);
+    @extend %display--inlineBlock; 
+}
+
 .mainNav-link {
     font-family: $customFont; 
     @extend %h2;    

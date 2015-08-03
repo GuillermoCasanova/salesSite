@@ -10,8 +10,7 @@
                 <div class="flexBasis--70  text-center">
 
                     <!--Album Artwork-->         
-                    <div class="theme-artworkContainer  relative  center"
-                        ng-class="{'bounce' : isPlaying}">
+                    <div class="theme-artworkContainer  relative  center">
         
                         <ss-page-theme-backgrounds component="theme-artwork">
                         
@@ -44,7 +43,27 @@
                         
                     </button>
 
-                    <button class="[ audioPlayer-button  pause ] ">
+                    <button class="[ audioPlayer-button ] pause">
+                        
+                        <svg viewBox="0 0 144 144" 
+                             preserveAspectRatio="xMidYMid meet"  
+                             title="Pause track" 
+                             class="pause  icon--controls">
+
+                            <use xlink:href="images/icon--controls.svg#pause-icon"></use>
+
+                        </svg>
+
+                        <svg viewBox="0 0 144 144" 
+                             preserveAspectRatio="xMidYMid meet"  
+                             title="Pause track" 
+                             class="play  icon--controls">
+
+                            <use xlink:href="images/icon--controls.svg#play-icon"></use>
+
+                        </svg>
+
+
 
                     </button>
 

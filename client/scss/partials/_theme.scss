@@ -10,12 +10,16 @@
 }
 
 
-//Changes color of text to black since Big Sis is too bright for white text
+//Changes color of text and svg logos/icons to black since Big Sis is too bright for white text
 .theme-big-sis {
     color: #2E2D31; 
 
+    .logo,
+    .icon--controls, 
     a,
     a:hover {
+        //Colors all svg files through fill property 
+        fill:  #2E2D31;
         color: #2E2D31; 
     }
 }
