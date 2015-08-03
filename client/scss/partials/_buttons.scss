@@ -15,32 +15,32 @@ button {
 }
 
 .button {
-  @include border-radius(6px);
-  color: #000; 
   font-weight: bold; 
-
+  @include border-radius(6px);
+  @include single-transition(all, .3s, ease-in-out); 
 }
 
-.button--action {
+.button--primary {
+  background-color: #fff; 
+  color: $offBlack; 
   @include box-shadow(rgba(darken(#fff, 60%), 1) 0 2px 0);
-  background-color: lighten(#fff, 10%);
  
   &:hover {
-    @include box-shadow(rgba(darken(#fff, 60%), 1) 0 1px 0);
-    position: relative;
     top: 2px; 
-    color: #000; 
-    background-color: darken(#fff, 10%);
-    
+    color: $offBlack; 
+    background-color: darken(#fff, 6%);
+    @include box-shadow(rgba(darken(#fff, 60%), 1) 0 1px 0);
+    @extend %relative; 
+
   }
 }
 
-.button--secondaryAction {
-    @include border-radius(40px);
-    color: #fff; 
+.button--secondary {
     border: 2px solid #fff; 
     background-color: transparent; 
-    
+    @extend %text--white; 
+    @include border-radius(40px);
+
 
     &:hover {
         color: #191919; 
@@ -68,14 +68,14 @@ button {
 
 .button--goUp {
 
-  @include single-transition(bottom, 1s, cubic-bezier(.6,.32,1,.65));
   width: 50px; 
   height: 50px;
   background-color: transparent; 
-  position: fixed; 
   right: 10px; 
   bottom: -200px; 
-
+  @include single-transition(bottom, .3s, cubic-bezier(.6,.32,1,.65));
+  @extend %fixed; 
+  
   &:hover {
     background-color: transparent; 
   }

@@ -1,0 +1,172 @@
+        
+/*------------------------------------*\
+    #Page Themes (Extends from _typography.scss and uses mixins from _themes.scss)
+\*------------------------------------*/
+
+
+.pageTheme-pageWrap {
+    z-index: 90;
+    position: relative;
+}
+
+
+// Changes color of text, svg logos/icons, and table borders  to $offBlack since
+// Big Sis theme background is too bright for white text
+.theme-big-sis {
+    color: $brown; 
+
+    .logo,
+    .icon--controls, 
+    a,
+    a:hover {
+        // Colors svg files  through fill property and links
+        fill:  $brown;
+        color: $brown; 
+    }
+
+    .button--primary {
+        background-color: lighten($brown, 6%); 
+        @extend %text--white; 
+
+        &:hover {
+            background-color: darken($brown, 6%);
+            @extend %text--white; 
+        }
+    }
+
+    .button--secondary {
+        border: 2px solid $brown; 
+        color: $brown; 
+
+        &:hover {
+            background-color: $brown; 
+            @extend %text--white; 
+        }
+    }
+    
+    .table--primary {
+
+        .table-row {
+
+            &:hover {
+
+                @media #{$medium-up} {
+                    background: rgba(30, 30, 30, .1);
+                }
+
+            }
+
+            td {    
+
+
+                @media #{$medium-up} {
+                    border-top: 1px solid $brown;  
+
+                }
+
+            }  
+        }
+
+    }
+
+    input,
+    input:focus {
+        color: $brown; 
+        border: 2px solid $brown;
+        
+    }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Backgrounds (extends from _theme.scss)  
+\*------------------------------------*/
+
+
+.theme-background {
+
+    top: 0; left: 0; right: 0; bottom: 0;
+    @include single-transition(all, .3s, ease-in-out);
+    @extend %fixed;
+    @extend %theme-backgrounds;
+     
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Artworks  (Includes from _theme.scss)
+\*------------------------------------*/
+
+
+.theme-artworkContainer {
+    //Fallback for Safari needing a height/width on container
+    width: rem-calc(250px);
+    height: rem-calc(200px); 
+    @media #{$medium-up} {
+        height: rem-calc(450px);
+        width: rem-calc(450px);
+    }
+    @extend %mtb2;
+
+}
+
+
+.theme-artwork {
+
+    background-size: contain;
+    top: 0; right: 0; bottom: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-position: center; 
+    background-repeat: no-repeat;
+    @include single-transition(all, .3s, ease-in-out);
+    opacity: 0; 
+
+    &.is-showing {
+        z-index: 80;
+        opacity: 1; 
+    }
+
+    &.is-next {
+        z-index: 70;
+    }
+
+
+    &.getting-it-on {
+        @include themeArtwork('getting-it-on'); 
+    }
+
+    &.sales-renee {
+         @include themeArtwork('sales-renee'); 
+    }
+
+    &.vow {
+        @include themeArtwork('vow'); 
+    }
+
+    &.chinese-new-year {
+       @include themeArtwork('chinese-new-year');
+    }
+
+    &.toto,
+    &.toto-xxyyxx-remix {
+        @include themeArtwork('toto');
+    }
+
+    &.big-sis {
+        @include themeArtwork('big-sis');
+    }
+
+}
+
+
+

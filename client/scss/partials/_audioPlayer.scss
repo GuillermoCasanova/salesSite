@@ -1,8 +1,12 @@
 
-
 /*------------------------------------*\
     #Audio Player  
 \*------------------------------------*/
+
+
+.player {
+    max-width: 600px; 
+}
 
 
 .audioPlayer-button,
@@ -19,36 +23,42 @@
     }
 }
 
+
+
+
+
+
+/*------------------------------------*\
+    #Next and Previous Seeking buttons  
+\*------------------------------------*/
+
+
 .next {
-   @extend %icon--arrowRight; 
-    width: rem-calc(60);
-    height: rem-calc(60);
-    //Flips arrow to prevent doing another http request to image
-    @include single-transition(all, .2s, ease-in-out);
+
+    @include single-transition(all, .3s, ease-in-out);
 
     &.is-showing {
-        opacity: 1; 
+         opacity: 1; 
          left: 0; 
-         @include transform(translateX(8px) rotateY(180deg));
+         @include transform(translateX(8px));
     }
 
     &.is-hidden {
         opacity: 0; 
-        @include transform(translateX(-8px) rotateY(180deg));
+        @include transform(translateX(-8px));
     }
 
 }
 
+
 .prev {
-    @extend %icon--arrowLeft; 
-    width: rem-calc(60);
-    height: rem-calc(60);
-        @include single-transition(all, .2s, ease-in-out);
+
+    @include single-transition(all, .3s, ease-in-out);
 
 
     &.is-showing {
         opacity: 1; 
-        @include transform(translateX(-8px));
+        @include transform(translateX(0));
     }
 
     &.is-hidden {
@@ -57,6 +67,20 @@
     }
 
 }
+
+
+.seeker {
+    width: rem-calc(60);
+    height: rem-calc(60);
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Pause and play buttons 
+\*------------------------------------*/
 
 
 .pause,
@@ -69,12 +93,15 @@
 }
 
 
-.play {
-    background-image: url("../images/icon--pause.svg");
-}
-
+//These hide/show the play/pause button depending if music is playing or not
 .pause {
-    background-image: url("../images/icon--play.svg");
+    .icon--controls.play {
+        display: none; 
+    }
 }
 
-
+.play {
+    .icon--controls.pause {
+        display: none; 
+    }
+}

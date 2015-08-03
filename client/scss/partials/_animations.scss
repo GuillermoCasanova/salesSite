@@ -3,14 +3,6 @@
     #Animations
 \*------------------------------------*/
 
-.hover--lightToDark {
-  opacity: .5;
-  
-  &:hover {
-    opacity: 1; 
-  }
-  
-}
 
 .primaryAnimation {
     @extend %primaryAnimation; 
@@ -26,27 +18,12 @@
   animation-iteration-count: infinite;
 }
 
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
 
-.animated.bounceIn,
-.animated.bounceOut {
-  -webkit-animation-duration: .75s;
-  animation-duration: .75s;
-}
-
-.animated.flipOutX,
-.animated.flipOutY {
-  -webkit-animation-duration: .75s;
-  animation-duration: .75s;
-}
 
 
 
 /*------------------------------------*\
-    #Keyframes 
+    #Animation Keyframes 
 \*------------------------------------*/
 
 
@@ -182,16 +159,3 @@
             transform: translate3d(0,-4px,0);
   }
 }
-
-
-/*!
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-
-Copyright (c) 2015 Daniel Eden
-*/
-
-
-
-
-

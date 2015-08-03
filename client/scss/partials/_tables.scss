@@ -14,13 +14,6 @@
 
         &:hover {
 
-            & {
-                .button--secondaryAction {
-                    color: #000;    
-                    background-color: #fff; 
-                }
-            }
-
             @media #{$medium-up} {
                 background: rgba(255, 255, 255, 0.1);
             }

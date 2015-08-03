@@ -6,8 +6,6 @@
 @import "typography.scss";
 
 //Arrows 
-$icon--arrowright: "../images/icon--arrowLeft.svg";
-$icon--arrowleft: "../images/icon--arrowLeft.svg";
 $icon--arrowup: "../images/icon--arrowUp.svg";
 
 //Social Media 
@@ -17,23 +15,11 @@ $icon--socialMedia: "../images/icons--socialMedia.svg";
 $icons--stores: "../images/icons--stores.svg";
 
 
-
 @mixin icon($icon: false) {
   background-image: url($icon);
   background-repeat: no-repeat; 
 
   @content; 
-}
-
-
-
-%icon--arrowRight {
-    @include transform(rotateY(180deg));
-    background-image: url($icon--arrowleft);
-}
-
-%icon--arrowLeft {
-    background-image: url($icon--arrowleft);
 }
 
 
