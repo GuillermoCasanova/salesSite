@@ -36,19 +36,28 @@
         
              <div class="alignItems--center flexParent text-center justifyContent--center">
         
-               <!--Audio Player Controllers-->                  
+               <!--Audio Player Controls-->                  
                 <div class="flexBasis--70  text-center  controls">
         
-                    <button  ng-class=" isPlaying ? 'is-showing' : 'is-hidden'" class="[ audioPlayer-button  prev ]">
-                        
+                    <button  ng-class=" isPlaying ? 'is-showing' : 'is-hidden'" class="[ audioPlayer-button prev ]">
+
+                        <svg viewBox="0 0 144 144" 
+                             preserveAspectRatio="xMidYMid meet"  
+                             title="Play previous track" 
+                             class="seeker icon--controls">
+
+                            <use xlink:href="images/icon--controls.svg#prev-icon"></use>
+
+                        </svg>
+
                     </button>
 
                     <button class="[ audioPlayer-button ] pause">
                         
                         <svg viewBox="0 0 144 144" 
                              preserveAspectRatio="xMidYMid meet"  
-                             title="Pause track" 
-                             class="pause  icon--controls">
+                             title="Play Music" 
+                             class="play  icon--controls">
 
                             <use xlink:href="images/icon--controls.svg#pause-icon"></use>
 
@@ -56,20 +65,28 @@
 
                         <svg viewBox="0 0 144 144" 
                              preserveAspectRatio="xMidYMid meet"  
-                             title="Pause track" 
-                             class="play  icon--controls">
+                             title="Pause Music" 
+                             class="pause  icon--controls">
 
                             <use xlink:href="images/icon--controls.svg#play-icon"></use>
 
                         </svg>
 
 
-
                     </button>
 
         
-                    <button ng-class=" isPlaying ? 'is-showing' : 'is-hidden'" class="[ audioPlayer-button  next ]" >
-                        
+                    <button ng-class=" isPlaying ? 'is-showing' : 'is-hidden'" class="[ audioPlayer-button next ]" >
+
+                        <svg viewBox="0 0 144 144" 
+                             preserveAspectRatio="xMidYMid meet"  
+                             title="Play next track" 
+                             class="seeker  icon--controls">
+
+                            <use xlink:href="images/icon--controls.svg#next-icon"></use>
+
+                        </svg>     
+
                     </button>
 
 

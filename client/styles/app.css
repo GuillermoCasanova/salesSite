@@ -607,21 +607,7 @@ h6,
 /*------------------------------------*\
     #Text Shadow
 \*------------------------------------*/
-/* line 30, ../scss/modules/_icons.scss */
-[rel*="next"], .next, .slick-next, .slideshow--news .slick-next {
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  background-image: url("../images/icon--arrowLeft.svg");
-}
-
-/* line 35, ../scss/modules/_icons.scss */
-[rel*="prev"], .prev, .slick-prev, .slideshow--news .slick-prev {
-  background-image: url("../images/icon--arrowLeft.svg");
-}
-
-/* line 40, ../scss/modules/_icons.scss */
+/* line 26, ../scss/modules/_icons.scss */
 .reveal-modal h1 a,
 .reveal-modal h2 a,
 .reveal-modal h3 a,
@@ -8121,21 +8107,7 @@ h6,
 /*------------------------------------*\
     #Text Shadow
 \*------------------------------------*/
-/* line 30, ../scss/modules/_icons.scss */
-[rel*="next"], .next, .slick-next, .slideshow--news .slick-next {
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  background-image: url("../images/icon--arrowLeft.svg");
-}
-
-/* line 35, ../scss/modules/_icons.scss */
-[rel*="prev"], .prev, .slick-prev, .slideshow--news .slick-prev {
-  background-image: url("../images/icon--arrowLeft.svg");
-}
-
-/* line 40, ../scss/modules/_icons.scss */
+/* line 26, ../scss/modules/_icons.scss */
 .reveal-modal h1 a,
 .reveal-modal h2 a,
 .reveal-modal h3 a,
@@ -8628,12 +8600,9 @@ h6 {
     #Icons
 \*------------------------------------*/
 /*------------------------------------*\
-    #Directions
-\*------------------------------------*/
-/*------------------------------------*\
     #Social Media Icons
 \*------------------------------------*/
-/* line 35, ../scss/partials/_icons.scss */
+/* line 12, ../scss/partials/_icons.scss */
 a[href*="twitter"],
 .icon--twitter {
   background-image: url("../images/icons--socialMedia.svg");
@@ -8641,7 +8610,7 @@ a[href*="twitter"],
   background-position: 0 -6em;
 }
 
-/* line 43, ../scss/partials/_icons.scss */
+/* line 20, ../scss/partials/_icons.scss */
 a[href*="facebook"],
 .icon--facebook {
   background-image: url("../images/icons--socialMedia.svg");
@@ -8649,14 +8618,14 @@ a[href*="facebook"],
   background-position: 0 -12em;
 }
 
-/* line 50, ../scss/partials/_icons.scss */
+/* line 27, ../scss/partials/_icons.scss */
 a[href*="soundcloud"],
 .icon--soundcloud {
   background-image: url("../images/icons--socialMedia.svg");
   background-repeat: no-repeat;
 }
 
-/* line 55, ../scss/partials/_icons.scss */
+/* line 32, ../scss/partials/_icons.scss */
 a[href*="youtube"],
 .icon--youtube {
   background-image: url("../images/icons--socialMedia.svg");
@@ -8664,7 +8633,7 @@ a[href*="youtube"],
   background-position: 0 -18em;
 }
 
-/* line 62, ../scss/partials/_icons.scss */
+/* line 39, ../scss/partials/_icons.scss */
 a[href*="instagram"],
 .icon--instagram {
   background-image: url("../images/icons--socialMedia.svg");
@@ -8675,33 +8644,33 @@ a[href*="instagram"],
 /*------------------------------------*\
     #Stores Icons
 \*------------------------------------*/
-/* line 78, ../scss/partials/_icons.scss */
+/* line 55, ../scss/partials/_icons.scss */
 .icon--itunes {
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
   background-position: 0 -6em;
 }
-/* line 83, ../scss/partials/_icons.scss */
+/* line 60, ../scss/partials/_icons.scss */
 .icon--itunes.icon--small {
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
   background-position: 0 -3em;
 }
 
-/* line 90, ../scss/partials/_icons.scss */
+/* line 67, ../scss/partials/_icons.scss */
 .icon--bandcamp {
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
   background-position: 0 -12em;
 }
-/* line 95, ../scss/partials/_icons.scss */
+/* line 72, ../scss/partials/_icons.scss */
 .icon--bandcamp.icon--small {
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
   background-position: 0 -6em;
 }
 
-/* line 102, ../scss/partials/_icons.scss */
+/* line 79, ../scss/partials/_icons.scss */
 .icon--spotify {
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
@@ -8711,21 +8680,21 @@ a[href*="instagram"],
 /*------------------------------------*\
     #Icon-Sizes
 \*------------------------------------*/
-/* line 117, ../scss/partials/_icons.scss */
+/* line 94, ../scss/partials/_icons.scss */
 .icon--large {
   background-size: 12em auto;
   padding: 6em;
   display: inline-block;
 }
 
-/* line 123, ../scss/partials/_icons.scss */
+/* line 100, ../scss/partials/_icons.scss */
 .icon--medium {
   background-size: 6em auto;
   padding: 3em;
   display: inline-block;
 }
 
-/* line 129, ../scss/partials/_icons.scss */
+/* line 106, ../scss/partials/_icons.scss */
 .icon--small {
   background-size: 3em auto;
   padding: 1.5em;
@@ -8735,7 +8704,7 @@ a[href*="instagram"],
 /*------------------------------------*\
     #SVG Icon Colors
 \*------------------------------------*/
-/* line 144, ../scss/partials/_icons.scss */
+/* line 121, ../scss/partials/_icons.scss */
 .icon--controls {
   fill: #fff;
 }
@@ -9444,37 +9413,36 @@ input[type="email"]:focus {
   outline: 0;
 }
 
-/* line 27, ../scss/partials/_audioPlayer.scss */
+/*------------------------------------*\
+    #Next and Previous Seeking buttons  
+\*------------------------------------*/
+/* line 36, ../scss/partials/_audioPlayer.scss */
 .next {
-  width: 3.75rem;
-  height: 3.75rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-/* line 34, ../scss/partials/_audioPlayer.scss */
+/* line 40, ../scss/partials/_audioPlayer.scss */
 .next.is-showing {
   opacity: 1;
   left: 0;
-  -moz-transform: translateX(8px) rotateY(180deg);
-  -ms-transform: translateX(8px) rotateY(180deg);
-  -webkit-transform: translateX(8px) rotateY(180deg);
-  transform: translateX(8px) rotateY(180deg);
+  -moz-transform: translateX(8px);
+  -ms-transform: translateX(8px);
+  -webkit-transform: translateX(8px);
+  transform: translateX(8px);
 }
-/* line 40, ../scss/partials/_audioPlayer.scss */
+/* line 46, ../scss/partials/_audioPlayer.scss */
 .next.is-hidden {
   opacity: 0;
-  -moz-transform: translateX(-8px) rotateY(180deg);
-  -ms-transform: translateX(-8px) rotateY(180deg);
-  -webkit-transform: translateX(-8px) rotateY(180deg);
-  transform: translateX(-8px) rotateY(180deg);
+  -moz-transform: translateX(-8px);
+  -ms-transform: translateX(-8px);
+  -webkit-transform: translateX(-8px);
+  transform: translateX(-8px);
 }
 
-/* line 48, ../scss/partials/_audioPlayer.scss */
+/* line 54, ../scss/partials/_audioPlayer.scss */
 .prev {
-  width: 3.75rem;
-  height: 3.75rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-/* line 55, ../scss/partials/_audioPlayer.scss */
+/* line 59, ../scss/partials/_audioPlayer.scss */
 .prev.is-showing {
   opacity: 1;
   -moz-transform: translateX(-8px);
@@ -9482,7 +9450,7 @@ input[type="email"]:focus {
   -webkit-transform: translateX(-8px);
   transform: translateX(-8px);
 }
-/* line 60, ../scss/partials/_audioPlayer.scss */
+/* line 64, ../scss/partials/_audioPlayer.scss */
 .prev.is-hidden {
   opacity: 0;
   -moz-transform: translateX(8px);
@@ -9491,19 +9459,28 @@ input[type="email"]:focus {
   transform: translateX(8px);
 }
 
-/* line 68, ../scss/partials/_audioPlayer.scss */
+/* line 72, ../scss/partials/_audioPlayer.scss */
+.seeker {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+/*------------------------------------*\
+    #Pause and play buttons 
+\*------------------------------------*/
+/* line 86, ../scss/partials/_audioPlayer.scss */
 .pause,
 .play {
   width: 4.375rem;
   height: 4.375rem;
 }
 
-/* line 79, ../scss/partials/_audioPlayer.scss */
+/* line 98, ../scss/partials/_audioPlayer.scss */
 .pause .icon--controls.play {
   display: none;
 }
 
-/* line 85, ../scss/partials/_audioPlayer.scss */
+/* line 104, ../scss/partials/_audioPlayer.scss */
 .play .icon--controls.pause {
   display: none;
 }
@@ -9640,7 +9617,7 @@ input[type="email"]:focus {
   left: -7%;
 }
 
-/* line 162, ../scss/partials/_slideshows.scss */
+/* line 161, ../scss/partials/_slideshows.scss */
 .slick-next {
   right: -7%;
 }
@@ -9648,11 +9625,11 @@ input[type="email"]:focus {
 /*------------------------------------*\
     #News Slide Show  
 \*------------------------------------*/
-/* line 172, ../scss/partials/_slideshows.scss */
+/* line 170, ../scss/partials/_slideshows.scss */
 .slideshow--news {
   overflow: hidden;
 }
-/* line 176, ../scss/partials/_slideshows.scss */
+/* line 174, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide {
   transition: all 0.4s ease-in-out;
   -moz-transform: scale(1);
@@ -9666,15 +9643,15 @@ input[type="email"]:focus {
   background-position: top;
   overflow: hidden;
 }
-/* line 186, ../scss/partials/_slideshows.scss */
+/* line 184, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide:hover {
   background-color: transparent;
 }
-/* line 188, ../scss/partials/_slideshows.scss */
+/* line 186, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide:hover .slideshow-slide-title {
   opacity: 0;
 }
-/* line 193, ../scss/partials/_slideshows.scss */
+/* line 191, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide .slideshow-slide-title {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -9683,12 +9660,12 @@ input[type="email"]:focus {
   color: #fff;
   transition: all 0.4s ease-in-out;
 }
-/* line 205, ../scss/partials/_slideshows.scss */
+/* line 203, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
   color: #fff;
   text-shadow: 1px, 1px, 1px, false, rgba(0, 0, 0, 0.6);
 }
-/* line 213, ../scss/partials/_slideshows.scss */
+/* line 211, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-prev,
 .slideshow--news .slick-next {
   -moz-border-radius: 6px;
@@ -9701,25 +9678,25 @@ input[type="email"]:focus {
   opacity: 0;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 213, ../scss/partials/_slideshows.scss */
+  /* line 211, ../scss/partials/_slideshows.scss */
   .slideshow--news .slick-prev,
   .slideshow--news .slick-next {
     opacity: 1;
   }
 }
-/* line 229, ../scss/partials/_slideshows.scss */
+/* line 227, ../scss/partials/_slideshows.scss */
 .slideshow--news:hover .slick-prev {
   left: -0.375rem;
 }
-/* line 233, ../scss/partials/_slideshows.scss */
+/* line 231, ../scss/partials/_slideshows.scss */
 .slideshow--news:hover .slick-next {
   right: -0.375rem;
 }
-/* line 238, ../scss/partials/_slideshows.scss */
+/* line 236, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-prev {
   left: -5%;
 }
-/* line 243, ../scss/partials/_slideshows.scss */
+/* line 239, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-next {
   right: -5%;
 }

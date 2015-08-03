@@ -35,6 +35,11 @@ angular.module("Sales")
                 //Removes all text from slick's next and previous buttons
                 element.find('button').text("");
 
+                //Inserts svg icons 
+                element.find('.slick-next').append("<svg viewBox=\"0 0 144 144\" preserveAspectRatio=\"xMidYMid meet\"title=\"Play next track\"class=\"icon--controls\"><use xlink:href=\"images/icon--controls.svg#next-icon\"></use></svg>");
+                
+                element.find('.slick-prev').append("<svg viewBox=\"0 0 144 144\" preserveAspectRatio=\"xMidYMid meet\"title=\"Play next track\"class=\"icon--controls\"><use xlink:href=\"images/icon--controls.svg#prev-icon\"></use></svg>");
+
             }); 
             
         }

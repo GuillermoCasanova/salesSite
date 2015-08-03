@@ -154,14 +154,12 @@ $slick-opacity-not-active: .25 !default;
 
 .slick-prev {
   left: -7%;
-  @extend %icon--arrowLeft; 
 
 }
 
 
 .slick-next {
   right: -7%;
-  @extend %icon--arrowRight; 
 }
 
 
@@ -236,13 +234,10 @@ $slick-opacity-not-active: .25 !default;
 
     }
     .slick-prev {
-      left: -5%; 
-      @extend %icon--arrowLeft; 
-    }
+      left: -5%;     }
 
     .slick-next {
       right: -5%; 
-      @extend %icon--arrowRight; 
 
     }
 
