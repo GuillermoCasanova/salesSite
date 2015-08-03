@@ -63,6 +63,11 @@
   position: relative;
 }
 
+/* line 140, ../scss/modules/_generics.scss */
+.theme-artwork {
+  position: absolute;
+}
+
 /*------------------------------------*\
     #Floats
 \*------------------------------------*/
@@ -806,8 +811,8 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
     #Animations
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
-.primaryAnimation, .secondaryAnimation, .pause,
-.play {
+.primaryAnimation, .icon--controls, .secondaryAnimation, .seeker, .pause,
+.play, .slick-prev, .slick-next {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -821,8 +826,8 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 }
 
 /* line 29, ../scss/modules/_animations.scss */
-.secondaryAnimation:hover, .pause:hover,
-.play:hover {
+.icon--controls:hover, .secondaryAnimation:hover, .seeker:hover, .pause:hover,
+.play:hover, .slick-prev:hover, .slick-next:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
@@ -6946,6 +6951,11 @@ th {
   position: relative;
 }
 
+/* line 140, ../scss/modules/_generics.scss */
+.theme-artwork {
+  position: absolute;
+}
+
 /*------------------------------------*\
     #Floats
 \*------------------------------------*/
@@ -7689,8 +7699,8 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
     #Animations
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
-.primaryAnimation, .secondaryAnimation, .pause,
-.play {
+.primaryAnimation, .icon--controls, .secondaryAnimation, .seeker, .pause,
+.play, .slick-prev, .slick-next {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -7704,8 +7714,8 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 }
 
 /* line 29, ../scss/modules/_animations.scss */
-.secondaryAnimation:hover, .pause:hover,
-.play:hover {
+.icon--controls:hover, .secondaryAnimation:hover, .seeker:hover, .pause:hover,
+.play:hover, .slick-prev:hover, .slick-next:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
@@ -8121,9 +8131,13 @@ a[href*="instagram"],
 /*------------------------------------*\
     #SVG Icon Colors
 \*------------------------------------*/
-/* line 121, ../scss/partials/_icons.scss */
+/* line 122, ../scss/partials/_icons.scss */
 .icon--controls {
   fill: #fff;
+  -moz-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  -webkit-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
 }
 
 /*------------------------------------*\
@@ -8634,32 +8648,32 @@ input:focus {
 
 /* line 15, ../scss/partials/_theme.scss */
 .theme-big-sis {
-  color: #8F7258;
+  color: #494A7B;
 }
 /* line 18, ../scss/partials/_theme.scss */
 .theme-big-sis .logo,
 .theme-big-sis .icon--controls,
 .theme-big-sis a,
 .theme-big-sis a:hover {
-  fill: #8F7258;
-  color: #8F7258;
+  fill: #494A7B;
+  color: #494A7B;
 }
 /* line 27, ../scss/partials/_theme.scss */
 .theme-big-sis .button--primary {
-  background-color: #a08165;
+  background-color: #54568e;
 }
 /* line 31, ../scss/partials/_theme.scss */
 .theme-big-sis .button--primary:hover {
-  background-color: #7c634c;
+  background-color: #3e3e68;
 }
 /* line 37, ../scss/partials/_theme.scss */
 .theme-big-sis .button--secondary {
-  border: 2px solid #8F7258;
-  color: #8F7258;
+  border: 2px solid #494A7B;
+  color: #494A7B;
 }
 /* line 41, ../scss/partials/_theme.scss */
 .theme-big-sis .button--secondary:hover {
-  background-color: #8F7258;
+  background-color: #494A7B;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 51, ../scss/partials/_theme.scss */
@@ -8670,18 +8684,18 @@ input:focus {
 @media only screen and (min-width: 40.0625em) {
   /* line 59, ../scss/partials/_theme.scss */
   .theme-big-sis .table--primary .table-row td {
-    border-top: 1px solid #8F7258;
+    border-top: 1px solid #494A7B;
   }
 }
 /* line 72, ../scss/partials/_theme.scss */
 .theme-big-sis input,
 .theme-big-sis input:focus {
-  color: #8F7258;
-  border: 2px solid #8F7258;
+  color: #494A7B;
+  border: 2px solid #494A7B;
 }
 
 /*------------------------------------*\
-    #Backgrounds (extends from _theme.scss)  
+    #Backgrounds (Extends from _theme.scss)  
 \*------------------------------------*/
 /* line 90, ../scss/partials/_theme.scss */
 .theme-background {
@@ -8720,14 +8734,13 @@ input:focus {
   left: 0;
   height: 100%;
   width: 100%;
-  position: absolute;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  opacity: 0;
 }
 /* line 134, ../scss/partials/_theme.scss */
 .theme-artwork.is-showing {
@@ -8914,19 +8927,19 @@ input:focus {
 /*------------------------------------*\
     #Pause and play buttons 
 \*------------------------------------*/
-/* line 86, ../scss/partials/_audioPlayer.scss */
+/* line 87, ../scss/partials/_audioPlayer.scss */
 .pause,
 .play {
   width: 4.375rem;
   height: 4.375rem;
 }
 
-/* line 98, ../scss/partials/_audioPlayer.scss */
+/* line 99, ../scss/partials/_audioPlayer.scss */
 .pause .icon--controls.play {
   display: none;
 }
 
-/* line 104, ../scss/partials/_audioPlayer.scss */
+/* line 105, ../scss/partials/_audioPlayer.scss */
 .play .icon--controls.pause {
   display: none;
 }
@@ -9063,7 +9076,7 @@ input:focus {
   left: -7%;
 }
 
-/* line 161, ../scss/partials/_slideshows.scss */
+/* line 162, ../scss/partials/_slideshows.scss */
 .slick-next {
   right: -7%;
 }
@@ -9071,11 +9084,11 @@ input:focus {
 /*------------------------------------*\
     #News Slide Show  
 \*------------------------------------*/
-/* line 170, ../scss/partials/_slideshows.scss */
+/* line 173, ../scss/partials/_slideshows.scss */
 .slideshow--news {
   overflow: hidden;
 }
-/* line 174, ../scss/partials/_slideshows.scss */
+/* line 177, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide {
   background-color: #000;
   height: 18.75rem;
@@ -9089,15 +9102,15 @@ input:focus {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 185, ../scss/partials/_slideshows.scss */
+/* line 188, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide:hover {
   background-color: transparent;
 }
-/* line 187, ../scss/partials/_slideshows.scss */
+/* line 190, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide:hover .slideshow-slide-title {
   opacity: 0;
 }
-/* line 192, ../scss/partials/_slideshows.scss */
+/* line 195, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide .slideshow-slide-title {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -9105,11 +9118,11 @@ input:focus {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
-/* line 204, ../scss/partials/_slideshows.scss */
+/* line 207, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
   text-shadow: 1px, 1px, 1px, false, rgba(0, 0, 0, 0.6);
 }
-/* line 212, ../scss/partials/_slideshows.scss */
+/* line 215, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-prev,
 .slideshow--news .slick-next {
   width: 3.4375rem;
@@ -9122,25 +9135,25 @@ input:focus {
   border-radius: 6px;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 212, ../scss/partials/_slideshows.scss */
+  /* line 215, ../scss/partials/_slideshows.scss */
   .slideshow--news .slick-prev,
   .slideshow--news .slick-next {
     opacity: 1;
   }
 }
-/* line 228, ../scss/partials/_slideshows.scss */
+/* line 231, ../scss/partials/_slideshows.scss */
 .slideshow--news:hover .slick-prev {
   left: -0.375rem;
 }
-/* line 232, ../scss/partials/_slideshows.scss */
+/* line 235, ../scss/partials/_slideshows.scss */
 .slideshow--news:hover .slick-next {
   right: -0.375rem;
 }
-/* line 237, ../scss/partials/_slideshows.scss */
+/* line 240, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-prev {
   left: -5%;
 }
-/* line 240, ../scss/partials/_slideshows.scss */
+/* line 243, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-next {
   right: -5%;
 }

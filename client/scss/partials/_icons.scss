@@ -118,7 +118,9 @@ a[href*="instagram"],
     #SVG Icon Colors
 \*------------------------------------*/
 
+   
 .icon--controls {
     fill: #fff; 
+    @include single-transition(fill, .3s, ease-in-out); 
 }
 

@@ -72,6 +72,7 @@
 .seeker {
     width: rem-calc(60);
     height: rem-calc(60);
+    @extend %secondaryAnimation; 
 }
 
 
