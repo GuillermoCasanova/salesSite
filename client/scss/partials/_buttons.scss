@@ -15,27 +15,27 @@ button {
 }
 
 .button {
- color: #000; 
   font-weight: bold; 
   @include border-radius(6px);
-  @include single-transition(all, 0.3s, ease-in-out); 
+  @include single-transition(all, .3s, ease-in-out); 
 }
 
-.button--action {
-  background-color: lighten(#fff, 10%);
+.button--primary {
+  background-color: #fff; 
+  color: $offBlack; 
   @include box-shadow(rgba(darken(#fff, 60%), 1) 0 2px 0);
  
   &:hover {
     top: 2px; 
-    color: #000; 
-    background-color: darken(#fff, 10%);
+    color: $offBlack; 
+    background-color: darken(#fff, 6%);
     @include box-shadow(rgba(darken(#fff, 60%), 1) 0 1px 0);
     @extend %relative; 
 
   }
 }
 
-.button--secondaryAction {
+.button--secondary {
     border: 2px solid #fff; 
     background-color: transparent; 
     @extend %text--white; 
@@ -73,7 +73,7 @@ button {
   background-color: transparent; 
   right: 10px; 
   bottom: -200px; 
-  @include single-transition(bottom, 1s, cubic-bezier(.6,.32,1,.65));
+  @include single-transition(bottom, .3s, cubic-bezier(.6,.32,1,.65));
   @extend %fixed; 
   
   &:hover {

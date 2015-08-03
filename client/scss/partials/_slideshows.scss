@@ -179,7 +179,7 @@ $slick-opacity-not-active: .25 !default;
         background-repeat: no-repeat; 
         background-position: top; 
         overflow: hidden; 
-        @include single-transition(all, .4s, ease-in-out);
+        @include single-transition(all, .3s, ease-in-out);
         @include transform(scale(1)); 
 
         &:hover {
@@ -196,7 +196,7 @@ $slick-opacity-not-active: .25 !default;
             opacity: 1; 
             @extend %text--white;
             @extend %vertical-align; 
-            @include single-transition(all, .4s, ease-in-out);
+            @include single-transition(all, .3s, ease-in-out);
 
             
         }

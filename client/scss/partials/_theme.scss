@@ -1,8 +1,8 @@
         
 /*------------------------------------*\
-    #Page Themes 
+    #Page Themes (Extends from _typography.scss and uses mixins from _themes.scss)
 \*------------------------------------*/
-//Uses mixins from themes module 
+
 
 .pageTheme-pageWrap {
     z-index: 90;
@@ -10,19 +10,76 @@
 }
 
 
-//Changes color of text and svg logos/icons to black since Big Sis is too bright for white text
+// Changes color of text, svg logos/icons, and table borders  to $offBlack since
+// Big Sis theme background is too bright for white text
 .theme-big-sis {
-    color: #2E2D31; 
+    color: $brown; 
 
     .logo,
     .icon--controls, 
     a,
     a:hover {
-        //Colors all svg files through fill property 
-        fill:  #2E2D31;
-        color: #2E2D31; 
+        // Colors svg files  through fill property and links
+        fill:  $brown;
+        color: $brown; 
     }
+
+    .button--primary {
+        background-color: lighten($brown, 6%); 
+        @extend %text--white; 
+
+        &:hover {
+            background-color: darken($brown, 6%);
+            @extend %text--white; 
+        }
+    }
+
+    .button--secondary {
+        border: 2px solid $brown; 
+        color: $brown; 
+
+        &:hover {
+            background-color: $brown; 
+            @extend %text--white; 
+        }
+    }
+    
+    .table--primary {
+
+        .table-row {
+
+            &:hover {
+
+                @media #{$medium-up} {
+                    background: rgba(30, 30, 30, .1);
+                }
+
+            }
+
+            td {    
+
+
+                @media #{$medium-up} {
+                    border-top: 1px solid $brown;  
+
+                }
+
+            }  
+        }
+
+    }
+
+    input,
+    input:focus {
+        color: $brown; 
+        border: 2px solid $brown;
+        
+    }
+
 }
+
+
+
 
 
 /*------------------------------------*\

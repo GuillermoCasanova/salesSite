@@ -58,7 +58,7 @@
 
     &.is-showing {
         opacity: 1; 
-        @include transform(translateX(-8px));
+        @include transform(translateX(0));
     }
 
     &.is-hidden {
