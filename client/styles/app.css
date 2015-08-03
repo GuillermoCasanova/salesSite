@@ -811,7 +811,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
     #Animations
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
-.primaryAnimation, .icon--controls, .secondaryAnimation, .seeker, .pause,
+.primaryAnimation, .secondaryAnimation, .pause,
 .play, .slick-prev, .slick-next {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -826,7 +826,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 }
 
 /* line 29, ../scss/modules/_animations.scss */
-.icon--controls:hover, .secondaryAnimation:hover, .seeker:hover, .pause:hover,
+.secondaryAnimation:hover, .pause:hover,
 .play:hover, .slick-prev:hover, .slick-next:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
@@ -7699,7 +7699,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
     #Animations
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
-.primaryAnimation, .icon--controls, .secondaryAnimation, .seeker, .pause,
+.primaryAnimation, .secondaryAnimation, .pause,
 .play, .slick-prev, .slick-next {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -7714,7 +7714,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 }
 
 /* line 29, ../scss/modules/_animations.scss */
-.icon--controls:hover, .secondaryAnimation:hover, .seeker:hover, .pause:hover,
+.secondaryAnimation:hover, .pause:hover,
 .play:hover, .slick-prev:hover, .slick-next:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
@@ -8927,19 +8927,19 @@ input:focus {
 /*------------------------------------*\
     #Pause and play buttons 
 \*------------------------------------*/
-/* line 87, ../scss/partials/_audioPlayer.scss */
+/* line 86, ../scss/partials/_audioPlayer.scss */
 .pause,
 .play {
   width: 4.375rem;
   height: 4.375rem;
 }
 
-/* line 99, ../scss/partials/_audioPlayer.scss */
+/* line 98, ../scss/partials/_audioPlayer.scss */
 .pause .icon--controls.play {
   display: none;
 }
 
-/* line 105, ../scss/partials/_audioPlayer.scss */
+/* line 104, ../scss/partials/_audioPlayer.scss */
 .play .icon--controls.pause {
   display: none;
 }
