@@ -90,20 +90,16 @@ $slick-opacity-not-active: .25 !default;
 
 
 .slick-slide {
-    @extend %left; 
     height: 95%;
     min-height: 1px;
-    position: relative;
-    overflow: hidden;  
+    overflow: hidden; 
+    @extend %left; 
+    @extend %relative;  
   
     img {
-        display: block;
         width: 100%;
+        @extend %display--block; 
     }
-
-    // &.slick-loading img {
-    //     display: none;
-    // }
 
     &.dragging img {
         pointer-events: none;
@@ -119,9 +115,6 @@ $slick-opacity-not-active: .25 !default;
         border: 1px solid transparent;
     }
 
-    // @include breakpoint(godBear) {
-    //   max-height: rem-calc(560); 
-    // }
 }
 
 /* Arrows */
@@ -154,15 +147,11 @@ $slick-opacity-not-active: .25 !default;
 
 .slick-prev {
   left: -7%;
-    @extend %secondaryAnimation; 
-
 }
 
 
 .slick-next {
   right: -7%;
-    @extend %secondaryAnimation; 
-  
 }
 
 
@@ -237,8 +226,10 @@ $slick-opacity-not-active: .25 !default;
         }
 
     }
+    
     .slick-prev {
-      left: -5%;     }
+      left: -5%;     
+    }
 
     .slick-next {
       right: -5%; 
