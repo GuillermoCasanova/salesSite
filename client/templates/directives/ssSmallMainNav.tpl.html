@@ -1,8 +1,6 @@
 <nav class="mainNav  mainNav--small  hide-on-medium">
 
-    <ul class="ml0 pl3 controls">
-
-        <li >
+    <div class="ml0 pl3 mainNav-controls">
 
         <svg viewBox="0 0 200 60" class="mainNav-logo  logo" title="SALES logo">
 
@@ -10,17 +8,15 @@
 
         </svg>
 
-        </li>
 
-        <li class="mainNav-menuIcon">
+        <svg ng-click="toggleNav()" viewBox="0 0 15 15"  title="Toggle Menu" class="mainNav-menuIcon  icon--controls">
 
-            <a ng-click="toggleNav()">
-                <img src="images/icon--hamburger.svg" width="30px" height="30px" />
-            </a>
+          <use xlink:href="images/icon--controls.svg#menu-icon"></use>
 
-        </li>
+        </svg>
 
-    </ul>
+
+    </div>
 
     <div class="mainNav-menu">
 
@@ -32,7 +28,7 @@
                    offset="200" 
                    scroll-to="section-ep" 
                    class="mainNav-link ">
-                  NEW EP 
+                  MUSIC
               </a>
         
             </li>

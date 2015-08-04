@@ -70,8 +70,9 @@
     
     @extend %relative;  
 
-    .controls {
+    .mainNav-controls {
         width: 100%;
+        height: rem-calc(80px); 
         @extend %display--block;  
         @extend %relative;  
         @extend %pt1; 
@@ -84,7 +85,11 @@
     }
 
     .mainNav-menuIcon {
-        text-align: right; 
+        text-align: right;
+        fill: #fff;  
+        width: rem-calc(45px);
+        height: rem-calc(45px);
+        @extend %right;
         @extend %mr3; 
         @extend %mt2; 
     }
@@ -96,7 +101,7 @@
         @include single-transition(all, 0.3s, ease-in-out);
         @extend %display--block;  
         @extend %left; 
-        @extend %mt3; 
+        @extend %mt1; 
         @extend %relative; 
 
         &.is-showing {

@@ -30,7 +30,7 @@
 }
 
 /* line 88, ../scss/modules/_generics.scss */
-.mainNav-link, .mainNav--small .controls, .mainNav--small .mainNav-menu {
+.mainNav-link, .mainNav--small .mainNav-controls, .mainNav--small .mainNav-menu, .slick-slide img {
   display: block;
 }
 
@@ -59,7 +59,7 @@
 }
 
 /* line 136, ../scss/modules/_generics.scss */
-.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text, .button--primary:hover, .mainNav--large, .mainNav--small, .mainNav--small .controls, .mainNav--small .mainNav-menu {
+.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text, .button--primary:hover, .mainNav--large, .mainNav--small, .mainNav--small .mainNav-controls, .mainNav--small .mainNav-menu, .slick-slide {
   position: relative;
 }
 
@@ -74,6 +74,11 @@
 /* line 153, ../scss/modules/_generics.scss */
 .mainNav--small .mainNav-logo, .mainNav--small .mainNav-menu, .slick-slide {
   float: left;
+}
+
+/* line 157, ../scss/modules/_generics.scss */
+.mainNav--small .mainNav-menuIcon {
+  float: right;
 }
 
 /*------------------------------------*\
@@ -118,7 +123,7 @@
 }
 
 /* line 242, ../scss/modules/_generics.scss */
-.pt1, .mainNav--small .controls {
+.pt1, .mainNav--small .mainNav-controls {
   padding-top: rem-calc(6) !important;
 }
 
@@ -341,7 +346,7 @@
 }
 
 /* line 465, ../scss/modules/_generics.scss */
-.mt1, .mainNav--small .mainNav-logo {
+.mt1, .mainNav--small .mainNav-logo, .mainNav--small .mainNav-menu {
   margin-top: rem-calc(6) !important;
 }
 
@@ -351,7 +356,7 @@
 }
 
 /* line 473, ../scss/modules/_generics.scss */
-.mt3, .mainNav--small .mainNav-menu {
+.mt3 {
   margin-top: rem-calc(24) !important;
 }
 
@@ -812,7 +817,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
 .primaryAnimation, .secondaryAnimation, .pause,
-.play, .slick-prev, .slick-next {
+.play {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -827,7 +832,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 
 /* line 29, ../scss/modules/_animations.scss */
 .secondaryAnimation:hover, .pause:hover,
-.play:hover, .slick-prev:hover, .slick-next:hover {
+.play:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
@@ -6918,7 +6923,7 @@ th {
 }
 
 /* line 88, ../scss/modules/_generics.scss */
-.mainNav-link, .mainNav--small .controls, .mainNav--small .mainNav-menu {
+.mainNav-link, .mainNav--small .mainNav-controls, .mainNav--small .mainNav-menu, .slick-slide img {
   display: block;
 }
 
@@ -6947,7 +6952,7 @@ th {
 }
 
 /* line 136, ../scss/modules/_generics.scss */
-.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text, .button--primary:hover, .mainNav--large, .mainNav--small, .mainNav--small .controls, .mainNav--small .mainNav-menu {
+.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text, .button--primary:hover, .mainNav--large, .mainNav--small, .mainNav--small .mainNav-controls, .mainNav--small .mainNav-menu, .slick-slide {
   position: relative;
 }
 
@@ -6962,6 +6967,11 @@ th {
 /* line 153, ../scss/modules/_generics.scss */
 .mainNav--small .mainNav-logo, .mainNav--small .mainNav-menu, .slick-slide {
   float: left;
+}
+
+/* line 157, ../scss/modules/_generics.scss */
+.mainNav--small .mainNav-menuIcon {
+  float: right;
 }
 
 /*------------------------------------*\
@@ -7006,7 +7016,7 @@ th {
 }
 
 /* line 242, ../scss/modules/_generics.scss */
-.pt1, .mainNav--small .controls {
+.pt1, .mainNav--small .mainNav-controls {
   padding-top: 0.375rem !important;
 }
 
@@ -7229,7 +7239,7 @@ th {
 }
 
 /* line 465, ../scss/modules/_generics.scss */
-.mt1, .mainNav--small .mainNav-logo {
+.mt1, .mainNav--small .mainNav-logo, .mainNav--small .mainNav-menu {
   margin-top: 0.375rem !important;
 }
 
@@ -7239,7 +7249,7 @@ th {
 }
 
 /* line 473, ../scss/modules/_generics.scss */
-.mt3, .mainNav--small .mainNav-menu {
+.mt3 {
   margin-top: 1.5rem !important;
 }
 
@@ -7700,7 +7710,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
 .primaryAnimation, .secondaryAnimation, .pause,
-.play, .slick-prev, .slick-next {
+.play {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -7715,7 +7725,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
 
 /* line 29, ../scss/modules/_animations.scss */
 .secondaryAnimation:hover, .pause:hover,
-.play:hover, .slick-prev:hover, .slick-next:hover {
+.play:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
@@ -8490,18 +8500,22 @@ input:focus {
     #Main Navigation Small 
 \*------------------------------------*/
 /* line 73, ../scss/partials/_navigation.scss */
-.mainNav--small .controls {
+.mainNav--small .mainNav-controls {
   width: 100%;
+  height: 5rem;
 }
-/* line 80, ../scss/partials/_navigation.scss */
+/* line 81, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-logo {
   width: 10rem;
 }
-/* line 86, ../scss/partials/_navigation.scss */
+/* line 87, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-menuIcon {
   text-align: right;
+  fill: #fff;
+  width: 2.8125rem;
+  height: 2.8125rem;
 }
-/* line 92, ../scss/partials/_navigation.scss */
+/* line 97, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-menu {
   overflow: hidden;
   height: 0;
@@ -8511,7 +8525,7 @@ input:focus {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 102, ../scss/partials/_navigation.scss */
+/* line 107, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-menu.is-showing {
   height: 17.5rem;
   opacity: 1;
@@ -9020,23 +9034,21 @@ input:focus {
 .slick-slide {
   height: 95%;
   min-height: 1px;
-  position: relative;
   overflow: hidden;
 }
 /* line 99, ../scss/partials/_slideshows.scss */
 .slick-slide img {
-  display: block;
   width: 100%;
 }
-/* line 108, ../scss/partials/_slideshows.scss */
+/* line 104, ../scss/partials/_slideshows.scss */
 .slick-slide.dragging img {
   pointer-events: none;
 }
-/* line 112, ../scss/partials/_slideshows.scss */
+/* line 108, ../scss/partials/_slideshows.scss */
 .slick-initialized .slick-slide {
   display: block;
 }
-/* line 116, ../scss/partials/_slideshows.scss */
+/* line 112, ../scss/partials/_slideshows.scss */
 .slick-vertical .slick-slide {
   display: block;
   height: auto;
@@ -9044,7 +9056,7 @@ input:focus {
 }
 
 /* Arrows */
-/* line 129, ../scss/partials/_slideshows.scss */
+/* line 122, ../scss/partials/_slideshows.scss */
 .slick-prev,
 .slick-next {
   transition: all 0.2s ease-in-out;
@@ -9059,24 +9071,24 @@ input:focus {
   border: none;
   outline: none;
 }
-/* line 143, ../scss/partials/_slideshows.scss */
+/* line 136, ../scss/partials/_slideshows.scss */
 .slick-prev:hover, .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
   outline: none;
 }
-/* line 148, ../scss/partials/_slideshows.scss */
+/* line 141, ../scss/partials/_slideshows.scss */
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before {
   opacity: 0.25;
 }
 
-/* line 155, ../scss/partials/_slideshows.scss */
+/* line 148, ../scss/partials/_slideshows.scss */
 .slick-prev {
   left: -7%;
 }
 
-/* line 162, ../scss/partials/_slideshows.scss */
+/* line 153, ../scss/partials/_slideshows.scss */
 .slick-next {
   right: -7%;
 }
@@ -9084,11 +9096,11 @@ input:focus {
 /*------------------------------------*\
     #News Slide Show  
 \*------------------------------------*/
-/* line 173, ../scss/partials/_slideshows.scss */
+/* line 162, ../scss/partials/_slideshows.scss */
 .slideshow--news {
   overflow: hidden;
 }
-/* line 177, ../scss/partials/_slideshows.scss */
+/* line 166, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide {
   background-color: #000;
   height: 18.75rem;
@@ -9102,15 +9114,15 @@ input:focus {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 188, ../scss/partials/_slideshows.scss */
+/* line 177, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide:hover {
   background-color: transparent;
 }
-/* line 190, ../scss/partials/_slideshows.scss */
+/* line 179, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide:hover .slideshow-slide-title {
   opacity: 0;
 }
-/* line 195, ../scss/partials/_slideshows.scss */
+/* line 184, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide .slideshow-slide-title {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -9118,11 +9130,11 @@ input:focus {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
-/* line 207, ../scss/partials/_slideshows.scss */
+/* line 196, ../scss/partials/_slideshows.scss */
 .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
   text-shadow: 1px, 1px, 1px, false, rgba(0, 0, 0, 0.6);
 }
-/* line 215, ../scss/partials/_slideshows.scss */
+/* line 204, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-prev,
 .slideshow--news .slick-next {
   width: 3.4375rem;
@@ -9135,25 +9147,25 @@ input:focus {
   border-radius: 6px;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 215, ../scss/partials/_slideshows.scss */
+  /* line 204, ../scss/partials/_slideshows.scss */
   .slideshow--news .slick-prev,
   .slideshow--news .slick-next {
     opacity: 1;
   }
 }
-/* line 231, ../scss/partials/_slideshows.scss */
+/* line 220, ../scss/partials/_slideshows.scss */
 .slideshow--news:hover .slick-prev {
   left: -0.375rem;
 }
-/* line 235, ../scss/partials/_slideshows.scss */
+/* line 224, ../scss/partials/_slideshows.scss */
 .slideshow--news:hover .slick-next {
   right: -0.375rem;
 }
-/* line 240, ../scss/partials/_slideshows.scss */
+/* line 230, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-prev {
   left: -5%;
 }
-/* line 243, ../scss/partials/_slideshows.scss */
+/* line 234, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-next {
   right: -5%;
 }
