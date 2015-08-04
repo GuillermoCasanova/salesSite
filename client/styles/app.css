@@ -8648,32 +8648,32 @@ input:focus {
 
 /* line 15, ../scss/partials/_theme.scss */
 .theme-big-sis {
-  color: #494A7B;
+  color: #465881;
 }
 /* line 18, ../scss/partials/_theme.scss */
 .theme-big-sis .logo,
 .theme-big-sis .icon--controls,
 .theme-big-sis a,
 .theme-big-sis a:hover {
-  fill: #494A7B;
-  color: #494A7B;
+  fill: #465881;
+  color: #465881;
 }
 /* line 27, ../scss/partials/_theme.scss */
 .theme-big-sis .button--primary {
-  background-color: #54568e;
+  background-color: #516695;
 }
 /* line 31, ../scss/partials/_theme.scss */
 .theme-big-sis .button--primary:hover {
-  background-color: #3e3e68;
+  background-color: #3b4a6d;
 }
 /* line 37, ../scss/partials/_theme.scss */
 .theme-big-sis .button--secondary {
-  border: 2px solid #494A7B;
-  color: #494A7B;
+  border: 2px solid #465881;
+  color: #465881;
 }
 /* line 41, ../scss/partials/_theme.scss */
 .theme-big-sis .button--secondary:hover {
-  background-color: #494A7B;
+  background-color: #465881;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 51, ../scss/partials/_theme.scss */
@@ -8684,14 +8684,14 @@ input:focus {
 @media only screen and (min-width: 40.0625em) {
   /* line 59, ../scss/partials/_theme.scss */
   .theme-big-sis .table--primary .table-row td {
-    border-top: 1px solid #494A7B;
+    border-top: 1px solid #465881;
   }
 }
 /* line 72, ../scss/partials/_theme.scss */
 .theme-big-sis input,
 .theme-big-sis input:focus {
-  color: #494A7B;
-  border: 2px solid #494A7B;
+  color: #465881;
+  border: 2px solid #465881;
 }
 
 /*------------------------------------*\
