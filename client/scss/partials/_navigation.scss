@@ -20,13 +20,16 @@
     font-family: $customFont; 
     @extend %h2;    
     @extend %mr1; 
-    //Needed so hover scale transform pesists 
-    @extend %display--block; 
+    @extend %display--block;  //Needed so hover scale transform pesists 
     @include single-transition(all, 0.3s, cubic-bezier(.39, 1.05, .23, 1.26));
     @include transform(scale(1)); 
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
+        background-color: transparent; 
+        text-decoration: none; 
+        color: $offWhite; 
         @include transform(scale(1.1)); 
     }
 }
@@ -53,6 +56,11 @@
     .mainNav-logo {
         width: rem-calc(200px);
         @include single-transition(all, 0.3s, cubic-bezier(.39, 1.05, .23, 1.26));
+
+        &:hover,
+        &:focus {
+            @include single-transition(all, 0.3s, cubic-bezier(.39, 1.05, .23, 1.26));
+        }
 
     }
 }

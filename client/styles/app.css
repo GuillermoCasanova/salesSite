@@ -636,7 +636,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
   text-align: center;
 }
 
-/* line 26, ../scss/modules/_icons.scss */
+/* line 32, ../scss/modules/_icons.scss */
 .reveal-modal h1 a,
 .reveal-modal h2 a,
 .reveal-modal h3 a,
@@ -7529,7 +7529,7 @@ body, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis
   text-align: center;
 }
 
-/* line 26, ../scss/modules/_icons.scss */
+/* line 32, ../scss/modules/_icons.scss */
 .reveal-modal h1 a,
 .reveal-modal h2 a,
 .reveal-modal h3 a,
@@ -7982,11 +7982,18 @@ a {
   font-weight: 600;
   color: #F1F2F2;
   text-decoration: none;
+  background-color: transparent;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-/* line 69, ../scss/partials/_typography.scss */
-a:hover {
+/* line 72, ../scss/partials/_typography.scss */
+a:hover, a:focus, a:active {
   color: #F1F2F2;
   position: relative;
+  color: #2E2D31;
+  background-color: #F1F2F2;
 }
 
 /*-----------------------------------*\
@@ -7998,7 +8005,7 @@ a:hover {
 /*
 ** Hn sizes .hn classes defined by placeholders from typography.scss module 
 */
-/* line 103, ../scss/partials/_typography.scss */
+/* line 110, ../scss/partials/_typography.scss */
 h1,
 h2,
 h3,
@@ -8046,6 +8053,13 @@ a[href*="twitter"],
   background-repeat: no-repeat;
   background-position: 0 -6em;
 }
+/* line 22, ../scss/modules/_icons.scss */
+a[href*="twitter"]:hover, a[href*="twitter"]:active, a[href*="twitter"]:focus,
+.icon--twitter:hover,
+.icon--twitter:active,
+.icon--twitter:focus {
+  background-color: transparent;
+}
 
 /* line 20, ../scss/partials/_icons.scss */
 a[href*="facebook"],
@@ -8054,12 +8068,26 @@ a[href*="facebook"],
   background-repeat: no-repeat;
   background-position: 0 -12em;
 }
+/* line 22, ../scss/modules/_icons.scss */
+a[href*="facebook"]:hover, a[href*="facebook"]:active, a[href*="facebook"]:focus,
+.icon--facebook:hover,
+.icon--facebook:active,
+.icon--facebook:focus {
+  background-color: transparent;
+}
 
 /* line 27, ../scss/partials/_icons.scss */
 a[href*="soundcloud"],
 .icon--soundcloud {
   background-image: url("../images/icons--socialMedia.svg");
   background-repeat: no-repeat;
+}
+/* line 22, ../scss/modules/_icons.scss */
+a[href*="soundcloud"]:hover, a[href*="soundcloud"]:active, a[href*="soundcloud"]:focus,
+.icon--soundcloud:hover,
+.icon--soundcloud:active,
+.icon--soundcloud:focus {
+  background-color: transparent;
 }
 
 /* line 32, ../scss/partials/_icons.scss */
@@ -8069,6 +8097,13 @@ a[href*="youtube"],
   background-repeat: no-repeat;
   background-position: 0 -18em;
 }
+/* line 22, ../scss/modules/_icons.scss */
+a[href*="youtube"]:hover, a[href*="youtube"]:active, a[href*="youtube"]:focus,
+.icon--youtube:hover,
+.icon--youtube:active,
+.icon--youtube:focus {
+  background-color: transparent;
+}
 
 /* line 39, ../scss/partials/_icons.scss */
 a[href*="instagram"],
@@ -8076,6 +8111,13 @@ a[href*="instagram"],
   background-image: url("../images/icons--socialMedia.svg");
   background-repeat: no-repeat;
   background-position: 0 -24em;
+}
+/* line 22, ../scss/modules/_icons.scss */
+a[href*="instagram"]:hover, a[href*="instagram"]:active, a[href*="instagram"]:focus,
+.icon--instagram:hover,
+.icon--instagram:active,
+.icon--instagram:focus {
+  background-color: transparent;
 }
 
 /*------------------------------------*\
@@ -8087,11 +8129,19 @@ a[href*="instagram"],
   background-repeat: no-repeat;
   background-position: 0 -6em;
 }
+/* line 22, ../scss/modules/_icons.scss */
+.icon--itunes:hover, .icon--itunes:active, .icon--itunes:focus {
+  background-color: transparent;
+}
 /* line 60, ../scss/partials/_icons.scss */
 .icon--itunes.icon--small {
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
   background-position: 0 -3em;
+}
+/* line 22, ../scss/modules/_icons.scss */
+.icon--itunes.icon--small:hover, .icon--itunes.icon--small:active, .icon--itunes.icon--small:focus {
+  background-color: transparent;
 }
 
 /* line 67, ../scss/partials/_icons.scss */
@@ -8100,11 +8150,19 @@ a[href*="instagram"],
   background-repeat: no-repeat;
   background-position: 0 -12em;
 }
+/* line 22, ../scss/modules/_icons.scss */
+.icon--bandcamp:hover, .icon--bandcamp:active, .icon--bandcamp:focus {
+  background-color: transparent;
+}
 /* line 72, ../scss/partials/_icons.scss */
 .icon--bandcamp.icon--small {
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
   background-position: 0 -6em;
+}
+/* line 22, ../scss/modules/_icons.scss */
+.icon--bandcamp.icon--small:hover, .icon--bandcamp.icon--small:active, .icon--bandcamp.icon--small:focus {
+  background-color: transparent;
 }
 
 /* line 79, ../scss/partials/_icons.scss */
@@ -8112,6 +8170,10 @@ a[href*="instagram"],
   background-image: url("../images/icons--stores.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+}
+/* line 22, ../scss/modules/_icons.scss */
+.icon--spotify:hover, .icon--spotify:active, .icon--spotify:focus {
+  background-color: transparent;
 }
 
 /*------------------------------------*\
@@ -8467,8 +8529,11 @@ input:focus {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 28, ../scss/partials/_navigation.scss */
-.mainNav-link:hover, .mainNav-link:active {
+/* line 27, ../scss/partials/_navigation.scss */
+.mainNav-link:hover, .mainNav-link:active, .mainNav-link:focus {
+  background-color: transparent;
+  text-decoration: none;
+  color: #F1F2F2;
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -8478,18 +8543,25 @@ input:focus {
 /*------------------------------------*\
     #Main Navigation Large 
 \*------------------------------------*/
-/* line 43, ../scss/partials/_navigation.scss */
+/* line 46, ../scss/partials/_navigation.scss */
 .mainNav--large {
   height: 5rem;
 }
-/* line 48, ../scss/partials/_navigation.scss */
+/* line 51, ../scss/partials/_navigation.scss */
 .fixed .mainNav--large {
   height: 3.75rem;
   z-index: 700;
 }
-/* line 53, ../scss/partials/_navigation.scss */
+/* line 56, ../scss/partials/_navigation.scss */
 .mainNav--large .mainNav-logo {
   width: 12.5rem;
+  -moz-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
+  -o-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
+  -webkit-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
+  transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
+}
+/* line 60, ../scss/partials/_navigation.scss */
+.mainNav--large .mainNav-logo:hover, .mainNav--large .mainNav-logo:focus {
   -moz-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
   -o-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
   -webkit-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
@@ -8499,23 +8571,23 @@ input:focus {
 /*------------------------------------*\
     #Main Navigation Small 
 \*------------------------------------*/
-/* line 73, ../scss/partials/_navigation.scss */
+/* line 81, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-controls {
   width: 100%;
   height: 5rem;
 }
-/* line 81, ../scss/partials/_navigation.scss */
+/* line 89, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-logo {
   width: 10rem;
 }
-/* line 87, ../scss/partials/_navigation.scss */
+/* line 95, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-menuIcon {
   text-align: right;
   fill: #fff;
   width: 2.8125rem;
   height: 2.8125rem;
 }
-/* line 97, ../scss/partials/_navigation.scss */
+/* line 105, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-menu {
   overflow: hidden;
   height: 0;
@@ -8525,7 +8597,7 @@ input:focus {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 107, ../scss/partials/_navigation.scss */
+/* line 115, ../scss/partials/_navigation.scss */
 .mainNav--small .mainNav-menu.is-showing {
   height: 17.5rem;
   opacity: 1;

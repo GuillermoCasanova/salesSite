@@ -19,6 +19,12 @@ $icons--stores: "../images/icons--stores.svg";
   background-image: url($icon);
   background-repeat: no-repeat; 
 
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: transparent; 
+    }
+
   @content; 
 }
 

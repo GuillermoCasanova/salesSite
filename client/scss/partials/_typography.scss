@@ -65,10 +65,17 @@ a {
 	font-weight: $bold; 
 	color: $offWhite;
 	text-decoration: none; 
+    background-color: transparent; 
+    @include single-transition(all, 0.2s, ease-in-out);
 
-	&:hover {
+
+	&:hover,
+    &:focus,
+    &:active {
 		color: $offWhite; 
 		position: relative; 
+        color: $offBlack; 
+        background-color: $offWhite; 
 	}
 
 }
