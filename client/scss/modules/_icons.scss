@@ -22,7 +22,7 @@ $icons--stores: "../images/icons--stores.svg";
     &:hover,
     &:active,
     &:focus {
-        background-color: transparent; 
+        background-color: transparent !important; 
     }
 
   @content; 

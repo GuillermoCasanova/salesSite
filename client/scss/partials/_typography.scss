@@ -63,19 +63,18 @@ body, html {
 
 a {
 	font-weight: $bold; 
-	color: $offWhite;
 	text-decoration: none; 
     background-color: transparent; 
-    @include single-transition(all, 0.2s, ease-in-out);
+    @extend %text--white; 
+    @include single-transition(all, .3s, ease-in-out);
 
 
 	&:hover,
     &:focus,
     &:active {
-		color: $offWhite; 
 		position: relative; 
+        background-color: #fff; 
         color: $offBlack; 
-        background-color: $offWhite; 
 	}
 
 }

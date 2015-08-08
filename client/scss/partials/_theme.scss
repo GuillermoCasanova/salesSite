@@ -17,13 +17,27 @@
 
     .logo,
     .icon--controls, 
-    a,
-    a:hover {
+    a {
         // Colors svg files  through fill property and links
         fill:  $blue--dark;
         color: $blue--dark; 
     }
 
+    a {
+        &:hover {
+            background-color: $blue--dark; 
+            @extend %text--white; 
+        }
+    }
+    
+    // Styles for mainNav under big-sis theme 
+    .mainNav-link {
+        &:hover {
+            color: $blue--dark; 
+        }
+    }
+    
+    // Styles for buttons under big-sis theme
     .button--primary {
         background-color: lighten($blue--dark, 6%); 
         @extend %text--white; 
@@ -44,6 +58,7 @@
         }
     }
     
+    // Styles for table under big-sis theme 
     .table--primary {
 
         .table-row {

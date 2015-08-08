@@ -12,7 +12,9 @@
 
         @extend %mtb3; 
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
 
             @media #{$medium-up} {
                 background: rgba(255, 255, 255, 0.1);

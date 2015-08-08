@@ -4,14 +4,7 @@
 \*------------------------------------*/
 
 button {
-
-  border: 0; 
-
-  &:hover {
-    cursor: pointer; 
-  }
-
-  
+  border: 0;   
 }
 
 .button {
@@ -25,7 +18,9 @@ button {
   color: $offBlack; 
   @include box-shadow(rgba(darken(#fff, 60%), 1) 0 2px 0);
  
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     top: 2px; 
     color: $offBlack; 
     background-color: darken(#fff, 6%);
@@ -42,7 +37,9 @@ button {
     @include border-radius(40px);
 
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         color: #191919; 
         background-color: #fff; 
     }
