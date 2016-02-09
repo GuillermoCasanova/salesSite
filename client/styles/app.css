@@ -811,6 +811,10 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 .big-sis.theme-background {
   background: #F8DE65 url("../images/bg--big-sis.jpg") repeat center fixed;
 }
+/* line 55, ../scss/modules/_theme.scss */
+.jamz.theme-background {
+  background: #f40878 url("../images/bg--pink.jpg") repeat center fixed;
+}
 
 /*------------------------------------*\
     #Animations
@@ -7704,6 +7708,10 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 .big-sis.theme-background {
   background: #F8DE65 url("../images/bg--big-sis.jpg") repeat center fixed;
 }
+/* line 55, ../scss/modules/_theme.scss */
+.jamz.theme-background {
+  background: #f40878 url("../images/bg--pink.jpg") repeat center fixed;
+}
 
 /*------------------------------------*\
     #Animations
@@ -8919,6 +8927,22 @@ input:focus {
   /* line 180, ../scss/partials/_theme.scss */
   .theme-artwork.big-sis {
     background-image: url("../images/big-sis--large.png");
+  }
+}
+/* line 184, ../scss/partials/_theme.scss */
+.theme-artwork.jamz {
+  background-image: url("../images/jamz--small.png");
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 184, ../scss/partials/_theme.scss */
+  .theme-artwork.jamz {
+    background-image: url("../images/jamz--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 184, ../scss/partials/_theme.scss */
+  .theme-artwork.jamz {
+    background-image: url("../images/jamz--large.png");
   }
 }
 

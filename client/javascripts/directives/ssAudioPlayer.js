@@ -1,4 +1,4 @@
-angular.module("Sales")
+    angular.module("Sales")
     .directive('ssAudioPlayer', 
         function() {
 
@@ -36,6 +36,7 @@ angular.module("Sales")
 
                 //Inits Soundcloud player with array of URLS
                 var scplayer = new SoundCloudPlayer([
+                    "https://soundcloud.com/sales/jamz",
                     "https://soundcloud.com/sales/big-sis",
                     "https://soundcloud.com/sales/sales-renee",
                     "https://soundcloud.com/sales/vow",
@@ -43,7 +44,7 @@ angular.module("Sales")
                     "https://soundcloud.com/sales/getting-it-on",
                     "https://soundcloud.com/sales/toto",
                     "https://soundcloud.com/sales/toto-xxyyxx-remix/"
-                    
+
                     ],{
                       consumer_key: "7a6e6123d37c58d267bdfa4d526e554c"
                     , autoplay: false

@@ -181,6 +181,10 @@
         @include themeArtwork('big-sis');
     }
 
+    &.jamz {
+        @include themeArtwork('jamz'); 
+    }
+
 }
 
 
