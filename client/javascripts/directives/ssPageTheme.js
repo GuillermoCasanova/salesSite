@@ -7,7 +7,7 @@ angular.module("Sales")
             '$scope', 
             function($scope) {
                 //Starter theme when user first lands on page
-                $scope.defaultTheme = "getting-it-on";
+                $scope.defaultTheme = "jamz";
                 //Themes are based off the song's permalinks 
                 $scope.currentTheme = $scope.defaultTheme ;
 
