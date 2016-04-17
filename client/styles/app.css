@@ -815,6 +815,10 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 .jamz.theme-background {
   background: #eca7bc url("../images/bg--pink.jpg") repeat center fixed;
 }
+/* line 60, ../scss/modules/_theme.scss */
+.ivy.theme-background {
+  background: #17431e url("../images/bg--darkGreen.jpg") repeat center fixed;
+}
 
 /*------------------------------------*\
     #Animations
@@ -7712,6 +7716,10 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 .jamz.theme-background {
   background: #eca7bc url("../images/bg--pink.jpg") repeat center fixed;
 }
+/* line 60, ../scss/modules/_theme.scss */
+.ivy.theme-background {
+  background: #17431e url("../images/bg--darkGreen.jpg") repeat center fixed;
+}
 
 /*------------------------------------*\
     #Animations
@@ -8943,6 +8951,22 @@ input:focus {
   /* line 184, ../scss/partials/_theme.scss */
   .theme-artwork.jamz {
     background-image: url("../images/jamz--large.png");
+  }
+}
+/* line 188, ../scss/partials/_theme.scss */
+.theme-artwork.ivy {
+  background-image: url("../images/ivy--small.png");
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 188, ../scss/partials/_theme.scss */
+  .theme-artwork.ivy {
+    background-image: url("../images/ivy--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 188, ../scss/partials/_theme.scss */
+  .theme-artwork.ivy {
+    background-image: url("../images/ivy--large.png");
   }
 }
 

@@ -36,6 +36,7 @@
 
                 //Inits Soundcloud player with array of URLS
                 var scplayer = new SoundCloudPlayer([
+                    "https://soundcloud.com/sales/ivy",
                     "https://soundcloud.com/sales/jamz",
                     "https://soundcloud.com/sales/big-sis",
                     "https://soundcloud.com/sales/sales-renee",

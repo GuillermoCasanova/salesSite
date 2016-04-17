@@ -185,7 +185,8 @@
         @include themeArtwork('jamz'); 
     }
 
+    &.ivy {
+        @include themeArtwork('ivy'); 
+    }
+
 }
-
-
-
