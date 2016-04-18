@@ -4,5 +4,6 @@ bower_components
 node_modules
 .sass-cache/
 client/fonts
+client/images
 client/.sass-cache
 

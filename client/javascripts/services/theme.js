@@ -13,7 +13,9 @@ angular.module('Sales')
                  {'name' :'chinese-new-year'},
                  {'name' : 'toto-xxyyxx-remix'},
                  {'name' : 'big-sis'},
-                 {'name' : 'jamz'}
+                 {'name' : 'jamz'},
+                 {'name' : 'ivy'}
+
                 ];
     return {
             getThemes : function() {

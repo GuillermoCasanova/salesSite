@@ -4,6 +4,14 @@ angular.module('Sales')
       ) {
 
         var posts = [
+                    {
+                        'title' : 'NORTH AMERICAN SPRING TOUR 2016',
+                        'date': 'April 16th, 2015',
+                        'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_NORTH_AMERICAN_SPRING_2016.jpg',
+                        'mainImage' : 'https://s3.amazonaws.com/salessite/SALES_NORTH_AMERICAN_SPRING_2016_header.jpg',
+                        'id' : 'spring_2016_ivy',
+                        'body' : '<p>I know it hasn\'t been so long since we last talked, but we wanted to get in touch and see how you are doing. Maybe you could use a fresh track?</p> <p>Here is our latest single, <a href="https://soundcloud.com/sales/ivy" target="_blank">"ivy",</a> hope it\'s something you can put your story to.  </p> <p>We\'ll be on tour, and sharing our album in April #420. Check the site for dates/tickets and come see us. We\'d love to meet you and maybe even hang-out (taco party in San Diego, bagel and schmear in Brooklyn, we want to see redwoods, and maybe we could go for a biscuit in Nashville?). Let us know. </p> <p>All the best, </p> <p>Lauren & Jordan <span class="fwb">SALES</span></p>'
+                    },
 
                     {
                         'title' : 'WEST COAST SUMMER 2015',
