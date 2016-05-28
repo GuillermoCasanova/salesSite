@@ -244,7 +244,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('w', [
+    grunt.registerTask('default', [
         'connect',
         'build:dev',
         'watch:client'
