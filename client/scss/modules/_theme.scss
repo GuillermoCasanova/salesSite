@@ -28,52 +28,52 @@
     &.ep,
     &.getting-it-on,
     &.toto-xxyyxx-remix {
-        background: #000 url('../images/bg--black.jpg') repeat center fixed;
+        background: #000 url('../assets/images/bg--black.jpg') repeat center fixed;
 
     }
 
     &.sales-renee {
-        background: $green url('../images/bg--green.jpg') repeat center fixed;
+        background: $green url('../assets/images/bg--green.jpg') repeat center fixed;
     }
 
     &.vow {
-        background: $orange url('../images/bg--orange.jpg') repeat center fixed;
+        background: $orange url('../assets/images/bg--orange.jpg') repeat center fixed;
     }
 
     &.chinese-new-year {
-       background: $red url('../images/bg--red.jpg') repeat center fixed;
+       background: $red url('../assets/images/bg--red.jpg') repeat center fixed;
     }
 
     &.toto {
-        background: $purple url('../images/bg--purple.jpg') repeat center fixed;
+        background: $purple url('../assets/images/bg--purple.jpg') repeat center fixed;
     }
 
     &.big-sis {
-        background: $yellow url('../images/bg--big-sis.jpg') repeat center fixed;
+        background: $yellow url('../assets/images/bg--big-sis.jpg') repeat center fixed;
 
     }
     &.jamz {
 
-        background: $pink url('../images/bg--pink.jpg') repeat center fixed;
+        background: $pink url('../assets/images/bg--pink.jpg') repeat center fixed;
 
     }
     &.ivy {
 
-        background: $darkGreen url('../images/bg--darkGreen.jpg') repeat center fixed;
+        background: $darkGreen url('../assets/images/bg--darkGreen.jpg') repeat center fixed;
 
     }
 }
 
 @mixin themeArtwork($pArtwork) {
     
-    background-image: url('../images/'+ $pArtwork + '--small.png');
+    background-image: url('../assets/images/'+ $pArtwork + '--small.png');
 
     @media #{$medium-up} {
-        background-image: url('../images/'+ $pArtwork + '--medium.png');
+        background-image: url('../assets/images/'+ $pArtwork + '--medium.png');
     }
 
     @media #{$large-up} {
-        background-image: url('../images/'+ $pArtwork + '--large.png');
+        background-image: url('../assets/images/'+ $pArtwork + '--large.png');
     }
 
 }

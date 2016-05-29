@@ -5,7 +5,7 @@ angular.module("Sales")
             replace: true, 
             restrict: "E",
             scope: {}, 
-            templateUrl: "templates/directives/ssPageNav.tpl.html"
+            templateUrl: "/js/navigation/ssPageNav.tpl.html"
 
         };
 

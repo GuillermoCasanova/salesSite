@@ -1,33 +1,15 @@
 
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
 
-@import "partials/base";
 
-@import "settings--overwrite";
+@import 'normalize';
+@import 'settings--overwrite';
 @import "foundation";
-@import "normalize"; 
 
-
-// Partials
-@import 
-"partials/base",
-"partials/generics",
-"partials/typography",
-"partials/components",
-"partials/icons",
-"partials/buttons",
-"partials/lists",
-"partials/forms",
-"partials/flexBox",
-"partials/navigation",
-"partials/animations",
-"partials/theme",
-"foundation/components/flex-video",
-"partials/audioPlayer",
-"partials/slideshows",
-"partials/modals",
-"partials/tables",
-"partials/footer";
-
+// Make sure the charset is set appropriately
+@charset 'UTF-8';
 
 
 
@@ -68,3 +50,5 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+@import 'appstyles';

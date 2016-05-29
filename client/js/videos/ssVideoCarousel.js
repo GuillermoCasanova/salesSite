@@ -7,6 +7,6 @@ angular.module("Sales")
 
             replace: true,
             restrict: "E",
-            templateUrl: "templates/directives/ssVideoCarousel.tpl.html"
+            templateUrl: "js/videos/ssVideoCarousel.tpl.html"
         }
     });

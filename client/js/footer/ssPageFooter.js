@@ -5,7 +5,7 @@ angular.module("Sales")
             replace: true, 
             restrict: "E",
             scope: {}, 
-            templateUrl: "templates/directives/ssPageFooter.tpl.html"
+            templateUrl: "/js/footer/ssPageFooter.tpl.html"
 
         };
 

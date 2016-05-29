@@ -6,7 +6,7 @@ angular.module("Sales")
 
             replace: true,
             restrict: "E",
-            templateUrl: "templates/directives/ssBlogPostsCarousel.tpl.html",
+            templateUrl: "/js/blog/ssBlogPostsCarousel.tpl.html",
             scope: {},
             link: function(scope, element, attrs) {
 

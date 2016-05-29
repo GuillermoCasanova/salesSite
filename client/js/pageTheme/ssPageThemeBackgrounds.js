@@ -12,7 +12,7 @@ angular.module('Sales')
             restrict: 'E',
             scope: {}, 
             require: '^ssPageTheme',
-            templateUrl : 'templates/directives/ssPageThemeBackgrounds.tpl.html',
+            templateUrl : '/js/pageTheme/ssPageThemeBackgrounds.tpl.html',
             link: function(scope, element, attrs, ssPageTheme) {
 
                 scope.component = attrs.component;

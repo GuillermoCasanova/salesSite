@@ -9,7 +9,7 @@ angular.module('Sales')
     })
 
     .when('/home', {
-        templateUrl: "templates/home/index.html"
+        templateUrl: "/js/home/index.html"
     })
 
 }]);

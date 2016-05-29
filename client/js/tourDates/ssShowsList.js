@@ -5,7 +5,7 @@ angular.module("Sales")
             replace: true, 
             restrict: "E",
             scope: {}, 
-            templateUrl: "templates/directives/ssShowsList.tpl.html",
+            templateUrl: "/js/tourDates/ssShowsList.tpl.html",
             controller: 'showsController',
             controllerAs: 'showsController',
             link: function(scope, element, attr) {

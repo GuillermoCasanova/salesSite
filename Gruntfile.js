@@ -6,7 +6,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
-
+        app: 'client',
+        dist: 'build',
         clean: {
             build: {
                 src: [
@@ -16,171 +17,50 @@ module.exports = function(grunt) {
         },
 
         copy: {
-            server: {
-                files: [
-                  {
-                      expand: true,
-                      flatten: false,
-                      cwd: 'views',
-                      src: [
-                          'index.html'
-                      ],
-                      dest: 'build',
-                      filter: 'isFile'
-                  },
-                  {
-                      expand: true,
-                      flatten: false,
-                      cwd: 'bower_components',
-                      src: [
-                          '**/*'
-                      ],
-                      dest: 'build/bower_components'
-                  },
-                  {
-                      expand: true,
-                      flatten: false,
-                      cwd: 'client/templates',
-                      src: [
-                          '**/*'
-                      ],
-                      dest: 'build/templates'
-                  },
-                  {
-                      expand: true,
-                      flatten: false,
-                      cwd: 'client/images',
-                      src: [
-                          '*.png',
-                          '*.jpg',
-                          '*.svg'
-                      ],
-                      dest: 'build/images'
-                  },
-                  {
-                      expand: true,
-                      flatten: false,
-                      cwd: 'client/fonts',
-                      src: [
-                          '**/*'
-                      ],
-                      dest: 'build/fonts'
-                  },
-                  {
-                      expand: true,
-                      flatten: false,
-                      cwd: 'client/styles',
-                      src: [
-                          'app.css'
-                      ],
-                      dest: 'build/styles'
-                  },
-                  {
-                      expand: true, 
-                      flatten: false, 
-                      cwd: 'client/javascripts',
-                      src: [
-                            '**/**'
-                      ],
-                      dest: 'build/javascripts'
-                  }
-                ],
-            },
-
-        },
-
-        bowerInstall: {
-            target: {
-                src: [
-                    'build/index.html'
-                ],
-                cwd: '.',
-                dependencies: true,
-                exclude: [
-                    'soundmanager2'
-                ],
-                fileTypes: {},
-                ignorePath: '',
-                overrides: {}
-            }
-        },
-
-        concat: {
-            options: {
-                separator: ';\n',
-            },
-            build: {
-                src: [
-                    'client/javascripts/app.js',
-                    'client/javascripts/routes.js',
-                    'client/javascripts/directives/**/*.js',
-                    'client/javascripts/controllers/**/*.js',
-                    'client/javascripts/services/**/*.js',
-                    'client/javascripts/filters/**/*.js'
-                ],
-                dest: 'build/javascripts/app.js',
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd:'<%= app %>/',
+                    src: ['assets/**/*', '**/*.html','*.xml', '**/*.php', '!**/*.scss', '!bower_components/**', 'data/**'],
+                    dest: '<%= dist %>/'
+                } ]
             },
         },
 
         uglify: {
             options: {
+                preserveComments: 'some',
                 mangle: false
-            },
-          target: {
-             files : {
-                'build/javascripts/app.min.js' : ['build/javascripts/app.js'],
-                'build/javascripts/vendor/sc-player.js' : ['build/javascripts/vendor/sc-player.js'],
-                'build/javascripts/_bower.js' : ['build/javascripts/_bower.js']
-             }
-          },
-
-        },
-
-        bower_concat: {
-            build: {
-                dest: 'build/javascripts/_bower.js',
-                bowerOptions: {
-                  relative: false
-                },
-                dependencies: {
-
-                     'angular': 'jquery'
-                },
-                callback: function(mainFiles, component) {
-                    return _.map(mainFiles, function(filepath) {
-                        // Use minified files if available
-                        var min = filepath.replace(/\.js$/, '.min.js');
-                        min = "zzz";
-                        return grunt.file.exists(min) ? min : filepath;
-                    });
-                }
             }
         },
 
-        processhtml: {
-            prod: {
-                files: {
-                    'build/index.html' : 'build/index.html'
-                }
+        useminPrepare: {
+            html: ['<%= app %>/index.html'],
+            options: {
+                dest: '<%= dist %>'
+            }
+        },
+
+        usemin: {
+            html: ['<%= dist %>/**/*.html', '!<%= app %>/bower_components/**'],
+            css: ['<%= dist %>/css/**/*.css'],
+            options: {
+                dirs: ['<%= dist %>']
             }
         },
 
         sass: {
             dist: {
-                options:{
+                options: {
+                    style: 'expanded', // expanded or nested or compact or compressed
+                    loadPath: '<%= app %>/bower_components/foundation/scss',
                     compass: true,
-                    update: true
+                    quiet: false,
+                      update: true,
+                      lineNumbers: true
                 },
                 files: {
-                    'client/styles/app.css': 'client/scss/app.scss'
-                }
-            }
-        },
-
-        cssmin: {
-            add_banner: {
-                files: {
-                    'build/styles/app.min.css': ['client/styles/app.css']
+                    '<%= app %>/css/app.css': '<%= app %>/scss/app.scss'
                 }
             }
         },
@@ -188,86 +68,53 @@ module.exports = function(grunt) {
         watch: {
             client: {
                 files: [
-                  'client/javascripts/**/*.js',
+                  'client/js/**/*',
                   'client/scss/**/*.scss',
                   'views/index.html',
                   'client/templates/**/*',
                   'client/images/*'
                 ],
-                tasks: ['build:dev'],
+                tasks: ['compile-sass', 'bower-install'],
                 options: {
                   livereload: true
                 }
             }
         },
-
-         compass: {
-            dist: {
-                options: {
-                    sassDir: 'client/scss',
-                    cssDir: 'client/styles',
-                    environment: 'development',
-                    watch: false
-                }
-            }
+        wiredep: {
+            target: {
+                src: [
+                    '<%= app %>/index.html'
+                ],
+                exclude: [
+                    'modernizr'
+                ]
+            },
+          options: {
+              bowerJson: require('./bower.json')
+          }
         },
 
         connect: {
           server: {
             options: {
-              base: 'build',
+              base: '<%= app %>',
               port: 8000,
               hostname: '*'
             }
-          }
-        },
-
-       replace: {
-         prod: {
-           options: {
-             patterns: [
-              {
-                match: /app\.js/g,
-                replacement: 'app.min.js'
-              },
-              {
-                match: /app\.css/g,
-                replacement: 'app.min.css'
-              }
-              ]
-            },
-            files: [
-              {expand: true, flatten: true, src: ['build/index.html'], dest: 'build/'}
-            ]
           }
         }
 
     });
 
-    grunt.registerTask('default', [
-        'connect',
-        'build:dev',
-        'watch:client'
-    ]);
-
-    grunt.registerTask('build:dev', [
-        'clean',
-        'copy',
-        'bowerInstall',
-        'concat', 
-        'bower_concat', 
-        'processhtml', 
-        'compass'
-    ]);
 
 
-    grunt.registerTask('build:prod', [
-        'connect', 
-        'build:dev',
-        'cssmin',
-        'uglify',
-        'replace',
-        'watch:client'        
-    ]);
+    grunt.registerTask('compile-sass', ['sass']);
+    grunt.registerTask('bower-install', ['wiredep']);
+
+    grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect', 'watch']);
+
+
+    grunt.registerTask('publish', ['compile-sass', 'clean', 'useminPrepare', 'copy', 'concat', 'cssmin', 'uglify', 'usemin']);
+    
 
 };

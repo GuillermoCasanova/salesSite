@@ -1,0 +1,28 @@
+
+
+/* all app scss styles here */
+// Imports Compass Easing plugin
+@import "compass/css3";
+@import "compass/utilities";
+@import "modules/all";
+
+// Partials
+@import 
+"partials/base",
+"partials/generics",
+"partials/typography",
+"partials/components",
+"partials/icons",
+"partials/buttons",
+"partials/lists",
+"partials/forms",
+"partials/flexBox",
+"partials/navigation",
+"partials/animations",
+"partials/theme",
+"foundation/components/flex-video",
+"partials/audioPlayer",
+"partials/slideshows",
+"partials/modals",
+"partials/tables",
+"partials/footer";
