@@ -49,6 +49,20 @@ angular.module('Sales')
 
         }
 
+    }).
+    state('main.press', {
+
+        url: "press",
+        views:  {
+
+            'main' : {
+
+                templateUrl: "js/press/press.html"
+
+            }
+
+        }
+
     });
 
 }]);
