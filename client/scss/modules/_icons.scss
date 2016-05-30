@@ -3,16 +3,15 @@
     #Icons 
 \*------------------------------------*/
 
-@import "typography.scss";
 
 //Arrows 
-$icon--arrowup: "../images/icon--arrowUp.svg";
+$icon--arrowup: "../assets/images/icon--arrowUp.svg";
 
 //Social Media 
-$icon--socialMedia: "../images/icons--socialMedia.svg";
+$icon--socialMedia: "../assets/images/icons--socialMedia.svg";
 
 //Purchase icons
-$icons--stores: "../images/icons--stores.svg";
+$icons--stores: "../assets/images/icons--stores.svg";
 
 
 @mixin icon($icon: false) {

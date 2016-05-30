@@ -1,0 +1,85 @@
+<nav class="mainNav  mainNav--small  hide-on-medium">
+
+    <div class="ml0 pl3 mainNav-controls">
+
+        <svg viewBox="0 0 200 60" class="mainNav-logo  logo" title="SALES logo">
+
+          <use xlink:href="assets/images/logo--sales.svg#sales-logo"></use>
+
+        </svg>
+
+
+        <svg ng-click="toggleNav()" viewBox="0 0 15 15"  title="Toggle Menu" class="mainNav-menuIcon  icon--controls">
+
+          <use xlink:href="assets/images/icon--controls.svg#menu-icon"></use>
+
+        </svg>
+
+
+    </div>
+
+    <div class="mainNav-menu">
+
+        <ul class="[ mt0 ]  [ flexParent  flexDirection--column  alignItems--left ]" >
+        
+            <li class="mainNav-item  pb3">
+        
+              <a  callback-before="toggleNav()"
+                   offset="200" 
+                   scroll-to="section-ep" 
+                   class="mainNav-link ">
+                  MUSIC
+              </a>
+        
+            </li>
+        
+            <li class="mainNav-item  pb3">
+        
+              <a  callback-before="toggleNav()"
+                  offset="200" 
+                  scroll-to="section-videos" 
+                  class="mainNav-link">
+                  VIDEOS
+              </a>
+        
+            </li>
+        
+        
+            <li class="mainNav-item  pb3">
+        
+                <a  callback-before="toggleNav()"
+                    offset="200" 
+                    scroll-to="section-news" 
+                    class="mainNav-link ">
+                    NEWS
+                </a>
+        
+            </li>
+        
+            <li class="mainNav-item  pb3">
+        
+                <a  callback-before="toggleNav()"
+                    offset="200" 
+                    scroll-to="section-tour" 
+                    class="mainNav-link ">
+                    ON TOUR
+                </a>
+        
+            </li>
+        
+            <li  
+                  class="mainNav-item">
+        
+                <a href="https://sales.bandcamp.com/merch" 
+                   target="_blank" 
+                   class="mainNav-link">
+                  STORE
+                </a>
+        
+            </li>
+        
+        </ul>
+
+    </div>
+
+</nav>
