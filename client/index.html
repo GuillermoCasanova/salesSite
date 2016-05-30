@@ -4,7 +4,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
-    <title>SALES | New single 'ivy' out now!</title>
+    <title>SALES | Debut album out now! Listen here.</title>
 
     <meta content="wearenotsales" property="og:site_name"></meta>
 
@@ -56,14 +56,8 @@
   </head>
 
 <body ss-page-theme  class="theme-{{currentTheme}}">
-    
-    <div class="row"  ng-if="false">
-        <div class="mt5  center"  >
-           <h1>HANG ON, IT'S LOADING...</h1>
-        </div>
-    </div>
-    
-       <!-- GoogleAnalytics
+
+    <!-- GoogleAnalytics
     ================================================== -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -74,29 +68,17 @@
       ga('create', 'UA-43938621-1', 'auto');
       ga('send', 'pageview');
     </script>
-    
 
-    <ss-page-nav >
-
-    </ss-page-nav>
-
-    <ss-page-theme-backgrounds component="theme-background">
-
-    </ss-page-theme-backgrounds>
-
-    <div class="pageTheme-pageWrap">
-    
-        <div ng-view  autoscroll="true">
-        
-            
+    <div class="row"  ng-if="false">
+        <div class="mt5  center"  >
+           <h1>HANG ON, IT'S LOADING...</h1>
         </div>
-        
-        <ss-page-footer>
-        </ss-page-footer>
+    </div>
+
+    <!-- Main app view-->
+    <div ui-view>
 
     </div>
-    
-
 
 </body>
 

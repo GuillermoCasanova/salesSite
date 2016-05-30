@@ -1,6 +1,7 @@
 angular.module('Sales', ['ngRoute', 
     'ngResource', 
     'ngSanitize', 
+    'ui.router',
     'smoothScroll' ])
     .config(function() {
 

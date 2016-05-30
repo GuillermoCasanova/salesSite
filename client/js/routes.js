@@ -1,15 +1,54 @@
 angular.module('Sales')
-    .config(['$routeProvider',
+    .config(['$stateProvider', '$urlRouterProvider',
 
-        function($routeProvider) {
+        function($stateProvider, $urlRouterProvider) {
 
-    $routeProvider
-    .when('/', {
-        redirectTo: '/home'
+
+    //If anything is unmatched just go to home
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider
+    .state('main', {
+
+        abstract: true, 
+        url: "/",
+        templateUrl: "js/main/main.html", 
     })
+    .state('main.home', {
+        url: "",
+        views: {
+            'main': {
 
-    .when('/home', {
-        templateUrl: "/js/home/index.html"
+                templateUrl: "js/home/index.html"
+            }
+        }
     })
+    .state('main.tourDates', {
+        
+        url: "tour",
+        views: {
+
+            'main': {
+
+                templateUrl: "js/tourDates/tourDates.html"
+            }
+
+        }  
+
+    })
+    .state('main.contact', {
+
+        url: "contact",
+        views: {
+
+            'main' : {
+
+                templateUrl: "js/contact/contact.html"
+
+            }
+
+        }
+
+    });
 
 }]);

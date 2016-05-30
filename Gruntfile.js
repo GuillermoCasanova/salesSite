@@ -68,11 +68,11 @@ module.exports = function(grunt) {
         watch: {
             client: {
                 files: [
-                  'client/js/**/*',
-                  'client/scss/**/*.scss',
-                  'views/index.html',
-                  'client/templates/**/*',
-                  'client/images/*'
+                  '<%= app %>/js/**/*',
+                  '<%= app %>/scss/**/*.scss',
+                  '<%= app %>/index.html',
+                  '<%= app %>/templates/**/*',
+                  '<%= app %>/images/*'
                 ],
                 tasks: ['compile-sass', 'bower-install'],
                 options: {
