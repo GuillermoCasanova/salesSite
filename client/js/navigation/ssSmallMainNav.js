@@ -4,7 +4,7 @@ angular.module("Sales")
         return {
             replace: true, 
             restrict: "E",
-            templateUrl: "/js/navigation/ssSmallMainNav.tpl.html",
+            templateUrl: "js/navigation/ssSmallMainNav.tpl.html",
             scope: {}, 
             link: function(scope, element, attrs) {
                 scope.toggleNav = function() {

@@ -8,7 +8,7 @@
             restrict: "E",
             scope: true,
             require: "^ssPageTheme",
-            templateUrl: "/js/audioPlayer/ssAudioPlayer.tpl.html",
+            templateUrl: "js/audioPlayer/ssAudioPlayer.tpl.html",
             controller: [
             '$scope',
             function($scope) {

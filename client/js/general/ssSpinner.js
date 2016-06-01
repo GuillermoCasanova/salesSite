@@ -8,7 +8,7 @@ angular.module("Sales")
             return {
                 replace: true, 
                 restrict: "E",
-                templateUrl: "/js/general/ssSpinner.tpl.html",
+                templateUrl: "js/general/ssSpinner.tpl.html",
                 scope: {},
                 link: function(scope, element, attrs) {
 
