@@ -1,0 +1,26 @@
+
+
+<div class="row">
+    <div class="small-12 columns">
+
+        <h1 class="text--mega  text-center">Store</h1>
+
+        <div class="row pb5">
+            
+            <div class="small-8  small-centered medium-uncentered columns medium-4 large-3 "  ng-repeat="product in store.inventory">
+                        
+                    
+                <div class="thumbnail  text-center mb4">
+                    <img src="{{product.thumbnail}}" alt="{{product.name}}" width="420">
+                        <a ng-href="{{product.link}}" target="_blank">
+                    <h2>{{product.name}}</h2>
+                    
+                        </a>
+                </div>
+                
+        
+            </div>
+        
+        </div>
+    </div>
+</div>

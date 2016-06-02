@@ -5,6 +5,14 @@ angular.module('Sales')
 
         var posts = [
                     {
+                        'title' : 'SPRING TOUR JUNE LEG CANCELLED',
+                        'date': 'June 7th, 2016',
+                        'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_NORTH_AMERICAN_SPRING_2016.jpg',
+                        'mainImage' : 'https://s3.amazonaws.com/salessite/SALES_NORTH_AMERICAN_SPRING_2016_header.jpg',
+                        'id' : 'cancelling_june_spring_leg',
+                        'body' : 'Hey friends, We are so happy with the release of SALES LP, and want to say thanks to all of you for your support, whether it was coming out to a show, picking up some merchandise, inviting us to eat/float spa with you, putting SALES on your playlist, or even sharing our music with a friend. We couldn\'t do any of this without your support. We choose to be independent and with that comes a lot of work. We love going to new places and meeting all of you. We want to continue to make music and tour as SALES for years to come. In order to put on the best live show, and remain independent we\'ve decided to take a step back and cancel the upcoming June shows. If you bought a ticket, it will be refunded. We are sorry and promise to make it back to your city. Thanks again for all of your understanding and support. Love,Lauren & JordaSALES'
+                    },
+                    {
                         'title' : 'NORTH AMERICAN SPRING TOUR 2016',
                         'date': 'April 16th, 2015',
                         'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_NORTH_AMERICAN_SPRING_2016.jpg',

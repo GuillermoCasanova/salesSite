@@ -49,6 +49,22 @@ angular.module('Sales')
 
         }
 
+    })
+    .state('main.store', {
+
+        url: "store",
+        views: {
+
+            'main' : {
+
+                templateUrl: "js/store/store.html",
+                controller: 'storeCtrl',
+                controllerAs: 'store'
+
+            }
+
+        }
+
     }).
     state('main.press', {
 
