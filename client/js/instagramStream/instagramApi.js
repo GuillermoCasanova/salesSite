@@ -11,9 +11,11 @@ angular.module("Sales")
             fetchPhotos: function(callback) {
 
                 $http.jsonp(endPoint).then(function(response) {
-
+                    console.log(response.data); 
+                    
                     // since jsonp, it is expecting a callback, we check that here
                     if(callback && typeof callback === 'function') {
+                    console.log(response.data); 
 
                         callback(response.data);
 

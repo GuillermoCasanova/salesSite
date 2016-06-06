@@ -1,0 +1,82 @@
+
+
+<div class="globalAudioPlayer">
+    
+    <div class="globalAudioPlayer-controls">
+        
+        <button  class="[ audioPlayer-button prev ]  is-showing"  class="show-for-medium-up">
+
+            <svg viewBox="0 0 144 144" 
+                 preserveAspectRatio="xMidYMid meet"  
+                 title="Play previous track" 
+                 class="seeker icon--controls">
+
+                <use xlink:href="assets/images/icon--controls.svg#prev-icon"></use>
+
+            </svg>
+
+        </button>
+
+        <button class="[ audioPlayer-button ] pause">
+            
+            <svg viewBox="0 0 144 144" 
+                 preserveAspectRatio="xMidYMid meet"  
+                 title="Play Music" 
+                 class="play  icon--controls">
+
+                <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
+
+            </svg>
+
+            <svg viewBox="0 0 144 144" 
+                 preserveAspectRatio="xMidYMid meet"  
+                 title="Pause Music" 
+                 class="pause  icon--controls">
+
+                <use xlink:href="assets/images/icon--controls.svg#play-icon"></use>
+
+            </svg>
+
+
+        </button>
+
+
+        <button class="[ audioPlayer-button next ] is-showing"  class="show-for-medium-up">>
+
+            <svg viewBox="0 0 144 144" 
+                 preserveAspectRatio="xMidYMid meet"  
+                 title="Play next track" 
+                 class="seeker  icon--controls">
+
+                <use xlink:href="assets/images/icon--controls.svg#next-icon"></use>
+
+            </svg>     
+
+        </button>
+
+    </div>
+
+    <div class="globalAudioPlayer-information">
+            
+           <h1> {{globalAudioPlayer.currentSong}}</h1>
+
+    </div>
+
+
+    <div class="globalAudioPlayer-playlists">
+        
+    
+        <div class="row">
+            
+            <div class="small-12 columns" ng-repeat="song in globalAudioPlayer.tracks">
+                
+                {{song}}
+
+            </div>
+
+        </div>
+    
+
+    </div>
+
+</div>

@@ -6269,7 +6269,7 @@ th.hide-for-touch {
     #Drop Shadows
 \*------------------------------------*/
 /* line 65, ../scss/modules/_generics.scss */
-.dropshadow {
+.dropshadow, .globalAudioPlayer {
   -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) #333333;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) #333333;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) #333333;
@@ -7767,6 +7767,17 @@ input:focus {
 /* line 96, ../scss/partials/_flexBox.scss */
 .flexBasis--70 {
   flex-basis: 43.75rem;
+}
+
+/* line 4, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  background-color: black;
 }
 
 /*------------------------------------*\

@@ -13,6 +13,8 @@ angular.module('Sales')
         abstract: true, 
         url: "/",
         templateUrl: "js/main/main.html", 
+        controller: "mainCtrl",
+        controllerAs: "main"
     })
     .state('main.home', {
         url: "",
@@ -65,8 +67,22 @@ angular.module('Sales')
 
         }
 
-    }).
-    state('main.press', {
+    })
+    .state('main.videos', {
+
+        url: "videos",
+        views: {
+
+            'main' : {
+
+                templateUrl: "js/videos/videos.html"
+
+            }
+
+        }
+
+    })
+    .state('main.press', {
 
         url: "press",
         views:  {
