@@ -4,7 +4,7 @@
     
     <div class="globalAudioPlayer-controls">
         
-        <button  class="[ audioPlayer-button prev ]  is-showing"  class="show-for-medium-up">
+<!--         <button  class="[ audioPlayer-button prev ] "  class="show-for-medium-up">
 
             <svg viewBox="0 0 144 144" 
                  preserveAspectRatio="xMidYMid meet"  
@@ -15,7 +15,7 @@
 
             </svg>
 
-        </button>
+        </button> -->
 
         <button class="[ audioPlayer-button ] pause">
             
@@ -40,8 +40,8 @@
 
         </button>
 
-
-        <button class="[ audioPlayer-button next ] is-showing"  class="show-for-medium-up">>
+<!-- 
+        <button class="[ audioPlayer-button next ] "  class="show-for-medium-up">
 
             <svg viewBox="0 0 144 144" 
                  preserveAspectRatio="xMidYMid meet"  
@@ -52,7 +52,7 @@
 
             </svg>     
 
-        </button>
+        </button> -->
 
     </div>
 
@@ -63,19 +63,82 @@
     </div>
 
 
-    <div class="globalAudioPlayer-playlists">
+  
+
+    <div class="globalAudioPlayer-artwork">
         
-    
-        <div class="row">
+        <img ng-src="{{globalAudioPlayer.currentSongArtwork}}" alt="Song Artwork" width="100">
+
+    </div>
+
+
+  <div class="globalAudioPlayer-playlists">
+
+        <nav>
             
-            <div class="small-12 columns" ng-repeat="song in globalAudioPlayer.tracks">
+            <ul>
                 
-                {{song}}
+                <li>
+
+                    <h1 class="h6">
+                    
+                        Playlists
+                        
+                    </h1>
+
+                </li>
+
+                <li>
+
+                    <h1 class="h6">
+                    
+                        Catalogue
+                        
+                    </h1>
+
+                </li>
+
+            </ul>
+
+        </nav>
+        
+        <div class="row">
+
+            <h1 class="text--micro">
+                    
+                 Currently Playing
+                        
+            </h1>    
+
+            <div class="small-12 columns" ng-repeat="song in globalAudioPlayer.tracks track by $index">
+                
+                <h2 class="h6" ng-click="globalAudioPlayer.playSong($index)">{{song.name}}{{$index}}</h2>
 
             </div>
 
         </div>
-    
+
+        <div class="globalAudioPlayer-playlists-catalogue">
+            
+            <div class="row">
+
+                <h1 class="text--micro">
+                
+                    Catalogue
+                    
+                </h1>    
+
+                <div class="small-12 columns" ng-repeat="release in globalAudioPlayer.catalogue">
+                    
+                    <img ng-src="{{release.artwork}}" alt="Release Artwork" width="50">
+
+                    <h2 class="text-micro">{{release.name}}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 

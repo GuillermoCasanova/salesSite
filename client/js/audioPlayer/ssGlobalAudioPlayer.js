@@ -17,10 +17,13 @@
                 //and sets notPlayed to true; 
                 globalAudioPlayer.currentSong = globalAudioPlayer.placeHolderText;
 
+                globalAudioPlayer.currentSongArtwork = AudioPlayer.getArtworkOfCurrent(); 
+
                 globalAudioPlayer.changeTheme = function(pThemeName) {
-                    console.log(pThemeName); 
                     //Uses parent directive's controller function to change theme
-                    ssPageTheme.changeTheme(pThemeName);
+                    // ssPageTheme.changeTheme(pThemeName);
+
+                        console.log(pThemeName); 
                 };
 
                 // //Inits Controls for Audio Player as Jquery Object
@@ -38,8 +41,7 @@
                     AudioPlayer.scplayer.track_info(AudioPlayer.scplayer.track_index()).done(function(track){
                         globalAudioPlayer.currentSong = track.title;
                         globalAudioPlayer.changeTheme(track.permalink);
-                        //Has the jquery object use the globalAudioPlayer of this directive 
-                        scope.$apply();
+                        scope.$apply(); 
                         
                     });
                 };
@@ -114,7 +116,7 @@
                     if(hasNotPlayed === true) {
                         return;
                     }
-
+                    console.log('running changeTheme function'); 
                     changeTheme(); 
                 });
 

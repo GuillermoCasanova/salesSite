@@ -10,8 +10,17 @@ angular.module("Sales")
             vm.loadingText = "Loading track..."; 
 
             vm.tracks = AudioPlayer.getCurrentPlaylist();
-            
-       
+
+            vm.catalogue = AudioPlayer.getReleases(); 
+
+            vm.playSong = function(pToSong) {
+
+                var id = pToSong; 
+
+                AudioPlayer.playSong(id); 
+                
+            }
+
     }]);
 
 
