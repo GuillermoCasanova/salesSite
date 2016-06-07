@@ -132,7 +132,6 @@
 
         if(scplayer) {
 
-            console.log('there was already one hre');
             scplayer  = false; 
 
         }
@@ -196,7 +195,6 @@
     }
 
     var playSong = function(pPosition) {
-        console.log(pPosition);
         scplayer.goto(pPosition); 
 
         return pPosition; 

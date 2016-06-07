@@ -39,7 +39,7 @@
                     scope.$apply(); 
 
                     AudioPlayer.scplayer.track_info(AudioPlayer.scplayer.track_index()).done(function(track){
-                        globalAudioPlayer.currentSong = track.title;
+                        globalAudioPlayer.currentSong = track;
                         globalAudioPlayer.changeTheme(track.permalink);
                         scope.$apply(); 
                         
