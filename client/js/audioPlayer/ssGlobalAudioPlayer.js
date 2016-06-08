@@ -1,6 +1,6 @@
     angular.module("Sales")
-    .directive('ssGlobalAudioPlayer', ['AudioPlayer',
-        function(AudioPlayer) {
+    .directive('ssGlobalAudioPlayer', ['AudioPlayer', '$timeout',
+        function(AudioPlayer, $timeout) {
 
         return {
 
@@ -27,14 +27,13 @@
                 };
 
                 // //Inits Controls for Audio Player as Jquery Object
-                $controls = element.find(".globalAudioPlayer-controls");
+                $controls = $(element).find(".globalAudioPlayer-controls");
 
                 //Tells player the user has yet to play anything
                 var hasNotPlayed = true; 
 
                 //Function for changing theme
                 var changeTheme = function() {
-                    globalAudioPlayer.isPlaying = true; 
                     globalAudioPlayer.currentSong = globalAudioPlayer.loadingText;
                     scope.$apply(); 
 
@@ -54,27 +53,39 @@
                     e.preventDefault();
                     var $this = jQuery(this)
                     if( $this.hasClass('play') ){ 
-
                         AudioPlayer.scplayer.pause();
+                        AudioPlayer.isPlaying = false; 
+                        scope.$apply(); 
+                        console.log(AudioPlayer.isPlaying); 
+
                     }
                     else if( $this.hasClass('pause') ) { 
+
+
+
                         if(hasNotPlayed === true) {
                             changeTheme(); 
                             hasNotPlayed = false; 
 
-                            setTimeout(function() {
+                            $timeout(function() {
                                 AudioPlayer.scplayer.pause(); 
+                                AudioPlayer.isPlaying = true; 
+                                console.log(AudioPlayer.isPlaying); 
                             }, 1000)
 
                             return; 
                         }
               
                         AudioPlayer.scplayer.pause(); 
+                        AudioPlayer.isPlaying = true; 
+                        scope.$apply(); 
+                        console.log(AudioPlayer.isPlaying); 
+
 
                     }
                     else if( 
                         $this.hasClass('stop') ){ AudioPlayer.scplayer.stop(); 
-
+                  
                         /* Need to make pause button turn back to play button */
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");

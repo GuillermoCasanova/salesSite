@@ -1,7 +1,7 @@
 
 angular.module("Sales")
-    .controller('globalAudioPlayerCtrl', ['AudioPlayer', 
-        function(AudioPlayer) {
+    .controller('globalAudioPlayerCtrl', ['$scope', 'AudioPlayer', 
+        function($scope, AudioPlayer) {
 
             var vm = this; 
 
@@ -18,8 +18,22 @@ angular.module("Sales")
                 var id = pToSong; 
 
                 AudioPlayer.playSong(id); 
-                
+                AudioPlayer.play(); 
+
             }
+
+            vm.isPlaying = AudioPlayer.isPlaying; 
+
+            $scope.$watch( function() {
+
+                return AudioPlayer.isPlaying; 
+                
+            }, function(newVal, oldVal) {
+
+                vm.isPlaying = newVal;  
+                console.log("val change"); 
+
+            });
 
     }]);
 

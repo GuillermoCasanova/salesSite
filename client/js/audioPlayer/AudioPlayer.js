@@ -179,7 +179,6 @@
     // generatePlaylist(); 
 
     var getCurrentPlaylist = function() {
-        console.log(scplayer.playlist()); 
         return catalogue[0].tracks; 
     }
 
@@ -210,6 +209,7 @@
         "getArtworkOfCurrent" : getArtworkOfCurrent,
         "getCurrentPlaylist": getCurrentPlaylist,
         "getReleases": getReleases,
+        "isPlaying" : isPlaying,
         "setPlaylist" : setPlaylist
 
     }
