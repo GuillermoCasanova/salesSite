@@ -79,8 +79,6 @@
                         AudioPlayer.scplayer.pause(); 
                         AudioPlayer.isPlaying = true; 
                         scope.$apply(); 
-                        console.log(AudioPlayer.isPlaying); 
-
 
                     }
                     else if( 

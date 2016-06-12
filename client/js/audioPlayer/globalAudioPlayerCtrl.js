@@ -22,8 +22,6 @@ angular.module("Sales")
 
             }
 
-            vm.isPlaying = AudioPlayer.isPlaying; 
-
             $scope.$watch( function() {
 
                 return AudioPlayer.isPlaying; 
@@ -31,6 +29,7 @@ angular.module("Sales")
             }, function(newVal, oldVal) {
 
                 vm.isPlaying = newVal;  
+                console.log(vm.isPlaying); 
                 console.log("val change"); 
 
             });
