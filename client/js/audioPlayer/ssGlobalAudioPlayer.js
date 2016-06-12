@@ -19,12 +19,12 @@
 
                 globalAudioPlayer.currentSongArtwork = AudioPlayer.getArtworkOfCurrent(); 
 
-                globalAudioPlayer.changeTheme = function(pThemeName) {
-                    //Uses parent directive's controller function to change theme
-                    // ssPageTheme.changeTheme(pThemeName);
+                // globalAudioPlayer.changeTheme = function(pThemeName) {
+                //     //Uses parent directive's controller function to change theme
+                //     // ssPageTheme.changeTheme(pThemeName);
 
-                        console.log(pThemeName); 
-                };
+                //     console.log(pThemeName); 
+                // };
 
                 // //Inits Controls for Audio Player as Jquery Object
                 $controls = $(element).find(".globalAudioPlayer-controls");
@@ -32,52 +32,43 @@
                 //Tells player the user has yet to play anything
                 var hasNotPlayed = true; 
 
-                //Function for changing theme
-                var changeTheme = function() {
-                    globalAudioPlayer.currentSong = globalAudioPlayer.loadingText;
-                    scope.$apply(); 
 
-                    AudioPlayer.scplayer.track_info(AudioPlayer.scplayer.track_index()).done(function(track){
-                        globalAudioPlayer.currentSong = track;
-                        globalAudioPlayer.changeTheme(track.permalink);
-                        scope.$apply(); 
-                        
-                    });
-                };
 
                 //Inits controls of audio player selecting DOM elements
                 $controls.on("click", 'button', function(e){
                     
                     var playlist = AudioPlayer.getCurrentPlaylist(); 
-
+                    console.log('clicked'); 
                     e.preventDefault();
                     var $this = jQuery(this)
                     if( $this.hasClass('play') ){ 
                         AudioPlayer.scplayer.pause();
-                        AudioPlayer.isPlaying = false; 
+                        AudioPlayer.isPlaying = false;
                         scope.$apply(); 
-                        console.log(AudioPlayer.isPlaying); 
+
 
                     }
                     else if( $this.hasClass('pause') ) { 
-
-
-
                         if(hasNotPlayed === true) {
-                            changeTheme(); 
                             hasNotPlayed = false; 
 
-                            $timeout(function() {
-                                AudioPlayer.scplayer.pause(); 
-                                AudioPlayer.isPlaying = true; 
-                                console.log(AudioPlayer.isPlaying); 
-                            }, 1000)
+                            AudioPlayer.scplayer.pause(); 
+                            AudioPlayer.isPlaying = true; 
+                            scope.$apply(); 
+
+                            AudioPlayer.changeCurrentTrackInfo().done(function(track){
+
+                                AudioPlayer.currentSong = track; 
+                                scope.$apply(); 
+
+                            });
+
 
                             return; 
                         }
               
-                        AudioPlayer.scplayer.pause(); 
-                        AudioPlayer.isPlaying = true; 
+                        AudioPlayer.scplayer.pause();
+                        AudioPlayer.isPlaying = true;
                         scope.$apply(); 
 
                     }
@@ -119,15 +110,6 @@
 
                 });                
                 
-                //Changes currentSong and theme on the changing_track event
-                AudioPlayer.scplayer.on('scplayer.changing_track', function(e, index) {
-
-                    if(hasNotPlayed === true) {
-                        return;
-                    }
-                    console.log('running changeTheme function'); 
-                    changeTheme(); 
-                });
 
 
                 

@@ -5,13 +5,13 @@ angular.module("Sales")
 
             var vm = this; 
 
-            console.log(AudioPlayer.checkIfPlaying()); 
-
             vm.loadingText = "Loading track..."; 
 
             vm.tracks = AudioPlayer.getCurrentPlaylist();
 
             vm.catalogue = AudioPlayer.getReleases(); 
+
+            vm.isPlaying = AudioPlayer.isPlaying;  
 
             vm.playSong = function(pToSong) {
 
@@ -29,10 +29,52 @@ angular.module("Sales")
             }, function(newVal, oldVal) {
 
                 vm.isPlaying = newVal;  
-                console.log(vm.isPlaying); 
-                console.log("val change"); 
 
             });
+
+
+            $scope.$watch(function() {
+
+                return AudioPlayer.currentSong; 
+                
+            }, function(newVal, oldVal) {
+                vm.currentSong = AudioPlayer.currentSong;  
+
+            });
+
+            $scope.$watch(function() {
+
+                return AudioPlayer.isPlaying; 
+                
+            }, function(newVal, oldVal) {
+
+                vm.isPlaying = AudioPlayer.isPlaying;  
+
+            });
+
+
+            vm.getCurrentTrack = AudioPlayer.getCurrentTrack(); 
+
+
+
+            // vm.changeTrack = function(pTrack) {
+            //     vm.currentSong = pTrack;
+            //     console.log()
+            // }
+
+            // //Function for changing theme
+            // vm.changeTheme = function() {
+            //     console.log('changing theme'); 
+            //     vm.currentSong = {}; 
+            //     vm.currentSong.title = vm.loadingText;
+            //     console.log(vm.currentSong); 
+
+            //     AudioPlayer.scplayer.track_info(AudioPlayer.scplayer.track_index()).done(function(track){
+
+            //         vm.changeTrack(track); 
+                    
+            //     });
+            // };
 
     }]);
 

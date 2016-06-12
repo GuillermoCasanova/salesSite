@@ -1,6 +1,7 @@
     angular.module('Sales')
     .factory('AudioPlayer', function() {
 
+
     var isPlaying = false; 
 
     var currentSong = null; 
@@ -11,6 +12,8 @@
 
     var scplayer = false; 
 
+    var hasNotPlayed = true; 
+
     var checkIfPlaying  = function() {
 
         return isPlaying; 
@@ -19,6 +22,9 @@
     var play =  function() {
 
         isPlaying = true; 
+
+        hasNotPlayed = false; 
+
         return isPlaying;
     };
 
@@ -31,14 +37,6 @@
     var getCurrentSong = function() {
 
         return currentSong; 
-    }
-
-    var changeCurrentSong = function(pSong) {
-
-        currentSong = pSong;
-
-        return currentSong; 
-
     }
 
     var catalogue = [{
@@ -156,28 +154,6 @@
 
     setPlaylist(scPlayerLinks); 
 
-
-    // var generatePlaylist  = function() {
-
-    //     var list = catalogue[0].tracks;
-
-    //     var playlistLinks = scplayer.playlist(); 
-
-    //     for(var i = 0; i < playlistLinks.length; i++) {
-
-    //         scplayer.track_info(i).then(function(track) {
-
-    //             var title = track.title; 
-
-    //             tracks.push(title); 
-
-    //         }); 
-    //     }
-
-    // }
-
-    // generatePlaylist(); 
-
     var getCurrentPlaylist = function() {
         return catalogue[0].tracks; 
     }
@@ -199,15 +175,35 @@
         return pPosition; 
     }
 
+
+    var changeCurrentTrackInfo = function() {
+            
+        return scplayer.track_info(scplayer.track_index()); 
+
+    }
+       
+    //Changes currentSong and theme on the changing_track event
+    scplayer.on('scplayer.changing_track', function(e, index) {
+
+        if(hasNotPlayed === true) {
+            return;
+        }
+
+        changeCurrenTrackInfo(); 
+
+    });
+
     return {
         "scplayer": scplayer, 
-        "changeCurrentSong": changeCurrentSong,
+        "changeCurrentTrackInfo": changeCurrentTrackInfo,
         "checkIfPlaying": checkIfPlaying, 
+        "currentSong" : currentSong, 
         "play": play, 
         "playSong":playSong,
         "stopPlaying": stopPlaying,
         "getArtworkOfCurrent" : getArtworkOfCurrent,
         "getCurrentPlaylist": getCurrentPlaylist,
+        "getCurrentTrack": getCurrentSong,
         "getReleases": getReleases,
         "isPlaying" : isPlaying,
         "setPlaylist" : setPlaylist

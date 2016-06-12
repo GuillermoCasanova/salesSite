@@ -5,7 +5,7 @@ angular.module('Sales', ['ngRoute',
     'smoothScroll' ])
     .config(function() {
 
-}).run(function($timeout) {
+}).run(['$rootScope', '$timeout', function($rootScope, $timeout) {
 
 
     // Function to set data-useragent attribute to document
@@ -13,6 +13,11 @@ angular.module('Sales', ['ngRoute',
             $document[0].documentElement.setAttribute('data-useragent', navigator.userAgent);
     };
 
+
+    // Code to make the page load at the top when a state changes
+    $rootScope.$on('$stateChangeSuccess', function() {
+       document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
 
 
     angular.element(document).ready(function() {
@@ -39,4 +44,4 @@ angular.module('Sales', ['ngRoute',
 
     });
 
-});
+}]);
