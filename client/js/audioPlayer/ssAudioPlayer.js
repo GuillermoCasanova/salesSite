@@ -32,6 +32,8 @@
                     
                 }, function(newVal, oldVal) {
 
+                    console.log('song name change'); 
+
                     if(newVal) {
 
                         $scope.currentSong = newVal.title;  

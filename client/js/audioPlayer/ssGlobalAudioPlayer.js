@@ -56,8 +56,10 @@
                             scope.$apply(); 
 
                             AudioPlayer.getCurrentTrackInfo().done(function(track){
-                                AudioPlayer.currentSong = track; 
+                          AudioPlayer.changeCurrentTrackInfo(track); 
+                                scope.currentSong = AudioPlayer.currentSong.title; 
                                 scope.$apply(); 
+
 
                             });
 
@@ -68,6 +70,14 @@
                         AudioPlayer.play();
                         scope.$apply(); 
 
+                        AudioPlayer.getCurrentTrackInfo().done(function(track){
+
+                            AudioPlayer.changeCurrentTrackInfo(track); 
+
+                            scope.currentSong = AudioPlayer.currentSong.title; 
+                            scope.$apply(); 
+
+                        });
                     }
                     else if( 
                         $this.hasClass('stop') ){ AudioPlayer.stop(); 

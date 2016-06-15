@@ -26,6 +26,13 @@ angular.module("Sales")
 
                     console.log('play'); 
                     AudioPlayer.play(); 
+
+                 AudioPlayer.getCurrentTrackInfo().done(function(track){
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.$apply(); 
+
+                });
+
                 }
 
             } else { 
@@ -43,6 +50,11 @@ angular.module("Sales")
                     AudioPlayer.play(); 
 
                 }, 400); 
+
+                 AudioPlayer.getCurrentTrackInfo().done(function(track){
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.$apply(); 
+                });
 
 
             }

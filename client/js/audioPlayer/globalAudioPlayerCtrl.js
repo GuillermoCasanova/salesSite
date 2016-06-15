@@ -36,16 +36,22 @@ angular.module("Sales")
             });
 
 
-            $scope.$watch(function() {
+           $scope.$watch(function() {
 
-                return AudioPlayer.getCurrentSong(); 
-                
-            }, function(newVal, oldVal) {
+                    return AudioPlayer.currentSong; 
+                    
+                }, function(newVal, oldVal) {
 
-                vm.currentSong = newVal;   
+                    console.log('song name change'); 
 
-            });
+                    if(newVal) {
 
+                        vm.currentSong = newVal.title;  
+                        console.log($scope.currentSong); 
+
+                    }
+
+                });
 
             // vm.getCurrentTrack = AudioPlayer.getCurrentTrack(); 
 
