@@ -24,7 +24,6 @@
                 }, function(newVal, oldVal) {
 
                     $scope.isPlaying = newVal;  
-                    console.log(newVal); 
                 });
 
               $scope.$watch(function() {
@@ -32,33 +31,31 @@
                     return AudioPlayer.currentSong; 
                     
                 }, function(newVal, oldVal) {
-                    $scope.currentSong = AudioPlayer.currentSong;  
 
-                });
+                    if(newVal) {
 
-              $scope.$watch(function() {
+                        $scope.currentSong = newVal.title;  
+                        console.log($scope.currentSong); 
 
-                return AudioPlayer.isPlaying; 
-                    
-                }, function(newVal, oldVal) {
-                    
-                    $scope.isPlaying = AudioPlayer.isPlaying;  
+                    }
 
                 });
 
             }],
             link: function(scope, element, attrs, ssPageTheme) {
 
-                //Initializes the current song text with the placeholder text
-                //and sets notPlayed to true; 
-                scope.currentSong = scope.placeHolderText;
+                // globalAudioPlayer.changeTheme = function(pThemeName) {
+                //     //Uses parent directive's controller function to change theme
+                //     // ssPageTheme.changeTheme(pThemeName);
+
+                //     console.log(pThemeName); 
+                // };
 
                 // //Inits Controls for Audio Player as Jquery Object
                 $controls = $(element).find(".controls");
 
+                //Tells player the user has yet to play anything
                 var hasNotPlayed = true; 
-
-                scope.scplayer = AudioPlayer.scplayer; 
 
                 //Inits controls of audio player selecting DOM elements
                 $controls.on("click", 'button', function(e){
@@ -66,57 +63,52 @@
                     var playlist = AudioPlayer.getCurrentPlaylist(); 
 
                     e.preventDefault();
+
                     var $this = jQuery(this)
                     if( $this.hasClass('play') ){ 
-                        AudioPlayer.togglePlaylist();
+                        AudioPlayer.stop();
                         scope.$apply(); 
 
-                        AudioPlayer.getCurrentTrackInfo().done(function(track){
-
-                            AudioPlayer.changeCurrentTrackInfo(track); 
-                            scope.$apply(); 
-
-                        });
 
                     }
                     else if( $this.hasClass('pause') ) { 
-
-
                         if(hasNotPlayed === true) {
-                           // changeTheme(); 
                             hasNotPlayed = false; 
-                            AudioPlayer.togglePlaylist();
+
+                            AudioPlayer.play(); 
                             scope.$apply(); 
 
                             AudioPlayer.getCurrentTrackInfo().done(function(track){
-
                                 AudioPlayer.changeCurrentTrackInfo(track); 
+                                scope.currentSong = AudioPlayer.currentSong.title; 
                                 scope.$apply(); 
 
                             });
+
+
                             return; 
                         }
               
-                        AudioPlayer.togglePlaylist();
+                        AudioPlayer.play();
                         scope.$apply(); 
 
                         AudioPlayer.getCurrentTrackInfo().done(function(track){
-
                             AudioPlayer.changeCurrentTrackInfo(track); 
+                            scope.currentSong = AudioPlayer.currentSong.title; 
                             scope.$apply(); 
 
                         });
 
                     }
                     else if( 
-                        $this.hasClass('stop') ){ scope.scplayer.stop(); 
+                        $this.hasClass('stop') ){ AudioPlayer.stop(); 
                   
                         /* Need to make pause button turn back to play button */
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");
                     }
                     else if( 
-                        $this.hasClass('next') ){ scope.scplayer.next(); 
+                        $this.hasClass('next') ){ AudioPlayer.scplayer.next(); 
                         if ( $controls.find('.pause') ){
                             $controls.find('.pause').addClass("play");
                             $controls.find('.play').removeClass("pause");
@@ -124,7 +116,7 @@
                         }
                     }
                     else if( 
-                        $this.hasClass('prev') ){ scope.scplayer.prev(); 
+                        $this.hasClass('prev') ){ AudioPlayer.scplayer.prev(); 
                         if ( $controls.find('.pause') ){
                             $controls.find('.pause').addClass("play");
                             $controls.find('.play').removeClass("pause");
@@ -134,7 +126,7 @@
                 });
 
                 
-                scope.scplayer.on("scplayer.pause", function(e, is_paused){
+                AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
 
                     if(is_paused === true){
                         $controls.find('.play').addClass("pause");
@@ -145,7 +137,10 @@
                     }
 
                 });                
+                
 
+
+                
             }
         };
 

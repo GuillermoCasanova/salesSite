@@ -42,8 +42,7 @@
                     e.preventDefault();
                     var $this = jQuery(this)
                     if( $this.hasClass('play') ){ 
-                        AudioPlayer.scplayer.pause();
-                        AudioPlayer.isPlaying = false;
+                        AudioPlayer.stop();
                         scope.$apply(); 
 
 
@@ -53,12 +52,10 @@
                             hasNotPlayed = false; 
 
                             console.log(AudioPlayer.scplayer); 
-                            
-                            AudioPlayer.scplayer.pause(); 
+                            AudioPlayer.play(); 
                             scope.$apply(); 
 
-                            AudioPlayer.changeCurrentTrackInfo().done(function(track){
-                                AudioPlayer.isPlaying = true; 
+                            AudioPlayer.getCurrentTrackInfo().done(function(track){
                                 AudioPlayer.currentSong = track; 
                                 scope.$apply(); 
 
@@ -68,13 +65,12 @@
                             return; 
                         }
               
-                        AudioPlayer.scplayer.pause();
-                        AudioPlayer.isPlaying = true;
+                        AudioPlayer.play();
                         scope.$apply(); 
 
                     }
                     else if( 
-                        $this.hasClass('stop') ){ AudioPlayer.scplayer.stop(); 
+                        $this.hasClass('stop') ){ AudioPlayer.stop(); 
                   
                         /* Need to make pause button turn back to play button */
                         $controls.find('.play').addClass("pause");
@@ -99,8 +95,6 @@
                 });
 
                 
-                console.log(AudioPlayer.scplayer); 
-
                 AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
 
                     if(is_paused === true){
@@ -112,9 +106,6 @@
                     }
 
                 });                
-                
-
-
                 
             }
         };

@@ -17,7 +17,7 @@ angular.module("Sales")
 
             if(vm.playlist === pPlaylist) {
 
-                if(AudioPlayer.checkIfPlaying()) {
+                if(AudioPlayer.isPlaying) {
 
                     console.log('stop'); 
                     AudioPlayer.stop(); 
@@ -39,7 +39,7 @@ angular.module("Sales")
 
                 $timeout(function() {
                     console.log('play'); 
-                    
+
                     AudioPlayer.play(); 
 
                 }, 400); 

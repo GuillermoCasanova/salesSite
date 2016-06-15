@@ -24,11 +24,14 @@ angular.module("Sales")
 
             $scope.$watch( function() {
 
-                return AudioPlayer.checkIfPlaying(); 
+                return AudioPlayer.isPlaying; 
                 
             }, function(newVal, oldVal) {
 
                 vm.isPlaying = newVal;  
+
+                    console.log(vm.isPlaying); 
+
 
             });
 

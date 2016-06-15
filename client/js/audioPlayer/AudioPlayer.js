@@ -90,11 +90,6 @@
     //*Methods//
     //*******//
 
-    var checkIfPlaying  = function() {
-
-        return isPlaying; 
-    };
-
     var currentSong = function() {
 
         return currentSong; 
@@ -136,11 +131,11 @@
         console.log('play'); 
         this.scplayer.play(); 
 
-        isPlaying = true; 
+        this.isPlaying = true; 
 
         hasNotPlayed = false; 
 
-        return isPlaying;
+        return this.isPlaying;
     };
 
 
@@ -175,8 +170,8 @@
             this.scplayer.stop(); 
         }
 
-            this.scplayer = {}; 
-        
+        this.scplayer = {}; 
+
         //Inits Soundcloud player with array of URLS
         this.scplayer = new SoundCloudPlayer(pSoundcloudLinks,{
               consumer_key: "7a6e6123d37c58d267bdfa4d526e554c"
@@ -197,8 +192,8 @@
     var stop = function() {
         console.log('stop'); 
         this.scplayer.stop(); 
-        isPlaying = false; 
-        return isPlaying
+        this.isPlaying = false; 
+        return this.isPlaying
     };
 
 
@@ -239,7 +234,7 @@
 
     var changeCurrentTrackInfo = function(pTrackInfo) {
 
-        currentSong = pTrackInfo; 
+        this.currentSong = pTrackInfo; 
 
         return currentSong; 
     };
@@ -267,7 +262,6 @@
         scplayer: scplayer,
         "getCurrentTrackInfo": getCurrentTrackInfo,
         "changeCurrentTrackInfo": changeCurrentTrackInfo,
-        "checkIfPlaying": checkIfPlaying, 
         "play": play, 
         "playPlaylist": playPlaylist, 
         playSong: function(pSongToPlay) {
@@ -282,10 +276,7 @@
         "getCurrentPlaylist": getCurrentPlaylist,
         "getReleases": getReleases,
         "generateSCPlayerLinks": generateSCPlayerLinks,
-        isPlaying : function() {
-
-            return checkIfPlaying(); 
-        },
+        isPlaying : false,
         "setPlaylist" : setPlaylist
     }; 
 

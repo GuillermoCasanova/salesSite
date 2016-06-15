@@ -8,7 +8,7 @@ angular.module("Sales")
 
         console.log('hello tes this is main speaking')
 
-        console.log(AudioPlayer.checkIfPlaying()); 
+        console.log(AudioPlayer.isPlaying); 
         
     }]);
 
