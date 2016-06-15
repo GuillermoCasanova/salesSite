@@ -58,6 +58,8 @@
 
                 var hasNotPlayed = true; 
 
+                scope.scplayer = AudioPlayer.scplayer; 
+
                 //Inits controls of audio player selecting DOM elements
                 $controls.on("click", 'button', function(e){
                     
@@ -66,13 +68,12 @@
                     e.preventDefault();
                     var $this = jQuery(this)
                     if( $this.hasClass('play') ){ 
-                        AudioPlayer.scplayer.pause();
-                        AudioPlayer.isPlaying = false;
-                                scope.$apply(); 
+                        AudioPlayer.togglePlaylist();
+                        scope.$apply(); 
 
-                        AudioPlayer.changeCurrentTrackInfo().done(function(track){
+                        AudioPlayer.getCurrentTrackInfo().done(function(track){
 
-                            AudioPlayer.currentSong = track; 
+                            AudioPlayer.changeCurrentTrackInfo(track); 
                             scope.$apply(); 
 
                         });
@@ -84,41 +85,38 @@
                         if(hasNotPlayed === true) {
                            // changeTheme(); 
                             hasNotPlayed = false; 
+                            AudioPlayer.togglePlaylist();
+                            scope.$apply(); 
 
-                            AudioPlayer.scplayer.pause();
-                            AudioPlayer.isPlaying = true;
-                                scope.$apply(); 
+                            AudioPlayer.getCurrentTrackInfo().done(function(track){
 
-                            AudioPlayer.changeCurrentTrackInfo().done(function(track){
-
-                                AudioPlayer.currentSong = track; 
+                                AudioPlayer.changeCurrentTrackInfo(track); 
                                 scope.$apply(); 
 
                             });
                             return; 
                         }
               
-                        AudioPlayer.scplayer.pause();
-                        AudioPlayer.isPlaying = true;
-                                scope.$apply(); 
+                        AudioPlayer.togglePlaylist();
+                        scope.$apply(); 
 
-                        AudioPlayer.changeCurrentTrackInfo().done(function(track){
+                        AudioPlayer.getCurrentTrackInfo().done(function(track){
 
-                            AudioPlayer.currentSong = track; 
+                            AudioPlayer.changeCurrentTrackInfo(track); 
                             scope.$apply(); 
 
                         });
 
                     }
                     else if( 
-                        $this.hasClass('stop') ){ AudioPlayer.scplayer.stop(); 
+                        $this.hasClass('stop') ){ scope.scplayer.stop(); 
                   
                         /* Need to make pause button turn back to play button */
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");
                     }
                     else if( 
-                        $this.hasClass('next') ){ AudioPlayer.scplayer.next(); 
+                        $this.hasClass('next') ){ scope.scplayer.next(); 
                         if ( $controls.find('.pause') ){
                             $controls.find('.pause').addClass("play");
                             $controls.find('.play').removeClass("pause");
@@ -126,7 +124,7 @@
                         }
                     }
                     else if( 
-                        $this.hasClass('prev') ){ AudioPlayer.scplayer.prev(); 
+                        $this.hasClass('prev') ){ scope.scplayer.prev(); 
                         if ( $controls.find('.pause') ){
                             $controls.find('.pause').addClass("play");
                             $controls.find('.play').removeClass("pause");
@@ -136,7 +134,7 @@
                 });
 
                 
-                AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
+                scope.scplayer.on("scplayer.pause", function(e, is_paused){
 
                     if(is_paused === true){
                         $controls.find('.play').addClass("pause");

@@ -24,7 +24,7 @@ angular.module("Sales")
 
             $scope.$watch( function() {
 
-                return AudioPlayer.isPlaying; 
+                return AudioPlayer.checkIfPlaying(); 
                 
             }, function(newVal, oldVal) {
 
@@ -35,46 +35,16 @@ angular.module("Sales")
 
             $scope.$watch(function() {
 
-                return AudioPlayer.currentSong; 
-                
-            }, function(newVal, oldVal) {
-                vm.currentSong = AudioPlayer.currentSong;  
-
-            });
-
-            $scope.$watch(function() {
-
-                return AudioPlayer.isPlaying; 
+                return AudioPlayer.getCurrentSong(); 
                 
             }, function(newVal, oldVal) {
 
-                vm.isPlaying = AudioPlayer.isPlaying;  
+                vm.currentSong = newVal;   
 
             });
 
 
-            vm.getCurrentTrack = AudioPlayer.getCurrentTrack(); 
-
-
-
-            // vm.changeTrack = function(pTrack) {
-            //     vm.currentSong = pTrack;
-            //     console.log()
-            // }
-
-            // //Function for changing theme
-            // vm.changeTheme = function() {
-            //     console.log('changing theme'); 
-            //     vm.currentSong = {}; 
-            //     vm.currentSong.title = vm.loadingText;
-            //     console.log(vm.currentSong); 
-
-            //     AudioPlayer.scplayer.track_info(AudioPlayer.scplayer.track_index()).done(function(track){
-
-            //         vm.changeTrack(track); 
-                    
-            //     });
-            // };
+            // vm.getCurrentTrack = AudioPlayer.getCurrentTrack(); 
 
     }]);
 

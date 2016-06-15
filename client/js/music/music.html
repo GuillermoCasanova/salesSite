@@ -1,0 +1,30 @@
+
+<section>
+
+    <div class="row">
+        
+        <div class="small-12 columns">
+            <h1 class="uc">Catalogue </h1>
+        </div>
+    
+    </div>
+
+    <div class="row">
+        
+        <div class="small-12 columns  medium-4  small-3  end"
+             ng-repeat="release in music.catalogue track by $index">
+            
+            <a ng-click="music.playPlaylist(release.tracks)">
+
+                <img ng-src="{{release.artwork}}" 
+                     alt="Release Artwork">
+                    
+                <h2>{{release.name}}</h2>        
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>

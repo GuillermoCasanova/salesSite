@@ -52,12 +52,13 @@
                         if(hasNotPlayed === true) {
                             hasNotPlayed = false; 
 
+                            console.log(AudioPlayer.scplayer); 
+                            
                             AudioPlayer.scplayer.pause(); 
-                            AudioPlayer.isPlaying = true; 
                             scope.$apply(); 
 
                             AudioPlayer.changeCurrentTrackInfo().done(function(track){
-
+                                AudioPlayer.isPlaying = true; 
                                 AudioPlayer.currentSong = track; 
                                 scope.$apply(); 
 
@@ -98,6 +99,8 @@
                 });
 
                 
+                console.log(AudioPlayer.scplayer); 
+
                 AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
 
                     if(is_paused === true){

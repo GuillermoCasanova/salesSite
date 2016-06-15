@@ -95,6 +95,21 @@ angular.module('Sales')
 
         }
 
+    }).state('main.music', {
+
+        url: "music",
+        views:  {
+
+            'main' : {
+
+                templateUrl: "js/music/music.html",
+                controller: "musicCtrl",
+                controllerAs: "music"
+
+            }
+
+        }
+
     });
 
 }]);

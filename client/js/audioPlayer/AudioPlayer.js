@@ -2,9 +2,13 @@
     .factory('AudioPlayer', function() {
 
 
+    //*Default variables*//
+
     var isPlaying = false; 
 
     var currentSong = null; 
+
+    var currentSoundCloudLinks = []; 
 
     var scPlayerLinks = []; 
 
@@ -13,31 +17,6 @@
     var scplayer = false; 
 
     var hasNotPlayed = true; 
-
-    var checkIfPlaying  = function() {
-
-        return isPlaying; 
-    };
-
-    var play =  function() {
-
-        isPlaying = true; 
-
-        hasNotPlayed = false; 
-
-        return isPlaying;
-    };
-
-    var stopPlaying = function() {
-
-        isPlaying = false; 
-        return isPlaying
-    };
-
-    var getCurrentSong = function() {
-
-        return currentSong; 
-    }
 
     var catalogue = [{
 
@@ -105,37 +84,101 @@
     }]; 
 
 
-    var generateSCPlayerLinks = function() {
 
-        var list = catalogue[0].tracks;
 
+    //*********//
+    //*Methods//
+    //*******//
+
+    var checkIfPlaying  = function() {
+
+        return isPlaying; 
+    };
+
+    var currentSong = function() {
+
+        return currentSong; 
+
+    }; 
+
+
+    var getArtworkOfCurrent = function() {
+
+        return catalogue[0].artwork; 
+
+    }; 
+
+
+    var getCatalogue = function() {
+
+        return catalogue; 
+    };
+
+    var getCurrentPlaylist = function() {
+
+        return this.scplayer; 
+
+    };
+    
+    var getCurrentSong = function() {
+
+        return currentSong; 
+
+    };
+
+    var getReleases = function() {
+        return catalogue; 
+
+    };
+
+    var play =  function() {
+
+        console.log('play'); 
+        this.scplayer.play(); 
+
+        isPlaying = true; 
+
+        hasNotPlayed = false; 
+
+        return isPlaying;
+    };
+
+
+
+    var generateSCPlayerLinks = function(pTracks) {
+
+        scPlayerLinks = []; 
+
+        var list = pTracks;
+        
         for(var i = 0; i < list.length; i++) {
 
             scPlayerLinks.push(list[i].link);
 
         }
-
         return scPlayerLinks; 
 
-    }
+    }; 
 
     var getSCPlayerLinks = function() {
 
         return scPlayerLinks; 
 
-    }
+    }; 
 
 
-    var setPlaylist = function(pSoundcloudLinks) {
+    var setPlaylist = function(pSoundcloudLinks, pPlay) {
 
-        if(scplayer) {
+        var autoPlay = pPlay; 
 
-            scplayer  = false; 
-
+        if(this.scplayer) {
+            this.scplayer.stop(); 
         }
 
+            this.scplayer = {}; 
+        
         //Inits Soundcloud player with array of URLS
-        scplayer = new SoundCloudPlayer(pSoundcloudLinks,{
+        this.scplayer = new SoundCloudPlayer(pSoundcloudLinks,{
               consumer_key: "7a6e6123d37c58d267bdfa4d526e554c"
             , autoplay: false
             , toggle_pause: true
@@ -143,71 +186,112 @@
             , cache: true
             , loop : true
             , debug: false
-        }); 
+        })
 
-        console.log('success');
+        scplayer = this.scplayer; 
 
-    }
+        currentSoundCloudLinks = pSoundcloudLinks; 
+
+    }; 
+
+    var stop = function() {
+        console.log('stop'); 
+        this.scplayer.stop(); 
+        isPlaying = false; 
+        return isPlaying
+    };
 
 
-    generateSCPlayerLinks()
+    var togglePlaylist = function() {
+        if(this.isPlaying) {
+            this.scplayer.pause();   
+            isPlaying = false; 
 
-    setPlaylist(scPlayerLinks); 
+        } else if(this.isPlaying === false){
+            this.scplayer.play(); 
+            console.log('play'); 
+            isPlaying = true; 
+        }
+    }; 
 
-    var getCurrentPlaylist = function() {
-        return catalogue[0].tracks; 
-    }
+    var playPlaylist = function() {
+        this.scplayer.play();   
+        isPlaying = true; 
 
-    var getArtworkOfCurrent = function() {
+    }; 
 
-        return catalogue[0].artwork; 
-
-    }
-
-    var getReleases = function() {
-        return catalogue; 
-
-    }
 
     var playSong = function(pPosition) {
-        scplayer.goto(pPosition); 
+
+        console.log('play'); 
+        this.scplayer.goto(pPosition); 
 
         return pPosition; 
-    }
+    }; 
 
 
-    var changeCurrentTrackInfo = function() {
-            
-        return scplayer.track_info(scplayer.track_index()); 
+    var getCurrentTrackInfo = function() {
+        
+        return this.scplayer.track_info(scplayer.track_index()); 
 
-    }
+    }; 
+
+
+    var changeCurrentTrackInfo = function(pTrackInfo) {
+
+        currentSong = pTrackInfo; 
+
+        return currentSong; 
+    };
        
     //Changes currentSong and theme on the changing_track event
-    scplayer.on('scplayer.changing_track', function(e, index) {
+    // scplayer.on('scplayer.changing_track', function(e, index) {
 
-        if(hasNotPlayed === true) {
-            return;
-        }
+    //     if(hasNotPlayed === true) {
+    //         return;
+    //     }
 
-        changeCurrenTrackInfo(); 
+    //     changeCurrenTrackInfo(); 
 
-    });
+    // });
 
-    return {
-        "scplayer": scplayer, 
+
+    // var getArtworkOfCurrent = function() {
+
+    //     return catalogue[0].artwork; 
+
+    // }
+
+    var audioPlayerObject = {
+
+        scplayer: scplayer,
+        "getCurrentTrackInfo": getCurrentTrackInfo,
         "changeCurrentTrackInfo": changeCurrentTrackInfo,
         "checkIfPlaying": checkIfPlaying, 
-        "currentSong" : currentSong, 
         "play": play, 
-        "playSong":playSong,
-        "stopPlaying": stopPlaying,
-        "getArtworkOfCurrent" : getArtworkOfCurrent,
-        "getCurrentPlaylist": getCurrentPlaylist,
-        "getCurrentTrack": getCurrentSong,
-        "getReleases": getReleases,
-        "isPlaying" : isPlaying,
-        "setPlaylist" : setPlaylist
+        "playPlaylist": playPlaylist, 
+        playSong: function(pSongToPlay) {
 
-    }
+            return playSong(pSongToPlay); 
+
+        },
+        "stop": stop,
+        "getArtworkOfCurrent" : getArtworkOfCurrent,
+        "getCatalogue": getCatalogue,
+        "getCurrentSong": getCurrentSong,
+        "getCurrentPlaylist": getCurrentPlaylist,
+        "getReleases": getReleases,
+        "generateSCPlayerLinks": generateSCPlayerLinks,
+        isPlaying : function() {
+
+            return checkIfPlaying(); 
+        },
+        "setPlaylist" : setPlaylist
+    }; 
+
+    audioPlayerObject.generateSCPlayerLinks(catalogue[0].tracks); 
+    audioPlayerObject.setPlaylist(scPlayerLinks); 
+
+    return audioPlayerObject; 
 
 });
