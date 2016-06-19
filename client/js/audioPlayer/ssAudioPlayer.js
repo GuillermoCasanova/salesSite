@@ -19,7 +19,7 @@
 
                 $scope.$watch( function() {
 
-                    return AudioPlayer.isPlaying; 
+                    return AudioPlayer.isPlaying(); 
                     
                 }, function(newVal, oldVal) {
 
@@ -28,7 +28,7 @@
 
               $scope.$watch(function() {
 
-                    return AudioPlayer.currentSong; 
+                    return AudioPlayer.currentTrack(); 
                     
                 }, function(newVal, oldVal) {
 
@@ -82,7 +82,7 @@
 
                             AudioPlayer.getCurrentTrackInfo().done(function(track){
                                 AudioPlayer.changeCurrentTrackInfo(track); 
-                                scope.currentSong = AudioPlayer.currentSong.title; 
+                                scope.currentSong = AudioPlayer.currentTrack().title; 
                                 scope.$apply(); 
 
                             });
@@ -96,7 +96,7 @@
 
                         AudioPlayer.getCurrentTrackInfo().done(function(track){
                             AudioPlayer.changeCurrentTrackInfo(track); 
-                            scope.currentSong = AudioPlayer.currentSong.title; 
+                            scope.currentSong = AudioPlayer.currentTrack().title; 
                             scope.$apply(); 
 
                         });

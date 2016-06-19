@@ -1,59 +1,108 @@
 
 angular.module("Sales")
-    .controller('globalAudioPlayerCtrl', ['$scope', 'AudioPlayer', 
-        function($scope, AudioPlayer) {
+    .controller('globalAudioPlayerCtrl', ['$scope', '$timeout', 'AudioPlayer', 
+        function($scope, $timeout, AudioPlayer) {
 
             var vm = this; 
 
             vm.loadingText = "Loading track..."; 
 
-            vm.tracks = AudioPlayer.getCurrentPlaylist();
+            vm.currentPlaylist = AudioPlayer.getCurrentRelease().tracks;
 
-            vm.catalogue = AudioPlayer.getReleases(); 
+            vm.catalogue = AudioPlayer.getCatalogue(); 
 
             vm.isPlaying = AudioPlayer.isPlaying;  
 
+            vm.playerDrawerIsOpen = false; 
+
+            vm.activeTab = 0; 
+
+            vm.showTab = function(pTabId) {
+
+                 vm.activeTab = pTabId; 
+
+            }; 
+
+            vm.checkIfTabActive = function(pTabId) {
+
+                return vm.activeTab === pTabId; 
+            }; 
+
+            vm.openDrawer = function() {
+
+                if(vm.playerDrawerIsOpen) {
+
+                    vm.playerDrawerIsOpen = false; 
+                } else {
+
+                    vm.playerDrawerIsOpen = true; 
+
+                }
+            }; 
+
+            vm.playPlaylist = function(pPlaylist) { 
+
+                AudioPlayer.playPlaylist(pPlaylist); 
+
+            }; 
+
+            vm.pause  = function() {
+
+                AudioPlayer.pause();
+
+                $scope.$apply(); 
+
+            }; 
+
             vm.playSong = function(pToSong) {
 
-                var id = pToSong; 
+                AudioPlayer.playSong(pToSong); 
 
-                AudioPlayer.playSong(id); 
+            }; 
+
+            vm.play = function() {
+
                 AudioPlayer.play(); 
 
-            }
+                $scope.$apply(); 
+
+                AudioPlayer.getCurrentTrackInfo().done(function(track){
+
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.currentTrack = AudioPlayer.currentTrack().title; 
+                    $scope.$apply(); 
+
+
+                });
+
+            }; 
+
 
             $scope.$watch( function() {
 
-                return AudioPlayer.isPlaying; 
+                return AudioPlayer.isPlaying(); 
                 
             }, function(newVal, oldVal) {
 
                 vm.isPlaying = newVal;  
-
-                    console.log(vm.isPlaying); 
-
 
             });
 
 
            $scope.$watch(function() {
 
-                    return AudioPlayer.currentSong; 
-                    
-                }, function(newVal, oldVal) {
+                return AudioPlayer.currentTrack(); 
+                
+            }, function(newVal, oldVal) {
 
-                    console.log('song name change'); 
+                if(newVal) {
 
-                    if(newVal) {
+                    vm.currentTrack = newVal.title;  
+                    vm.currentPlaylist = AudioPlayer.getCurrentRelease().tracks
 
-                        vm.currentSong = newVal.title;  
-                        console.log($scope.currentSong); 
+                }
 
-                    }
-
-                });
-
-            // vm.getCurrentTrack = AudioPlayer.getCurrentTrack(); 
+            });
 
     }]);
 

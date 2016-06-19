@@ -13,7 +13,8 @@
         </div>
     </div>
 
-    <div class="globalAudioPlayer">
+    <div class="globalAudioPlayer"
+         ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
         
         <div class="row">
 
@@ -21,20 +22,20 @@
 
                 <div class="flexParent">
                     
-                    <div class="globalAudioPlayer-controls ">
+                    <div class="globalAudioPlayer-controls  ">
                         
-                        <!--         <button  class="[ audioPlayer-button prev ] "  class="show-for-medium-up">
+                                <button  class="[ audioPlayer-button prev ] "  class="show-for-medium-up">
                         
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
                                  title="Play previous track" 
-                                 class="seeker icon--controls">
+                                 class="seeker icon--controls  icon--small">
                         
                                 <use xlink:href="assets/images/icon--controls.svg#prev-icon"></use>
                         
                             </svg>
                         
-                        </button> -->
+                        </button>
                         
                         <button class="audioPlayer-button "
                                  ng-class="globalAudioPlayer.isPlaying ? 'play' : 'pause'">
@@ -60,7 +61,7 @@
                         
                         </button>
                         
-                        <!-- 
+                        
                         <button class="[ audioPlayer-button next ] "  class="show-for-medium-up">
                         
                             <svg viewBox="0 0 144 144" 
@@ -72,16 +73,27 @@
                         
                             </svg>     
                         
-                        </button> -->
+                        </button>
                         
                     </div>
                         
                     <div class="globalAudioPlayer-information  flexGrow--1  text-left"  >
                             
-                       <h1 class="h5">{{globalAudioPlayer.currentSong|| 'Play Music'}}</h1>
+                       <h1 class="h5   mb0">{{globalAudioPlayer.currentSong|| 'Play Music'}}</h1>
                 
-                       <h2 class="text--micro">via <a ng-href="{{globalAudioPlayer.currentSong.link}}">Soundcloud</a> / <a href=""> Buy</a></h2>
+                       <h2 class="text--micro mt0">via <a ng-href="{{globalAudioPlayer.currentSong.link}}">Soundcloud</a> / <a href=""> Buy</a></h2>
                         
+                    </div>
+
+                    <div class="globalAudioPlayer-secondaryinformation  flexGrow--1">
+    
+                        <a ng-click="globalAudioPlayer.openDrawer()"
+                           class="button button--secondary small display--block  mt2  text-center">
+                            
+                            playlists 
+
+                        </a>
+
                     </div>
                 
                 </div>
@@ -93,7 +105,8 @@
     </div>
     
     
-    <div class="globalAudioPlayer-playlists">
+    <div class="globalAudioPlayer-playlists row  large-9  columns"
+         ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
     
         <nav>
             
@@ -101,7 +114,7 @@
                 
                 <li class="small-6  columns  text-center">
     
-                    <h1 class="h6">
+                    <h1 class="h6"  ng-click="globalAudioPlayer.showTab(0)">
                     
                         Playlists
                         
@@ -111,7 +124,7 @@
     
                 <li class="small-6  columns  text-center">
     
-                    <h1 class="h6">
+                    <h1 class="h6" ng-click="globalAudioPlayer.showTab(1)"> 
                     
                         Catalogue
                         
@@ -123,23 +136,64 @@
     
         </nav>
         
-        <div class="row">
+        <div class=" globalAudioPlayer-tab"
+               ng-class="{ 'is-active' : globalAudioPlayer.checkIfTabActive(0) }">
     
-            <h1 class="text--micro">
+            <ul class="row">
+
+                <li>
                     
-                 Currently Playing
+                    <ul class="list--inline">
+                        <li>Play</li>
+
+                        <li>Track</li>
+
+                        <li>Release</li>    
+
+                    </ul>
+                    
+                    <hr>
+
+                </li>
+
+                <li class="small-12 columns" >
+                    
+                    <ul class="list--inline"
+                        ng-click="globalAudioPlayer.playSong(song)"
+                        ng-repeat="song in globalAudioPlayer.currentPlaylist track by $index">
                         
-            </h1>    
-    
-            <div class="small-12 columns" ng-repeat="song in globalAudioPlayer.tracks track by $index">
-                
-                <h2 class="h6" ng-click="globalAudioPlayer.playSong($index)">{{song.name}}{{$index}}</h2>
-    
-            </div>
-    
+
+                        <li>
+                            
+                            <svg viewBox="0 0 144 144" 
+                                 preserveAspectRatio="xMidYMid meet"  
+                                 title="Play Music" 
+                                 class="play  icon--controls icon--small">
+                        
+                                <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
+                        
+                            </svg>
+
+                        </li>
+
+                        <li>
+                            
+                            {{song.name}}
+
+                        </li>
+
+                        <hr>
+                        
+                    </ul>
+                    
+                </li>
+
+            </ul>
+
         </div>
     
-        <div class="globalAudioPlayer-playlists-catalogue">
+        <div class="globalAudioPlayer-tab"
+             ng-class="{ 'is-active' : globalAudioPlayer.checkIfTabActive(1) }">
             
             <div class="row">
     
@@ -151,9 +205,13 @@
     
                 <div class="small-6 columns" ng-repeat="release in globalAudioPlayer.catalogue">
                     
-                    <img ng-src="{{release.artwork}}" alt="Release Artwork" width="50">
-    
-                    <h2 class="text-micro">{{release.name}}</h2>
+                    <div ng-click="globalAudioPlayer.playPlaylist(release)">
+
+                        <img ng-src="{{release.artwork}}" alt="Release Artwork" width="50">
+                            
+                        <h2 class="text-micro">{{release.name}}</h2>
+                        
+                    </div>
     
                 </div>
     

@@ -7053,27 +7053,32 @@ img.ri {
   display: inline-block;
 }
 
+/* line 55, ../scss/partials/_generics.scss */
+.display--block {
+  display: block;
+}
+
 /*------------------------------------*\
     #Centering
 \*------------------------------------*/
-/* line 62, ../scss/partials/_generics.scss */
+/* line 67, ../scss/partials/_generics.scss */
 .centerContentsVertically {
   display: inline-block;
 }
-/* line 65, ../scss/partials/_generics.scss */
+/* line 70, ../scss/partials/_generics.scss */
 .centerContentsVertically > * {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 71, ../scss/partials/_generics.scss */
+/* line 76, ../scss/partials/_generics.scss */
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 77, ../scss/partials/_generics.scss */
+/* line 82, ../scss/partials/_generics.scss */
 .vertical-align-middle {
   position: absolute;
   top: 50%;
@@ -7084,12 +7089,12 @@ img.ri {
 /*------------------------------------*\
     #Position Relative or Absolute
 \*------------------------------------*/
-/* line 92, ../scss/partials/_generics.scss */
+/* line 97, ../scss/partials/_generics.scss */
 .relative {
   position: relative;
 }
 
-/* line 96, ../scss/partials/_generics.scss */
+/* line 101, ../scss/partials/_generics.scss */
 .absolute {
   position: absolute;
 }
@@ -7100,27 +7105,27 @@ img.ri {
 /*------------------------------------*\
     #Width 
 \*------------------------------------*/
-/* line 151, ../scss/partials/_generics.scss */
+/* line 156, ../scss/partials/_generics.scss */
 .width100 {
   width: 100%;
 }
 
-/* line 154, ../scss/partials/_generics.scss */
+/* line 159, ../scss/partials/_generics.scss */
 .maxWidth7 {
   max-width: 450px;
 }
 
-/* line 159, ../scss/partials/_generics.scss */
+/* line 164, ../scss/partials/_generics.scss */
 .u-expanded {
   width: 100%;
 }
 
-/* line 164, ../scss/partials/_generics.scss */
+/* line 169, ../scss/partials/_generics.scss */
 .expand-on-small {
   width: 100%;
 }
 @media (min-width: 900px) {
-  /* line 164, ../scss/partials/_generics.scss */
+  /* line 169, ../scss/partials/_generics.scss */
   .expand-on-small {
     width: auto;
   }
@@ -7130,14 +7135,14 @@ img.ri {
     #Visibility Classes
 \*------------------------------------*/
 @media (min-width: 100px) and (max-width: 760px) {
-  /* line 179, ../scss/partials/_generics.scss */
+  /* line 184, ../scss/partials/_generics.scss */
   .hide-on-small {
     display: none;
   }
 }
 
 @media (min-width: 760px) {
-  /* line 186, ../scss/partials/_generics.scss */
+  /* line 191, ../scss/partials/_generics.scss */
   .hide-on-medium {
     display: none;
   }
@@ -7146,7 +7151,7 @@ img.ri {
 /*------------------------------------*\
     #Clearfix
 \*------------------------------------*/
-/* line 200, ../scss/partials/_generics.scss */
+/* line 205, ../scss/partials/_generics.scss */
 .cf {
   overflow: auto;
   zoom: 1;
@@ -7156,13 +7161,13 @@ img.ri {
     #View Port Height and Width 
 \*------------------------------------*/
 @media (min-width: 760px) {
-  /* line 212, ../scss/partials/_generics.scss */
+  /* line 217, ../scss/partials/_generics.scss */
   .vh100 {
     height: 100vh;
   }
 }
 
-/* line 218, ../scss/partials/_generics.scss */
+/* line 223, ../scss/partials/_generics.scss */
 .vw100 {
   width: 100vw;
 }
@@ -7173,7 +7178,7 @@ img.ri {
 /*------------------------------------*\
     #Margins
 \*------------------------------------*/
-/* line 246, ../scss/partials/_generics.scss */
+/* line 251, ../scss/partials/_generics.scss */
 .mga {
   margin: auto;
 }
@@ -7773,11 +7778,68 @@ input:focus {
 .globalAudioPlayer {
   position: fixed;
   bottom: 0;
+  top: 0;
   right: 0;
   left: 0;
   width: 100%;
-  z-index: 200;
+  z-index: 150;
   background-color: black;
+  height: 5.25rem;
+  -moz-transform: translateY(93vh);
+  -ms-transform: translateY(93vh);
+  -webkit-transform: translateY(93vh);
+  transform: translateY(93vh);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 19, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer.is-showing {
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 26, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-tab {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: none;
+}
+/* line 33, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-tab.is-active {
+  display: block;
+  position: relative;
+}
+
+/* line 39, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-playlists {
+  top: 0;
+  width: 100%;
+  height: 80%;
+  background-color: black;
+  z-index: 150;
+  position: fixed;
+  -moz-transform: translateY(100vh);
+  -ms-transform: translateY(100vh);
+  -webkit-transform: translateY(100vh);
+  transform: translateY(100vh);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 50, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-playlists.is-showing {
+  -moz-transform: translateY(84px);
+  -ms-transform: translateY(84px);
+  -webkit-transform: translateY(84px);
+  transform: translateY(84px);
+  z-index: 200;
+  opacity: 1;
 }
 
 /*------------------------------------*\
@@ -7786,7 +7848,7 @@ input:focus {
 /* line 7, ../scss/partials/_navigation.scss */
 .mainNav {
   background: transparent;
-  z-index: 700;
+  z-index: 100;
   overflow: visible;
 }
 /* line 12, ../scss/partials/_navigation.scss */
