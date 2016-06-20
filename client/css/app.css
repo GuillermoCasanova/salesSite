@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -7649,131 +7648,364 @@ input:focus {
 /*------------------------------------*\
     #Flex-Box
 \*------------------------------------*/
-/* line 7, ../scss/partials/_flexBox.scss */
-.flexParent {
-  display: -webkit-box;
-  /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
-  display: -moz-box;
-  /* OLD: Firefox (buggy) */
+/*------------------------------------*\
+    #Grid Alignments and Properties  
+\*------------------------------------*/
+/* line 20, ../scss/partials/_flexBox.scss */
+.grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: -ms-flexbox;
-  /* MID: IE 10 */
+  -ms-flex-wrap: wrap;
   display: -webkit-flex;
-  /* NEW, Chrome 21–28, Safari 6.1+ */
   display: flex;
-  /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
-  padding-right: 0.875rem;
-  padding-left: 0.875rem;
-}
-
-/* line 17, ../scss/partials/_flexBox.scss */
-.flexDirection--rowReverse {
-  -webkit-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
-
-/* line 21, ../scss/partials/_flexBox.scss */
-.flexDirection--column {
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
-
-/* line 25, ../scss/partials/_flexBox.scss */
-.flexDirection--row {
-  -webkit-flex-direction: row;
-  flex-direction: row;
-}
-
-@media (min-width: 100px) and (max-width: 760px) {
-  /* line 29, ../scss/partials/_flexBox.scss */
-  .columnOn-small {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
-/* line 35, ../scss/partials/_flexBox.scss */
-.flexDirection--columnReverse {
-  -webkit-flex-direction: column-reverse;
-  flex-direction: column-reverse;
-}
-
-/* line 39, ../scss/partials/_flexBox.scss */
-.flexWrap--wrap {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-/* line 43, ../scss/partials/_flexBox.scss */
-.flexwrap--wrapReverse {
-  -webkit-flex-wrap: wrap-reverse;
-  flex-wrap: wrap-reverse;
+/* line 31, ../scss/partials/_flexBox.scss */
+.grid-cell {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1;
+  flex: 1;
 }
 
-/* line 47, ../scss/partials/_flexBox.scss */
-.justifyContent--center {
-  -webkit-justify-content: center;
-  justify-content: center;
+/* line 36, ../scss/partials/_flexBox.scss */
+.grid-cell--2 {
+  -ms-flex: 2 1 auto;
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+/* line 41, ../scss/partials/_flexBox.scss */
+.grid--flexCells > .grid-cell {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 46, ../scss/partials/_flexBox.scss */
+.grid--top {
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
 
 /* line 51, ../scss/partials/_flexBox.scss */
-.centerOn-Small {
-  -webkit-justify-content: center;
-  justify-content: center;
+.grid--bottom {
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
 }
 
-/* line 55, ../scss/partials/_flexBox.scss */
-.justifyContent--spaceBetween {
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-
-/* line 59, ../scss/partials/_flexBox.scss */
-.justifyContent--spaceAround {
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-}
-
-/* line 63, ../scss/partials/_flexBox.scss */
-.alignItems--center {
+/* line 56, ../scss/partials/_flexBox.scss */
+.grid--center {
+  -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
 }
 
-/* line 67, ../scss/partials/_flexBox.scss */
-.alignItems--left {
-  -webkit-align-items: left;
-  align-items: left;
+/* line 61, ../scss/partials/_flexBox.scss */
+.grid--stretch {
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+/* line 66, ../scss/partials/_flexBox.scss */
+.grid--justifyCenter {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 /* line 71, ../scss/partials/_flexBox.scss */
-.alignItems--right {
-  -webkit-align-items: right;
-  align-items: right;
+.grid--justifyRight {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
 
-/* line 82, ../scss/partials/_flexBox.scss */
-.flexGrow--1 {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
+/* line 76, ../scss/partials/_flexBox.scss */
+.grid--justifyLeft {
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+/* line 81, ../scss/partials/_flexBox.scss */
+.grid--justifySpaceBetween {
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 /* line 86, ../scss/partials/_flexBox.scss */
-.flexGrow--2 {
-  -webkit-flex-grow: 2;
-  flex-grow: 2;
+.grid--justifySpaceAround {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
 }
 
-/* line 90, ../scss/partials/_flexBox.scss */
-.flexGrow--3 {
-  -webkit-flex-grow: 3;
-  flex-grow: 3;
+/* line 91, ../scss/partials/_flexBox.scss */
+.grid--expand {
+  width: 100%;
 }
 
-/* line 96, ../scss/partials/_flexBox.scss */
-.flexBasis--70 {
-  flex-basis: 43.75rem;
+/*------------------------------------*\
+    #Grid Direction, alingmnet, wraps, centering
+\*------------------------------------*/
+/* line 104, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionColumn {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 
+/* line 109, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionColumnReverse {
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+/* line 114, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionRow {
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* line 119, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionRowReverse {
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 127, ../scss/partials/_flexBox.scss */
+  .med-grid--flexDirectionColumn {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+/*------------------------------------*\
+    #Grid Wrap
+\*------------------------------------*/
+/* line 145, ../scss/partials/_flexBox.scss */
+.grid--flexWrap {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* line 150, ../scss/partials/_flexBox.scss */
+.grid--flexWrapReverse {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+/* line 156, ../scss/partials/_flexBox.scss */
+.grid--flexNoWrap {
+  -ms-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+/*------------------------------------*\
+    #Sizing properties for Child Elements 
+\*------------------------------------*/
+/* line 171, ../scss/partials/_flexBox.scss */
+.grid-cell--top {
+  -ms-flex-item-align: start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+
+/* line 176, ../scss/partials/_flexBox.scss */
+.grid-cell--bottom {
+  -ms-flex-item-align: end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+
+/* line 181, ../scss/partials/_flexBox.scss */
+.grid-cell--center {
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+
+/* line 186, ../scss/partials/_flexBox.scss */
+.grid-cell--autoSize {
+  -ms-flex: 0 0 auto;
+  -webkit-flex: none;
+  flex: none;
+}
+
+/* line 191, ../scss/partials/_flexBox.scss */
+.grid--fit > .grid-cell {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+/* line 196, ../scss/partials/_flexBox.scss */
+.grid--full > .grid-cell {
+  -ms-flex: 0 0 100%;
+  -webkit-flex: 0 0 100%;
+  flex: 0 0 100%;
+}
+
+/* line 201, ../scss/partials/_flexBox.scss */
+.grid--1of2 > .grid-cell {
+  -ms-flex: 0 0 50%;
+  -webkit-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+/* line 206, ../scss/partials/_flexBox.scss */
+.grid--1of3 > .grid-cell {
+  -ms-flex: 0 0 33.3333%;
+  -webkit-flex: 0 0 33.3333%;
+  flex: 0 0 33.3333%;
+}
+
+/* line 211, ../scss/partials/_flexBox.scss */
+.grid--1of4 > .grid-cell {
+  -ms-flex: 0 0 25%;
+  -webkit-flex: 0 0 25%;
+  flex: 0 0 25%;
+}
+
+@media only screen {
+  /* line 218, ../scss/partials/_flexBox.scss */
+  .small-grid--fit > .grid-cell {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* line 222, ../scss/partials/_flexBox.scss */
+  .small-grid--full > .grid-cell {
+    -ms-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  /* line 226, ../scss/partials/_flexBox.scss */
+  .small-grid--1of2 > .grid-cell {
+    -ms-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+
+  /* line 230, ../scss/partials/_flexBox.scss */
+  .small-grid--1of3 > .grid-cell {
+    -ms-flex: 0 0 33.3333%;
+    -webkit-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+  }
+
+  /* line 234, ../scss/partials/_flexBox.scss */
+  .small-grid--1of4 > .grid-cell {
+    -ms-flex: 0 0 25%;
+    -webkit-flex: 0 0 25%;
+    flex: 0 0 25%;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 241, ../scss/partials/_flexBox.scss */
+  .med-grid--fit > .grid-cell {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* line 245, ../scss/partials/_flexBox.scss */
+  .med-grid--full > .grid-cell {
+    -ms-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  /* line 249, ../scss/partials/_flexBox.scss */
+  .med-grid--1of2 > .grid-cell {
+    -ms-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+
+  /* line 253, ../scss/partials/_flexBox.scss */
+  .med-grid--1of3 > .grid-cell {
+    -ms-flex: 0 0 33.3333%;
+    -webkit-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+  }
+
+  /* line 257, ../scss/partials/_flexBox.scss */
+  .med-grid--1of4 > .grid-cell {
+    -ms-flex: 0 0 25%;
+    -webkit-flex: 0 0 25%;
+    flex: 0 0 25%;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 264, ../scss/partials/_flexBox.scss */
+  .large-grid--fit > .grid-cell {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* line 268, ../scss/partials/_flexBox.scss */
+  .large-grid--full > .grid-cell {
+    -ms-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  /* line 272, ../scss/partials/_flexBox.scss */
+  .large-grid--1of2 > .grid-cell {
+    -ms-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+
+  /* line 276, ../scss/partials/_flexBox.scss */
+  .large-grid--1of3 > .grid-cell {
+    -ms-flex: 0 0 33.3333%;
+    -webkit-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+  }
+
+  /* line 280, ../scss/partials/_flexBox.scss */
+  .large-grid--1of4 > .grid-cell {
+    -ms-flex: 0 0 25%;
+    -webkit-flex: 0 0 25%;
+    flex: 0 0 25%;
+  }
+}
+/*------------------------------------*\
+    #Flex Gutters  (these using 1rem for gutter base)
+\*------------------------------------*/
+/* line 295, ../scss/partials/_flexBox.scss */
+.grid--gutters {
+  margin: -1rem 0 1em -1rem;
+}
+
+/* line 298, ../scss/partials/_flexBox.scss */
+.grid--gutters > .grid-cell {
+  padding: 1rem 0 0 1rem;
+}
+
+/*------------------------------------*\
+    #Flex Debug
+\*------------------------------------*/
 /* line 4, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer {
   position: fixed;
@@ -7840,6 +8072,18 @@ input:focus {
   transform: translateY(84px);
   z-index: 200;
   opacity: 1;
+}
+
+/* line 62, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-controls .seeker {
+  height: 1rem;
+  width: 1rem;
+}
+/* line 68, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-controls .play,
+.globalAudioPlayer-controls .pause {
+  height: 4rem;
+  width: 2rem;
 }
 
 /*------------------------------------*\

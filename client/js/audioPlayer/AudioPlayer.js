@@ -99,7 +99,8 @@
 
     var changeCurrentTrackInfo = function(pTrackInfo) {
 
-        currentTrack = pTrackInfo; 
+        currentTrack = pTrackInfo;  
+        console.log(currentTrack); 
 
     };
 
@@ -346,8 +347,6 @@
         getCurrentTrackInfo().done(function(track){
 
             AudioPlayer.changeCurrentTrackInfo(track); 
-
-            console.log(currentTrack); 
 
         });
 

@@ -55,3 +55,19 @@
     }
 
 }
+
+
+.globalAudioPlayer-controls {
+
+    .seeker {
+
+        height: 1rem; 
+        width: 1rem; 
+    }
+
+    .play, 
+    .pause {
+        height: 4rem; 
+        width: 2rem; 
+    }
+}

@@ -24,12 +24,12 @@
                     
                     <div class="globalAudioPlayer-controls  ">
                         
-                                <button  class="[ audioPlayer-button prev ] "  class="show-for-medium-up">
+                                <button  class="[ audioPlayer-button prev ] show-for-medium-up " >
                         
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
                                  title="Play previous track" 
-                                 class="seeker icon--controls  icon--small">
+                                 class="seeker icon--controls">
                         
                                 <use xlink:href="assets/images/icon--controls.svg#prev-icon"></use>
                         
@@ -43,7 +43,7 @@
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
                                  title="Play Music" 
-                                 class="play  icon--controls icon--small">
+                                 class="play  icon--controls">
                         
                                 <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
                         
@@ -52,7 +52,7 @@
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
                                  title="Pause Music" 
-                                 class="pause  icon--controls  icon--small">
+                                 class="pause  icon--controls ">
                         
                                 <use xlink:href="assets/images/icon--controls.svg#play-icon"></use>
                         
@@ -62,7 +62,7 @@
                         </button>
                         
                         
-                        <button class="[ audioPlayer-button next ] "  class="show-for-medium-up">
+                        <button class="[ audioPlayer-button next ] show-for-medium-up" >
                         
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
@@ -79,7 +79,7 @@
                         
                     <div class="globalAudioPlayer-information  flexGrow--1  text-left"  >
                             
-                       <h1 class="h5   mb0">{{globalAudioPlayer.currentSong|| 'Play Music'}}</h1>
+                       <h1 class="h5   mb0">{{globalAudioPlayer.currentTrack || 'Play Music'}}</h1>
                 
                        <h2 class="text--micro mt0">via <a ng-href="{{globalAudioPlayer.currentSong.link}}">Soundcloud</a> / <a href=""> Buy</a></h2>
                         
@@ -87,12 +87,12 @@
 
                     <div class="globalAudioPlayer-secondaryinformation  flexGrow--1">
     
-                        <a ng-click="globalAudioPlayer.openDrawer()"
-                           class="button button--secondary small display--block  mt2  text-center">
+                        <div ng-click="globalAudioPlayer.openDrawer()"
+                           class="small display--block  mt2  text-center">
                             
-                            playlists 
+                            <img src="assets/images/icon--radio.svg" alt="Radio" width="30"> 
 
-                        </a>
+                        </div>
 
                     </div>
                 
@@ -207,7 +207,7 @@
                     
                     <div ng-click="globalAudioPlayer.playPlaylist(release)">
 
-                        <img ng-src="{{release.artwork}}" alt="Release Artwork" width="50">
+                        <img ng-src="{{release.artwork}}" alt="Release Artwork" width="300">
                             
                         <h2 class="text-micro">{{release.name}}</h2>
                         
