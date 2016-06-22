@@ -6975,12 +6975,17 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
   background: #17431e url("../assets/images/bg--darkGreen.jpg") repeat center fixed;
 }
 
+/* line 82, ../scss/modules/_theme.scss */
+.globalAudioPlayer, .globalAudioPlayer-tab {
+  background: #000 url("../assets/images/bg--black.jpg") repeat center fixed;
+}
+
 /*------------------------------------*\
     #Animations
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
-.primaryAnimation, .secondaryAnimation, .pause,
-.play {
+.primaryAnimation, .secondaryAnimation, .audioPlayer-button .pause,
+.audioPlayer-button .play {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -6994,8 +6999,8 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 }
 
 /* line 29, ../scss/modules/_animations.scss */
-.secondaryAnimation:hover, .pause:hover,
-.play:hover {
+.secondaryAnimation:hover, .audioPlayer-button .pause:hover,
+.audioPlayer-button .play:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
@@ -7476,10 +7481,18 @@ a[href*="instagram"]:hover, a[href*="instagram"]:active, a[href*="instagram"]:fo
   display: inline-block;
 }
 
+/* line 113, ../scss/partials/_icons.scss */
+.icon--micro {
+  background-size: 3em auto;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.25rem;
+}
+
 /*------------------------------------*\
     #SVG Icon Colors
 \*------------------------------------*/
-/* line 122, ../scss/partials/_icons.scss */
+/* line 129, ../scss/partials/_icons.scss */
 .icon--controls {
   fill: #fff;
   -moz-transition: fill 0.3s ease-in-out;
@@ -8026,7 +8039,7 @@ input:focus {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 19, ../scss/partials/_globalAudioPlayer.scss */
+/* line 20, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer.is-showing {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -8034,20 +8047,20 @@ input:focus {
   transform: translateY(0);
 }
 
-/* line 26, ../scss/partials/_globalAudioPlayer.scss */
+/* line 27, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-tab {
   position: absolute;
   top: 0;
   width: 100%;
   display: none;
 }
-/* line 33, ../scss/partials/_globalAudioPlayer.scss */
+/* line 35, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-tab.is-active {
   display: block;
   position: relative;
 }
 
-/* line 39, ../scss/partials/_globalAudioPlayer.scss */
+/* line 41, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-playlists {
   top: 0;
   width: 100%;
@@ -8064,7 +8077,7 @@ input:focus {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 50, ../scss/partials/_globalAudioPlayer.scss */
+/* line 52, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-playlists.is-showing {
   -moz-transform: translateY(84px);
   -ms-transform: translateY(84px);
@@ -8072,18 +8085,6 @@ input:focus {
   transform: translateY(84px);
   z-index: 200;
   opacity: 1;
-}
-
-/* line 62, ../scss/partials/_globalAudioPlayer.scss */
-.globalAudioPlayer-controls .seeker {
-  height: 1rem;
-  width: 1rem;
-}
-/* line 68, ../scss/partials/_globalAudioPlayer.scss */
-.globalAudioPlayer-controls .play,
-.globalAudioPlayer-controls .pause {
-  height: 4rem;
-  width: 2rem;
 }
 
 /*------------------------------------*\
@@ -8624,19 +8625,12 @@ input:focus {
 /*------------------------------------*\
     #Pause and play buttons 
 \*------------------------------------*/
-/* line 86, ../scss/partials/_audioPlayer.scss */
-.pause,
-.play {
-  width: 4.375rem;
-  height: 4.375rem;
-}
-
-/* line 98, ../scss/partials/_audioPlayer.scss */
+/* line 100, ../scss/partials/_audioPlayer.scss */
 .pause .icon--controls.play {
   display: none;
 }
 
-/* line 104, ../scss/partials/_audioPlayer.scss */
+/* line 106, ../scss/partials/_audioPlayer.scss */
 .play .icon--controls.pause {
   display: none;
 }

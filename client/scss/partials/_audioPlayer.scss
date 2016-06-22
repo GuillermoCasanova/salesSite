@@ -83,13 +83,15 @@
 \*------------------------------------*/
 
 
-.pause,
-.play {
 
-    width: rem-calc(70);
-    height: rem-calc(70);
-    @extend %secondaryAnimation; 
+.audioPlayer-button {
 
+    .pause,
+    .play {
+
+        @extend %secondaryAnimation; 
+
+    }
 }
 
 

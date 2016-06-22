@@ -1,7 +1,11 @@
 
 angular.module("Sales")
-    .controller('globalAudioPlayerCtrl', ['$scope', '$timeout', 'AudioPlayer', 
-        function($scope, $timeout, AudioPlayer) {
+    .controller('globalAudioPlayerCtrl', 
+        ['$scope', 
+         '$filter', 
+         '$timeout', 
+         'AudioPlayer', 
+        function($scope, $filter, $timeout, AudioPlayer) {
 
             var vm = this; 
 
@@ -11,7 +15,7 @@ angular.module("Sales")
 
             vm.catalogue = AudioPlayer.getCatalogue(); 
 
-            vm.isPlaying = AudioPlayer.isPlaying;  
+            vm.isPlaying = AudioPlayer.isPlaying();  
 
             vm.playerDrawerIsOpen = false; 
 
@@ -26,6 +30,39 @@ angular.module("Sales")
             vm.checkIfTabActive = function(pTabId) {
 
                 return vm.activeTab === pTabId; 
+            }; 
+
+
+            vm.checkIfSongPlaying = function(pTrack) {
+
+                console.log('checking if song playing'); 
+
+                if(!vm.isPlaying) {
+
+                    console.log('is not playing anymore, STOP'); 
+
+                    return false; 
+                } 
+
+                if(vm.currentTrack) {
+
+                
+                    var trackTitle = $filter('dashless')(vm.currentTrack);
+
+                    trackTitle = trackTitle.toLowerCase(); 
+
+                    var trackPicked = pTrack.name.toLowerCase();
+
+                    console.log(trackPicked === trackTitle);
+
+                    return trackPicked === trackTitle;  
+
+                } else {
+
+                    return false; 
+
+                }
+
             }; 
 
             vm.openDrawer = function() {
@@ -54,9 +91,37 @@ angular.module("Sales")
 
             }; 
 
-            vm.playSong = function(pToSong) {
+            vm.playSong = function(pTrack) {
 
-                AudioPlayer.playSong(pToSong); 
+                if(vm.currentTrack) {
+
+                    var trackTitle = $filter('dashless')(vm.currentTrack);
+
+                    trackTitle = trackTitle.toLowerCase(); 
+
+                    var trackPicked = pTrack.name.toLowerCase(); 
+
+                }  
+
+               if(trackPicked === trackTitle) {
+
+                    console.log('same track'); 
+
+                    AudioPlayer.pause();
+
+                    return; 
+
+                }  
+
+                AudioPlayer.playSong(pTrack); 
+
+                AudioPlayer.getCurrentTrackInfo().done(function(track){
+
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.currentTrack = AudioPlayer.currentTrack().title; 
+                    $scope.$apply(); 
+
+                });
 
             }; 
 
@@ -84,6 +149,7 @@ angular.module("Sales")
                 
             }, function(newVal, oldVal) {
 
+                console.log(newVal); 
                 vm.isPlaying = newVal;  
 
             });

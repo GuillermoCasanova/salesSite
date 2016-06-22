@@ -13,6 +13,7 @@
     background-color: black; 
     height: rem-calc(84px); 
     @extend %dropshadow; 
+    @extend %artworkBg--black; 
     @include transform(translateY(93vh)); 
     @include single-transition(all, .2s, ease-in-out); 
 
@@ -29,6 +30,7 @@
     top: 0; 
     width: 100%; 
     display: none; 
+    @extend %artworkBg--black; 
 
     &.is-active {
         display: block; 
@@ -57,17 +59,23 @@
 }
 
 
-.globalAudioPlayer-controls {
+// .globalAudioPlayer-controls {
+    
 
-    .seeker {
+//     .audioPlayer-button {
 
-        height: 1rem; 
-        width: 1rem; 
-    }
+//         .seeker {
 
-    .play, 
-    .pause {
-        height: 4rem; 
-        width: 2rem; 
-    }
-}
+//             height: 1rem; 
+//             width: 1rem; 
+//         }
+
+//         .play, 
+//         .pause {
+//             height: 4rem; 
+//             width: 2rem; 
+//         }
+        
+//     }
+
+// }

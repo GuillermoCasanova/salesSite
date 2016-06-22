@@ -104,6 +104,31 @@
 
     };
 
+    var checkIfTrackPlaying = function(pTrack) {
+  
+    // Checks to see if there is a currentsong
+    // and if there is checks to see if its the same one that is about
+    // to be payed, if so, it just pauses the player
+    if(!isPlaying) {
+
+        return false; 
+
+    }
+
+    if(currentTrack) {
+        var trackTitle = $filter('dashless')(currentTrack.title);
+
+        trackTitle = trackTitle.toLowerCase(); 
+
+        var trackPicked = pTrack.name.toLowerCase(); 
+
+        return trackPicked === trackTitle; 
+
+    } 
+
+
+    };
+
     var checkIfPlaying = function() {
 
         return isPlaying; 
@@ -154,7 +179,15 @@
 
         this.scplayer.pause(); 
 
-        isPlaying = false; 
+        if(isPlaying) {
+
+                isPlaying = false;
+
+                console.log(isPlaying); 
+
+            } else {
+                isPlaying = true; 
+            }
 
         return isPlaying; 
     }
@@ -170,48 +203,57 @@
         return isPlaying;
     };
 
+    // var playSong = function(pTrack) {
+
+
+    //     console.log(pTrack); 
+
+    //     // Checks to see if there is a currentsong
+    //     // and if there is checks to see if its the same one that is about
+    //     // to be payed, if so, it just pauses the player
+    //     if(currentTrack) {
+
+    //         var trackTitle = $filter('dashless')(currentTrack.title);
+
+    //         trackTitle = trackTitle.toLowerCase(); 
+
+    //         var trackPicked = pTrack.name.toLowerCase(); 
+
+    //     }  
+
+    //         if(trackPicked === trackTitle) {
+
+    //             console.log('same track'); 
+
+    //             this.pause();
+
+    //         }  else {
+
+    //         var position = pTrack.id;
+
+    //         console.log(position); 
+
+    //         this.scplayer.goto(position, true); 
+
+    //         getCurrentTrackInfo().done(function(track){
+
+    //             changeCurrentTrackInfo(track); 
+
+    //             isPlaying = true; 
+
+    //             hasNotPlayed = false; 
+
+    //         });
+    //     }
+
+    //     return pTrack ; 
+    // }; 
+
     var playSong = function(pTrack) {
 
+        this.scplayer.goto(pTrack.id);
 
-        // Checks to see if there is a currentsong
-        // and if there is checks to see if its the same one that is about
-        // to be payed, if so, it just pauses the player
-        if(currentTrack) {
-
-            var trackTitle = $filter('dashless')(currentTrack.title);
-
-            trackTitle = trackTitle.toLowerCase(); 
-
-            var trackPicked = pTrack.name.toLowerCase(); 
-        } 
-
-
-        if(currentTrack &&  trackPicked === trackTitle) {
-
-            this.scplayer.pause(); 
-
-        } else {
-
-            var position = pTrack.id - 1; 
-
-            var that = this; 
-
-            this.scplayer.goto(position); 
-
-            isPlaying = true; 
-
-            hasNotPlayed = false; 
-
-            this.getCurrentTrackInfo().done(function(track){
-
-                that.changeCurrentTrackInfo(track); 
-
-            });
-     
-        }
-
-        return pTrack ; 
-    }; 
+    }
 
     var generateSCPlayerLinks = function(pTracks) {
 
@@ -297,7 +339,11 @@
             $timeout(function() {
 
                 that.play(); 
+                getCurrentTrackInfo().done(function(track){
 
+                        changeCurrentTrackInfo(track); 
+
+                    });
             }, 400); 
 
             getCurrentTrackInfo().done(function(track){
@@ -366,6 +412,7 @@
 
             updateCurrentTrackinfo(); 
 
+            console.log('update track info on changing track event'); 
         });
 
     }
@@ -381,6 +428,7 @@
         scplayer: scplayer,
         "getCurrentTrackInfo": getCurrentTrackInfo,
         "changeCurrentTrackInfo": changeCurrentTrackInfo,
+        "checkIfTrackPlaying" : checkIfTrackPlaying, 
         "currentTrack" : getCurrentTrack,
         "getCurrentRelease" : getCurrentRelease,
         "pause": pause,  

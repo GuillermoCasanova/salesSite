@@ -20,9 +20,9 @@
 
             <div class="small-12 columns">
 
-                <div class="flexParent">
+                <div class="grid  grid--center">
                     
-                    <div class="globalAudioPlayer-controls  ">
+                    <div class="globalAudioPlayer-controls  grid-cell  grid-cell--autoSize pr4">
                         
                                 <button  class="[ audioPlayer-button prev ] show-for-medium-up " >
                         
@@ -43,7 +43,7 @@
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
                                  title="Play Music" 
-                                 class="play  icon--controls">
+                                 class="play  icon--controls  icon--micro">
                         
                                 <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
                         
@@ -52,7 +52,7 @@
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
                                  title="Pause Music" 
-                                 class="pause  icon--controls ">
+                                 class="pause  icon--controls  icon--micro">
                         
                                 <use xlink:href="assets/images/icon--controls.svg#play-icon"></use>
                         
@@ -77,22 +77,23 @@
                         
                     </div>
                         
-                    <div class="globalAudioPlayer-information  flexGrow--1  text-left"  >
-                            
-                       <h1 class="h5   mb0">{{globalAudioPlayer.currentTrack || 'Play Music'}}</h1>
-                
-                       <h2 class="text--micro mt0">via <a ng-href="{{globalAudioPlayer.currentSong.link}}">Soundcloud</a> / <a href=""> Buy</a></h2>
+                    <div class="globalAudioPlayer-information  grid-cell  text-left"  >
+                            <div>
+                                
+                               <h1 class="h5   mb0">{{globalAudioPlayer.currentTrack || 'Play Music'}}</h1>
+                        
+                               <h2 class="text--micro mt0">via <a ng-href="{{globalAudioPlayer.currentSong.link}}">Soundcloud</a> / <a href=""> Buy</a></h2>
+                            </div>
                         
                     </div>
 
-                    <div class="globalAudioPlayer-secondaryinformation  flexGrow--1">
-    
-                        <div ng-click="globalAudioPlayer.openDrawer()"
-                           class="small display--block  mt2  text-center">
-                            
-                            <img src="assets/images/icon--radio.svg" alt="Radio" width="30"> 
+                    <div class="globalAudioPlayer-secondaryinformation  grid-cell text-right">
 
-                        </div>
+                        <img src="assets/images/icon--radio.svg" 
+                             alt="Radio" 
+                             width="30"
+                             class="mr5  mb2"
+                             ng-click="globalAudioPlayer.openDrawer()"> 
 
                     </div>
                 
@@ -105,16 +106,16 @@
     </div>
     
     
-    <div class="globalAudioPlayer-playlists row  large-9  columns"
+    <div class="globalAudioPlayer-playlists"
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
     
         <nav>
             
-            <ul class="row">
+            <ul class="row  pl0">
                 
                 <li class="small-6  columns  text-center">
     
-                    <h1 class="h6"  ng-click="globalAudioPlayer.showTab(0)">
+                    <h1 class="h3"  ng-click="globalAudioPlayer.showTab(0)">
                     
                         Playlists
                         
@@ -124,7 +125,7 @@
     
                 <li class="small-6  columns  text-center">
     
-                    <h1 class="h6" ng-click="globalAudioPlayer.showTab(1)"> 
+                    <h1 class="h3" ng-click="globalAudioPlayer.showTab(1)"> 
                     
                         Catalogue
                         
@@ -139,53 +140,71 @@
         <div class=" globalAudioPlayer-tab"
                ng-class="{ 'is-active' : globalAudioPlayer.checkIfTabActive(0) }">
     
-            <ul class="row">
+            <ul class="row pl0  small-collapse">
 
-                <li>
+                <li class="small-12  columns  mtb1">
                     
-                    <ul class="list--inline">
-                        <li>Play</li>
+                    <ul class="list--inline  grid h4">
 
-                        <li>Track</li>
+                        <li class="grid-cell  text-center">Play</li>
 
-                        <li>Release</li>    
+                        <li class="grid-cell  text-center">Track</li>
+
+                        <li class="grid-cell  text-center">Release</li>    
 
                     </ul>
                     
                     <hr>
 
                 </li>
-
-                <li class="small-12 columns" >
+            
+                <li class="small-12 columns" 
+                    ng-click="globalAudioPlayer.playSong(song)"
+                    ng-repeat="song in globalAudioPlayer.currentPlaylist track by $index">
                     
-                    <ul class="list--inline"
-                        ng-click="globalAudioPlayer.playSong(song)"
-                        ng-repeat="song in globalAudioPlayer.currentPlaylist track by $index">
+                    <ul class="grid  grid--center  list--inline mtb1"
+                        >
                         
-
-                        <li>
+                        <li class="grid-cell">
                             
-                            <svg viewBox="0 0 144 144" 
-                                 preserveAspectRatio="xMidYMid meet"  
-                                 title="Play Music" 
-                                 class="play  icon--controls icon--small">
-                        
-                                <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
-                        
-                            </svg>
+                            <button class="audioPlayer-button "
+                                    ng-class="globalAudioPlayer.checkIfSongPlaying(song) ? 'play' : 'pause'"
+                                    >
+                            
+                                <svg viewBox="0 0 144 144" 
+                                     preserveAspectRatio="xMidYMid meet"  
+                                     title="Play Music" 
+                                     class="play  icon--controls  icon--micro">
+                            
+                                    <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
+                            
+                                </svg>
+                            
+                                <svg viewBox="0 0 144 144" 
+                                     preserveAspectRatio="xMidYMid meet"  
+                                     title="Pause Music" 
+                                     class="pause  icon--controls icon--micro">
+                            
+                                    <use xlink:href="assets/images/icon--controls.svg#play-icon"></use>
+                            
+                                </svg>
+                            
+                            
+                            </button>
 
                         </li>
 
-                        <li>
+                        <li class="grid-cell">
                             
                             {{song.name}}
 
                         </li>
 
-                        <hr>
                         
                     </ul>
-                    
+
+                    <hr>
+
                 </li>
 
             </ul>
