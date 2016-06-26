@@ -2,28 +2,40 @@ angular.module('Sales')
     .directive('ssPageThemeBackgrounds', [
           '$timeout',
           'Theme',
+          'AudioPlayer',
         function(
           $timeout,
-          Theme
+          Theme,
+          AudioPlayer
         ) {
 
         return {
 
             restrict: 'E',
             scope: {}, 
-            require: '^ssPageTheme',
+            controller: ['$scope', 'AudioPlayer', function($scope, AudioPlayer) {
+
+                $scope.loaded = false; 
+
+                $scope.isActive = function(pBackground) {
+
+                    if(AudioPlayer.currentTrack() !== null) {
+
+                        return AudioPlayer.currentTrack().permalink === pBackground;
+
+                    }
+                }
+
+
+
+            }],
+            controllerAs: 'theme',
             templateUrl : 'js/pageTheme/ssPageThemeBackgrounds.tpl.html',
-            link: function(scope, element, attrs, ssPageTheme) {
+            link: function(scope, element, attrs, theme) {
 
-                scope.component = attrs.component;
-
-                scope.loaded = false; 
+                 scope.component = attrs.component;
 
                 scope.backgrounds = Theme.getThemes(); 
-
-                scope.isActive = function(pBackground) {
-                    return ssPageTheme.getCurrentTheme() === pBackground;
-                }
 
             }
 

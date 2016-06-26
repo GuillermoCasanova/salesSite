@@ -30,7 +30,6 @@
     top: 0; 
     width: 100%; 
     display: none; 
-    @extend %artworkBg--black; 
 
     &.is-active {
         display: block; 
@@ -42,16 +41,18 @@
     
     top: 0;
     width: 100%;
-    height: 80%; 
+    height: 100%; 
     background-color: black;
     z-index: 150; 
     position: fixed; 
+    color: black; 
     @include transform(translateY(100vh)); 
     @include single-transition(all, .2s, ease-in-out); 
+    @extend %artworkBg--white; 
 
     &.is-showing {
     
-        @include transform(translateY(84px)); 
+        @include transform(translateY(66px)); 
         z-index: 200; 
         opacity: 1; 
     }

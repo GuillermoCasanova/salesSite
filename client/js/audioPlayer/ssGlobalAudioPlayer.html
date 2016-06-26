@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="globalAudioPlayer"
+    <div class="globalAudioPlayer   "
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
         
         <div class="row">
@@ -78,6 +78,7 @@
                     </div>
                         
                     <div class="globalAudioPlayer-information  grid-cell  text-left"  >
+
                             <div>
                                 
                                <h1 class="h5   mb0">{{globalAudioPlayer.currentTrack || 'Play Music'}}</h1>
@@ -117,7 +118,7 @@
     
                     <h1 class="h3"  ng-click="globalAudioPlayer.showTab(0)">
                     
-                        Playlists
+                        Playlist 
                         
                     </h1>
     
@@ -168,8 +169,7 @@
                         <li class="grid-cell">
                             
                             <button class="audioPlayer-button "
-                                    ng-class="globalAudioPlayer.checkIfSongPlaying(song) ? 'play' : 'pause'"
-                                    >
+                                    ng-class="globalAudioPlayer.checkIfSongPlaying(song) ? 'play' : 'pause'">
                             
                                 <svg viewBox="0 0 144 144" 
                                      preserveAspectRatio="xMidYMid meet"  
@@ -194,13 +194,18 @@
 
                         </li>
 
-                        <li class="grid-cell">
+                        <li class="grid-cell  text-center h4">
                             
                             {{song.name}}
 
                         </li>
 
-                        
+                        <li class="grid-cell  text-center h4">
+                            
+                            {{globalAudioPlayer.currentRelease}}
+
+                        </li>
+
                     </ul>
 
                     <hr>
@@ -215,12 +220,6 @@
              ng-class="{ 'is-active' : globalAudioPlayer.checkIfTabActive(1) }">
             
             <div class="row">
-    
-                <h1 class="text--micro">
-                
-                    Catalogue
-                    
-                </h1>    
     
                 <div class="small-6 columns" ng-repeat="release in globalAudioPlayer.catalogue">
                     

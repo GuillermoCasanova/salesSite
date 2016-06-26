@@ -12,7 +12,7 @@
 
 // Changes color of text, svg logos/icons, and table borders  to $offBlack since
 // Big Sis theme background is too ight for white text
-.theme-big-sis {
+.theme-big-sis  {
     color: $blue--dark; 
 
     .logo,
@@ -189,4 +189,11 @@
         @include themeArtwork('ivy'); 
     }
 
+    &.lp {
+
+        @include themeArtwork('lp'); 
+    }
+
 }
+
+

@@ -13,9 +13,11 @@ angular.module("Sales")
 
             vm.currentPlaylist = AudioPlayer.getCurrentRelease().tracks;
 
+            vm.currentRelease = AudioPlayer.getCurrentRelease().name;
+
             vm.catalogue = AudioPlayer.getCatalogue(); 
 
-            vm.isPlaying = AudioPlayer.isPlaying();  
+            vm.isPlaying = AudioPlayer.isPlaying;  
 
             vm.playerDrawerIsOpen = false; 
 
@@ -35,18 +37,21 @@ angular.module("Sales")
 
             vm.checkIfSongPlaying = function(pTrack) {
 
-                console.log('checking if song playing'); 
+                    console.log('is playing is defined now as ');
+                    console.log(vm.isPlaying);  
 
-                if(!vm.isPlaying) {
+                if(!vm.isPlaying) { 
 
-                    console.log('is not playing anymore, STOP'); 
 
                     return false; 
                 } 
 
+
                 if(vm.currentTrack) {
 
-                
+                    console.log("there current track object is"); 
+                    console.log(vm.currentTrack); 
+
                     var trackTitle = $filter('dashless')(vm.currentTrack);
 
                     trackTitle = trackTitle.toLowerCase(); 
@@ -93,7 +98,10 @@ angular.module("Sales")
 
             vm.playSong = function(pTrack) {
 
+
                 if(vm.currentTrack) {
+
+                    console.log(vm.currentTrack); 
 
                     var trackTitle = $filter('dashless')(vm.currentTrack);
 
@@ -103,22 +111,14 @@ angular.module("Sales")
 
                 }  
 
-               if(trackPicked === trackTitle) {
-
-                    console.log('same track'); 
-
-                    AudioPlayer.pause();
-
-                    return; 
-
-                }  
-
+        
                 AudioPlayer.playSong(pTrack); 
 
                 AudioPlayer.getCurrentTrackInfo().done(function(track){
 
                     AudioPlayer.changeCurrentTrackInfo(track); 
                     $scope.currentTrack = AudioPlayer.currentTrack().title; 
+                    vm.isPlaying = true; 
                     $scope.$apply(); 
 
                 });

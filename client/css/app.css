@@ -6974,10 +6974,19 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 .ivy.theme-background {
   background: #17431e url("../assets/images/bg--darkGreen.jpg") repeat center fixed;
 }
+/* line 66, ../scss/modules/_theme.scss */
+.lp.theme-background {
+  background: #000 url("../assets/images/bg--white.jpg") repeat center fixed;
+}
 
-/* line 82, ../scss/modules/_theme.scss */
-.globalAudioPlayer, .globalAudioPlayer-tab {
+/* line 87, ../scss/modules/_theme.scss */
+.globalAudioPlayer {
   background: #000 url("../assets/images/bg--black.jpg") repeat center fixed;
+}
+
+/* line 92, ../scss/modules/_theme.scss */
+.globalAudioPlayer-playlists {
+  background: #000 url("../assets/images/bg--white.jpg") repeat center fixed;
 }
 
 /*------------------------------------*\
@@ -8054,20 +8063,21 @@ input:focus {
   width: 100%;
   display: none;
 }
-/* line 35, ../scss/partials/_globalAudioPlayer.scss */
+/* line 34, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-tab.is-active {
   display: block;
   position: relative;
 }
 
-/* line 41, ../scss/partials/_globalAudioPlayer.scss */
+/* line 40, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-playlists {
   top: 0;
   width: 100%;
-  height: 80%;
+  height: 100%;
   background-color: black;
   z-index: 150;
   position: fixed;
+  color: black;
   -moz-transform: translateY(100vh);
   -ms-transform: translateY(100vh);
   -webkit-transform: translateY(100vh);
@@ -8077,12 +8087,12 @@ input:focus {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 52, ../scss/partials/_globalAudioPlayer.scss */
+/* line 53, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-playlists.is-showing {
-  -moz-transform: translateY(84px);
-  -ms-transform: translateY(84px);
-  -webkit-transform: translateY(84px);
-  transform: translateY(84px);
+  -moz-transform: translateY(66px);
+  -ms-transform: translateY(66px);
+  -webkit-transform: translateY(66px);
+  transform: translateY(66px);
   z-index: 200;
   opacity: 1;
 }
@@ -8543,6 +8553,22 @@ input:focus {
   /* line 188, ../scss/partials/_theme.scss */
   .theme-artwork.ivy {
     background-image: url("../assets/images/ivy--large.png");
+  }
+}
+/* line 192, ../scss/partials/_theme.scss */
+.theme-artwork.lp {
+  background-image: url("../assets/images/lp--small.png");
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 192, ../scss/partials/_theme.scss */
+  .theme-artwork.lp {
+    background-image: url("../assets/images/lp--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 192, ../scss/partials/_theme.scss */
+  .theme-artwork.lp {
+    background-image: url("../assets/images/lp--large.png");
   }
 }
 

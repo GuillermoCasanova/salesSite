@@ -151,6 +151,11 @@
         return this.scplayer; 
 
     };
+
+    var getCurrentTheme = function() {
+
+        return currentTrack; 
+    }
     
 
     var getCurrentRelease = function() {
@@ -252,7 +257,8 @@
     var playSong = function(pTrack) {
 
         this.scplayer.goto(pTrack.id);
-
+        
+        console.log(pTrack.id); 
     }
 
     var generateSCPlayerLinks = function(pTracks) {
@@ -439,6 +445,7 @@
         "getArtworkOfCurrent" : getArtworkOfCurrent,
         "getCatalogue": getCatalogue,
         "getCurrentPlaylist": getCurrentPlaylist,
+        "getCurrentTheme": getCurrentTheme,
         "generateSCPlayerLinks": generateSCPlayerLinks,
         "isPlaying" : checkIfPlaying,
         "setPlaylist" : setPlaylist

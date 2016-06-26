@@ -29,73 +29,78 @@
     <div class="row">
 
         <div  class="small-12  medium-6  small-centered  columns  text-center">
-            
-            <!--Curent Song--> 
-            <h1 class="h2  mt2  text--mega">{{currentSong || " Play Music"}}</h1>
-            
-        
-             <div class="alignItems--center flexParent text-center justifyContent--center">
-        
-               <!--Audio Player Controls-->                  
-                <div class="flexBasis--70  text-center  controls">
-        
-                    <button  ng-class=" isPlaying ? 'is-showing' : 'is-hidden'" class="[ audioPlayer-button prev ]">
 
+            <!--Curent Song--> 
+            <h1 class="h2  mt2  text--mega">{{currentSong}}</h1>
+
+            <!--Audio Player Controls-->                  
+            <div class="grid  controls">
+                
+                <div class="grid-cell">
+
+                    <button  ng-class=" isPlaying ? 'is-showing' : 'is-hidden'" class="[ audioPlayer-button prev ]">
+                                    
                         <svg viewBox="0 0 144 144" 
                              preserveAspectRatio="xMidYMid meet"  
                              title="Play previous track" 
                              class="seeker icon--controls">
-
+                                    
                             <use xlink:href="assets/images/icon--controls.svg#prev-icon"></use>
-
+                                    
                         </svg>
-
+                                    
                     </button>
 
-                    <button class="audioPlayer-button" 
-                            ng-click="playMusic()"
-                            ng-class="isPlaying ? 'play' : 'pause'">
+                </div>
+                    
+                <div class="grid-cell">
+
+                    <button class="audioPlayer-button "
+                                ng-class="globalAudioPlayer.checkIfSongPlaying(song) ? 'play' : 'pause'">
                         
-                        <svg viewBox="0 0 144 144" 
-                             preserveAspectRatio="xMidYMid meet"  
-                             title="Play Music" 
-                             class="play  icon--controls">
+                            <svg viewBox="0 0 144 144" 
+                                 preserveAspectRatio="xMidYMid meet"  
+                                 title="Play Music" 
+                                 class="play  icon--controls  icon--micro">
+                        
+                                <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
+                        
+                            </svg>
+                        
+                            <svg viewBox="0 0 144 144" 
+                                 preserveAspectRatio="xMidYMid meet"  
+                                 title="Pause Music" 
+                                 class="pause  icon--controls icon--micro">
+                        
+                                <use xlink:href="assets/images/icon--controls.svg#play-icon"></use>
+                        
+                            </svg>
+                        
+                        
+                        </button>
+                            
+                </div>
+                                
+                            
+                <div class="grid-cell">
 
-                            <use xlink:href="assets/images/icon--controls.svg#pause-icon"></use>
-
-                        </svg>
-
-                        <svg viewBox="0 0 144 144" 
-                             preserveAspectRatio="xMidYMid meet"  
-                             title="Pause Music" 
-                             class="pause  icon--controls">
-
-                            <use xlink:href="assets/images/icon--controls.svg#play-icon"></use>
-
-                        </svg>
-
-
-                    </button>
-
-        
                     <button ng-class=" isPlaying ? 'is-showing' : 'is-hidden'" class="[ audioPlayer-button next ]" >
-
+                                    
                         <svg viewBox="0 0 144 144" 
                              preserveAspectRatio="xMidYMid meet"  
                              title="Play next track" 
                              class="seeker  icon--controls">
-
+                                    
                             <use xlink:href="assets/images/icon--controls.svg#next-icon"></use>
-
+                                    
                         </svg>     
-
+                                    
                     </button>
 
-
                 </div>
-            
+                
             </div>
-        
+                    
         </div>
 
     </div>
