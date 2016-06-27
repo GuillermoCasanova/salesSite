@@ -62,6 +62,11 @@
         background: $darkGreen url('../assets/images/bg--darkGreen.jpg') repeat center fixed;
 
     }
+
+    &.lp {
+
+        background: #000 url('../assets/images/bg--white.jpg') repeat center fixed;
+    }
 }
 
 @mixin themeArtwork($pArtwork) {
@@ -75,5 +80,16 @@
     @media #{$large-up} {
         background-image: url('../assets/images/'+ $pArtwork + '--large.png');
     }
+
+}
+
+
+%artworkBg--black {
+    background: #000 url('../assets/images/bg--black.jpg') repeat center fixed;
+
+}
+
+%artworkBg--white {
+    background: #000 url('../assets/images/bg--white.jpg') repeat center fixed;
 
 }

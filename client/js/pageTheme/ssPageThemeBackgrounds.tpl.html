@@ -1,6 +1,6 @@
 <div 
-    ng-class="isActive(background.name) ? 'is-showing' : 'is-hidden' "  
+    ng-class="theme.isActive(background.name) ? 'is-showing' : 'is-hidden' "  
     class="{{component}}  {{background.name}}"
-    ng-repeat="background in backgrounds">
+    ng-repeat="background in theme.backgrounds">
 
  </div>

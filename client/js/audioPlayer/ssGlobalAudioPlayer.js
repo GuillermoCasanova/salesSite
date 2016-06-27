@@ -32,41 +32,30 @@
                 //Tells player the user has yet to play anything
                 var hasNotPlayed = true; 
 
-
-
                 //Inits controls of audio player selecting DOM elements
                 $controls.on("click", 'button', function(e){
                     
-                    var playlist = AudioPlayer.getCurrentPlaylist(); 
-                    console.log('clicked'); 
                     e.preventDefault();
-                    var $this = jQuery(this)
-                    if( $this.hasClass('play') ){ 
-                        AudioPlayer.stop();
-                        scope.$apply(); 
 
+                    var $this = jQuery(this)
+
+                    if( $this.hasClass('play') ){ 
+
+                        globalAudioPlayer.pause(); 
 
                     }
                     else if( $this.hasClass('pause') ) { 
+
                         if(hasNotPlayed === true) {
+
                             hasNotPlayed = false; 
 
-                            console.log(AudioPlayer.scplayer); 
-                            AudioPlayer.play(); 
-                            scope.$apply(); 
-
-                            AudioPlayer.getCurrentTrackInfo().done(function(track){
-                                AudioPlayer.currentSong = track; 
-                                scope.$apply(); 
-
-                            });
-
+                            globalAudioPlayer.play(); 
 
                             return; 
                         }
               
-                        AudioPlayer.play();
-                        scope.$apply(); 
+                        globalAudioPlayer.play(); 
 
                     }
                     else if( 
@@ -95,8 +84,12 @@
                 });
 
                 
+
+                //listens for event on sc player being paused to change icon for play/pausing 
                 AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
 
+                    console.log('sc player paused'); 
+                    
                     if(is_paused === true){
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");

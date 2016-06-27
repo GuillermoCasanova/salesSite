@@ -13,8 +13,6 @@ angular.module("Sales")
 
         vm.playPlaylist = function(pPlaylist) { 
 
-            console.log(pPlaylist); 
-
             if(vm.playlist === pPlaylist) {
 
                 if(AudioPlayer.isPlaying) {
@@ -26,15 +24,19 @@ angular.module("Sales")
 
                     console.log('play'); 
                     AudioPlayer.play(); 
+
+                 AudioPlayer.getCurrentTrackInfo().done(function(track){
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.$apply(); 
+
+                });
+
                 }
 
             } else { 
 
-                var scPlayerLinksArray = AudioPlayer.generateSCPlayerLinks(pPlaylist);
+                AudioPlayer.setPlaylist(pPlaylist); 
 
-                AudioPlayer.setPlaylist(scPlayerLinksArray); 
-
-                    console.log('stop'); 
                 AudioPlayer.stop(); 
 
                 $timeout(function() {
@@ -43,6 +45,11 @@ angular.module("Sales")
                     AudioPlayer.play(); 
 
                 }, 400); 
+
+                 AudioPlayer.getCurrentTrackInfo().done(function(track){
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.$apply(); 
+                });
 
 
             }

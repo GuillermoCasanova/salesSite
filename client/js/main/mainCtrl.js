@@ -4,12 +4,7 @@ angular.module("Sales")
         function(AudioPlayer) {
 
         var vm = this; 
-        
 
-        console.log('hello tes this is main speaking')
-
-        console.log(AudioPlayer.isPlaying); 
-        
     }]);
 
 

@@ -5,20 +5,30 @@ angular.module("Sales")
             restrict: "A",
             controller: [
             '$scope', 
-            function($scope) {
+            'AudioPlayer',
+            function($scope, AudioPlayer) {
                 //Starter theme when user first lands on page
-                $scope.defaultTheme = "ivy";
-                //Themes are based off the song's permalinks 
-                $scope.currentTheme = $scope.defaultTheme ;
 
-               this.changeTheme = function(pTheme) {
-                    $scope.currentTheme = pTheme; 
+                var vm = this; 
 
-                };
+                 var defaultTheme = "lp";
+                
+                $scope.$watch(function() {
 
-                this.getCurrentTheme = function() {
-                    return $scope.currentTheme;
-                };
+                    return AudioPlayer.getCurrentTheme(); 
+
+                }, function(newVal, oldVal) {
+
+                    if(newVal) {
+
+                        vm.currentTheme = newVal.permalink;
+
+                    } else {
+
+                        vm.currentTheme = defaultTheme; 
+                    }
+
+                }); 
 
             }],
             controllerAs: 'ssPageTheme'

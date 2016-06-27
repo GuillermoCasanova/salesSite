@@ -1,22 +1,26 @@
     angular.module('Sales')
-    .factory('AudioPlayer', function() {
+    .factory('AudioPlayer', ['$timeout', '$filter', function($timeout, $filter) {
 
 
     //*Default variables*//
 
-    var isPlaying = false; 
+    var currentPlaylist = null; 
 
-    var currentSong = null; 
+    var currentTrack = null; 
 
     var currentSoundCloudLinks = []; 
 
-    var scPlayerLinks = []; 
+    var hasNotPlayed = true; 
 
-    var tracks = [];
+    var isPlaying = false; 
+
+    var currentRelease = null; 
+
+    var scPlayerLinks = []; 
 
     var scplayer = false; 
 
-    var hasNotPlayed = true; 
+    var tracks = [];
 
     var catalogue = [{
 
@@ -69,15 +73,18 @@
         "tracks": [
             {
                 "name": "big sis",
-                "link": "https://soundcloud.com/sales/ivy"
+                "link": "https://soundcloud.com/sales/ivy", 
+                "id" : 0
             },
             {
                 "name" : "jamz",
-                "link" : "https://soundcloud.com/sales/jamz"
+                "link" : "https://soundcloud.com/sales/jamz", 
+                "id": 1
             },
             {
                 "name" : "ivy",
-                "link" : "https://soundcloud.com/sales/chinese-new-year"
+                "link" : "https://soundcloud.com/sales/chinese-new-year",
+                "id" : 2
             }]
 
 
@@ -90,12 +97,42 @@
     //*Methods//
     //*******//
 
-    var currentSong = function() {
+    var changeCurrentTrackInfo = function(pTrackInfo) {
 
-        return currentSong; 
+        currentTrack = pTrackInfo;  
+        console.log(currentTrack); 
 
+    };
+
+    var checkIfTrackPlaying = function(pTrack) {
+  
+    // Checks to see if there is a currentsong
+    // and if there is checks to see if its the same one that is about
+    // to be payed, if so, it just pauses the player
+    if(!isPlaying) {
+
+        return false; 
+
+    }
+
+    if(currentTrack) {
+        var trackTitle = $filter('dashless')(currentTrack.title);
+
+        trackTitle = trackTitle.toLowerCase(); 
+
+        var trackPicked = pTrack.name.toLowerCase(); 
+
+        return trackPicked === trackTitle; 
+
+    } 
+
+
+    };
+
+    var checkIfPlaying = function() {
+
+        return isPlaying; 
     }; 
-
 
     var getArtworkOfCurrent = function() {
 
@@ -114,31 +151,159 @@
         return this.scplayer; 
 
     };
+
+    var getCurrentTheme = function() {
+
+        if(currentTrack) {
+
+            return currentTrack; 
+
+        }
+    }
     
-    var getCurrentSong = function() {
 
-        return currentSong; 
+    var getCurrentRelease = function() {
 
-    };
+        return currentRelease; 
 
-    var getReleases = function() {
+    }
+
+    var getCurrentTrack = function() {
+
+        if(currentTrack) {
+
+            return currentTrack; 
+
+        }
+    }
+
+    var getCurrentTrackInfo = function() {
+        
+        return scplayer.track_info(scplayer.track_index()); 
+
+    }; 
+
+    var getCatalogue = function() {
         return catalogue; 
 
     };
 
+    var next = function() {
+
+        console.log('play next'); 
+        console.log(this.scplayer); 
+
+        this.scplayer.next(); 
+
+        getCurrentTrackInfo().done(function(track){
+
+            changeCurrentTrackInfo(track); 
+
+        });
+
+
+        isPlaying = true; 
+
+        return isPlaying
+    }; 
+
+    var pause = function() {
+
+        this.scplayer.pause(); 
+
+        if(isPlaying) {
+
+            isPlaying = false;
+
+
+        } else {
+            
+            isPlaying = true; 
+        }
+
+        return isPlaying; 
+    }
+
     var play =  function() {
 
-        console.log('play'); 
         this.scplayer.play(); 
 
-        this.isPlaying = true; 
+        isPlaying = true; 
+
+        if(hasNotPlayed) {
+
+            getCurrentTrackInfo().done(function(track){
+
+                changeCurrentTrackInfo(track); 
+
+            });
+
+        }
 
         hasNotPlayed = false; 
 
-        return this.isPlaying;
+        return isPlaying;
     };
 
+    // var playSong = function(pTrack) {
 
+
+    //     console.log(pTrack); 
+
+    //     // Checks to see if there is a currentsong
+    //     // and if there is checks to see if its the same one that is about
+    //     // to be payed, if so, it just pauses the player
+    //     if(currentTrack) {
+
+    //         var trackTitle = $filter('dashless')(currentTrack.title);
+
+    //         trackTitle = trackTitle.toLowerCase(); 
+
+    //         var trackPicked = pTrack.name.toLowerCase(); 
+
+    //     }  
+
+    //         if(trackPicked === trackTitle) {
+
+    //             console.log('same track'); 
+
+    //             this.pause();
+
+    //         }  else {
+
+    //         var position = pTrack.id;
+
+    //         console.log(position); 
+
+    //         this.scplayer.goto(position, true); 
+
+    //         getCurrentTrackInfo().done(function(track){
+
+    //             changeCurrentTrackInfo(track); 
+
+    //             isPlaying = true; 
+
+    //             hasNotPlayed = false; 
+
+    //         });
+    //     }
+
+    //     return pTrack ; 
+    // }; 
+
+    var playSong = function(pTrack) {
+
+        this.scplayer.goto(pTrack.id);
+        
+        console.log(pTrack.id); 
+    }
+
+    var prev = function() {
+
+        this.scplayer.prev(); 
+        isPlaying = true; 
+
+    }
 
     var generateSCPlayerLinks = function(pTracks) {
 
@@ -162,7 +327,11 @@
     }; 
 
 
-    var setPlaylist = function(pSoundcloudLinks, pPlay) {
+    var setPlaylist = function(pCatalogueRelease, pPlay) {
+
+        var links = generateSCPlayerLinks(pCatalogueRelease.tracks); 
+
+        currentRelease = pCatalogueRelease; 
 
         var autoPlay = pPlay; 
 
@@ -173,7 +342,7 @@
         this.scplayer = {}; 
 
         //Inits Soundcloud player with array of URLS
-        this.scplayer = new SoundCloudPlayer(pSoundcloudLinks,{
+        this.scplayer = new SoundCloudPlayer(links,{
               consumer_key: "7a6e6123d37c58d267bdfa4d526e554c"
             , autoplay: false
             , toggle_pause: true
@@ -185,71 +354,118 @@
 
         scplayer = this.scplayer; 
 
-        currentSoundCloudLinks = pSoundcloudLinks; 
+        currentSoundCloudLinks = links; 
 
     }; 
 
+    var playPlaylist = function(pPlaylist) {
+
+        if(currentPlaylist === pPlaylist) {
+
+            if(isPlaying) {
+
+                this.pause(); 
+
+            } else {
+
+                this.play(); 
+
+                getCurrentTrackInfo().done(function(track){
+
+                    changeCurrentTrackInfo(track); 
+
+                });
+
+            }
+
+        } else { 
+
+            this.setPlaylist(pPlaylist); 
+
+            this.stop(); 
+
+            var that = this; 
+
+            $timeout(function() {
+
+                that.play(); 
+                getCurrentTrackInfo().done(function(track){
+
+                        changeCurrentTrackInfo(track); 
+
+                    });
+            }, 400); 
+
+            getCurrentTrackInfo().done(function(track){
+
+                changeCurrentTrackInfo(track); 
+
+            });
+
+
+        }
+
+        currentPlaylist = pPlaylist; 
+
+    }
+
     var stop = function() {
-        console.log('stop'); 
+
         this.scplayer.stop(); 
-        this.isPlaying = false; 
-        return this.isPlaying
+
+        isPlaying = false; 
+
+        return isPlaying
     };
 
-
     var togglePlaylist = function() {
-        if(this.isPlaying) {
+
+        if(isPlaying) {
+
             this.scplayer.pause();   
             isPlaying = false; 
 
-        } else if(this.isPlaying === false){
+
+        } else if(isPlaying === false){
+
             this.scplayer.play(); 
-            console.log('play'); 
+
             isPlaying = true; 
         }
-    }; 
-
-    var playPlaylist = function() {
-        this.scplayer.play();   
-        isPlaying = true; 
 
     }; 
 
 
-    var playSong = function(pPosition) {
-
-        console.log('play'); 
-        this.scplayer.goto(pPosition); 
-
-        return pPosition; 
-    }; 
 
 
-    var getCurrentTrackInfo = function() {
-        
-        return this.scplayer.track_info(scplayer.track_index()); 
+    var updateCurrentTrackinfo = function() {
+
+        getCurrentTrackInfo().done(function(track){
+
+            AudioPlayer.changeCurrentTrackInfo(track); 
+
+        });
 
     }; 
 
-
-    var changeCurrentTrackInfo = function(pTrackInfo) {
-
-        this.currentSong = pTrackInfo; 
-
-        return currentSong; 
-    };
+ 
        
     //Changes currentSong and theme on the changing_track event
-    // scplayer.on('scplayer.changing_track', function(e, index) {
 
-    //     if(hasNotPlayed === true) {
-    //         return;
-    //     }
+    if(scplayer) {
 
-    //     changeCurrenTrackInfo(); 
+        scplayer.on('scplayer.changing_track', function(e, index) {
 
-    // });
+            if(hasNotPlayed === true) {
+                return;
+            }
 
+            updateCurrentTrackinfo(); 
+
+            console.log('update track info on changing track event'); 
+        });
+
+    }
 
     // var getArtworkOfCurrent = function() {
 
@@ -262,27 +478,27 @@
         scplayer: scplayer,
         "getCurrentTrackInfo": getCurrentTrackInfo,
         "changeCurrentTrackInfo": changeCurrentTrackInfo,
+        "checkIfTrackPlaying" : checkIfTrackPlaying, 
+        "currentTrack" : getCurrentTrack,
+        "next" : next, 
+        "getCurrentRelease" : getCurrentRelease,
+        "pause": pause,  
         "play": play, 
-        "playPlaylist": playPlaylist, 
-        playSong: function(pSongToPlay) {
-
-            return playSong(pSongToPlay); 
-
-        },
+        "playPlaylist" : playPlaylist, 
+        "playSong": playSong,
+        "prev" : prev, 
         "stop": stop,
         "getArtworkOfCurrent" : getArtworkOfCurrent,
         "getCatalogue": getCatalogue,
-        "getCurrentSong": getCurrentSong,
         "getCurrentPlaylist": getCurrentPlaylist,
-        "getReleases": getReleases,
+        "getCurrentTheme": getCurrentTheme,
         "generateSCPlayerLinks": generateSCPlayerLinks,
-        isPlaying : false,
+        "isPlaying" : checkIfPlaying,
         "setPlaylist" : setPlaylist
     }; 
 
-    audioPlayerObject.generateSCPlayerLinks(catalogue[0].tracks); 
-    audioPlayerObject.setPlaylist(scPlayerLinks); 
+    audioPlayerObject.setPlaylist(catalogue[0]); 
 
     return audioPlayerObject; 
 
-});
+}]);

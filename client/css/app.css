@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -6890,7 +6889,7 @@ h6,
     #Common Font Colors
 \*------------------------------------*/
 /* line 135, ../scss/modules/_typography.scss */
-body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .mainNav-link:active, .mainNav .mainNav-link:focus, .theme-big-sis a:hover, .theme-big-sis .button--primary, .theme-big-sis .button--primary:hover, .theme-big-sis .button--secondary:hover, .slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
+body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .mainNav-link:active, .mainNav .mainNav-link:focus, .theme-big-sis a:hover, .theme-big-sis .button--primary, .theme-big-sis .button--primary:hover, .theme-big-sis .button--secondary:hover, .theme-lp a:hover, .theme-lp .button--primary, .theme-lp .button--primary:hover, .theme-lp .button--secondary:hover, .slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
   color: #fff;
 }
 
@@ -6975,13 +6974,27 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 .ivy.theme-background {
   background: #17431e url("../assets/images/bg--darkGreen.jpg") repeat center fixed;
 }
+/* line 66, ../scss/modules/_theme.scss */
+.lp.theme-background {
+  background: #000 url("../assets/images/bg--white.jpg") repeat center fixed;
+}
+
+/* line 87, ../scss/modules/_theme.scss */
+.globalAudioPlayer {
+  background: #000 url("../assets/images/bg--black.jpg") repeat center fixed;
+}
+
+/* line 92, ../scss/modules/_theme.scss */
+.globalAudioPlayer-playlists {
+  background: #000 url("../assets/images/bg--white.jpg") repeat center fixed;
+}
 
 /*------------------------------------*\
     #Animations
 \*------------------------------------*/
 /* line 7, ../scss/modules/_animations.scss */
-.primaryAnimation, .secondaryAnimation, .pause,
-.play {
+.primaryAnimation, .secondaryAnimation, .audioPlayer-button .pause,
+.audioPlayer-button .play {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -6995,8 +7008,8 @@ body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .main
 }
 
 /* line 29, ../scss/modules/_animations.scss */
-.secondaryAnimation:hover, .pause:hover,
-.play:hover {
+.secondaryAnimation:hover, .audioPlayer-button .pause:hover,
+.audioPlayer-button .play:hover {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
@@ -7053,27 +7066,32 @@ img.ri {
   display: inline-block;
 }
 
+/* line 55, ../scss/partials/_generics.scss */
+.display--block {
+  display: block;
+}
+
 /*------------------------------------*\
     #Centering
 \*------------------------------------*/
-/* line 62, ../scss/partials/_generics.scss */
+/* line 67, ../scss/partials/_generics.scss */
 .centerContentsVertically {
   display: inline-block;
 }
-/* line 65, ../scss/partials/_generics.scss */
+/* line 70, ../scss/partials/_generics.scss */
 .centerContentsVertically > * {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 71, ../scss/partials/_generics.scss */
+/* line 76, ../scss/partials/_generics.scss */
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 77, ../scss/partials/_generics.scss */
+/* line 82, ../scss/partials/_generics.scss */
 .vertical-align-middle {
   position: absolute;
   top: 50%;
@@ -7084,12 +7102,12 @@ img.ri {
 /*------------------------------------*\
     #Position Relative or Absolute
 \*------------------------------------*/
-/* line 92, ../scss/partials/_generics.scss */
+/* line 97, ../scss/partials/_generics.scss */
 .relative {
   position: relative;
 }
 
-/* line 96, ../scss/partials/_generics.scss */
+/* line 101, ../scss/partials/_generics.scss */
 .absolute {
   position: absolute;
 }
@@ -7100,27 +7118,27 @@ img.ri {
 /*------------------------------------*\
     #Width 
 \*------------------------------------*/
-/* line 151, ../scss/partials/_generics.scss */
+/* line 156, ../scss/partials/_generics.scss */
 .width100 {
   width: 100%;
 }
 
-/* line 154, ../scss/partials/_generics.scss */
+/* line 159, ../scss/partials/_generics.scss */
 .maxWidth7 {
   max-width: 450px;
 }
 
-/* line 159, ../scss/partials/_generics.scss */
+/* line 164, ../scss/partials/_generics.scss */
 .u-expanded {
   width: 100%;
 }
 
-/* line 164, ../scss/partials/_generics.scss */
+/* line 169, ../scss/partials/_generics.scss */
 .expand-on-small {
   width: 100%;
 }
 @media (min-width: 900px) {
-  /* line 164, ../scss/partials/_generics.scss */
+  /* line 169, ../scss/partials/_generics.scss */
   .expand-on-small {
     width: auto;
   }
@@ -7130,14 +7148,14 @@ img.ri {
     #Visibility Classes
 \*------------------------------------*/
 @media (min-width: 100px) and (max-width: 760px) {
-  /* line 179, ../scss/partials/_generics.scss */
+  /* line 184, ../scss/partials/_generics.scss */
   .hide-on-small {
     display: none;
   }
 }
 
 @media (min-width: 760px) {
-  /* line 186, ../scss/partials/_generics.scss */
+  /* line 191, ../scss/partials/_generics.scss */
   .hide-on-medium {
     display: none;
   }
@@ -7146,7 +7164,7 @@ img.ri {
 /*------------------------------------*\
     #Clearfix
 \*------------------------------------*/
-/* line 200, ../scss/partials/_generics.scss */
+/* line 205, ../scss/partials/_generics.scss */
 .cf {
   overflow: auto;
   zoom: 1;
@@ -7156,13 +7174,13 @@ img.ri {
     #View Port Height and Width 
 \*------------------------------------*/
 @media (min-width: 760px) {
-  /* line 212, ../scss/partials/_generics.scss */
+  /* line 217, ../scss/partials/_generics.scss */
   .vh100 {
     height: 100vh;
   }
 }
 
-/* line 218, ../scss/partials/_generics.scss */
+/* line 223, ../scss/partials/_generics.scss */
 .vw100 {
   width: 100vw;
 }
@@ -7173,7 +7191,7 @@ img.ri {
 /*------------------------------------*\
     #Margins
 \*------------------------------------*/
-/* line 246, ../scss/partials/_generics.scss */
+/* line 251, ../scss/partials/_generics.scss */
 .mga {
   margin: auto;
 }
@@ -7472,10 +7490,18 @@ a[href*="instagram"]:hover, a[href*="instagram"]:active, a[href*="instagram"]:fo
   display: inline-block;
 }
 
+/* line 113, ../scss/partials/_icons.scss */
+.icon--micro {
+  background-size: 3em auto;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.25rem;
+}
+
 /*------------------------------------*\
     #SVG Icon Colors
 \*------------------------------------*/
-/* line 122, ../scss/partials/_icons.scss */
+/* line 129, ../scss/partials/_icons.scss */
 .icon--controls {
   fill: #fff;
   -moz-transition: fill 0.3s ease-in-out;
@@ -7644,140 +7670,431 @@ input:focus {
 /*------------------------------------*\
     #Flex-Box
 \*------------------------------------*/
-/* line 7, ../scss/partials/_flexBox.scss */
-.flexParent {
-  display: -webkit-box;
-  /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
-  display: -moz-box;
-  /* OLD: Firefox (buggy) */
+/*------------------------------------*\
+    #Grid Alignments and Properties  
+\*------------------------------------*/
+/* line 20, ../scss/partials/_flexBox.scss */
+.grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: -ms-flexbox;
-  /* MID: IE 10 */
+  -ms-flex-wrap: wrap;
   display: -webkit-flex;
-  /* NEW, Chrome 21–28, Safari 6.1+ */
   display: flex;
-  /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
-  padding-right: 0.875rem;
-  padding-left: 0.875rem;
-}
-
-/* line 17, ../scss/partials/_flexBox.scss */
-.flexDirection--rowReverse {
-  -webkit-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
-
-/* line 21, ../scss/partials/_flexBox.scss */
-.flexDirection--column {
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
-
-/* line 25, ../scss/partials/_flexBox.scss */
-.flexDirection--row {
-  -webkit-flex-direction: row;
-  flex-direction: row;
-}
-
-@media (min-width: 100px) and (max-width: 760px) {
-  /* line 29, ../scss/partials/_flexBox.scss */
-  .columnOn-small {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
-/* line 35, ../scss/partials/_flexBox.scss */
-.flexDirection--columnReverse {
-  -webkit-flex-direction: column-reverse;
-  flex-direction: column-reverse;
-}
-
-/* line 39, ../scss/partials/_flexBox.scss */
-.flexWrap--wrap {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-/* line 43, ../scss/partials/_flexBox.scss */
-.flexwrap--wrapReverse {
-  -webkit-flex-wrap: wrap-reverse;
-  flex-wrap: wrap-reverse;
+/* line 31, ../scss/partials/_flexBox.scss */
+.grid-cell {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1;
+  flex: 1;
 }
 
-/* line 47, ../scss/partials/_flexBox.scss */
-.justifyContent--center {
-  -webkit-justify-content: center;
-  justify-content: center;
+/* line 36, ../scss/partials/_flexBox.scss */
+.grid-cell--2 {
+  -ms-flex: 2 1 auto;
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+/* line 41, ../scss/partials/_flexBox.scss */
+.grid--flexCells > .grid-cell {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 46, ../scss/partials/_flexBox.scss */
+.grid--top {
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
 
 /* line 51, ../scss/partials/_flexBox.scss */
-.centerOn-Small {
-  -webkit-justify-content: center;
-  justify-content: center;
+.grid--bottom {
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
 }
 
-/* line 55, ../scss/partials/_flexBox.scss */
-.justifyContent--spaceBetween {
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-
-/* line 59, ../scss/partials/_flexBox.scss */
-.justifyContent--spaceAround {
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-}
-
-/* line 63, ../scss/partials/_flexBox.scss */
-.alignItems--center {
+/* line 56, ../scss/partials/_flexBox.scss */
+.grid--center {
+  -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
 }
 
-/* line 67, ../scss/partials/_flexBox.scss */
-.alignItems--left {
-  -webkit-align-items: left;
-  align-items: left;
+/* line 61, ../scss/partials/_flexBox.scss */
+.grid--stretch {
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+/* line 66, ../scss/partials/_flexBox.scss */
+.grid--justifyCenter {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 /* line 71, ../scss/partials/_flexBox.scss */
-.alignItems--right {
-  -webkit-align-items: right;
-  align-items: right;
+.grid--justifyRight {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
 
-/* line 82, ../scss/partials/_flexBox.scss */
-.flexGrow--1 {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
+/* line 76, ../scss/partials/_flexBox.scss */
+.grid--justifyLeft {
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+/* line 81, ../scss/partials/_flexBox.scss */
+.grid--justifySpaceBetween {
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 /* line 86, ../scss/partials/_flexBox.scss */
-.flexGrow--2 {
-  -webkit-flex-grow: 2;
-  flex-grow: 2;
+.grid--justifySpaceAround {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
 }
 
-/* line 90, ../scss/partials/_flexBox.scss */
-.flexGrow--3 {
-  -webkit-flex-grow: 3;
-  flex-grow: 3;
+/* line 91, ../scss/partials/_flexBox.scss */
+.grid--expand {
+  width: 100%;
 }
 
-/* line 96, ../scss/partials/_flexBox.scss */
-.flexBasis--70 {
-  flex-basis: 43.75rem;
+/*------------------------------------*\
+    #Grid Direction, alingmnet, wraps, centering
+\*------------------------------------*/
+/* line 104, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionColumn {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 
+/* line 109, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionColumnReverse {
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+/* line 114, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionRow {
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* line 119, ../scss/partials/_flexBox.scss */
+.grid--flexDirectionRowReverse {
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 127, ../scss/partials/_flexBox.scss */
+  .med-grid--flexDirectionColumn {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+/*------------------------------------*\
+    #Grid Wrap
+\*------------------------------------*/
+/* line 145, ../scss/partials/_flexBox.scss */
+.grid--flexWrap {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* line 150, ../scss/partials/_flexBox.scss */
+.grid--flexWrapReverse {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+/* line 156, ../scss/partials/_flexBox.scss */
+.grid--flexNoWrap {
+  -ms-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+/*------------------------------------*\
+    #Sizing properties for Child Elements 
+\*------------------------------------*/
+/* line 171, ../scss/partials/_flexBox.scss */
+.grid-cell--top {
+  -ms-flex-item-align: start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+
+/* line 176, ../scss/partials/_flexBox.scss */
+.grid-cell--bottom {
+  -ms-flex-item-align: end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+
+/* line 181, ../scss/partials/_flexBox.scss */
+.grid-cell--center {
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+
+/* line 186, ../scss/partials/_flexBox.scss */
+.grid-cell--autoSize {
+  -ms-flex: 0 0 auto;
+  -webkit-flex: none;
+  flex: none;
+}
+
+/* line 191, ../scss/partials/_flexBox.scss */
+.grid--fit > .grid-cell {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+/* line 196, ../scss/partials/_flexBox.scss */
+.grid--full > .grid-cell {
+  -ms-flex: 0 0 100%;
+  -webkit-flex: 0 0 100%;
+  flex: 0 0 100%;
+}
+
+/* line 201, ../scss/partials/_flexBox.scss */
+.grid--1of2 > .grid-cell {
+  -ms-flex: 0 0 50%;
+  -webkit-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+/* line 206, ../scss/partials/_flexBox.scss */
+.grid--1of3 > .grid-cell {
+  -ms-flex: 0 0 33.3333%;
+  -webkit-flex: 0 0 33.3333%;
+  flex: 0 0 33.3333%;
+}
+
+/* line 211, ../scss/partials/_flexBox.scss */
+.grid--1of4 > .grid-cell {
+  -ms-flex: 0 0 25%;
+  -webkit-flex: 0 0 25%;
+  flex: 0 0 25%;
+}
+
+@media only screen {
+  /* line 218, ../scss/partials/_flexBox.scss */
+  .small-grid--fit > .grid-cell {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* line 222, ../scss/partials/_flexBox.scss */
+  .small-grid--full > .grid-cell {
+    -ms-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  /* line 226, ../scss/partials/_flexBox.scss */
+  .small-grid--1of2 > .grid-cell {
+    -ms-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+
+  /* line 230, ../scss/partials/_flexBox.scss */
+  .small-grid--1of3 > .grid-cell {
+    -ms-flex: 0 0 33.3333%;
+    -webkit-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+  }
+
+  /* line 234, ../scss/partials/_flexBox.scss */
+  .small-grid--1of4 > .grid-cell {
+    -ms-flex: 0 0 25%;
+    -webkit-flex: 0 0 25%;
+    flex: 0 0 25%;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 241, ../scss/partials/_flexBox.scss */
+  .med-grid--fit > .grid-cell {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* line 245, ../scss/partials/_flexBox.scss */
+  .med-grid--full > .grid-cell {
+    -ms-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  /* line 249, ../scss/partials/_flexBox.scss */
+  .med-grid--1of2 > .grid-cell {
+    -ms-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+
+  /* line 253, ../scss/partials/_flexBox.scss */
+  .med-grid--1of3 > .grid-cell {
+    -ms-flex: 0 0 33.3333%;
+    -webkit-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+  }
+
+  /* line 257, ../scss/partials/_flexBox.scss */
+  .med-grid--1of4 > .grid-cell {
+    -ms-flex: 0 0 25%;
+    -webkit-flex: 0 0 25%;
+    flex: 0 0 25%;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 264, ../scss/partials/_flexBox.scss */
+  .large-grid--fit > .grid-cell {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  /* line 268, ../scss/partials/_flexBox.scss */
+  .large-grid--full > .grid-cell {
+    -ms-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  /* line 272, ../scss/partials/_flexBox.scss */
+  .large-grid--1of2 > .grid-cell {
+    -ms-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+
+  /* line 276, ../scss/partials/_flexBox.scss */
+  .large-grid--1of3 > .grid-cell {
+    -ms-flex: 0 0 33.3333%;
+    -webkit-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+  }
+
+  /* line 280, ../scss/partials/_flexBox.scss */
+  .large-grid--1of4 > .grid-cell {
+    -ms-flex: 0 0 25%;
+    -webkit-flex: 0 0 25%;
+    flex: 0 0 25%;
+  }
+}
+/*------------------------------------*\
+    #Flex Gutters  (these using 1rem for gutter base)
+\*------------------------------------*/
+/* line 295, ../scss/partials/_flexBox.scss */
+.grid--gutters {
+  margin: -1rem 0 1em -1rem;
+}
+
+/* line 298, ../scss/partials/_flexBox.scss */
+.grid--gutters > .grid-cell {
+  padding: 1rem 0 0 1rem;
+}
+
+/*------------------------------------*\
+    #Flex Debug
+\*------------------------------------*/
 /* line 4, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer {
   position: fixed;
   bottom: 0;
+  top: 0;
   right: 0;
   left: 0;
   width: 100%;
-  z-index: 200;
+  z-index: 150;
   background-color: black;
+  height: 5.25rem;
+  -moz-transform: translateY(93vh);
+  -ms-transform: translateY(93vh);
+  -webkit-transform: translateY(93vh);
+  transform: translateY(93vh);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 20, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer.is-showing {
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 27, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-tab {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: none;
+}
+/* line 34, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-tab.is-active {
+  display: block;
+  position: relative;
+}
+
+/* line 40, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-playlists {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 150;
+  position: fixed;
+  color: black;
+  -moz-transform: translateY(100vh);
+  -ms-transform: translateY(100vh);
+  -webkit-transform: translateY(100vh);
+  transform: translateY(100vh);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 53, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-playlists.is-showing {
+  -moz-transform: translateY(66px);
+  -ms-transform: translateY(66px);
+  -webkit-transform: translateY(66px);
+  transform: translateY(66px);
+  z-index: 200;
+  opacity: 1;
 }
 
 /*------------------------------------*\
@@ -7786,7 +8103,7 @@ input:focus {
 /* line 7, ../scss/partials/_navigation.scss */
 .mainNav {
   background: transparent;
-  z-index: 700;
+  z-index: 100;
   overflow: visible;
 }
 /* line 12, ../scss/partials/_navigation.scss */
@@ -8053,10 +8370,65 @@ input:focus {
   border: 2px solid #3b4664;
 }
 
+/* line 97, ../scss/partials/_theme.scss */
+.theme-lp {
+  color: #2E2D31;
+}
+/* line 101, ../scss/partials/_theme.scss */
+.theme-lp .logo,
+.theme-lp .icon--controls,
+.theme-lp a {
+  fill: #2E2D31;
+  color: #2E2D31;
+}
+/* line 110, ../scss/partials/_theme.scss */
+.theme-lp a:hover {
+  background-color: #2E2D31;
+}
+/* line 118, ../scss/partials/_theme.scss */
+.theme-lp .mainNav-link:hover {
+  color: #2E2D31;
+}
+/* line 124, ../scss/partials/_theme.scss */
+.theme-lp .button--primary {
+  background-color: #3d3c41;
+}
+/* line 128, ../scss/partials/_theme.scss */
+.theme-lp .button--primary:hover {
+  background-color: #1f1e21;
+}
+/* line 134, ../scss/partials/_theme.scss */
+.theme-lp .button--secondary {
+  border: 2px solid #2E2D31;
+  color: #2E2D31;
+}
+/* line 138, ../scss/partials/_theme.scss */
+.theme-lp .button--secondary:hover {
+  background-color: #2E2D31;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 149, ../scss/partials/_theme.scss */
+  .theme-lp .table--primary .table-row:hover {
+    background: rgba(30, 30, 30, 0.1);
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 157, ../scss/partials/_theme.scss */
+  .theme-lp .table--primary .table-row td {
+    border-top: 1px solid #2E2D31;
+  }
+}
+/* line 170, ../scss/partials/_theme.scss */
+.theme-lp input,
+.theme-lp input:focus {
+  color: #2E2D31;
+  border: 2px solid #2E2D31;
+}
+
 /*------------------------------------*\
     #Backgrounds (Extends from _theme.scss)  
 \*------------------------------------*/
-/* line 105, ../scss/partials/_theme.scss */
+/* line 189, ../scss/partials/_theme.scss */
 .theme-background {
   top: 0;
   left: 0;
@@ -8071,20 +8443,20 @@ input:focus {
 /*------------------------------------*\
     #Artworks  (Includes from _theme.scss)
 \*------------------------------------*/
-/* line 124, ../scss/partials/_theme.scss */
+/* line 208, ../scss/partials/_theme.scss */
 .theme-artworkContainer {
   width: 15.625rem;
   height: 12.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 124, ../scss/partials/_theme.scss */
+  /* line 208, ../scss/partials/_theme.scss */
   .theme-artworkContainer {
     height: 28.125rem;
     width: 28.125rem;
   }
 }
 
-/* line 137, ../scss/partials/_theme.scss */
+/* line 221, ../scss/partials/_theme.scss */
 .theme-artwork {
   background-size: contain;
   top: 0;
@@ -8101,141 +8473,157 @@ input:focus {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 149, ../scss/partials/_theme.scss */
+/* line 233, ../scss/partials/_theme.scss */
 .theme-artwork.is-showing {
   z-index: 80;
   opacity: 1;
 }
-/* line 154, ../scss/partials/_theme.scss */
+/* line 238, ../scss/partials/_theme.scss */
 .theme-artwork.is-next {
   z-index: 70;
 }
-/* line 159, ../scss/partials/_theme.scss */
+/* line 243, ../scss/partials/_theme.scss */
 .theme-artwork.getting-it-on {
   background-image: url("../assets/images/getting-it-on--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 159, ../scss/partials/_theme.scss */
+  /* line 243, ../scss/partials/_theme.scss */
   .theme-artwork.getting-it-on {
     background-image: url("../assets/images/getting-it-on--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 159, ../scss/partials/_theme.scss */
+  /* line 243, ../scss/partials/_theme.scss */
   .theme-artwork.getting-it-on {
     background-image: url("../assets/images/getting-it-on--large.png");
   }
 }
-/* line 163, ../scss/partials/_theme.scss */
+/* line 247, ../scss/partials/_theme.scss */
 .theme-artwork.sales-renee {
   background-image: url("../assets/images/sales-renee--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 163, ../scss/partials/_theme.scss */
+  /* line 247, ../scss/partials/_theme.scss */
   .theme-artwork.sales-renee {
     background-image: url("../assets/images/sales-renee--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 163, ../scss/partials/_theme.scss */
+  /* line 247, ../scss/partials/_theme.scss */
   .theme-artwork.sales-renee {
     background-image: url("../assets/images/sales-renee--large.png");
   }
 }
-/* line 167, ../scss/partials/_theme.scss */
+/* line 251, ../scss/partials/_theme.scss */
 .theme-artwork.vow {
   background-image: url("../assets/images/vow--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 167, ../scss/partials/_theme.scss */
+  /* line 251, ../scss/partials/_theme.scss */
   .theme-artwork.vow {
     background-image: url("../assets/images/vow--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 167, ../scss/partials/_theme.scss */
+  /* line 251, ../scss/partials/_theme.scss */
   .theme-artwork.vow {
     background-image: url("../assets/images/vow--large.png");
   }
 }
-/* line 171, ../scss/partials/_theme.scss */
+/* line 255, ../scss/partials/_theme.scss */
 .theme-artwork.chinese-new-year {
   background-image: url("../assets/images/chinese-new-year--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 171, ../scss/partials/_theme.scss */
+  /* line 255, ../scss/partials/_theme.scss */
   .theme-artwork.chinese-new-year {
     background-image: url("../assets/images/chinese-new-year--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 171, ../scss/partials/_theme.scss */
+  /* line 255, ../scss/partials/_theme.scss */
   .theme-artwork.chinese-new-year {
     background-image: url("../assets/images/chinese-new-year--large.png");
   }
 }
-/* line 175, ../scss/partials/_theme.scss */
+/* line 259, ../scss/partials/_theme.scss */
 .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
   background-image: url("../assets/images/toto--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 175, ../scss/partials/_theme.scss */
+  /* line 259, ../scss/partials/_theme.scss */
   .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
     background-image: url("../assets/images/toto--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 175, ../scss/partials/_theme.scss */
+  /* line 259, ../scss/partials/_theme.scss */
   .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
     background-image: url("../assets/images/toto--large.png");
   }
 }
-/* line 180, ../scss/partials/_theme.scss */
+/* line 264, ../scss/partials/_theme.scss */
 .theme-artwork.big-sis {
   background-image: url("../assets/images/big-sis--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 180, ../scss/partials/_theme.scss */
+  /* line 264, ../scss/partials/_theme.scss */
   .theme-artwork.big-sis {
     background-image: url("../assets/images/big-sis--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 180, ../scss/partials/_theme.scss */
+  /* line 264, ../scss/partials/_theme.scss */
   .theme-artwork.big-sis {
     background-image: url("../assets/images/big-sis--large.png");
   }
 }
-/* line 184, ../scss/partials/_theme.scss */
+/* line 268, ../scss/partials/_theme.scss */
 .theme-artwork.jamz {
   background-image: url("../assets/images/jamz--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 184, ../scss/partials/_theme.scss */
+  /* line 268, ../scss/partials/_theme.scss */
   .theme-artwork.jamz {
     background-image: url("../assets/images/jamz--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 184, ../scss/partials/_theme.scss */
+  /* line 268, ../scss/partials/_theme.scss */
   .theme-artwork.jamz {
     background-image: url("../assets/images/jamz--large.png");
   }
 }
-/* line 188, ../scss/partials/_theme.scss */
+/* line 272, ../scss/partials/_theme.scss */
 .theme-artwork.ivy {
   background-image: url("../assets/images/ivy--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 188, ../scss/partials/_theme.scss */
+  /* line 272, ../scss/partials/_theme.scss */
   .theme-artwork.ivy {
     background-image: url("../assets/images/ivy--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 188, ../scss/partials/_theme.scss */
+  /* line 272, ../scss/partials/_theme.scss */
   .theme-artwork.ivy {
     background-image: url("../assets/images/ivy--large.png");
+  }
+}
+/* line 276, ../scss/partials/_theme.scss */
+.theme-artwork.lp {
+  background-image: url("../assets/images/lp--small.png");
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 276, ../scss/partials/_theme.scss */
+  .theme-artwork.lp {
+    background-image: url("../assets/images/lp--medium.png");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 276, ../scss/partials/_theme.scss */
+  .theme-artwork.lp {
+    background-image: url("../assets/images/lp--large.png");
   }
 }
 
@@ -8318,19 +8706,12 @@ input:focus {
 /*------------------------------------*\
     #Pause and play buttons 
 \*------------------------------------*/
-/* line 86, ../scss/partials/_audioPlayer.scss */
-.pause,
-.play {
-  width: 4.375rem;
-  height: 4.375rem;
-}
-
-/* line 98, ../scss/partials/_audioPlayer.scss */
+/* line 100, ../scss/partials/_audioPlayer.scss */
 .pause .icon--controls.play {
   display: none;
 }
 
-/* line 104, ../scss/partials/_audioPlayer.scss */
+/* line 106, ../scss/partials/_audioPlayer.scss */
 .play .icon--controls.pause {
   display: none;
 }

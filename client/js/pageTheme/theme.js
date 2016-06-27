@@ -14,7 +14,8 @@ angular.module('Sales')
                  {'name' : 'toto-xxyyxx-remix'},
                  {'name' : 'big-sis'},
                  {'name' : 'jamz'},
-                 {'name' : 'ivy'}
+                 {'name' : 'ivy'},
+                 {'name' : 'lp'}
 
                 ];
     return {

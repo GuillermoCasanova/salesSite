@@ -14,7 +14,7 @@
         <div class="small-12 columns  medium-4  small-3  end"
              ng-repeat="release in music.catalogue track by $index">
             
-            <a ng-click="music.playPlaylist(release.tracks)">
+            <a ng-click="music.playPlaylist(release)">
 
                 <img ng-src="{{release.artwork}}" 
                      alt="Release Artwork">

@@ -15,41 +15,62 @@
 
                 $scope.placeHolderText = "Play";
                 $scope.loadingText = "Loading track..."; 
-                $scope.isPlaying = AudioPlayer.isPlaying; 
+                $scope.isPlaying = AudioPlayer.isPlaying(); 
 
                 $scope.$watch( function() {
 
-                    return AudioPlayer.isPlaying; 
+                    return AudioPlayer.isPlaying(); 
                     
                 }, function(newVal, oldVal) {
+
+                    console.log('is playing is '); 
+                    console.log(newVal); 
 
                     $scope.isPlaying = newVal;  
                 });
 
               $scope.$watch(function() {
 
-                    return AudioPlayer.currentSong; 
+                    return AudioPlayer.currentTrack(); 
                     
                 }, function(newVal, oldVal) {
 
                     if(newVal) {
 
                         $scope.currentSong = newVal.title;  
-                        console.log($scope.currentSong); 
 
                     }
 
                 });
 
+           $scope.pause  = function() {
+
+                AudioPlayer.pause();
+
+                $scope.$apply(); 
+
+            }; 
+
+            $scope.play = function() {
+
+                AudioPlayer.play(); 
+
+                $scope.$apply(); 
+
+                AudioPlayer.getCurrentTrackInfo().done(function(track){
+
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.currentTrack = AudioPlayer.currentTrack().title; 
+                    $scope.$apply(); 
+
+
+                });
+
+            }; 
+
             }],
-            link: function(scope, element, attrs, ssPageTheme) {
-
-                // globalAudioPlayer.changeTheme = function(pThemeName) {
-                //     //Uses parent directive's controller function to change theme
-                //     // ssPageTheme.changeTheme(pThemeName);
-
-                //     console.log(pThemeName); 
-                // };
+            controllerAs: 'ssAudioPlayer',
+            link: function(scope, element, attrs, ssAudioPlayer) {
 
                 // //Inits Controls for Audio Player as Jquery Object
                 $controls = $(element).find(".controls");
@@ -60,44 +81,27 @@
                 //Inits controls of audio player selecting DOM elements
                 $controls.on("click", 'button', function(e){
                     
-                    var playlist = AudioPlayer.getCurrentPlaylist(); 
-
                     e.preventDefault();
 
                     var $this = jQuery(this)
-                    if( $this.hasClass('play') ){ 
-                        AudioPlayer.stop();
-                        scope.$apply(); 
 
+                    if( $this.hasClass('play') ){ 
+
+                        scope.pause(); 
 
                     }
                     else if( $this.hasClass('pause') ) { 
+
                         if(hasNotPlayed === true) {
+
                             hasNotPlayed = false; 
 
-                            AudioPlayer.play(); 
-                            scope.$apply(); 
-
-                            AudioPlayer.getCurrentTrackInfo().done(function(track){
-                                AudioPlayer.changeCurrentTrackInfo(track); 
-                                scope.currentSong = AudioPlayer.currentSong.title; 
-                                scope.$apply(); 
-
-                            });
-
+                            scope.play(); 
 
                             return; 
                         }
               
-                        AudioPlayer.play();
-                        scope.$apply(); 
-
-                        AudioPlayer.getCurrentTrackInfo().done(function(track){
-                            AudioPlayer.changeCurrentTrackInfo(track); 
-                            scope.currentSong = AudioPlayer.currentSong.title; 
-                            scope.$apply(); 
-
-                        });
+                        scope.play(); 
 
                     }
                     else if( 
@@ -126,8 +130,12 @@
                 });
 
                 
+
+                //listens for event on sc player being paused to change icon for play/pausing 
                 AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
 
+                    console.log('sc player paused'); 
+                    
                     if(is_paused === true){
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");
@@ -138,10 +146,8 @@
 
                 });                
                 
-
-
-                
             }
+                
         };
 
 }]);
