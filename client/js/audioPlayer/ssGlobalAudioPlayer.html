@@ -18,11 +18,11 @@
         
         <div class="row">
 
-            <div class="small-12 columns">
+            <div class="small-12 columns  medium-10  medium-centered  ">
 
                 <div class="grid  grid--center">
                     
-                    <div class="globalAudioPlayer-controls  grid-cell  grid-cell--autoSize pr4">
+                    <div class="globalAudioPlayer-controls  grid-cell  grid-cell--autoSize  grid pr4">
                         
                                 <button  class="[ audioPlayer-button prev ] show-for-medium-up " >
                         
@@ -88,13 +88,20 @@
                         
                     </div>
 
-                    <div class="globalAudioPlayer-secondaryinformation  grid-cell text-right">
+                    <div class="globalAudioPlayer-secondaryinformation  grid-cell text-right  grid">
 
+                    <div  class="grid-cell"  ng-click="globalAudioPlayer.openDrawer()">
                         <img src="assets/images/icon--radio.svg" 
                              alt="Radio" 
                              width="30"
-                             class="mr5  mb2"
-                             ng-click="globalAudioPlayer.openDrawer()"> 
+                             class="  mr2  "
+                            > 
+                        </div>
+                        <span class="show-for-medium-up  ff1 grid-cell  grid-cell--autoSize  text-left" ng-click="globalAudioPlayer.openDrawer()">
+                            
+                            Playlist
+
+                        </span>
 
                     </div>
                 
@@ -116,7 +123,7 @@
                 
                 <li class="small-6  columns  text-center">
     
-                    <a class="h3  ptb1  display-block"  ng-click="globalAudioPlayer.showTab(0)">
+                    <a class="h3  ptb1  ff1  display-block"  ng-click="globalAudioPlayer.showTab(0)">
                     
                         Playlist 
                         
@@ -126,7 +133,7 @@
     
                 <li class="small-6  columns  text-center">
     
-                    <a class="h3  ptb1  display-block" ng-click="globalAudioPlayer.showTab(1)"> 
+                    <a class="h3  ptb1  ff1  display-block" ng-click="globalAudioPlayer.showTab(1)"> 
                     
                         Catalogue
                         

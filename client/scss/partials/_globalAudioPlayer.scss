@@ -15,7 +15,7 @@
     color: #fff; 
     @extend %dropshadow; 
     @extend %artworkBg--black; 
-    @include transform(translateY(93vh)); 
+    @include transform(translateY(91vh)); 
     @include single-transition(all, .2s, ease-in-out); 
 
 
@@ -60,6 +60,17 @@
     @include transform(translateY(100vh)); 
     @include single-transition(all, .2s, ease-in-out); 
     @extend %artworkBg--white; 
+
+    @media #{$medium-up} {
+
+            width: 90%;
+            margin-right: auto;
+            margin-left: auto;
+            left: 0;
+            right: 0;
+            height: 84%;
+
+    }
 
     &.is-showing {
     
