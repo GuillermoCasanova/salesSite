@@ -188,19 +188,38 @@
 
     };
 
+    var next = function() {
+
+        console.log('play next'); 
+        console.log(this.scplayer); 
+
+        this.scplayer.next(); 
+
+        getCurrentTrackInfo().done(function(track){
+
+            changeCurrentTrackInfo(track); 
+
+        });
+
+
+        isPlaying = true; 
+
+        return isPlaying
+    }; 
+
     var pause = function() {
 
         this.scplayer.pause(); 
 
         if(isPlaying) {
 
-                isPlaying = false;
+            isPlaying = false;
 
-                console.log(isPlaying); 
 
-            } else {
-                isPlaying = true; 
-            }
+        } else {
+            
+            isPlaying = true; 
+        }
 
         return isPlaying; 
     }
@@ -215,7 +234,7 @@
 
             getCurrentTrackInfo().done(function(track){
 
-                AudioPlayer.changeCurrentTrackInfo(track); 
+                changeCurrentTrackInfo(track); 
 
             });
 
@@ -277,6 +296,13 @@
         this.scplayer.goto(pTrack.id);
         
         console.log(pTrack.id); 
+    }
+
+    var prev = function() {
+
+        this.scplayer.prev(); 
+        isPlaying = true; 
+
     }
 
     var generateSCPlayerLinks = function(pTracks) {
@@ -454,11 +480,13 @@
         "changeCurrentTrackInfo": changeCurrentTrackInfo,
         "checkIfTrackPlaying" : checkIfTrackPlaying, 
         "currentTrack" : getCurrentTrack,
+        "next" : next, 
         "getCurrentRelease" : getCurrentRelease,
         "pause": pause,  
         "play": play, 
         "playPlaylist" : playPlaylist, 
         "playSong": playSong,
+        "prev" : prev, 
         "stop": stop,
         "getArtworkOfCurrent" : getArtworkOfCurrent,
         "getCatalogue": getCatalogue,

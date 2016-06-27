@@ -52,8 +52,6 @@ angular.module("Sales")
 
                     var trackPicked = pTrack.name.toLowerCase();
 
-                    console.log(trackPicked === trackTitle);
-
                     return trackPicked === trackTitle;  
 
                 } else {
@@ -140,7 +138,6 @@ angular.module("Sales")
                 
             }, function(newVal, oldVal) {
 
-                console.log(newVal); 
                 vm.isPlaying = newVal;  
 
             });

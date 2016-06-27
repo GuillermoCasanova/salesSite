@@ -88,6 +88,8 @@
                 //listens for event on sc player being paused to change icon for play/pausing 
                 AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
 
+                    console.log('sc player paused'); 
+                    
                     if(is_paused === true){
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");
