@@ -15,27 +15,46 @@ angular.module('Sales')
             scope: {}, 
             controller: ['$scope', 'AudioPlayer', function($scope, AudioPlayer) {
 
-                $scope.loaded = false; 
+                var vm = this; 
 
-                $scope.isActive = function(pBackground) {
+                vm.loaded = false; 
 
-                    if(AudioPlayer.currentTrack() !== null) {
+                vm.currentTheme = 'lp'; 
 
-                        return AudioPlayer.currentTrack().permalink === pBackground;
+                if(vm.currentTheme === null ) {
 
-                    }
+                    vm.currentTheme = 'lp';
                 }
 
+                $scope.$watch( function() {
 
+                    return AudioPlayer.getCurrentTheme(); 
+                    
+                }, function(newVal, oldVal) {
+
+                    if(newVal) {
+
+                        vm.currentTheme = newVal.permalink; 
+
+                    }
+
+                });
+
+                vm.isActive = function(pBackground) {
+
+                    return vm.currentTheme === pBackground;
+
+                };
 
             }],
             controllerAs: 'theme',
+            bindToController: true, 
             templateUrl : 'js/pageTheme/ssPageThemeBackgrounds.tpl.html',
             link: function(scope, element, attrs, theme) {
 
                  scope.component = attrs.component;
 
-                scope.backgrounds = Theme.getThemes(); 
+                 theme.backgrounds = Theme.getThemes(); 
 
             }
 

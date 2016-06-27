@@ -37,9 +37,6 @@ angular.module("Sales")
 
             vm.checkIfSongPlaying = function(pTrack) {
 
-                    console.log('is playing is defined now as ');
-                    console.log(vm.isPlaying);  
-
                 if(!vm.isPlaying) { 
 
 
@@ -48,9 +45,6 @@ angular.module("Sales")
 
 
                 if(vm.currentTrack) {
-
-                    console.log("there current track object is"); 
-                    console.log(vm.currentTrack); 
 
                     var trackTitle = $filter('dashless')(vm.currentTrack);
 
@@ -98,10 +92,7 @@ angular.module("Sales")
 
             vm.playSong = function(pTrack) {
 
-
                 if(vm.currentTrack) {
-
-                    console.log(vm.currentTrack); 
 
                     var trackTitle = $filter('dashless')(vm.currentTrack);
 

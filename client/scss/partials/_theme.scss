@@ -12,7 +12,7 @@
 
 // Changes color of text, svg logos/icons, and table borders  to $offBlack since
 // Big Sis theme background is too ight for white text
-.theme-big-sis  {
+.theme-big-sis {
     color: $blue--dark; 
 
     .logo,
@@ -90,6 +90,90 @@
         border: 2px solid $blue--dark;
         
     }
+
+}
+
+
+.theme-lp {
+
+    color: $offBlack; 
+
+    .logo,
+    .icon--controls, 
+    a {
+        // Colors svg files  through fill property and links
+        fill:  $offBlack;
+        color: $offBlack; 
+    }
+
+    a {
+        &:hover {
+            background-color: $offBlack; 
+            @extend %text--white; 
+        }
+    }
+    
+    // Styles for mainNav under big-sis theme 
+    .mainNav-link {
+        &:hover {
+            color: $offBlack; 
+        }
+    }
+    
+    // Styles for buttons under big-sis theme
+    .button--primary {
+        background-color: lighten($offBlack, 6%); 
+        @extend %text--white; 
+
+        &:hover {
+            background-color: darken($offBlack, 6%);
+            @extend %text--white; 
+        }
+    }
+
+    .button--secondary {
+        border: 2px solid $offBlack; 
+        color: $offBlack; 
+
+        &:hover {
+            background-color: $offBlack; 
+            @extend %text--white; 
+        }
+    }
+    
+    // Styles for table under big-sis theme 
+    .table--primary {
+
+        .table-row {
+
+            &:hover {
+
+                @media #{$medium-up} {
+                    background: rgba(30, 30, 30, .1);
+                }
+
+            }
+
+            td {    
+
+
+                @media #{$medium-up} {
+                    border-top: 1px solid $offBlack;  
+
+                }
+
+            }  
+        }
+
+    }
+
+    input,
+    input:focus {
+        color: $offBlack; 
+        border: 2px solid $offBlack;
+        
+    }
+
 
 }
 

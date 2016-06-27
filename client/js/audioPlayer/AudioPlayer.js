@@ -154,7 +154,11 @@
 
     var getCurrentTheme = function() {
 
-        return currentTrack; 
+        if(currentTrack) {
+
+            return currentTrack; 
+
+        }
     }
     
 
@@ -166,7 +170,11 @@
 
     var getCurrentTrack = function() {
 
-        return currentTrack; 
+        if(currentTrack) {
+
+            return currentTrack; 
+
+        }
     }
 
     var getCurrentTrackInfo = function() {
@@ -202,6 +210,16 @@
         this.scplayer.play(); 
 
         isPlaying = true; 
+
+        if(hasNotPlayed) {
+
+            getCurrentTrackInfo().done(function(track){
+
+                AudioPlayer.changeCurrentTrackInfo(track); 
+
+            });
+
+        }
 
         hasNotPlayed = false; 
 

@@ -6889,7 +6889,7 @@ h6,
     #Common Font Colors
 \*------------------------------------*/
 /* line 135, ../scss/modules/_typography.scss */
-body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .mainNav-link:active, .mainNav .mainNav-link:focus, .theme-big-sis a:hover, .theme-big-sis .button--primary, .theme-big-sis .button--primary:hover, .theme-big-sis .button--secondary:hover, .slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
+body, a, .button--secondary, input, .mainNav .mainNav-link:hover, .mainNav .mainNav-link:active, .mainNav .mainNav-link:focus, .theme-big-sis a:hover, .theme-big-sis .button--primary, .theme-big-sis .button--primary:hover, .theme-big-sis .button--secondary:hover, .theme-lp a:hover, .theme-lp .button--primary, .theme-lp .button--primary:hover, .theme-lp .button--secondary:hover, .slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
   color: #fff;
 }
 
@@ -8370,10 +8370,65 @@ input:focus {
   border: 2px solid #3b4664;
 }
 
+/* line 97, ../scss/partials/_theme.scss */
+.theme-lp {
+  color: #2E2D31;
+}
+/* line 101, ../scss/partials/_theme.scss */
+.theme-lp .logo,
+.theme-lp .icon--controls,
+.theme-lp a {
+  fill: #2E2D31;
+  color: #2E2D31;
+}
+/* line 110, ../scss/partials/_theme.scss */
+.theme-lp a:hover {
+  background-color: #2E2D31;
+}
+/* line 118, ../scss/partials/_theme.scss */
+.theme-lp .mainNav-link:hover {
+  color: #2E2D31;
+}
+/* line 124, ../scss/partials/_theme.scss */
+.theme-lp .button--primary {
+  background-color: #3d3c41;
+}
+/* line 128, ../scss/partials/_theme.scss */
+.theme-lp .button--primary:hover {
+  background-color: #1f1e21;
+}
+/* line 134, ../scss/partials/_theme.scss */
+.theme-lp .button--secondary {
+  border: 2px solid #2E2D31;
+  color: #2E2D31;
+}
+/* line 138, ../scss/partials/_theme.scss */
+.theme-lp .button--secondary:hover {
+  background-color: #2E2D31;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 149, ../scss/partials/_theme.scss */
+  .theme-lp .table--primary .table-row:hover {
+    background: rgba(30, 30, 30, 0.1);
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 157, ../scss/partials/_theme.scss */
+  .theme-lp .table--primary .table-row td {
+    border-top: 1px solid #2E2D31;
+  }
+}
+/* line 170, ../scss/partials/_theme.scss */
+.theme-lp input,
+.theme-lp input:focus {
+  color: #2E2D31;
+  border: 2px solid #2E2D31;
+}
+
 /*------------------------------------*\
     #Backgrounds (Extends from _theme.scss)  
 \*------------------------------------*/
-/* line 105, ../scss/partials/_theme.scss */
+/* line 189, ../scss/partials/_theme.scss */
 .theme-background {
   top: 0;
   left: 0;
@@ -8388,20 +8443,20 @@ input:focus {
 /*------------------------------------*\
     #Artworks  (Includes from _theme.scss)
 \*------------------------------------*/
-/* line 124, ../scss/partials/_theme.scss */
+/* line 208, ../scss/partials/_theme.scss */
 .theme-artworkContainer {
   width: 15.625rem;
   height: 12.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 124, ../scss/partials/_theme.scss */
+  /* line 208, ../scss/partials/_theme.scss */
   .theme-artworkContainer {
     height: 28.125rem;
     width: 28.125rem;
   }
 }
 
-/* line 137, ../scss/partials/_theme.scss */
+/* line 221, ../scss/partials/_theme.scss */
 .theme-artwork {
   background-size: contain;
   top: 0;
@@ -8418,155 +8473,155 @@ input:focus {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 149, ../scss/partials/_theme.scss */
+/* line 233, ../scss/partials/_theme.scss */
 .theme-artwork.is-showing {
   z-index: 80;
   opacity: 1;
 }
-/* line 154, ../scss/partials/_theme.scss */
+/* line 238, ../scss/partials/_theme.scss */
 .theme-artwork.is-next {
   z-index: 70;
 }
-/* line 159, ../scss/partials/_theme.scss */
+/* line 243, ../scss/partials/_theme.scss */
 .theme-artwork.getting-it-on {
   background-image: url("../assets/images/getting-it-on--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 159, ../scss/partials/_theme.scss */
+  /* line 243, ../scss/partials/_theme.scss */
   .theme-artwork.getting-it-on {
     background-image: url("../assets/images/getting-it-on--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 159, ../scss/partials/_theme.scss */
+  /* line 243, ../scss/partials/_theme.scss */
   .theme-artwork.getting-it-on {
     background-image: url("../assets/images/getting-it-on--large.png");
   }
 }
-/* line 163, ../scss/partials/_theme.scss */
+/* line 247, ../scss/partials/_theme.scss */
 .theme-artwork.sales-renee {
   background-image: url("../assets/images/sales-renee--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 163, ../scss/partials/_theme.scss */
+  /* line 247, ../scss/partials/_theme.scss */
   .theme-artwork.sales-renee {
     background-image: url("../assets/images/sales-renee--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 163, ../scss/partials/_theme.scss */
+  /* line 247, ../scss/partials/_theme.scss */
   .theme-artwork.sales-renee {
     background-image: url("../assets/images/sales-renee--large.png");
   }
 }
-/* line 167, ../scss/partials/_theme.scss */
+/* line 251, ../scss/partials/_theme.scss */
 .theme-artwork.vow {
   background-image: url("../assets/images/vow--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 167, ../scss/partials/_theme.scss */
+  /* line 251, ../scss/partials/_theme.scss */
   .theme-artwork.vow {
     background-image: url("../assets/images/vow--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 167, ../scss/partials/_theme.scss */
+  /* line 251, ../scss/partials/_theme.scss */
   .theme-artwork.vow {
     background-image: url("../assets/images/vow--large.png");
   }
 }
-/* line 171, ../scss/partials/_theme.scss */
+/* line 255, ../scss/partials/_theme.scss */
 .theme-artwork.chinese-new-year {
   background-image: url("../assets/images/chinese-new-year--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 171, ../scss/partials/_theme.scss */
+  /* line 255, ../scss/partials/_theme.scss */
   .theme-artwork.chinese-new-year {
     background-image: url("../assets/images/chinese-new-year--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 171, ../scss/partials/_theme.scss */
+  /* line 255, ../scss/partials/_theme.scss */
   .theme-artwork.chinese-new-year {
     background-image: url("../assets/images/chinese-new-year--large.png");
   }
 }
-/* line 175, ../scss/partials/_theme.scss */
+/* line 259, ../scss/partials/_theme.scss */
 .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
   background-image: url("../assets/images/toto--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 175, ../scss/partials/_theme.scss */
+  /* line 259, ../scss/partials/_theme.scss */
   .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
     background-image: url("../assets/images/toto--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 175, ../scss/partials/_theme.scss */
+  /* line 259, ../scss/partials/_theme.scss */
   .theme-artwork.toto, .theme-artwork.toto-xxyyxx-remix {
     background-image: url("../assets/images/toto--large.png");
   }
 }
-/* line 180, ../scss/partials/_theme.scss */
+/* line 264, ../scss/partials/_theme.scss */
 .theme-artwork.big-sis {
   background-image: url("../assets/images/big-sis--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 180, ../scss/partials/_theme.scss */
+  /* line 264, ../scss/partials/_theme.scss */
   .theme-artwork.big-sis {
     background-image: url("../assets/images/big-sis--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 180, ../scss/partials/_theme.scss */
+  /* line 264, ../scss/partials/_theme.scss */
   .theme-artwork.big-sis {
     background-image: url("../assets/images/big-sis--large.png");
   }
 }
-/* line 184, ../scss/partials/_theme.scss */
+/* line 268, ../scss/partials/_theme.scss */
 .theme-artwork.jamz {
   background-image: url("../assets/images/jamz--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 184, ../scss/partials/_theme.scss */
+  /* line 268, ../scss/partials/_theme.scss */
   .theme-artwork.jamz {
     background-image: url("../assets/images/jamz--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 184, ../scss/partials/_theme.scss */
+  /* line 268, ../scss/partials/_theme.scss */
   .theme-artwork.jamz {
     background-image: url("../assets/images/jamz--large.png");
   }
 }
-/* line 188, ../scss/partials/_theme.scss */
+/* line 272, ../scss/partials/_theme.scss */
 .theme-artwork.ivy {
   background-image: url("../assets/images/ivy--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 188, ../scss/partials/_theme.scss */
+  /* line 272, ../scss/partials/_theme.scss */
   .theme-artwork.ivy {
     background-image: url("../assets/images/ivy--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 188, ../scss/partials/_theme.scss */
+  /* line 272, ../scss/partials/_theme.scss */
   .theme-artwork.ivy {
     background-image: url("../assets/images/ivy--large.png");
   }
 }
-/* line 192, ../scss/partials/_theme.scss */
+/* line 276, ../scss/partials/_theme.scss */
 .theme-artwork.lp {
   background-image: url("../assets/images/lp--small.png");
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 192, ../scss/partials/_theme.scss */
+  /* line 276, ../scss/partials/_theme.scss */
   .theme-artwork.lp {
     background-image: url("../assets/images/lp--medium.png");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 192, ../scss/partials/_theme.scss */
+  /* line 276, ../scss/partials/_theme.scss */
   .theme-artwork.lp {
     background-image: url("../assets/images/lp--large.png");
   }
