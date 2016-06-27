@@ -12,10 +12,14 @@
     z-index: 150;  
     background-color: black; 
     height: rem-calc(84px); 
+    color: #fff; 
     @extend %dropshadow; 
     @extend %artworkBg--black; 
     @include transform(translateY(93vh)); 
     @include single-transition(all, .2s, ease-in-out); 
+
+
+    
 
     &.is-showing {
         @include transform(translateY(0)); 
@@ -34,6 +38,13 @@
     &.is-active {
         display: block; 
         position: relative; 
+    }
+
+ .icon--controls, 
+    a {
+        // Colors svg files  through fill property and links
+        fill: $offBlack !important; 
+        color:$offBlack !important; 
     }
 }
 
@@ -59,24 +70,20 @@
 
 }
 
+.globalAudioPlayer-information {
+    a {
+        // Colors svg files  through fill property and links
+        color: #fff !important; 
+    }
+}
 
-// .globalAudioPlayer-controls {
-    
+.globalAudioPlayer-controls {
 
-//     .audioPlayer-button {
+    .icon--controls, 
+    a {
+        // Colors svg files  through fill property and links
+        fill:  #fff !important; 
+        color: #fff !important; 
+    }
 
-//         .seeker {
-
-//             height: 1rem; 
-//             width: 1rem; 
-//         }
-
-//         .play, 
-//         .pause {
-//             height: 4rem; 
-//             width: 2rem; 
-//         }
-        
-//     }
-
-// }
+}

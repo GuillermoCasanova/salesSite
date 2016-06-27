@@ -15,9 +15,7 @@ angular.module('Sales')
                  {'name' : 'big-sis'},
                  {'name' : 'jamz'},
                  {'name' : 'ivy'},
-                 {'name' : 'lp'}
-
-                ];
+                 {'name' : 'lp'}];
     return {
             getThemes : function() {
 

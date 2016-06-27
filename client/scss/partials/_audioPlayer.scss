@@ -9,6 +9,20 @@
 }
 
 
+.audioPlayer { 
+
+    .icon--controls.play, 
+    .icon--controls.pause {
+
+        display: inline-block;
+        width: 4.5rem;
+        height: 4.5rem;
+
+    }
+
+}
+
+
 .audioPlayer-button,
 .slick-slider button  {
     background-repeat: no-repeat;
@@ -107,5 +121,7 @@
         display: none; 
     }
 }
+
+
 
 

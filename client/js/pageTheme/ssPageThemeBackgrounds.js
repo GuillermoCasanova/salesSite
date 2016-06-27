@@ -13,13 +13,21 @@ angular.module('Sales')
 
             restrict: 'E',
             scope: {}, 
-            controller: ['$scope', 'AudioPlayer', function($scope, AudioPlayer) {
+            controller: [
+                '$scope', 
+                'AudioPlayer', 
+                'Theme', 
+                function($scope, AudioPlayer, Theme) {
 
                 var vm = this; 
 
+                var defaultTheme = 'lp'; 
+
                 vm.loaded = false; 
 
-                vm.currentTheme = 'lp'; 
+                vm.currentTheme = defaultTheme; 
+
+                vm.themes = Theme.getThemes(); 
 
                 if(vm.currentTheme === null ) {
 
@@ -34,9 +42,25 @@ angular.module('Sales')
 
                     if(newVal) {
 
-                        vm.currentTheme = newVal.permalink; 
+                        var themeName = newVal.permalink;
 
+                        for(var i = 0; i < vm.themes.length; i++) {
+
+                            if(vm.themes[i].name ===  themeName) {
+
+                                vm.currentTheme = themeName; 
+                                return 
+                            } 
+
+                        } 
+
+                        vm.currentTheme = defaultTheme; 
+
+                    } else {
+
+                        vm.currentTheme = defaultTheme; 
                     }
+
 
                 });
 

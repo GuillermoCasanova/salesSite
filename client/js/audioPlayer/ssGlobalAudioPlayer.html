@@ -116,21 +116,21 @@
                 
                 <li class="small-6  columns  text-center">
     
-                    <h1 class="h3"  ng-click="globalAudioPlayer.showTab(0)">
+                    <a class="h3  ptb1  display-block"  ng-click="globalAudioPlayer.showTab(0)">
                     
                         Playlist 
                         
-                    </h1>
+                    </a>
     
                 </li>
     
                 <li class="small-6  columns  text-center">
     
-                    <h1 class="h3" ng-click="globalAudioPlayer.showTab(1)"> 
+                    <a class="h3  ptb1  display-block" ng-click="globalAudioPlayer.showTab(1)"> 
                     
                         Catalogue
                         
-                    </h1>
+                    </a>
     
                 </li>
     
@@ -147,7 +147,7 @@
                     
                     <ul class="list--inline  grid h4">
 
-                        <li class="grid-cell  text-center">Play</li>
+                        <li class="grid-cell  grid-cell--autoSize  text-center">Play</li>
 
                         <li class="grid-cell  text-center">Track</li>
 
@@ -166,7 +166,7 @@
                     <ul class="grid  grid--center  list--inline mtb1"
                         >
                         
-                        <li class="grid-cell">
+                        <li class="grid-cell  grid-cell--autoSize">
                             
                             <button class="audioPlayer-button "
                                     ng-class="globalAudioPlayer.checkIfSongPlaying(song) ? 'play' : 'pause'">

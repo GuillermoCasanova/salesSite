@@ -114,7 +114,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect', 'watch']);
 
 
-    grunt.registerTask('publish', ['compile-sass', 'clean', 'useminPrepare', 'copy', 'concat', 'cssmin', 'uglify', 'usemin']);
+    grunt.registerTask('publish', ['compile-sass', 'clean', 'useminPrepare', 'copy', 'concat', 'cssmin', 'uglify', 'usemin', 'connect','watch' ]);
     
 
 };

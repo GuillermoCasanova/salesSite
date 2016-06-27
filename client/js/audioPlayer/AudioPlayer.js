@@ -1,5 +1,5 @@
     angular.module('Sales')
-    .factory('AudioPlayer', ['$timeout', '$filter', function($timeout, $filter) {
+    .factory('AudioPlayer', ['$http', '$timeout', '$filter', function($http, $timeout, $filter) {
 
 
     //*Default variables*//
@@ -72,20 +72,66 @@
         "artwork": "https://f4.bcbits.com/img/a1493513244_16.jpg",
         "tracks": [
             {
-                "name": "big sis",
-                "link": "https://soundcloud.com/sales/ivy", 
+                "name": "over",
+                "link": "https://soundcloud.com/sales/over", 
                 "id" : 0
+            },
+            {
+                "name" : "ivy",
+                "link" : "https://soundcloud.com/sales/ivy",
+                "id" : 1
+            },
+            {
+                "name" : "crash",
+                "link" : "https://soundcloud.com/sales/crash",
+                "id" : 2
+            },
+            {
+                "name": "untitled 01",
+                "link": "https://soundcloud.com/sales/untitled-01", 
+                "id" : 3
+            },
+            {
+                "name" : "pope is a rockstar",
+                "link" : "https://soundcloud.com/sales/pope-is-a-rockstar", 
+                "id": 4
+            },
+            {
+                "name" : "pope is a rockstar",
+                "link" : "https://soundcloud.com/sales/trapped-in-a-club", 
+                "id": 5
+            },
+            {
+                "name" : "mondays",
+                "link" : "https://soundcloud.com/sales/mondays", 
+                "id": 6
+            },
+            {
+                "name": "big sis",
+                "link": "https://soundcloud.com/sales/big-sis", 
+                "id" : 7
             },
             {
                 "name" : "jamz",
                 "link" : "https://soundcloud.com/sales/jamz", 
-                "id": 1
+                "id": 8
             },
             {
-                "name" : "ivy",
-                "link" : "https://soundcloud.com/sales/chinese-new-year",
-                "id" : 2
-            }]
+                "name" : "thurs 6-25",
+                "link" : "https://soundcloud.com/sales/thurs-6-25", 
+                "id": 9
+            },
+            {
+                "name" : "seven's day",
+                "link" : "https://soundcloud.com/sales/sevens-day", 
+                "id": 10
+            },
+            {
+                "name" : "sorry bro",
+                "link" : "https://soundcloud.com/sales/sorry-bro", 
+                "id": 11
+            }
+            ]
 
 
     }]; 
@@ -156,6 +202,7 @@
 
         if(currentTrack) {
 
+            if(currentTrack)
             return currentTrack; 
 
         }
@@ -189,9 +236,6 @@
     };
 
     var next = function() {
-
-        console.log('play next'); 
-        console.log(this.scplayer); 
 
         this.scplayer.next(); 
 
@@ -244,52 +288,6 @@
 
         return isPlaying;
     };
-
-    // var playSong = function(pTrack) {
-
-
-    //     console.log(pTrack); 
-
-    //     // Checks to see if there is a currentsong
-    //     // and if there is checks to see if its the same one that is about
-    //     // to be payed, if so, it just pauses the player
-    //     if(currentTrack) {
-
-    //         var trackTitle = $filter('dashless')(currentTrack.title);
-
-    //         trackTitle = trackTitle.toLowerCase(); 
-
-    //         var trackPicked = pTrack.name.toLowerCase(); 
-
-    //     }  
-
-    //         if(trackPicked === trackTitle) {
-
-    //             console.log('same track'); 
-
-    //             this.pause();
-
-    //         }  else {
-
-    //         var position = pTrack.id;
-
-    //         console.log(position); 
-
-    //         this.scplayer.goto(position, true); 
-
-    //         getCurrentTrackInfo().done(function(track){
-
-    //             changeCurrentTrackInfo(track); 
-
-    //             isPlaying = true; 
-
-    //             hasNotPlayed = false; 
-
-    //         });
-    //     }
-
-    //     return pTrack ; 
-    // }; 
 
     var playSong = function(pTrack) {
 
@@ -497,7 +495,7 @@
         "setPlaylist" : setPlaylist
     }; 
 
-    audioPlayerObject.setPlaylist(catalogue[0]); 
+    audioPlayerObject.setPlaylist(catalogue[1]); 
 
     return audioPlayerObject; 
 

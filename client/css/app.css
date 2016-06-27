@@ -7235,20 +7235,33 @@ body, html {
   text-transform: uppercase;
 }
 
+/*------------------------------------*\
+    #Font Weight
+\*------------------------------------*/
+/* line 36, ../scss/partials/_typography.scss */
+.ff1 {
+  font-family: "SALES", "sans-serif";
+}
+
+/* line 42, ../scss/partials/_typography.scss */
+.ff2 {
+  font-family: "Abel", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
 /*-----------------------------------*\
     #Text Alignement 
 \*------------------------------------*/
-/* line 36, ../scss/partials/_typography.scss */
+/* line 56, ../scss/partials/_typography.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 37, ../scss/partials/_typography.scss */
+/* line 57, ../scss/partials/_typography.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 38, ../scss/partials/_typography.scss */
+/* line 58, ../scss/partials/_typography.scss */
 .text-right {
   text-align: right;
 }
@@ -7256,12 +7269,12 @@ body, html {
 /*------------------------------------*\
     #Paragraph Sizes 
 \*------------------------------------*/
-/* line 48, ../scss/partials/_typography.scss */
+/* line 68, ../scss/partials/_typography.scss */
 .par--subText {
   font-size: 0.875rem;
 }
 
-/* line 52, ../scss/partials/_typography.scss */
+/* line 72, ../scss/partials/_typography.scss */
 .par--important {
   font-size: 1.125rem;
 }
@@ -7269,7 +7282,7 @@ body, html {
 /*------------------------------------*\
     #Link Styles
 \*------------------------------------*/
-/* line 64, ../scss/partials/_typography.scss */
+/* line 84, ../scss/partials/_typography.scss */
 a {
   font-weight: 600;
   text-decoration: none;
@@ -7279,7 +7292,7 @@ a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 72, ../scss/partials/_typography.scss */
+/* line 92, ../scss/partials/_typography.scss */
 a:hover, a:focus, a:active {
   position: relative;
   background-color: #fff;
@@ -7295,7 +7308,7 @@ a:hover, a:focus, a:active {
 /*
 ** Hn sizes .hn classes defined by placeholders from typography.scss module 
 */
-/* line 109, ../scss/partials/_typography.scss */
+/* line 129, ../scss/partials/_typography.scss */
 h1,
 h2,
 h3,
@@ -8039,6 +8052,7 @@ input:focus {
   z-index: 150;
   background-color: black;
   height: 5.25rem;
+  color: #fff;
   -moz-transform: translateY(93vh);
   -ms-transform: translateY(93vh);
   -webkit-transform: translateY(93vh);
@@ -8048,7 +8062,7 @@ input:focus {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 20, ../scss/partials/_globalAudioPlayer.scss */
+/* line 24, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer.is-showing {
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -8056,20 +8070,26 @@ input:focus {
   transform: translateY(0);
 }
 
-/* line 27, ../scss/partials/_globalAudioPlayer.scss */
+/* line 31, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-tab {
   position: absolute;
   top: 0;
   width: 100%;
   display: none;
 }
-/* line 34, ../scss/partials/_globalAudioPlayer.scss */
+/* line 38, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-tab.is-active {
   display: block;
   position: relative;
 }
+/* line 43, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-tab .icon--controls,
+.globalAudioPlayer-tab a {
+  fill: #2E2D31 !important;
+  color: #2E2D31 !important;
+}
 
-/* line 40, ../scss/partials/_globalAudioPlayer.scss */
+/* line 51, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-playlists {
   top: 0;
   width: 100%;
@@ -8087,7 +8107,7 @@ input:focus {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 53, ../scss/partials/_globalAudioPlayer.scss */
+/* line 64, ../scss/partials/_globalAudioPlayer.scss */
 .globalAudioPlayer-playlists.is-showing {
   -moz-transform: translateY(66px);
   -ms-transform: translateY(66px);
@@ -8095,6 +8115,18 @@ input:focus {
   transform: translateY(66px);
   z-index: 200;
   opacity: 1;
+}
+
+/* line 74, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-information a {
+  color: #fff !important;
+}
+
+/* line 82, ../scss/partials/_globalAudioPlayer.scss */
+.globalAudioPlayer-controls .icon--controls,
+.globalAudioPlayer-controls a {
+  fill: #fff !important;
+  color: #fff !important;
 }
 
 /*------------------------------------*\
@@ -8635,7 +8667,15 @@ input:focus {
   max-width: 600px;
 }
 
-/* line 12, ../scss/partials/_audioPlayer.scss */
+/* line 14, ../scss/partials/_audioPlayer.scss */
+.audioPlayer .icon--controls.play,
+.audioPlayer .icon--controls.pause {
+  display: inline-block;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+/* line 26, ../scss/partials/_audioPlayer.scss */
 .audioPlayer-button,
 .slick-slider button {
   background-repeat: no-repeat;
@@ -8645,7 +8685,7 @@ input:focus {
   cursor: pointer;
   outline: 0;
 }
-/* line 21, ../scss/partials/_audioPlayer.scss */
+/* line 35, ../scss/partials/_audioPlayer.scss */
 .audioPlayer-button:active,
 .slick-slider button:active {
   outline: 0;
@@ -8654,11 +8694,11 @@ input:focus {
 /*------------------------------------*\
     #Next and Previous Seeking buttons  
 \*------------------------------------*/
-/* line 36, ../scss/partials/_audioPlayer.scss */
+/* line 50, ../scss/partials/_audioPlayer.scss */
 .next {
   transition: all 0.3s ease-in-out;
 }
-/* line 40, ../scss/partials/_audioPlayer.scss */
+/* line 54, ../scss/partials/_audioPlayer.scss */
 .next.is-showing {
   opacity: 1;
   left: 0;
@@ -8667,7 +8707,7 @@ input:focus {
   -webkit-transform: translateX(8px);
   transform: translateX(8px);
 }
-/* line 46, ../scss/partials/_audioPlayer.scss */
+/* line 60, ../scss/partials/_audioPlayer.scss */
 .next.is-hidden {
   opacity: 0;
   -moz-transform: translateX(-8px);
@@ -8676,11 +8716,11 @@ input:focus {
   transform: translateX(-8px);
 }
 
-/* line 54, ../scss/partials/_audioPlayer.scss */
+/* line 68, ../scss/partials/_audioPlayer.scss */
 .prev {
   transition: all 0.3s ease-in-out;
 }
-/* line 59, ../scss/partials/_audioPlayer.scss */
+/* line 73, ../scss/partials/_audioPlayer.scss */
 .prev.is-showing {
   opacity: 1;
   -moz-transform: translateX(0);
@@ -8688,7 +8728,7 @@ input:focus {
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 64, ../scss/partials/_audioPlayer.scss */
+/* line 78, ../scss/partials/_audioPlayer.scss */
 .prev.is-hidden {
   opacity: 0;
   -moz-transform: translateX(8px);
@@ -8697,7 +8737,7 @@ input:focus {
   transform: translateX(8px);
 }
 
-/* line 72, ../scss/partials/_audioPlayer.scss */
+/* line 86, ../scss/partials/_audioPlayer.scss */
 .seeker {
   width: 3.75rem;
   height: 3.75rem;
@@ -8706,12 +8746,12 @@ input:focus {
 /*------------------------------------*\
     #Pause and play buttons 
 \*------------------------------------*/
-/* line 100, ../scss/partials/_audioPlayer.scss */
+/* line 114, ../scss/partials/_audioPlayer.scss */
 .pause .icon--controls.play {
   display: none;
 }
 
-/* line 106, ../scss/partials/_audioPlayer.scss */
+/* line 120, ../scss/partials/_audioPlayer.scss */
 .play .icon--controls.pause {
   display: none;
 }

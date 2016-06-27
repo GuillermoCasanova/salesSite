@@ -1,8 +1,10 @@
 angular.module('Sales')
-    .config(['$stateProvider', '$urlRouterProvider',
+    .config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
 
-        function($stateProvider, $urlRouterProvider) {
+        function($stateProvider, $urlRouterProvider, $httpProvider) {
 
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     //If anything is unmatched just go to home
     $urlRouterProvider.otherwise("/");
