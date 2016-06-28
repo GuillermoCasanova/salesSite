@@ -15,14 +15,30 @@ angular.module('Sales')
         $scope.events = {};
         $scope.loaded = false; 
 
+        $scope.showListLength = 0; 
+
         Shows.getShows()
             .success(function(pData) {
            $scope.loaded = true; 
+
+            if(pData.totalEntries === 0) {
+
+             $scope.viewingAllShows = true; 
+             console.log('zero'); 
+             return $scope.viewingAllShows; 
+
+           }
+
            $scope.events = pData.resultsPage.results.event; 
+
+
+
         });
 
         $scope.navigateToTickets = function(ticketLink) {
             $window.open(ticketLink, "_blank");
         };
+
+      
 
 }]);

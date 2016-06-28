@@ -46,7 +46,7 @@ angular.module("Sales")
 
                 if(vm.currentTrack) {
 
-                    var trackTitle = $filter('dashless')(vm.currentTrack);
+                    var trackTitle = $filter('dashless')(vm.currentTrack.title);
 
                     trackTitle = trackTitle.toLowerCase(); 
 
@@ -90,9 +90,9 @@ angular.module("Sales")
 
             vm.playSong = function(pTrack) {
 
-                if(vm.currentTrack) {
+                if(vm.currentTrack.title) {
 
-                    var trackTitle = $filter('dashless')(vm.currentTrack);
+                    var trackTitle = $filter('dashless')(vm.currentTrack.title);
 
                     trackTitle = trackTitle.toLowerCase(); 
 
@@ -151,10 +151,12 @@ angular.module("Sales")
 
                 if(newVal) {
 
-                    vm.currentTrack = newVal.title;  
+                    vm.currentTrack = newVal;  
                     vm.currentPlaylist = AudioPlayer.getCurrentRelease().tracks
 
+                    console.log(vm.currentTrack.permalink_url); 
                 }
+
 
             });
 

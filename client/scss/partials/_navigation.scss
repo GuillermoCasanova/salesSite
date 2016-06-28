@@ -22,9 +22,7 @@
         &:focus {
             background-color: transparent !important; 
             text-decoration: none; 
-            @extend %text--white; 
             @include transform(scale(1.1)); 
-
         }
     }
 

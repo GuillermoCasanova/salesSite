@@ -97,7 +97,7 @@
                 "id": 4
             },
             {
-                "name" : "pope is a rockstar",
+                "name" : "trapped in a club",
                 "link" : "https://soundcloud.com/sales/trapped-in-a-club", 
                 "id": 5
             },
@@ -146,7 +146,6 @@
     var changeCurrentTrackInfo = function(pTrackInfo) {
 
         currentTrack = pTrackInfo;  
-        console.log(currentTrack); 
 
     };
 

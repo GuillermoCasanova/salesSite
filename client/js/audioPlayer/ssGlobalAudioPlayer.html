@@ -1,18 +1,5 @@
 <div>
     
-    <div class="globalAudioPlayerTab">
-
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="flexParent">
-                    <span class="text-micro">
-                        Player Icon
-                    </span> 
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="globalAudioPlayer   "
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
         
@@ -24,7 +11,7 @@
                     
                     <div class="globalAudioPlayer-controls  grid-cell  grid-cell--autoSize  grid pr4">
                         
-                                <button  class="[ audioPlayer-button prev ] show-for-medium-up " >
+                        <button  class="[ audioPlayer-button prev ] show-for-medium-up " >
                         
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
@@ -81,9 +68,9 @@
 
                             <div>
                                 
-                               <h1 class="h5   mb0">{{globalAudioPlayer.currentTrack || 'Play Music'}}</h1>
+                               <h1 class="h5   mb0">{{globalAudioPlayer.currentTrack.title || 'Play Music'}}</h1>
                         
-                               <h2 class="text--micro mt0">via <a ng-href="{{globalAudioPlayer.currentSong.link}}">Soundcloud</a> / <a href=""> Buy</a></h2>
+                               <h2 class="text--micro mt0">via <a ng-href="{{globalAudioPlayer.currentTrack.permalink_url}}" target="_blank">Soundcloud</a> </h2>
                             </div>
                         
                     </div>
@@ -114,7 +101,7 @@
     </div>
     
     
-    <div class="globalAudioPlayer-playlists"
+    <div class="globalAudioPlayer-playlists  box-shadow1"
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
     
         <nav>
@@ -123,7 +110,7 @@
                 
                 <li class="small-6  columns  text-center">
     
-                    <a class="h3  ptb1  ff1  display-block"  ng-click="globalAudioPlayer.showTab(0)">
+                    <a class="h3  ptb2  ff1  display--block"  ng-click="globalAudioPlayer.showTab(0)">
                     
                         Playlist 
                         
@@ -133,7 +120,7 @@
     
                 <li class="small-6  columns  text-center">
     
-                    <a class="h3  ptb1  ff1  display-block" ng-click="globalAudioPlayer.showTab(1)"> 
+                    <a class="h3  ptb2  ff1  display--block" ng-click="globalAudioPlayer.showTab(1)"> 
                     
                         Catalogue
                         
@@ -142,6 +129,8 @@
                 </li>
     
             </ul>
+
+            <hr class="mt0">
     
         </nav>
         
@@ -152,9 +141,9 @@
 
                 <li class="small-12  columns  mtb1">
                     
-                    <ul class="list--inline  grid h4">
+                    <ul class="list--inline  grid h4  pl3">
 
-                        <li class="grid-cell  grid-cell--autoSize  text-center">Play</li>
+                        <li class="grid-cell  grid-cell--autoSize  text-center">Play Now</li>
 
                         <li class="grid-cell  text-center">Track</li>
 
@@ -228,7 +217,7 @@
             
             <div class="row">
     
-                <div class="small-6 columns" ng-repeat="release in globalAudioPlayer.catalogue">
+                <div class="small-6   medium-4  end  columns" ng-repeat="release in globalAudioPlayer.catalogue">
                     
                     <div ng-click="globalAudioPlayer.playPlaylist(release)">
 

@@ -107,9 +107,14 @@
     }
 
     a {
-        &:hover {
-            background-color: $offBlack; 
-            @extend %text--white; 
+    
+        @include transform(scale(1)); 
+        @include single-transition(all, 0.3s, cubic-bezier(.39, 1.05, .23, 1.26));
+
+        &:hover,
+        &:focus {
+            @include transform(scale(1.1)); 
+
         }
     }
     
