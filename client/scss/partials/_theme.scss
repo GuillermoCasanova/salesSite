@@ -26,7 +26,6 @@
     a {
         &:hover {
             background-color: $blue--dark; 
-            @extend %text--white; 
         }
     }
     

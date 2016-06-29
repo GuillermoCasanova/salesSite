@@ -1,17 +1,18 @@
 <div>
     
-    <div class="globalAudioPlayer   "
+    <div class="globalAudioPlayer  ptb1"
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
         
         <div class="row">
 
             <div class="small-12 columns  medium-10  medium-centered  ">
 
-                <div class="grid  grid--center">
+                <div class="grid  grid--center ">
                     
-                    <div class="globalAudioPlayer-controls  grid-cell  grid-cell--autoSize  grid pr4">
+                    <div class="globalAudioPlayer-controls  grid-cell  grid-cell--autoSize  grid pr3">
                         
-                        <button  class="[ audioPlayer-button prev ] show-for-medium-up " >
+                        <button  class="[ audioPlayer-button prev ] show-for-medium-up " 
+                                   ng-class=" globalAudioPlayer.isPlaying ? 'is-showing' : 'is-hidden'" >
                         
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
@@ -49,7 +50,8 @@
                         </button>
                         
                         
-                        <button class="[ audioPlayer-button next ] show-for-medium-up" >
+                        <button class="[ audioPlayer-button next ] show-for-medium-up"
+                                 ng-class=" globalAudioPlayer.isPlaying ? 'is-showing' : 'is-hidden'"  >
                         
                             <svg viewBox="0 0 144 144" 
                                  preserveAspectRatio="xMidYMid meet"  
@@ -64,20 +66,24 @@
                         
                     </div>
                         
-                    <div class="globalAudioPlayer-information  grid-cell  text-left"  >
+                    <div class="globalAudioPlayer-information  grid-cell  text-left 
+                                grid  small-grid--full"  >
 
-                            <div>
-                                
-                               <h1 class="h5   mb0">{{globalAudioPlayer.currentTrack.title || 'Play Music'}}</h1>
                         
-                               <h2 class="text--micro mt0">via <a ng-href="{{globalAudioPlayer.currentTrack.permalink_url}}" target="_blank">Soundcloud</a> </h2>
-                            </div>
+                            <h1 class="h5  mb0  grid-cell  hide-for-medium-up">{{globalAudioPlayer.currentTrack.title || 'Play Music'}}
+                            </h1>
+                            
+                            <h1 class="h3 mb0  grid-cell show-for-medium-up">
+                                {{globalAudioPlayer.currentTrack.title || 'Play Music'}}
+                            </h1>
+                                            
+                            <h2 class="text--micro mt0  mb0 ">via <a ng-href="{{globalAudioPlayer.currentTrack.permalink_url}}" target="_blank">Soundcloud</a> </h2>
                         
                     </div>
 
-                    <div class="globalAudioPlayer-secondaryinformation  grid-cell text-right  grid">
+                    <div class="globalAudioPlayer-secondaryinformation  grid-cell grid-cell--autoSize  text-right  grid">
 
-                    <div  class="grid-cell"  ng-click="globalAudioPlayer.openDrawer()">
+                    <div  class="grid-cell  grid-cell--autoSize"  ng-click="globalAudioPlayer.openDrawer()">
                         <img src="assets/images/icon--radio.svg" 
                              alt="Radio" 
                              width="30"
@@ -104,7 +110,7 @@
     <div class="globalAudioPlayer-playlists  box-shadow1"
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
     
-        <nav>
+        <nav class="globalAudioPlayer-tabTitles ">
             
             <ul class="row  pl0">
                 

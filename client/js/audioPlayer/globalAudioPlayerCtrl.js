@@ -75,8 +75,42 @@ angular.module("Sales")
             }; 
 
             vm.playPlaylist = function(pPlaylist) { 
+            
+                if(vm.playlist === pPlaylist) {
 
-                AudioPlayer.playPlaylist(pPlaylist); 
+                    if(AudioPlayer.isPlaying) {
+
+                        AudioPlayer.stop(); 
+
+                    } else {
+
+                        AudioPlayer.playPlaylist(pPlaylist); 
+                        
+
+                    }
+
+                } else { 
+
+                    AudioPlayer.setPlaylist(pPlaylist); 
+
+                    AudioPlayer.stop(); 
+
+                    $timeout(function() {
+
+                        AudioPlayer.play(); 
+
+                    }, 400); 
+
+                     AudioPlayer.getCurrentTrackInfo().done(function(track){
+                        AudioPlayer.changeCurrentTrackInfo(track); 
+                        $scope.$apply(); 
+                    });
+
+
+                }
+
+                vm.playlist = pPlaylist; 
+
 
             }; 
 
@@ -90,7 +124,7 @@ angular.module("Sales")
 
             vm.playSong = function(pTrack) {
 
-                if(vm.currentTrack.title) {
+                if(vm.currentTrack) {
 
                     var trackTitle = $filter('dashless')(vm.currentTrack.title);
 

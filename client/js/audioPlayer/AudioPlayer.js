@@ -363,9 +363,13 @@
 
                 this.pause(); 
 
+                isPlaying = false; 
+                
             } else {
 
                 this.play(); 
+
+                isPlaying = false; 
 
                 getCurrentTrackInfo().done(function(track){
 

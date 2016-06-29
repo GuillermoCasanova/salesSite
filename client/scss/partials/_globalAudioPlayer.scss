@@ -27,6 +27,21 @@
     }
 }
 
+.globalAudioPlayer-tabTitles {
+
+    a {
+
+        color: $offBlack !important; 
+
+        &:hover, 
+        &:active,
+        &:focus {
+            color: $offBlack !important; 
+        }
+
+    }
+}
+
 
 .globalAudioPlayer-tab {
 
@@ -40,7 +55,7 @@
         position: relative; 
     }
 
- .icon--controls, 
+    .icon--controls, 
     a {
         // Colors svg files  through fill property and links
         fill: $offBlack !important; 

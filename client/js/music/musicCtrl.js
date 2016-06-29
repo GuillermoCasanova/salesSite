@@ -23,13 +23,8 @@ angular.module("Sales")
                 } else {
 
                     console.log('play'); 
-                    AudioPlayer.play(); 
-
-                 AudioPlayer.getCurrentTrackInfo().done(function(track){
-                    AudioPlayer.changeCurrentTrackInfo(track); 
-                    $scope.$apply(); 
-
-                });
+                    AudioPlayer.playPlaylist(pPlaylist); 
+                    
 
                 }
 
