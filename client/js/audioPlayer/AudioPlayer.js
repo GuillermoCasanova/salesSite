@@ -238,21 +238,22 @@
 
         this.scplayer.next(); 
 
-        getCurrentTrackInfo().done(function(track){
+        console.log(this.scplayer); 
 
-            changeCurrentTrackInfo(track); 
-
-        });
+        this.scplayer.play(); 
 
 
         isPlaying = true; 
 
-        return isPlaying
+        return isPlaying; 
     }; 
 
     var pause = function() {
 
-        this.scplayer.pause(); 
+        this.scplayer.pause();
+
+        console.log(this.scplayer); 
+
 
         if(isPlaying) {
 
@@ -262,12 +263,25 @@
         } else {
             
             isPlaying = true; 
+
+            if(hasNotPlayed) {
+
+                getCurrentTrackInfo().done(function(track){
+
+                    changeCurrentTrackInfo(track); 
+
+                });
+
+            }
+
         }
 
         return isPlaying; 
     }
 
     var play =  function() {
+
+        console.log(this.scplayer); 
 
         this.scplayer.play(); 
 
@@ -298,7 +312,10 @@
     var prev = function() {
 
         this.scplayer.prev(); 
+
         isPlaying = true; 
+
+        return isPlaying
 
     }
 

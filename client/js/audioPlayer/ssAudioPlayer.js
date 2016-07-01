@@ -23,13 +23,10 @@
                     
                 }, function(newVal, oldVal) {
 
-                    console.log('is playing is '); 
-                    console.log(newVal); 
-
                     $scope.isPlaying = newVal;  
                 });
 
-              $scope.$watch(function() {
+                $scope.$watch(function() {
 
                     return AudioPlayer.currentTrack(); 
                     
@@ -43,21 +40,14 @@
 
                 });
 
-           $scope.pause  = function() {
+               $scope.pause  = function() {
 
-                AudioPlayer.pause();
+                    AudioPlayer.pause();
 
-                $scope.$apply(); 
+                    $scope.$apply(); 
 
-            }; 
 
-            $scope.play = function() {
-
-                AudioPlayer.play(); 
-
-                $scope.$apply(); 
-
-                AudioPlayer.getCurrentTrackInfo().done(function(track){
+                    AudioPlayer.getCurrentTrackInfo().done(function(track){
 
                     AudioPlayer.changeCurrentTrackInfo(track); 
                     $scope.currentTrack = AudioPlayer.currentTrack().title; 
@@ -67,6 +57,31 @@
                 });
 
             }; 
+
+            $scope.play = function() {
+
+                AudioPlayer.play();     
+
+                AudioPlayer.getCurrentTrackInfo().done(function(track){
+
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.currentTrack = AudioPlayer.currentTrack().title; 
+                    $scope.$apply(); 
+
+                });
+
+            }; 
+
+            $scope.prev = function() {
+
+                AudioPlayer.prev(); 
+
+            };
+            $scope.next = function() {
+
+                AudioPlayer.next(); 
+
+            }
 
             }],
             controllerAs: 'ssAudioPlayer',
@@ -89,6 +104,8 @@
 
                         scope.pause(); 
 
+                        scope.$apply(); 
+
                     }
                     else if( $this.hasClass('pause') ) { 
 
@@ -96,55 +113,65 @@
 
                             hasNotPlayed = false; 
 
-                            scope.play(); 
+                            $timeout(function() {
+
+                                scope.pause(); 
+
+                            }, 400); 
 
                             return; 
                         }
               
                         scope.play(); 
 
+                        scope.$apply(); 
+
                     }
                     else if( 
-                        $this.hasClass('stop') ){ AudioPlayer.stop(); 
+                        $this.hasClass('stop') ){ AudioPlayer.stop();
+
+                        scope.$apply(); 
+
                   
                         /* Need to make pause button turn back to play button */
                         $controls.find('.play').addClass("pause");
                         $controls.find('.pause').removeClass("play");
                     }
                     else if( 
-                        $this.hasClass('next') ){ AudioPlayer.scplayer.next(); 
-                        if ( $controls.find('.pause') ){
-                            $controls.find('.pause').addClass("play");
-                            $controls.find('.play').removeClass("pause");
-                            $controls.find('.play').click();                            
-                        }
+                        $this.hasClass('next') ){ 
+                        scope.next(); 
+
+                        scope.$apply(); 
                     }
                     else if( 
-                        $this.hasClass('prev') ){ AudioPlayer.scplayer.prev(); 
-                        if ( $controls.find('.pause') ){
-                            $controls.find('.pause').addClass("play");
-                            $controls.find('.play').removeClass("pause");
-                            $controls.find('.play').click();                            
-                        }
+                        $this.hasClass('prev') ){ 
+
+                        scope.prev(); 
+
+                        scope.$apply(); 
+
+
+
                     }
+
                 });
 
                 
 
                 //listens for event on sc player being paused to change icon for play/pausing 
-                AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
+                // AudioPlayer.scplayer.on("scplayer.pause", function(e, is_paused){
 
-                    console.log('sc player paused'); 
+                //     console.log('sc player paused'); 
                     
-                    if(is_paused === true){
-                        $controls.find('.play').addClass("pause");
-                        $controls.find('.pause').removeClass("play");
-                    }else{
-                        $controls.find('.pause').addClass("play");
-                        $controls.find('.play').removeClass("pause");
-                    }
+                //     if(is_paused === true){
+                //         $controls.find('.play').addClass("pause");
+                //         $controls.find('.pause').removeClass("play");
+                //     }else{
+                //         $controls.find('.pause').addClass("play");
+                //         $controls.find('.play').removeClass("pause");
+                //     }
 
-                });                
+                // });                
                 
             }
                 

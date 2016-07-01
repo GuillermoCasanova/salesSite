@@ -31,7 +31,7 @@
         <div  class="small-9  medium-6  small-centered  columns  text-center">
 
             <!--Curent Song--> 
-            <h1 class="h2  mt2  text--mega">{{currentSong}}</h1>
+            <h1 class="h2  mt2  text--mega">{{currentSong || 'Play Music Below'}}</h1>
 
             <!--Audio Player Controls-->                  
             <div class="grid  controls  audioPlayer">
@@ -53,7 +53,7 @@
 
                 </div>
                     
-                <div class="grid-cell">
+                <div class="grid-cell  grid-cell--autoSize">
 
                     <button class="audioPlayer-button "
                                 ng-class="isPlaying ? 'play' : 'pause'">

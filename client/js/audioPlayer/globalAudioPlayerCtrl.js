@@ -188,7 +188,6 @@ angular.module("Sales")
                     vm.currentTrack = newVal;  
                     vm.currentPlaylist = AudioPlayer.getCurrentRelease().tracks
 
-                    console.log(vm.currentTrack.permalink_url); 
                 }
 
 
