@@ -47,7 +47,16 @@
 
                 AudioPlayer.pause();
 
-                $scope.$apply(); 
+                $scope.$apply();
+
+                AudioPlayer.getCurrentTrackInfo().done(function(track){
+
+                    AudioPlayer.changeCurrentTrackInfo(track); 
+                    $scope.currentTrack = AudioPlayer.currentTrack().title; 
+                    $scope.$apply(); 
+
+
+                }); 
 
             }; 
 
@@ -88,6 +97,8 @@
                     if( $this.hasClass('play') ){ 
 
                         scope.pause(); 
+                        scope.$apply(); 
+                        
 
                     }
                     else if( $this.hasClass('pause') ) { 
@@ -96,12 +107,19 @@
 
                             hasNotPlayed = false; 
 
-                            scope.play(); 
+                           
+                            $timeout(function() {
+
+                                scope.pause(); 
+
+                            }, 200); 
 
                             return; 
                         }
               
                         scope.play(); 
+                        scope.$apply(); 
+
 
                     }
                     else if( 
