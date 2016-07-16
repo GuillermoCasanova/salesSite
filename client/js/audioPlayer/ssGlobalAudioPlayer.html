@@ -1,5 +1,6 @@
 <div>
     
+    <!--Global Audio Player Module--> 
     <div class="globalAudioPlayer  ptb1"
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
         
@@ -107,6 +108,7 @@
     </div>
     
     
+    <!--Playlists container--> 
     <div class="globalAudioPlayer-playlists  box-shadow1"
          ng-class="globalAudioPlayer.playerDrawerIsOpen ? 'is-showing' : 'is-hidden'">
     
@@ -140,6 +142,8 @@
     
         </nav>
         
+
+        <!--Playlist Tab--> 
         <div class=" globalAudioPlayer-tab"
                ng-class="{ 'is-active' : globalAudioPlayer.checkIfTabActive(0) }">
     
@@ -217,7 +221,9 @@
             </ul>
 
         </div>
-    
+        
+
+        <!--Catalogue Tab--> 
         <div class="globalAudioPlayer-tab"
              ng-class="{ 'is-active' : globalAudioPlayer.checkIfTabActive(1) }">
             
@@ -240,4 +246,11 @@
         </div>
     
     </div>
+
+    <div class="globalAudioPlayer-cover"
+         ng-class="{'is-visible' : globalAudioPlayer.playerDrawerIsOpen}">
+
+        
+    </div>
+
 </div>
