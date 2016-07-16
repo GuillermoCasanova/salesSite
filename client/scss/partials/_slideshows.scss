@@ -214,9 +214,16 @@ $slick-opacity-not-active: .25 !default;
         @media #{$medium-up} {
             opacity: 1; 
         }
+
+        .icon--controls {
+
+            fill: #fff !important; 
+            height: rem-calc(36px); 
+        }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         .slick-prev {
             left: rem-calc(-6px);
             

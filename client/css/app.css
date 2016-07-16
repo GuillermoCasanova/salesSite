@@ -9091,19 +9091,25 @@ input:focus {
     opacity: 1;
   }
 }
-/* line 220, ../scss/partials/_slideshows.scss */
-.slideshow--news:hover .slick-prev {
+/* line 218, ../scss/partials/_slideshows.scss */
+.slideshow--news .slick-prev .icon--controls,
+.slideshow--news .slick-next .icon--controls {
+  fill: #fff !important;
+  height: 2.25rem;
+}
+/* line 227, ../scss/partials/_slideshows.scss */
+.slideshow--news:hover .slick-prev, .slideshow--news:focus .slick-prev {
   left: -0.375rem;
 }
-/* line 224, ../scss/partials/_slideshows.scss */
-.slideshow--news:hover .slick-next {
+/* line 231, ../scss/partials/_slideshows.scss */
+.slideshow--news:hover .slick-next, .slideshow--news:focus .slick-next {
   right: -0.375rem;
 }
-/* line 230, ../scss/partials/_slideshows.scss */
+/* line 237, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-prev {
   left: -5%;
 }
-/* line 234, ../scss/partials/_slideshows.scss */
+/* line 241, ../scss/partials/_slideshows.scss */
 .slideshow--news .slick-next {
   right: -5%;
 }
