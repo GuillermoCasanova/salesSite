@@ -5,7 +5,8 @@ angular.module('Sales', ['ngRoute',
     'smoothScroll' ])
     .config(function() {
 
-}).run(['$rootScope', '$timeout', function($rootScope, $timeout) {
+}).constant("BASE_URL", "http://192.241.130.242/api/v1")
+  .run(['$rootScope', '$timeout', function($rootScope, $timeout) {
 
 
     // Function to set data-useragent attribute to document

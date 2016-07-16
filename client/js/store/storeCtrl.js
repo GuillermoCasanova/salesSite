@@ -12,7 +12,6 @@ angular.module("Sales")
         };
 
         vm.inventory = vm.getStoreInventory(); 
-        console.log(vm.inventory); 
         
     }]);
 
