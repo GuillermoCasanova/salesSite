@@ -6295,7 +6295,7 @@ th.hide-for-touch {
 }
 
 /* line 116, ../scss/modules/_generics.scss */
-.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
+.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide .slideshow-slide-title-text {
   top: 50%;
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -6312,7 +6312,7 @@ th.hide-for-touch {
 }
 
 /* line 136, ../scss/modules/_generics.scss */
-.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text, .button--primary:hover, .button--primary:focus, .button--primary:active, .mainNav--large, .mainNav--small, .mainNav--small .mainNav-controls, .mainNav--small .mainNav-menu, .slick-slide {
+.slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide .slideshow-slide-title-text, .button--primary:hover, .button--primary:focus, .button--primary:active, .mainNav--large, .mainNav--small, .mainNav--small .mainNav-controls, .mainNav--small .mainNav-menu, .slick-slide {
   position: relative;
 }
 
@@ -6889,7 +6889,7 @@ h6,
     #Common Font Colors
 \*------------------------------------*/
 /* line 135, ../scss/modules/_typography.scss */
-body, a, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis .button--primary:hover, .theme-big-sis .button--secondary:hover, .theme-lp .button--primary, .theme-lp .button--primary:hover, .theme-lp .button--secondary:hover, .slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
+body, a, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis .button--primary:hover, .theme-big-sis .button--secondary:hover, .theme-lp .button--primary, .theme-lp .button--primary:hover, .theme-lp .button--secondary:hover, .slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide .slideshow-slide-title-text {
   color: #fff;
 }
 
@@ -9069,7 +9069,7 @@ input:focus {
   transition: all 0.3s ease-in-out;
 }
 /* line 196, ../scss/partials/_slideshows.scss */
-.slideshow--news .slideshow-slide h1.slideshow-slide-title-text {
+.slideshow--news .slideshow-slide .slideshow-slide-title-text {
   text-shadow: 1px, 1px, 1px, false, rgba(0, 0, 0, 0.6);
 }
 /* line 204, ../scss/partials/_slideshows.scss */

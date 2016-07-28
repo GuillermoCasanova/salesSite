@@ -5,6 +5,14 @@ angular.module('Sales')
 
         var posts = [
                     {
+                        'title' : 'FALL TOUR 2016 ANNOUNCED',
+                        'date': 'July 27th, 2016',
+                        'thumbnail': 'https://scontent-atl3-1.xx.fbcdn.net/t31.0-8/12593609_1052080434874553_7692939998471576563_o.jpg',
+                        'mainImage' : 'https://scontent-atl3-1.xx.fbcdn.net/t31.0-8/12593609_1052080434874553_7692939998471576563_o.jpg',
+                        'id' : 'fall_tour_2016_announced',
+                        'body' : '<p>hey sugar bbs,</p><p> tickets for our fall tour are ON SALE /// let your hair down  </p><p>ticket links here:<a href="http://bit.ly/2ae8LiW"> http://bit.ly/2ae8LiW</a></p>'
+                    },
+                    {
                         'title' : 'SPRING TOUR JUNE LEG CANCELLED',
                         'date': 'June 7th, 2016',
                         'thumbnail': 'https://s3.amazonaws.com/salessite/SALES_NORTH_AMERICAN_SPRING_2016.jpg',

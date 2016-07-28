@@ -193,7 +193,7 @@ $slick-opacity-not-active: .25 !default;
             
         }
 
-        h1.slideshow-slide-title-text {
+        .slideshow-slide-title-text {
             @extend %text--white;
             @extend %vertical-align; 
             @include text-shadow(1px, 1px, 1px, false, rgba(0, 0, 0, .6));
