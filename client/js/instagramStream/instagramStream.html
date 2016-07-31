@@ -1,9 +1,9 @@
 
-<div class="row small-collapse  text-center mb6">
+<div class="row small-collapse  text-center mb6 pb3">
 
     <h1>#WEARENOTSALES</h1>
 
-    <div class="small-12  columns medium-3  large-2  end" ng-repeat="photo in instagramStream.instagramPhotos">
+    <div class="small-12  columns medium-3  large-2  end" ng-repeat="photo in instagramStream.instagramPhotos | limitTo: 18">
         
         <img ng-src="{{photo.images.standard_resolution.url}}" alt="" >
     
