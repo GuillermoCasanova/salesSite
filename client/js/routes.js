@@ -112,6 +112,19 @@ angular.module('Sales')
 
         }
 
+    }).state('main.privacyPolicy', {
+
+        url: "privacy-policy",
+        views:  {
+
+            'main' : {
+
+                templateUrl: "js/privacyPolicy/privacyPolicy.html"
+
+            }
+
+        }
+
     });
 
 }]);
