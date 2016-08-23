@@ -19,7 +19,7 @@ angular.module("Sales")
 
                         callback(response.data);
 
-                    }
+                        }
 
                 })
 

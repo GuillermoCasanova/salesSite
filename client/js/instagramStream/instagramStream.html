@@ -3,9 +3,14 @@
 
     <h1>#WEARENOTSALES</h1>
 
-    <div class="small-12  columns medium-3  large-2  end" ng-repeat="photo in instagramStream.instagramPhotos | limitTo: 18">
+    <div class="small-12  columns medium-3    end" ng-repeat="photo in instagramStream.instagramPhotos | limitTo: 8">
         
-        <img ng-src="{{photo.images.standard_resolution.url}}" alt="" >
+        <a ng-href="{{photo.link}}" target="_blank" title="Instagram Photo Link">
+
+            <img ng-src="{{photo.images.standard_resolution.url}}" 
+                 alt="Instagram Photo" >
+
+        </a>
     
     </div>
 
