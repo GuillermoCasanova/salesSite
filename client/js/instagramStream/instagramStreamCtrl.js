@@ -11,8 +11,6 @@ angular.module("Sales")
 
                 vm.instagramPhotos = response.data; 
 
-                console.log(vm.instagramPhotos); 
-
                
             });
 

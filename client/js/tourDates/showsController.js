@@ -19,12 +19,12 @@ angular.module('Sales')
 
         Shows.getShows()
             .success(function(pData) {
-           $scope.loaded = true; 
+                
+            $scope.loaded = true; 
 
             if(pData.totalEntries === 0) {
 
              $scope.viewingAllShows = true; 
-             console.log('zero'); 
              return $scope.viewingAllShows; 
 
            }

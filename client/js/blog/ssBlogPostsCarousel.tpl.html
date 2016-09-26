@@ -16,8 +16,14 @@
 
             <div class="slideshow-slide-title display--inlineBlock text-center">
 
-                <h1 class="slideshow-slide-title-text">{{post.title}}</h1>
-                
+                <div  class="slideshow-slide-title-text">
+
+                    <h1 class="mb2">{{post.title}}</h1>
+                    
+                    <h2 class="h4">{{post.date}}</h2>
+
+                </div>
+
             </div>
 
             
@@ -34,9 +40,11 @@
          role="dialog">
 
         <h1 class="reveal-modal-title" id="modalTitle">{{selectedPost.title}}</h1>
+
         
         <img class="center" ng-src="{{selectedPost.mainImage}}" alt="{{selectedPost.title}}">
-    
+        
+
 
         <div class="reveal-modal-body"  ng-bind-html="selectedPost.body">
             

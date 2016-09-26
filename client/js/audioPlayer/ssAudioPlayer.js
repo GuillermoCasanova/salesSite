@@ -46,15 +46,13 @@
 
                     $scope.$apply(); 
 
-
                     AudioPlayer.getCurrentTrackInfo().done(function(track){
 
                     AudioPlayer.changeCurrentTrackInfo(track); 
                     $scope.currentTrack = AudioPlayer.currentTrack().title; 
                     $scope.$apply(); 
 
-
-                });
+                }); 
 
             }; 
 
@@ -103,6 +101,8 @@
                     if( $this.hasClass('play') ){ 
 
                         scope.pause(); 
+                        scope.$apply(); 
+                        
 
                         scope.$apply(); 
 
@@ -113,16 +113,26 @@
 
                             hasNotPlayed = false; 
 
+<<<<<<< HEAD
+=======
+                           
+>>>>>>> replacing_songkick_stream
                             $timeout(function() {
 
                                 scope.pause(); 
 
+<<<<<<< HEAD
                             }, 400); 
+=======
+                            }, 200); 
+>>>>>>> replacing_songkick_stream
 
                             return; 
                         }
               
                         scope.play(); 
+                        scope.$apply(); 
+
 
                         scope.$apply(); 
 

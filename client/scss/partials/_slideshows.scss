@@ -193,7 +193,7 @@ $slick-opacity-not-active: .25 !default;
             
         }
 
-        h1.slideshow-slide-title-text {
+        .slideshow-slide-title-text {
             @extend %text--white;
             @extend %vertical-align; 
             @include text-shadow(1px, 1px, 1px, false, rgba(0, 0, 0, .6));
@@ -214,9 +214,16 @@ $slick-opacity-not-active: .25 !default;
         @media #{$medium-up} {
             opacity: 1; 
         }
+
+        .icon--controls {
+
+            fill: #fff !important; 
+            height: rem-calc(36px); 
+        }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         .slick-prev {
             left: rem-calc(-6px);
             

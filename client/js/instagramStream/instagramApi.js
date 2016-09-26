@@ -3,23 +3,23 @@ angular.module("Sales")
 
     function($http) {
 
-        var endPoint = "https://api.instagram.com/v1/users/1601498273/media/recent/?access_token=14227424.467ede5.167ef76092b74b55825edacf31741466&callback=JSON_CALLBACK";
+        var endPointUser = "https://api.instagram.com/v1/users/1601498273/media/recent/?access_token=1601498273.1677ed0.3b43603c32214f6086b4d46916c36ab8&callback=JSON_CALLBACK";
+
+        var endPointHashtag = "https://api.instagram.com/v1/tags/wearenotsales/media/recent?access_token=1601498273.1677ed0.3b43603c32214f6086b4d46916c36ab8&callback=JSON_CALLBACK";
 
 
         return {
 
             fetchPhotos: function(callback) {
 
-                $http.jsonp(endPoint).then(function(response) {
-                    console.log(response.data); 
+                $http.jsonp(endPointUser).then(function(response) {
                     
                     // since jsonp, it is expecting a callback, we check that here
                     if(callback && typeof callback === 'function') {
-                    console.log(response.data); 
 
                         callback(response.data);
 
-                    }
+                        }
 
                 })
 
