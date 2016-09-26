@@ -113,19 +113,11 @@
 
                             hasNotPlayed = false; 
 
-<<<<<<< HEAD
-=======
-                           
->>>>>>> replacing_songkick_stream
                             $timeout(function() {
 
                                 scope.pause(); 
 
-<<<<<<< HEAD
-                            }, 400); 
-=======
                             }, 200); 
->>>>>>> replacing_songkick_stream
 
                             return; 
                         }
