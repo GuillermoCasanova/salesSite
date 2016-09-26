@@ -6807,9 +6807,9 @@ th.hide-for-touch {
     #Typography
 \*------------------------------------*/
 @font-face {
-  font-family: 'SALES';
-  src: url("../assets/fonts/SALES.eot");
-  src: url("../assets/fonts/SALES.otf") format("embedded-opentype"), url("../assets/fonts/SALES.woff") format("woff"), url("../assets/fonts/SALES.ttf") format("truetype"), url("../assets/fonts/SALES.svg") format("svg");
+  font-family: 'Quest';
+  src: url("../assets/fonts/Quest.eot");
+  src: url("../assets/fonts/Quest.otf") format("embedded-opentype"), url("../assets/fonts/Quest.woff") format("woff"), url("../assets/fonts/Quest.ttf") format("truetype"), url("../assets/fonts/Quest.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -6819,7 +6819,7 @@ th.hide-for-touch {
 /*------------------------------------*\
     #Font Weight
 \*------------------------------------*/
-/* line 49, ../scss/modules/_typography.scss */
+/* line 48, ../scss/modules/_typography.scss */
 .table--primary .table-row td.date, .table--primary .table-row td.country {
   font-weight: 500;
 }
@@ -6827,13 +6827,13 @@ th.hide-for-touch {
 /*------------------------------------*\
     #Font Sizes + Hn Sizes
 \*------------------------------------*/
-/* line 60, ../scss/modules/_typography.scss */
+/* line 59, ../scss/modules/_typography.scss */
 .text--mega {
   font-size: 3.25rem;
   line-height: 1.125;
 }
 
-/* line 65, ../scss/modules/_typography.scss */
+/* line 64, ../scss/modules/_typography.scss */
 h1,
 .h1 {
   font-size: 2.25rem;
@@ -6841,42 +6841,42 @@ h1,
   letter-spacing: 0.25rem;
 }
 
-/* line 71, ../scss/modules/_typography.scss */
+/* line 70, ../scss/modules/_typography.scss */
 h2,
 .h2, .mainNav .mainNav-link, .table--primary .table-row td.date {
   font-size: 1.875rem;
   line-height: 1.3;
 }
 
-/* line 76, ../scss/modules/_typography.scss */
+/* line 75, ../scss/modules/_typography.scss */
 h3,
 .h3 {
   font-size: 1.5rem;
   line-height: 1.3;
 }
 
-/* line 81, ../scss/modules/_typography.scss */
+/* line 80, ../scss/modules/_typography.scss */
 h4,
 .h4 {
   font-size: 1.25rem;
   line-height: 1.2;
 }
 
-/* line 86, ../scss/modules/_typography.scss */
+/* line 85, ../scss/modules/_typography.scss */
 h5,
 .h5 {
   font-size: 1.125rem;
   line-height: 1.333;
 }
 
-/* line 91, ../scss/modules/_typography.scss */
+/* line 90, ../scss/modules/_typography.scss */
 h6,
 .h6 {
   font-size: 1rem;
   line-height: 1.5;
 }
 
-/* line 96, ../scss/modules/_typography.scss */
+/* line 95, ../scss/modules/_typography.scss */
 .text--micro {
   font-size: 0.875rem;
   line-height: 2;
@@ -6888,7 +6888,7 @@ h6,
 /*------------------------------------*\
     #Common Font Colors
 \*------------------------------------*/
-/* line 135, ../scss/modules/_typography.scss */
+/* line 134, ../scss/modules/_typography.scss */
 body, a, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-sis .button--primary:hover, .theme-big-sis .button--secondary:hover, .theme-lp .button--primary, .theme-lp .button--primary:hover, .theme-lp .button--secondary:hover, .slideshow--news .slideshow-slide .slideshow-slide-title, .slideshow--news .slideshow-slide .slideshow-slide-title-text {
   color: #fff;
 }
@@ -6896,7 +6896,7 @@ body, a, .button--secondary, input, .theme-big-sis .button--primary, .theme-big-
 /*------------------------------------*\
     #Text Alignment 
 \*------------------------------------*/
-/* line 148, ../scss/modules/_typography.scss */
+/* line 147, ../scss/modules/_typography.scss */
 .spinner {
   text-align: center;
 }
@@ -7297,7 +7297,7 @@ hr {
 \*------------------------------------*/
 /* line 87, ../scss/partials/_typography.scss */
 .ff1 {
-  font-family: "SALES", "sans-serif";
+  font-family: "Quest", "sans-serif";
 }
 
 /* line 93, ../scss/partials/_typography.scss */
@@ -7371,7 +7371,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "SALES", "sans-serif";
+  font-family: "Quest", "sans-serif";
   font-weight: 600;
 }
 
@@ -8266,7 +8266,7 @@ input:focus {
 }
 /* line 12, ../scss/partials/_navigation.scss */
 .mainNav .mainNav-link {
-  font-family: "SALES", "sans-serif";
+  font-family: "Quest", "sans-serif";
   -moz-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
   -o-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
   -webkit-transition: all 0.3s cubic-bezier(0.39, 1.05, 0.23, 1.26);
@@ -9216,7 +9216,7 @@ input:focus {
 }
 /* line 53, ../scss/partials/_tables.scss */
 .table--primary .table-row td.date {
-  font-family: "SALES", "sans-serif";
+  font-family: "Quest", "sans-serif";
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 53, ../scss/partials/_tables.scss */

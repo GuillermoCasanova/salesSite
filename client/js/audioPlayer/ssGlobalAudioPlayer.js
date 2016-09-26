@@ -7,7 +7,7 @@
             replace: true,
             restrict: "E",
             scope: true,
-            templateUrl: "js/AudioPlayer/ssGlobalAudioPlayer.html",
+            templateUrl: "js/audioPlayer/ssGlobalAudioPlayer.html",
             bindToController: {},
             controller: 'globalAudioPlayerCtrl',
             controllerAs: 'globalAudioPlayer',

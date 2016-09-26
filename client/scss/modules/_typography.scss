@@ -3,15 +3,14 @@
     #Typography
 \*------------------------------------*/
 
-//@include font-face("SALES", font-files("../fonts/SALES.ttf"));
 
 @font-face {
-  font-family: 'SALES';
-  src: url('../assets/fonts/SALES.eot');
-  src: url('../assets/fonts/SALES.otf') format('embedded-opentype'),
-       url('../assets/fonts/SALES.woff') format('woff'),
-       url('../assets/fonts/SALES.ttf') format('truetype'),
-       url('../assets/fonts/SALES.svg') format('svg');
+  font-family: 'Quest';
+  src: url('../assets/fonts/Quest.eot');
+  src: url('../assets/fonts/Quest.otf') format('embedded-opentype'),
+       url('../assets/fonts/Quest.woff') format('woff'),
+       url('../assets/fonts/Quest.ttf') format('truetype'),
+       url('../assets/fonts/Quest.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -38,7 +37,7 @@ $weight--extra-bold: 700;
 // $base-font-weight: $normal;
 
 
-$customFont: 'SALES', 'sans-serif';
+$customFont: 'Quest', 'sans-serif';
 
 
 /*------------------------------------*\
