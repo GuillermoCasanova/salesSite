@@ -84,20 +84,7 @@ angular.module('Sales')
         }
 
     })
-    .state('main.press', {
-
-        url: "press",
-        views:  {
-
-            'main' : {
-
-                templateUrl: "js/press/press.html"
-
-            }
-
-        }
-
-    }).state('main.music', {
+    .state('main.music', {
 
         url: "music",
         views:  {
@@ -124,6 +111,11 @@ angular.module('Sales')
             }
 
         }
+
+    }).state('press', {
+
+        url: "/press",
+         templateUrl: "js/press/press.html"
 
     });
 
