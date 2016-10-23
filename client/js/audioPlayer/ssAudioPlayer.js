@@ -72,12 +72,12 @@
 
             $scope.prev = function() {
 
-                AudioPlayer.prev(); 
+                AudioPlayer.scplayer.prev(); 
 
             };
             $scope.next = function() {
 
-                AudioPlayer.next(); 
+                AudioPlayer.scplayer.next(); 
 
             }
 
@@ -103,9 +103,6 @@
                         scope.pause(); 
                         scope.$apply(); 
                         
-
-                        scope.$apply(); 
-
                     }
                     else if( $this.hasClass('pause') ) { 
 
@@ -113,26 +110,16 @@
 
                             hasNotPlayed = false; 
 
-<<<<<<< HEAD
-=======
-                           
->>>>>>> replacing_songkick_stream
                             $timeout(function() {
 
                                 scope.pause(); 
 
-<<<<<<< HEAD
-                            }, 400); 
-=======
                             }, 200); 
->>>>>>> replacing_songkick_stream
 
                             return; 
                         }
               
                         scope.play(); 
-                        scope.$apply(); 
-
 
                         scope.$apply(); 
 
@@ -150,6 +137,7 @@
                     else if( 
                         $this.hasClass('next') ){ 
                         scope.next(); 
+                        scope.play(); 
 
                         scope.$apply(); 
                     }
@@ -157,6 +145,7 @@
                         $this.hasClass('prev') ){ 
 
                         scope.prev(); 
+                        scope.play(); 
 
                         scope.$apply(); 
 

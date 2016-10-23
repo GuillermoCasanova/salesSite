@@ -62,7 +62,7 @@ angular.module("Sales")
 
             }; 
 
-            vm.openDrawer = function() {
+            vm.openDrawer = function() {    
 
                 if(vm.playerDrawerIsOpen) {
 
@@ -72,6 +72,7 @@ angular.module("Sales")
                     vm.playerDrawerIsOpen = true; 
 
                 }
+                
             }; 
 
             vm.playPlaylist = function(pPlaylist) { 
